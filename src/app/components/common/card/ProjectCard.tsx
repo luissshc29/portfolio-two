@@ -187,7 +187,7 @@ export default function ProjectCard({
             </div>
           </DrawerTrigger>
           <DrawerContent>
-            <div className="z-[150] mx-auto min-h-[80vh] w-[90%]">
+            <div className="z-[150] mx-auto min-h-fit w-[90%] pb-6 pt-4">
               <DrawerHeader className="gap-1">
                 <DrawerTitle className="font-title text-xl">
                   {data.title[language]}

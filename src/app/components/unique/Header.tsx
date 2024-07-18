@@ -48,7 +48,7 @@ export default function Header() {
 
   return (
     <div
-      className="z-[999] flex h-[10vh] w-full flex-wrap-reverse items-center justify-around gap-4 duration-300"
+      className="z-[999] flex h-[7vh] w-full flex-wrap-reverse items-center justify-around gap-4 duration-300 md:h-[10vh]"
       id="header"
       style={style}
     >
