@@ -288,7 +288,7 @@ export const textVariants = {
             us: "Sep. 8, 2023",
           },
           stacks: [3, 7, 6, 10],
-          url: "https://pokedex-luissshc29.vercel.app/",
+          url: "https://pokedex-omega-tan-81.vercel.app/",
           repository: "https://github.com/luissshc29/pokedex",
         },
         {
