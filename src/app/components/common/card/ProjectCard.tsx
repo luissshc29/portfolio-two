@@ -239,8 +239,8 @@ export default function ProjectCard({
                     </p>
                   </div>
                   <Separator />
-                  <div className="flex w-full items-center justify-between gap-2">
-                    <span className="w-fit font-bold">
+                  <div className="flex w-[90%] items-center justify-between gap-2">
+                    <span className="w-fit text-sm font-bold">
                       {
                         textVariants.others.labels.projects.modal.stacks[
                           language
