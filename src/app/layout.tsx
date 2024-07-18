@@ -4,6 +4,7 @@ import LanguageProvider from "@/utils/context/Language";
 import Footer from "./components/unique/Footer";
 import { Toaster } from "@/shadcn/components/ui/toaster";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
   title: "Luis Henrique | Desenvolvedor Web",
@@ -25,6 +26,7 @@ export default function RootLayout({
           <Footer />
         </body>
         <Analytics />
+        <SpeedInsights />
       </LanguageProvider>
     </html>
   );
