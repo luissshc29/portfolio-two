@@ -19,11 +19,11 @@ export default function About() {
         bgText={textVariants.sections.about.title.bg[language]}
       />
 
-      <div className="flex md:flex-row flex-col justify-evenly items-center gap-10 w-full">
+      <div className="flex w-full flex-col items-center justify-evenly gap-10 md:flex-row">
         <img
           src="/images/avatar.jpg"
           alt="Avatar"
-          className="border-4 border-white rounded-full w-1/2 md:w-1/4"
+          className="w-1/2 rounded-full border-4 border-white md:w-1/4"
           loading="eager"
         />
         <div className="flex flex-col items-center gap-4">
@@ -35,7 +35,7 @@ export default function About() {
             variant="primary"
             download
           >
-            <p>{textVariants.sections.about.link[language]}</p>
+            <>{textVariants.sections.about.link[language]}</>
             <LuDownload size={18} />
           </Link>
         </div>
