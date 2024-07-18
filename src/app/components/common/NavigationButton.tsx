@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { AiOutlineArrowRight } from "react-icons/ai";
 
 interface NavigationButtonProps {
@@ -16,10 +16,10 @@ export default function NavigationButton({
   children: React.ReactNode;
 } & React.ButtonHTMLAttributes<HTMLButtonElement> &
   NavigationButtonProps) {
-  var element = document.getElementById(navigateTo);
+  const [element, setElement] = useState<HTMLElement>();
 
   useEffect(() => {
-    element = document.getElementById(navigateTo);
+    setElement(document.getElementById(navigateTo) as HTMLElement);
   }, []);
 
   return (

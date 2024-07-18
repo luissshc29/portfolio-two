@@ -15,7 +15,7 @@ import NavigationButton from "../common/NavigationButton";
 export default function Header() {
   const { language } = useLanguageContext();
 
-  var header = document.getElementById("header");
+  const [header, setHeader] = useState<HTMLElement>();
   const [headerYPosition, setHeaderYPosition] = useState<number>(345);
 
   const [style, setStyle] = useState<React.CSSProperties | undefined>(
@@ -37,7 +37,7 @@ export default function Header() {
   }
 
   useEffect(() => {
-    header = document.getElementById("header");
+    setHeader(document.getElementById("header") as HTMLElement);
     if (header) {
       setHeaderYPosition(header.offsetTop);
     }
