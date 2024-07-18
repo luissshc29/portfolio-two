@@ -36,7 +36,7 @@ export default function Link({
       ) : (
         <a
           target="_blank"
-          className={`relative z-10 m-0 flex items-center gap-1 border-none p-0 pb-[1px] text-sm font-medium text-neutral-400 ${className}`}
+          className={`relative z-10 m-0 flex items-center gap-1 border-none p-0 pb-[1px] font-medium text-neutral-400 underline ${className}`}
           {...rest}
         >
           {children}

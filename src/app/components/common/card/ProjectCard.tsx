@@ -20,7 +20,7 @@ import {
 } from "@/shadcn/components/ui/drawer";
 import { textVariants } from "@/utils/constants/textVariants";
 import React, { useState } from "react";
-import { FiEye, FiEyeOff, FiInfo, FiLink } from "react-icons/fi";
+import { FiInfo, FiLink, FiXCircle } from "react-icons/fi";
 import {
   Carousel,
   CarouselContent,
@@ -32,7 +32,6 @@ import { stacks } from "@/utils/constants/stacks";
 import Link from "../Link";
 import { LuClock4 } from "react-icons/lu";
 import { Separator } from "@/shadcn/components/ui/separator";
-
 type ProjectType = (typeof textVariants.sections.projects.list)[0];
 
 export default function ProjectCard({
@@ -117,7 +116,7 @@ export default function ProjectCard({
                     }
                     :
                   </span>
-                  <p className="text-sm text-neutral-200">
+                  <p className="text-neutral-300">
                     {data.description[language]}
                   </p>
                 </div>
@@ -131,7 +130,7 @@ export default function ProjectCard({
                     className={`tech flex h-8 w-2/3 items-center justify-center gap-1 ${showingOnTechContainer === "icons" ? "" : "flipped"}`}
                   >
                     <div className="tech-inner relative flex h-full w-full items-center justify-center">
-                      <div className="tech-front absolute flex gap-2 text-xl w-full justify-start">
+                      <div className="tech-front absolute flex w-full justify-start gap-2 text-xl">
                         {projectStacks.map((stack) => (
                           <p key={stack.id}>{stack.component}</p>
                         ))}
@@ -145,13 +144,13 @@ export default function ProjectCard({
                   </div>
                   <div className="w-fit">
                     {showingOnTechContainer === "icons" ? (
-                      <FiEye
-                        className="hover:cursor-pointer"
+                      <FiInfo
+                        className="text-xl hover:cursor-pointer"
                         onClick={() => setShowingOnTechContainer("texts")}
                       />
                     ) : (
-                      <FiEyeOff
-                        className="hover:cursor-pointer"
+                      <FiXCircle
+                        className="text-xl hover:cursor-pointer"
                         onClick={() => setShowingOnTechContainer("icons")}
                       />
                     )}
@@ -164,7 +163,11 @@ export default function ProjectCard({
                       {textVariants.others.labels.projects.modal.repo[language]}
                       :
                     </span>
-                    <Link variant="tertiary" href={data.repository}>
+                    <Link
+                      variant="tertiary"
+                      href={data.repository}
+                      className="text-base"
+                    >
                       {data.repository}
                       <FiLink />
                     </Link>
@@ -188,7 +191,7 @@ export default function ProjectCard({
           </DrawerTrigger>
           <DrawerContent>
             <div className="z-[1000] mx-auto min-h-fit w-[90%] pb-6 pt-4">
-              <DrawerHeader className="gap-1">
+              <DrawerHeader className="w-fit gap-0">
                 <DrawerTitle className="font-title text-xl">
                   {data.title[language]}
                 </DrawerTitle>
@@ -234,7 +237,7 @@ export default function ProjectCard({
                       }
                       :
                     </span>
-                    <p className="text-xs text-neutral-200">
+                    <p className="text-neutral-300">
                       {data.description[language]}
                     </p>
                   </div>
@@ -252,27 +255,27 @@ export default function ProjectCard({
                       className={`tech flex h-8 w-2/3 items-center justify-center gap-1 ${showingOnTechContainer === "icons" ? "" : "flipped"}`}
                     >
                       <div className="tech-inner relative flex h-full w-full items-center justify-center">
-                      <div className="tech-front absolute flex gap-2 text-xl w-full justify-start">
-                        {projectStacks.map((stack) => (
-                          <p key={stack.id}>{stack.component}</p>
-                        ))}
-                      </div>
-                      <div className="tech-back absolute flex w-full flex-wrap justify-start gap-2 gap-y-0 text-sm font-medium">
-                        {projectStacks.map((stack) => (
-                          <p key={stack.id}>{stack.name}</p>
-                        ))}
-                      </div>
+                        <div className="tech-front absolute flex w-full justify-start gap-2 text-xl">
+                          {projectStacks.map((stack) => (
+                            <p key={stack.id}>{stack.component}</p>
+                          ))}
+                        </div>
+                        <div className="tech-back absolute flex w-full flex-wrap justify-start gap-2 gap-y-0 text-sm font-medium">
+                          {projectStacks.map((stack) => (
+                            <p key={stack.id}>{stack.name}</p>
+                          ))}
+                        </div>
                       </div>
                     </div>
                     <div className="w-fit">
                       {showingOnTechContainer === "icons" ? (
-                        <FiEye
-                          className="hover:cursor-pointer"
+                        <FiInfo
+                          className="text-xl hover:cursor-pointer"
                           onClick={() => setShowingOnTechContainer("texts")}
                         />
                       ) : (
-                        <FiEyeOff
-                          className="hover:cursor-pointer"
+                        <FiXCircle
+                          className="text-xl hover:cursor-pointer"
                           onClick={() => setShowingOnTechContainer("icons")}
                         />
                       )}
@@ -280,7 +283,7 @@ export default function ProjectCard({
                   </div>
                   <Separator />
                   {data.repository && (
-                    <div className="flex flex-col items-start gap-1">
+                    <div className="flex flex-col items-start gap-[2px]">
                       <span className="text-sm font-bold">
                         {
                           textVariants.others.labels.projects.modal.repo[
@@ -292,7 +295,7 @@ export default function ProjectCard({
                       <Link
                         variant="tertiary"
                         href={data.repository}
-                        className="text-xs"
+                        className="text-sm"
                       >
                         {data.repository}
                         <FiLink />

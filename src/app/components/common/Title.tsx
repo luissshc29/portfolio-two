@@ -37,7 +37,7 @@ export default function Title({
       className="relative flex w-full items-center justify-center text-center font-title text-2xl font-bold text-white md:text-4xl"
       ref={ref}
     >
-      <h1 className="absolute z-[-2] text-5xl text-[#8d8d8d] opacity-20 md:text-7xl">
+      <h1 className="absolute z-[-2] text-5xl text-[#9b9b9b] opacity-20 md:text-7xl">
         {bgText}
       </h1>
       <h2>{title}</h2>

@@ -87,7 +87,6 @@ export default function Contacts() {
               <a
                 className="text-lg"
                 href={`tel:${textVariants.sections.contacts.info.phone.raw}`}
-                target="_blank"
               >
                 <IoMdCall />
               </a>
@@ -110,7 +109,6 @@ export default function Contacts() {
               <a
                 className="text-lg"
                 href={`mailto:${textVariants.sections.contacts.info.email.text}`}
-                target="_blank"
               >
                 <HiOutlineMail />
               </a>

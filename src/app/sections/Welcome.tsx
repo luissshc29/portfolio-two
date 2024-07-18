@@ -18,14 +18,14 @@ export default function Welcome() {
         bgText={textVariants.sections.welcome.title.bg[language]}
       />
 
-      <div className="flex flex-col justify-center items-center lg:gap-6 md:mb-10">
-        <h1 className="font-medium text-sm md:text-base">
+      <div className="flex flex-col items-center justify-center md:mb-10 lg:gap-6">
+        <h1 className="text-sm font-medium md:text-base">
           {textVariants.sections.welcome.subtitle[language]}
         </h1>
         <Header />
       </div>
       <IoIosArrowDown
-        className="bottom-12 absolute text-4xl animate-bounce hover:cursor-pointer"
+        className="absolute bottom-20 animate-bounce text-4xl hover:cursor-pointer"
         onClick={() =>
           document
             .getElementById("language")

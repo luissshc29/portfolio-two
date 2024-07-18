@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { textVariants } from "@/utils/constants/textVariants";
 import { useLanguageContext } from "@/utils/context/Language";
-import { BsChevronExpand } from "react-icons/bs";
+import { RiExpandUpDownLine } from "react-icons/ri";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -11,6 +11,8 @@ import {
   DropdownMenuTrigger,
 } from "@/shadcn/components/ui/dropdown-menu";
 import NavigationButton from "../common/NavigationButton";
+import { HiMagnifyingGlass } from "react-icons/hi2";
+import { IoMdMenu } from "react-icons/io";
 
 export default function Header() {
   const { language } = useLanguageContext();
@@ -48,13 +50,13 @@ export default function Header() {
 
   return (
     <div
-      className="z-[999] flex h-[7vh] w-full flex-wrap-reverse items-center justify-around gap-4 duration-300 md:h-[10vh]"
+      className="z-[999] flex h-[8vh] w-full flex-wrap-reverse items-center justify-around gap-4 py-1 duration-300 md:h-[10vh]"
       id="header"
       style={style}
     >
       <img
         src="/images/logo/logo-white-text-full.png"
-        className="w-[40%] hover:cursor-pointer md:w-1/4 lg:w-1/5"
+        className="w-[45%] hover:cursor-pointer md:w-1/4 lg:w-1/5"
         style={
           style
             ? { display: "block", transition: "300ms" }
@@ -77,8 +79,8 @@ export default function Header() {
       </div>
 
       <DropdownMenu>
-        <DropdownMenuTrigger className="text-xl lg:hidden">
-          <BsChevronExpand />
+        <DropdownMenuTrigger className="rounded-full border-[1px] border-white p-[3px] text-base lg:hidden">
+          {style ? <IoMdMenu /> : <HiMagnifyingGlass />}
         </DropdownMenuTrigger>
         <DropdownMenuContent>
           {textVariants.others.header.options.map((option) => (
