@@ -122,7 +122,7 @@ export default function ProjectCard({
                   </p>
                 </div>
                 <Separator />
-                <div className="flex w-full items-center justify-between gap-2">
+                <div className="flex w-full items-center justify-start gap-2">
                   <span className="w-fit font-bold">
                     {textVariants.others.labels.projects.modal.stacks[language]}
                     :
@@ -131,12 +131,12 @@ export default function ProjectCard({
                     className={`tech flex h-8 w-2/3 items-center justify-center gap-1 ${showingOnTechContainer === "icons" ? "" : "flipped"}`}
                   >
                     <div className="tech-inner relative flex h-full w-full items-center justify-center">
-                      <div className="tech-front absolute flex justify-evenly gap-2 text-xl">
+                      <div className="tech-front absolute flex gap-2 text-xl w-full justify-start">
                         {projectStacks.map((stack) => (
                           <p key={stack.id}>{stack.component}</p>
                         ))}
                       </div>
-                      <div className="tech-back absolute flex w-full flex-wrap justify-center gap-2 text-sm font-medium">
+                      <div className="tech-back absolute flex w-full flex-wrap justify-start gap-2 text-sm font-medium">
                         {projectStacks.map((stack) => (
                           <p key={stack.id}>{stack.name}</p>
                         ))}
@@ -239,7 +239,7 @@ export default function ProjectCard({
                     </p>
                   </div>
                   <Separator />
-                  <div className="flex w-full items-center justify-between gap-2">
+                  <div className="flex w-full items-center justify-start gap-2">
                     <span className="w-fit text-sm font-bold">
                       {
                         textVariants.others.labels.projects.modal.stacks[
@@ -252,16 +252,16 @@ export default function ProjectCard({
                       className={`tech flex h-8 w-2/3 items-center justify-center gap-1 ${showingOnTechContainer === "icons" ? "" : "flipped"}`}
                     >
                       <div className="tech-inner relative flex h-full w-full items-center justify-center">
-                        <div className="tech-front absolute flex justify-evenly gap-2 text-xl">
-                          {projectStacks.map((stack) => (
-                            <div key={stack.id}>{stack.component}</div>
-                          ))}
-                        </div>
-                        <div className="tech-back absolute flex w-full flex-wrap justify-center gap-1 text-xs">
-                          {projectStacks.map((stack) => (
-                            <div key={stack.id}>{stack.name}</div>
-                          ))}
-                        </div>
+                      <div className="tech-front absolute flex gap-2 text-xl w-full justify-start">
+                        {projectStacks.map((stack) => (
+                          <p key={stack.id}>{stack.component}</p>
+                        ))}
+                      </div>
+                      <div className="tech-back absolute flex w-full flex-wrap justify-start gap-2 gap-y-0 text-sm font-medium">
+                        {projectStacks.map((stack) => (
+                          <p key={stack.id}>{stack.name}</p>
+                        ))}
+                      </div>
                       </div>
                     </div>
                     <div className="w-fit">
