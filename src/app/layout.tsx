@@ -3,6 +3,7 @@ import "./globals.css";
 import LanguageProvider from "@/utils/context/Language";
 import Footer from "./components/unique/Footer";
 import { Toaster } from "@/shadcn/components/ui/toaster";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
   title: "Luis Henrique | Desenvolvedor Web",
@@ -20,10 +21,10 @@ export default function RootLayout({
       <LanguageProvider>
         <body className="dark bg-bg-primary font-text">
           {children}
-
           <Toaster />
           <Footer />
         </body>
+        <Analytics />
       </LanguageProvider>
     </html>
   );
