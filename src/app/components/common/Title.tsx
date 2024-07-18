@@ -28,8 +28,8 @@ export default function Title({
   }, [mainText]);
 
   return (
-    <div className="relative flex justify-center items-center w-full font-bold font-title text-2xl text-center text-white md:text-4xl">
-      <h1 className="z-[-2] absolute opacity-20 text-5xl text-neutral-500 md:text-7xl">
+    <div className="relative flex w-full items-center justify-center text-center font-title text-2xl font-bold text-white md:text-4xl">
+      <h1 className="absolute z-[-2] text-5xl text-[#8d8d8d] opacity-20 md:text-7xl">
         {bgText}
       </h1>
       <h2>{title}</h2>
