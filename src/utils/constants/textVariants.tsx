@@ -152,6 +152,10 @@ export const textVariants = {
         },
       },
       subtitle: {
+        br: "Clique em qualquer projeto para saber os detalhes",
+        us: "Click on any project to learn more details",
+      },
+      caption: {
         br: "Lista completa no",
         us: "Full list on",
       },

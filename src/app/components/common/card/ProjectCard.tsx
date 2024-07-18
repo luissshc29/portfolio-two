@@ -104,7 +104,7 @@ export default function ProjectCard({
                 </Carousel>
                 <div className="flex items-center gap-2 text-xs text-neutral-400 md:text-sm">
                   <LuClock4 />
-                  <p className="">{data.date[language]}</p>
+                  <p>{data.date[language]}</p>
                 </div>
               </div>
               <div className="flex h-full w-[calc(50%-2.5rem)] flex-col items-start justify-center gap-3 text-base">
@@ -187,7 +187,7 @@ export default function ProjectCard({
             </div>
           </DrawerTrigger>
           <DrawerContent>
-            <div className="z-[150] mx-auto min-h-fit w-[90%] pb-6 pt-4">
+            <div className="z-[1000] mx-auto min-h-fit w-[90%] pb-6 pt-4">
               <DrawerHeader className="gap-1">
                 <DrawerTitle className="font-title text-xl">
                   {data.title[language]}
@@ -199,7 +199,7 @@ export default function ProjectCard({
                   </Link>
                 </DrawerDescription>
               </DrawerHeader>
-              <div className="z-[150] mt-2 flex w-full flex-col items-center gap-2 md:flex-row md:gap-8">
+              <div className="z-[1000] mt-2 flex w-full flex-col items-center gap-2 md:flex-row md:gap-8">
                 <div className="flex h-full w-1/2 flex-col items-start gap-1 md:gap-3">
                   <Carousel className="w-full">
                     <CarouselContent>
@@ -254,12 +254,12 @@ export default function ProjectCard({
                       <div className="tech-inner relative flex h-full w-full items-center justify-center">
                         <div className="tech-front absolute flex justify-evenly gap-2 text-xl">
                           {projectStacks.map((stack) => (
-                            <p key={stack.id}>{stack.component}</p>
+                            <div key={stack.id}>{stack.component}</div>
                           ))}
                         </div>
                         <div className="tech-back absolute flex w-full flex-wrap justify-center gap-1 text-xs">
                           {projectStacks.map((stack) => (
-                            <p key={stack.id}>{stack.name}</p>
+                            <div key={stack.id}>{stack.name}</div>
                           ))}
                         </div>
                       </div>

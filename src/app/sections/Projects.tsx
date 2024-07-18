@@ -21,13 +21,16 @@ export default function Projects() {
         mainText={textVariants.sections.projects.title.main[language]}
         bgText={textVariants.sections.projects.title.bg[language]}
       />
-      <div className="justify-evenly items-center gap-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full">
+      <p className="text-sm md:text-base">
+        {textVariants.sections.projects.subtitle[language]}
+      </p>
+      <div className="grid w-full grid-cols-1 items-center justify-evenly gap-2 md:grid-cols-2 lg:grid-cols-3">
         {textVariants.sections.projects.list.map((proj) => (
           <ProjectCard key={proj.id} data={proj} language={language} />
         ))}
       </div>
-      <div className="flex justify-center items-center gap-1 text-sm md:text-base">
-        <p>{textVariants.sections.projects.subtitle[language]}</p>
+      <div className="flex items-center justify-center gap-1 text-sm md:text-base">
+        <p>{textVariants.sections.projects.caption[language]}</p>
         <Link variant="secondary" href="https://github.com/luissshc29">
           <p>GitHub</p>
           <FaGithub />

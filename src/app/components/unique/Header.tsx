@@ -41,7 +41,7 @@ export default function Header() {
     if (header) {
       setHeaderYPosition(header.offsetTop);
     }
-    window.addEventListener("scroll", () => {
+    window?.addEventListener("scroll", () => {
       handleStyleOnPageScroll();
     });
   }, []);

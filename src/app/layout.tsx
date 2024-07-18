@@ -24,9 +24,9 @@ export default function RootLayout({
           {children}
           <Toaster />
           <Footer />
+          <Analytics />
+          <SpeedInsights />
         </body>
-        <Analytics />
-        <SpeedInsights />
       </LanguageProvider>
     </html>
   );
