@@ -13,6 +13,16 @@ export default function LanguageSwitch() {
   const generalButtonClasses = "duration-300 hover:cursor-pointer";
   const activeButtonClasses = "hover:cursor-pointer duration-300 scale-[1.3]";
 
+  function changeLanguage() {
+    if (language === "br") {
+      setLanguage?.("us");
+      document.title = "Luis Henrique | Web Developer";
+    } else {
+      setLanguage?.("br");
+      document.title = "Luis Henrique | Desenvolvedor Web";
+    }
+  }
+
   return (
     <div
       className={
@@ -25,7 +35,7 @@ export default function LanguageSwitch() {
           ["opacity-100"]: language === "br",
           ["opacity-50"]: language === "us",
         })}
-        onClick={() => setLanguage?.("br")}
+        onClick={() => changeLanguage()}
       >
         {brFlag}
       </div>
@@ -44,7 +54,7 @@ export default function LanguageSwitch() {
           ["opacity-100"]: language === "us",
           ["opacity-50"]: language === "br",
         })}
-        onClick={() => setLanguage?.("us")}
+        onClick={() => changeLanguage()}
       >
         {usFlag}
       </div>
