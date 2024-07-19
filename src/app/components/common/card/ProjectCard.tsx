@@ -193,7 +193,7 @@ export default function ProjectCard({
             </div>
           </DrawerTrigger>
           <DrawerContent>
-            <div className="z-[1000] mx-auto min-h-fit w-[90%] pb-6 pt-4">
+            <div className="z-[1500] mx-auto min-h-fit w-[90%] pb-6 pt-4">
               <DrawerHeader className="w-fit gap-0">
                 <DrawerTitle className="font-title text-xl">
                   {data.title[language]}
@@ -205,7 +205,7 @@ export default function ProjectCard({
                   </Link>
                 </DrawerDescription>
               </DrawerHeader>
-              <div className="z-[1000] mt-2 flex w-full flex-col items-center gap-2 md:flex-row md:gap-8">
+              <div className="z-[1500] mt-2 flex w-full flex-col items-center gap-2 md:flex-row md:gap-8">
                 <div className="flex h-full w-1/2 flex-col items-start gap-1 md:gap-3">
                   <Carousel className="w-full">
                     <CarouselContent>
