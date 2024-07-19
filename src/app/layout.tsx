@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import LanguageProvider from "@/utils/context/Language";
+import LanguageProvider from "@/utils/context/LanguageContext";
 import Footer from "./components/unique/Footer";
 import { Toaster } from "@/shadcn/components/ui/toaster";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import HeaderProvider from "@/utils/context/HeaderContext";
 
 export const metadata: Metadata = {
   title: "Luis Henrique | Desenvolvedor Web",
@@ -20,13 +21,16 @@ export default function RootLayout({
   return (
     <html lang="pt-Br">
       <LanguageProvider>
-        <body className="dark bg-bg-primary font-text">
-          {children}
-          <Toaster />
-          <Footer />
-          <Analytics />
-          <SpeedInsights />
-        </body>
+        <HeaderProvider>
+          <body className="dark bg-bg-primary font-text">
+            {children}
+            <Toaster />
+            <Footer />
+            <Analytics />
+            <SpeedInsights />
+          </body>
+        </HeaderProvider>
+
       </LanguageProvider>
     </html>
   );

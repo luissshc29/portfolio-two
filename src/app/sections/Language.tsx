@@ -4,7 +4,7 @@ import React from "react";
 import BgImageContainer from "../components/common/BgImageContainer";
 import Title from "../components/common/Title";
 import { textVariants } from "@/utils/constants/textVariants";
-import { useLanguageContext } from "@/utils/context/Language";
+import { useLanguageContext } from "@/utils/context/LanguageContext";
 import LanguageSwitch from "../components/unique/LanguageSwitch";
 
 export default function Language() {

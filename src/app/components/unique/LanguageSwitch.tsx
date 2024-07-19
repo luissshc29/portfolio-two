@@ -5,7 +5,7 @@ import { brFlag } from "@/utils/svg/br";
 import { usFlag } from "@/utils/svg/us";
 import classNames from "classnames";
 import { ImLoop2 } from "react-icons/im";
-import { useLanguageContext } from "@/utils/context/Language";
+import { useLanguageContext } from "@/utils/context/LanguageContext";
 
 export default function LanguageSwitch() {
   const { language, setLanguage } = useLanguageContext();

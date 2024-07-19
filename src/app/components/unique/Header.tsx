@@ -2,8 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import { textVariants } from "@/utils/constants/textVariants";
-import { useLanguageContext } from "@/utils/context/Language";
-import { RiExpandUpDownLine } from "react-icons/ri";
+import { useLanguageContext } from "@/utils/context/LanguageContext";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -13,9 +12,12 @@ import {
 import NavigationButton from "../common/NavigationButton";
 import { HiMagnifyingGlass } from "react-icons/hi2";
 import { IoMdMenu } from "react-icons/io";
+import { useHeaderContext } from "@/utils/context/HeaderContext";
 
 export default function Header() {
   const { language } = useLanguageContext();
+
+  const { headerVisible } = useHeaderContext()
 
   const [header, setHeader] = useState<HTMLElement>();
   const [headerYPosition, setHeaderYPosition] = useState<number>(345);
@@ -48,7 +50,8 @@ export default function Header() {
     });
   }, []);
 
-  return (
+  if(headerVisible) {
+    return (
     <div
       className="z-[999] flex h-[8vh] w-full flex-wrap-reverse items-center justify-around gap-4 py-1 duration-300 md:h-[10vh]"
       id="header"
@@ -94,4 +97,7 @@ export default function Header() {
       </DropdownMenu>
     </div>
   );
+  }
+
+  
 }

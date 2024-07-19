@@ -3,7 +3,7 @@
 import React from "react";
 import BgImageContainer from "../components/common/BgImageContainer";
 import Title from "../components/common/Title";
-import { useLanguageContext } from "@/utils/context/Language";
+import { useLanguageContext } from "@/utils/context/LanguageContext";
 import { textVariants } from "@/utils/constants/textVariants";
 import Link from "../components/common/Link";
 import { FaGithub } from "react-icons/fa6";

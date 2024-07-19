@@ -5,7 +5,7 @@ import { stacks } from "@/utils/constants/stacks";
 import InfiniteSlider from "../components/unique/InfiniteSlider";
 import BgImageContainer from "../components/common/BgImageContainer";
 import Title from "../components/common/Title";
-import { useLanguageContext } from "@/utils/context/Language";
+import { useLanguageContext } from "@/utils/context/LanguageContext";
 import { textVariants } from "@/utils/constants/textVariants";
 import { LuDownload } from "react-icons/lu";
 import Link from "../components/common/Link";

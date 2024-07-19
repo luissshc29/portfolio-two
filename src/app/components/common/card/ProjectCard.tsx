@@ -32,6 +32,7 @@ import { stacks } from "@/utils/constants/stacks";
 import Link from "../Link";
 import { LuClock4 } from "react-icons/lu";
 import { Separator } from "@/shadcn/components/ui/separator";
+import { useHeaderContext } from "@/utils/context/HeaderContext";
 type ProjectType = (typeof textVariants.sections.projects.list)[0];
 
 export default function ProjectCard({
@@ -46,6 +47,8 @@ export default function ProjectCard({
   >("icons");
 
   const projectStacks = stacks.filter((s) => data.stacks.includes(s.id));
+  
+  const { setHeaderVisible } = useHeaderContext()
 
   return (
     <div className="card relative overflow-hidden shadow-lg">
@@ -58,7 +61,7 @@ export default function ProjectCard({
         <h1 className="semibold font-title text-xl">{data.title[language]}</h1>
 
         {/* Desktop */}
-        <Dialog>
+        <Dialog  onOpenChange={(e) => setHeaderVisible?.(!e)}>
           <DialogTrigger asChild className="hidden lg:block">
             <div className="hidden items-center gap-1 font-text hover:cursor-pointer lg:flex">
               <p className="text-sm font-medium underline">
@@ -180,7 +183,7 @@ export default function ProjectCard({
         </Dialog>
 
         {/* Mobile */}
-        <Drawer>
+        <Drawer onOpenChange={(e) => setHeaderVisible?.(!e)}>
           <DrawerTrigger asChild className="block lg:hidden">
             <div className="flex items-center gap-1 hover:cursor-pointer lg:hidden">
               <p className="text-sm font-medium underline">
@@ -222,7 +225,7 @@ export default function ProjectCard({
                     <CarouselPrevious />
                     <CarouselNext />
                   </Carousel>
-                  <div className="flex items-center gap-1 text-[10px] text-neutral-400 md:text-xs">
+                  <div className="flex items-center gap-1 text-[11px] text-neutral-400 md:text-xs">
                     <LuClock4 />
                     <p>{data.date[language]}</p>
                   </div>

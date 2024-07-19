@@ -2,7 +2,7 @@
 
 import React from "react";
 import BgImageContainer from "../components/common/BgImageContainer";
-import { useLanguageContext } from "@/utils/context/Language";
+import { useLanguageContext } from "@/utils/context/LanguageContext";
 import { textVariants } from "@/utils/constants/textVariants";
 import Title from "../components/common/Title";
 import { MdContentCopy } from "react-icons/md";
