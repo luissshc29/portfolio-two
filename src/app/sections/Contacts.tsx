@@ -49,9 +49,9 @@ export default function Contacts() {
                 key={item.id}
               >
                 <span
-                  className={`tooltip pointer-events-none absolute top-0 rounded-md px-2 py-1 text-sm text-white opacity-0 shadow-md transition-all duration-300 ease-in-out ${item.text.toLowerCase()}`}
+                  className={`tooltip min-w-[100px] pointer-events-none absolute top-0 rounded-md py-1 text-sm text-white opacity-0 shadow-md transition-all duration-300 ease-in-out ${item.text.toLowerCase()}`}
                 >
-                  {item.text}
+                  {item.username || item.text}
                 </span>
                 <a
                   key={item.id}
