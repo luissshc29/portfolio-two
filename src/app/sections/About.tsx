@@ -31,7 +31,7 @@ export default function About() {
             {textVariants.sections.about.paragraph[language]}
           </div>
           <Link
-            href="Currículo-Luis-Henrique-da-Cunha-Cavalcante.pdf"
+            href="curriculo-luis-henrique-da-cunha-cavalcante.pdf"
             variant="primary"
             download
           >
