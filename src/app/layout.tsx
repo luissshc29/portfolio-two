@@ -22,7 +22,7 @@ export default function RootLayout({
     <html lang="pt-Br">
       <LanguageProvider>
         <HeaderProvider>
-          <body className="dark bg-bg-primary font-text">
+          <body className="dark relative bg-bg-primary font-text">
             {children}
             <Toaster />
             <Footer />
@@ -30,7 +30,6 @@ export default function RootLayout({
             <SpeedInsights />
           </body>
         </HeaderProvider>
-
       </LanguageProvider>
     </html>
   );
