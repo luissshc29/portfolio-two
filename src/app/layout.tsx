@@ -20,6 +20,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-Br">
+      <head>
+        <meta
+          name="google-site-verification"
+          content="5WYCOXw59AxMbUclhEquVd7hbceqzxZRztDtehQ5NVs"
+        />
+      </head>
       <LanguageProvider>
         <HeaderProvider>
           <body className="dark relative bg-bg-primary font-text">
