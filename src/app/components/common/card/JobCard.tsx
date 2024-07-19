@@ -10,14 +10,14 @@ import {
 } from "@/shadcn/components/ui/card";
 import { Separator } from "@/shadcn/components/ui/separator";
 import { LuClock4 } from "react-icons/lu";
+import { Job } from "@/utils/types/Job";
 
-type JobType = (typeof textVariants.sections.experience.jobs)[0];
 
 export default function JobCard({
   data,
   language,
 }: {
-  data: JobType;
+  data: Job;
   language: "br" | "us";
 }) {
   return (

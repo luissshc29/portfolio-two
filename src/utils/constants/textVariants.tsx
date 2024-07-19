@@ -3,8 +3,9 @@ import { FaComputer } from "react-icons/fa6";
 import { v4 as uuidv4 } from "uuid";
 import { TfiLinkedin } from "react-icons/tfi";
 import { BsGithub, BsInstagram, BsWhatsapp } from "react-icons/bs";
+import { TextVariants } from "../types/TextVariants";
 
-export const textVariants = {
+export const textVariants: TextVariants = {
   sections: {
     welcome: {
       title: {
@@ -176,7 +177,7 @@ export const textVariants = {
           },
           date: {
             br: "28 Jun. 2024",
-            us: "Jun. 28, 204",
+            us: "Jun. 28, 2024",
           },
           stacks: [6, 13, 12, 11],
           url: "https://api-view-url.vercel.app/",
@@ -198,7 +199,7 @@ export const textVariants = {
           },
           date: {
             br: "28 Jun. 2024",
-            us: "Jun. 28, 204",
+            us: "Jun. 28, 2024",
           },
           stacks: [4, 6, 10, 13],
           url: "https://api-view-mu.vercel.app/",

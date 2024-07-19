@@ -33,13 +33,13 @@ import Link from "../Link";
 import { LuClock4 } from "react-icons/lu";
 import { Separator } from "@/shadcn/components/ui/separator";
 import { useHeaderContext } from "@/utils/context/HeaderContext";
-type ProjectType = (typeof textVariants.sections.projects.list)[0];
+import { Project } from "@/utils/types/Project";
 
 export default function ProjectCard({
   data,
   language,
 }: {
-  data: ProjectType;
+  data: Project;
   language: "br" | "us";
 }) {
   const [showingOnTechContainer, setShowingOnTechContainer] = useState<
