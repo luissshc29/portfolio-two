@@ -39,5 +39,7 @@ Jun. 17, 2024
 
 <br></br>
 [Linkedin :link:](https://www.linkedin.com/in/luis-henrique-6a7425165/)
+<br></br>
 [GitHub (@luissshc29) :link:](https://github.com/luissshc29)
+<br></br>
 [Instagram(@luissshc_) :link:](https://www.instagram.com/luissshc_/)
