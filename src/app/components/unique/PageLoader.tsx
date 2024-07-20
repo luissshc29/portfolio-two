@@ -44,7 +44,7 @@ export default function PageLoader({
     // Sets loading false in case window.onload doesn't work
     setTimeout(() => {
       setLoading(false);
-    }, 1000);
+    }, 1500);
   }, []);
 
   if (loading) {
