@@ -41,7 +41,9 @@ export default function PageLoader({
     // Sets loading false when window finishes loading
     window.onload = () => {
       setTimeout(() => {
-        setAnimate("animate-fade [animation-duration:500ms]");
+        setAnimate(
+          "animate-fade [animation-duration:500ms] [animation-fill-mode:forwards]",
+        );
       }, 500);
       setTimeout(() => {
         setLoading(false);
@@ -51,7 +53,9 @@ export default function PageLoader({
     // Sets loading false in case window.onload doesn't work
     if (loading) {
       setTimeout(() => {
-        setAnimate("animate-fade [animation-duration:500ms]");
+        setAnimate(
+          "animate-fade [animation-duration:500ms] [animation-fill-mode:forwards]",
+        );
       }, 500);
       setTimeout(() => {
         setLoading(false);
