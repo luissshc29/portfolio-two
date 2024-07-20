@@ -40,7 +40,9 @@ export default function PageLoader({
 
     // Sets loading false when window finishes loading
     window.onload = () => {
-      setAnimate("animate-fade duration-1000");
+      setTimeout(() => {
+        setAnimate("animate-fade [animation-duration:500ms]");
+      }, 500);
       setTimeout(() => {
         setLoading(false);
       }, 1000);
@@ -48,7 +50,9 @@ export default function PageLoader({
 
     // Sets loading false in case window.onload doesn't work
     if (loading) {
-      setAnimate("animate-fade duration-1000");
+      setTimeout(() => {
+        setAnimate("animate-fade [animation-duration:500ms]");
+      }, 500);
       setTimeout(() => {
         setLoading(false);
       }, 1000);
