@@ -26,6 +26,7 @@ export default function RootLayout({
           name="google-site-verification"
           content="5WYCOXw59AxMbUclhEquVd7hbceqzxZRztDtehQ5NVs"
         />
+        <link rel="shortcut icon" href="/images/shortcut-icon.png" />
       </head>
       <LanguageProvider>
         <HeaderProvider>
