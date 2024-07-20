@@ -42,19 +42,21 @@ export default function PageLoader({
     };
 
     // Sets loading false in case window.onload doesn't work
-    setTimeout(() => {
-      setLoading(false);
-    }, 1500);
+    if (loading) {
+      setTimeout(() => {
+        setLoading(false);
+      }, 1500);
+    }
   }, []);
 
   if (loading) {
     return (
-      <div className="flex h-screen w-screen flex-col items-center justify-center gap-4 bg-black md:gap-8">
+      <div className="flex h-screen w-screen flex-col items-center justify-center gap-2 bg-black md:gap-4">
         <div className="relative flex h-fit w-fit scale-[.8] flex-col items-center justify-center md:scale-100">
           <img
             src="/images/logo-white-small.png"
             alt="Small white logo"
-            className="absolute h-[60px] w-[60px]"
+            className="absolute h-[35px] w-[35px]"
           />
           <img src="/images/loading-circle.svg" alt="Loading image" />
         </div>
