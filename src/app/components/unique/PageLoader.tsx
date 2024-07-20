@@ -82,7 +82,7 @@ export default function PageLoader({
   }
 
   return (
-    <div className="animate-show-up [animation-duration:2000ms]">
+    <div className="animate-show-up [animation-duration:1500ms]">
       {children}
     </div>
   );
