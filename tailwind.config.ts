@@ -91,6 +91,14 @@ const config = {
             opacity: "1",
           },
         },
+        fade: {
+          "0%": {
+            opacity: "1",
+          },
+          "100%": {
+            opacity: "0",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -98,6 +106,7 @@ const config = {
         slide: "slide 40s linear infinite",
         blink: "blink 1s infinite",
         "show-up": "show-up 1s 1",
+        fade: "fade 2s 1",
       },
       fontFamily: {
         title: "var(--title)",

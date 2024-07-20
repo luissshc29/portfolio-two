@@ -30,6 +30,8 @@ export default function PageLoader({
   const [loading, setLoading] = useState<boolean>(true);
   const [loadingText, setLoadingText] = useState<string>("");
 
+  const [animate, setAnimate] = useState<string>("");
+
   useEffect(() => {
     // Selects a random loading text
     const randomText =
@@ -38,20 +40,26 @@ export default function PageLoader({
 
     // Sets loading false when window finishes loading
     window.onload = () => {
-      setLoading(false);
+      setAnimate("animate-fade duration-1000");
+      setTimeout(() => {
+        setLoading(false);
+      }, 1000);
     };
 
     // Sets loading false in case window.onload doesn't work
     if (loading) {
+      setAnimate("animate-fade duration-1000");
       setTimeout(() => {
         setLoading(false);
-      }, 1500);
+      }, 1000);
     }
   }, []);
 
   if (loading) {
     return (
-      <div className="flex h-screen w-screen flex-col items-center justify-center gap-2 bg-black md:gap-4">
+      <div
+        className={`flex h-screen w-screen flex-col items-center justify-center gap-2 bg-black md:gap-4 ${animate}`}
+      >
         <div className="relative flex h-fit w-fit scale-[.8] flex-col items-center justify-center md:scale-100">
           <img
             src="/images/logo-white-small.png"
