@@ -19,7 +19,7 @@ import {
   DrawerTrigger,
 } from "@/shadcn/components/ui/drawer";
 import { textVariants } from "@/utils/constants/textVariants";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FiInfo, FiLink, FiXCircle } from "react-icons/fi";
 import {
   Carousel,
@@ -49,6 +49,12 @@ export default function ProjectCard({
   const projectStacks = stacks.filter((s) => data.stacks.includes(s.id));
 
   const { setHeaderVisible } = useHeaderContext();
+
+  // Checking if Drawer is open and focusing on it
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  useEffect(() => {
+    document.getElementById("drawer-content")?.focus();
+  }, [isDrawerOpen]);
 
   return (
     <div className="card relative overflow-hidden shadow-lg">
@@ -183,7 +189,13 @@ export default function ProjectCard({
         </Dialog>
 
         {/* Mobile */}
-        <Drawer onOpenChange={(e) => setHeaderVisible?.(!e)}>
+        <Drawer
+          onOpenChange={(e) => {
+            setHeaderVisible?.(!e);
+            setIsDrawerOpen(e);
+          }}
+          disablePreventScroll={true}
+        >
           <DrawerTrigger asChild className="block lg:hidden">
             <div className="flex items-center gap-1 hover:cursor-pointer lg:hidden">
               <p className="text-sm font-medium underline">
@@ -192,7 +204,10 @@ export default function ProjectCard({
               <FiInfo className="text-base" />
             </div>
           </DrawerTrigger>
-          <DrawerContent>
+          <DrawerContent
+            className="[-webkit-overflow-scrolling:touch] [touch-action:manipulation]"
+            id="drawer-content"
+          >
             <div className="z-[1500] mx-auto min-h-fit w-[90%] pb-6 pt-4">
               <DrawerHeader className="w-fit gap-0">
                 <DrawerTitle className="font-title text-xl">
