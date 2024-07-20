@@ -84,6 +84,12 @@ export const textVariants: TextVariants = {
         br: "Currículo",
         us: "Resume",
       },
+      audio: {
+        url: {
+          br: "/audio/about-me-br.mp3",
+          us: "/audio/about-me-us.mp3",
+        },
+      },
     },
     experience: {
       title: {
@@ -380,21 +386,21 @@ export const textVariants: TextVariants = {
           {
             id: 1,
             text: "Linkedin",
-            username: 'Luis Henrique',
+            username: "Luis Henrique",
             link: "https://www.linkedin.com/in/luis-henrique-6a7425165/",
             component: <TfiLinkedin />,
           },
           {
             id: 2,
             text: "GitHub",
-            username: '@luissshc29',
+            username: "@luissshc29",
             link: "https://github.com/luissshc29",
             component: <BsGithub />,
           },
           {
             id: 3,
             text: "Instagram",
-            username: '@luissshc_',
+            username: "@luissshc_",
             link: "https://www.instagram.com/luissshc_/",
             component: <BsInstagram />,
           },

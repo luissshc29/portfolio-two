@@ -9,6 +9,7 @@ import { useLanguageContext } from "@/utils/context/LanguageContext";
 import { textVariants } from "@/utils/constants/textVariants";
 import { LuDownload } from "react-icons/lu";
 import Link from "../components/common/Link";
+import AudioPlayer from "../components/unique/AudioPlayer";
 
 export default function About() {
   const { language } = useLanguageContext();
@@ -26,18 +27,23 @@ export default function About() {
           className="w-1/2 rounded-full border-4 border-white md:w-1/4"
           loading="eager"
         />
-        <div className="flex flex-col items-center gap-4">
+        <div className="flex flex-col items-center gap-5">
           <div className="text-center text-sm md:text-left lg:text-base">
             {textVariants.sections.about.paragraph[language]}
           </div>
-          <Link
-            href="curriculo-luis-henrique-da-cunha-cavalcante.pdf"
-            variant="primary"
-            download
-          >
-            <>{textVariants.sections.about.link[language]}</>
-            <LuDownload size={18} />
-          </Link>
+          <div className="flex w-full flex-col-reverse items-center justify-evenly lg:flex-row">
+            <Link
+              href="curriculo-luis-henrique-da-cunha-cavalcante.pdf"
+              variant="primary"
+              download
+            >
+              <>{textVariants.sections.about.link[language]}</>
+              <LuDownload size={18} />
+            </Link>
+            <AudioPlayer
+              url={textVariants.sections.about.audio.url[language]}
+            />
+          </div>
         </div>
       </div>
       <div className="flex flex-col items-center">
