@@ -11,7 +11,12 @@ export default function PageLoader({
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
-    window.onload = () => setLoading(false);
+    window.onload = () => {
+      setLoading(false);
+    };
+    setTimeout(() => {
+      setLoading(false);
+    }, 500);
   }, []);
 
   if (loading) {
