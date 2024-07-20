@@ -19,7 +19,7 @@ export default function Experience() {
         mainText={textVariants.sections.experience.title.main[language]}
         bgText={textVariants.sections.experience.title.bg[language]}
       />
-      <div className="flex lg:flex-row flex-col justify-evenly gap-4 text-left">
+      <div className="flex flex-col justify-evenly gap-4 text-left lg:flex-row">
         {textVariants.sections.experience.jobs.map((job) => (
           <JobCard key={job.id} data={job} language={language} />
         ))}

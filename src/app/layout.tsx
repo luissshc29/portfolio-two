@@ -6,6 +6,7 @@ import { Toaster } from "@/shadcn/components/ui/toaster";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import HeaderProvider from "@/utils/context/HeaderContext";
+import PageLoader from "./components/unique/PageLoader";
 
 export const metadata: Metadata = {
   title: "Luis Henrique | Desenvolvedor Web",
@@ -29,9 +30,12 @@ export default function RootLayout({
       <LanguageProvider>
         <HeaderProvider>
           <body className="dark relative bg-bg-primary font-text">
-            {children}
-            <Toaster />
-            <Footer />
+            <PageLoader>
+              {children}
+              <Toaster />
+              <Footer />
+            </PageLoader>
+
             <Analytics />
             <SpeedInsights />
           </body>

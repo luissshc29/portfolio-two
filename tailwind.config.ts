@@ -84,6 +84,9 @@ const config = {
           "50%": { opacity: "0" },
         },
         "show-up": {
+          "0%": {
+            opacity: "0",
+          },
           "100%": {
             opacity: "1",
           },
@@ -94,7 +97,7 @@ const config = {
         "accordion-up": "accordion-up 0.2s ease-out",
         slide: "slide 40s linear infinite",
         blink: "blink 1s infinite",
-        "show-up": "show-up 1500ms 1",
+        "show-up": "show-up 1s 1",
       },
       fontFamily: {
         title: "var(--title)",

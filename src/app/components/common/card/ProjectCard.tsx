@@ -47,8 +47,8 @@ export default function ProjectCard({
   >("icons");
 
   const projectStacks = stacks.filter((s) => data.stacks.includes(s.id));
-  
-  const { setHeaderVisible } = useHeaderContext()
+
+  const { setHeaderVisible } = useHeaderContext();
 
   return (
     <div className="card relative overflow-hidden shadow-lg">
@@ -61,7 +61,7 @@ export default function ProjectCard({
         <h1 className="semibold font-title text-xl">{data.title[language]}</h1>
 
         {/* Desktop */}
-        <Dialog  onOpenChange={(e) => setHeaderVisible?.(!e)}>
+        <Dialog onOpenChange={(e) => setHeaderVisible?.(!e)}>
           <DialogTrigger asChild className="hidden lg:block">
             <div className="hidden items-center gap-1 font-text hover:cursor-pointer lg:flex">
               <p className="text-sm font-medium underline">
