@@ -50,7 +50,7 @@ export default function Contacts() {
                 key={item.id}
               >
                 <span
-                  className={`tooltip pointer-events-none absolute top-0 min-w-[100px] rounded-md py-1 text-sm text-white opacity-0 shadow-md transition-all duration-300 ease-in-out ${item.text.toLowerCase()}`}
+                  className={`tooltip pointer-events-none absolute top-0 min-w-[100px] rounded-md py-1 text-sm opacity-0 shadow-md transition-all duration-300 ease-in-out ${item.text.toLowerCase()}`}
                 >
                   {item.username || item.text}
                 </span>
