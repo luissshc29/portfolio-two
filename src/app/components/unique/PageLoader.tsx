@@ -104,7 +104,6 @@ export default function PageLoader({
             alt="Loading image"
             className="block dark:hidden"
           />
-          <img />
         </div>
       </div>
     );

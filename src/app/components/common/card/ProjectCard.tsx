@@ -101,6 +101,7 @@ export default function ProjectCard({
                             <img
                               src={`${data.images.path}${url}`}
                               className="rounded-sm"
+                              alt={data.title[language]}
                             />
                           </CardContent>
                         </Card>
@@ -231,6 +232,7 @@ export default function ProjectCard({
                               <img
                                 src={`${data.images.path}${url}`}
                                 className="rounded-sm"
+                                alt={data.title[language]}
                               />
                             </CardContent>
                           </Card>
