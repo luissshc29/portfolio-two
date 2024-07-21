@@ -14,7 +14,11 @@ import AudioPlayer from "../components/unique/AudioPlayer";
 export default function About() {
   const { language } = useLanguageContext();
   return (
-    <BgImageContainer id="about" src="/images/background/about-bg-img.jpg">
+    <BgImageContainer
+      id="about"
+      darkImgSrc="/images/background/dark/about-bg-img.jpg"
+      lightImgSrc="/images/background/light/about-bg-img.jpg"
+    >
       <Title
         mainText={textVariants.sections.about.title.main[language]}
         bgText={textVariants.sections.about.title.bg[language]}
@@ -24,7 +28,7 @@ export default function About() {
         <img
           src="/images/avatar.jpg"
           alt="Avatar"
-          className="w-1/2 rounded-full border-4 border-white md:w-1/4"
+          className="w-1/2 rounded-full border-4 border-neutral-800 dark:border-white md:w-1/4"
           loading="eager"
         />
         <div className="flex flex-col items-center gap-5">
@@ -46,7 +50,7 @@ export default function About() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col items-center">
+      <div className="flex flex-col items-center text-black dark:text-white">
         <p className="font-semibold">
           {textVariants.sections.about.subtitle[language]}
         </p>

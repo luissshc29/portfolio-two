@@ -65,7 +65,7 @@ const DropdownMenuContent = React.forwardRef<
       ref={ref}
       sideOffset={sideOffset}
       className={cn(
-        "z-[1000] min-w-[8rem] overflow-hidden rounded-sm border border-neutral-700 p-1 text-popover-foreground shadow-md before:absolute before:left-0 before:top-0 before:h-full before:w-full before:bg-black before:bg-opacity-70 before:backdrop-blur-[10px] before:[-webkit-backdrop-filter:blur(12px)] data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",
+        "z-[1000] min-w-[8rem] overflow-hidden rounded-sm border border-neutral-500 p-1 text-popover-foreground shadow-md before:absolute before:left-0 before:top-0 before:h-full before:w-full before:bg-white before:bg-opacity-70 before:backdrop-blur-[10px] before:[-webkit-backdrop-filter:blur(12px)] data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 dark:border-neutral-700 dark:before:bg-black",
         className,
       )}
       {...props}

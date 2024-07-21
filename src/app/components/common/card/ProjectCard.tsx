@@ -64,13 +64,13 @@ export default function ProjectCard({
         className="card-image h-full w-full object-cover transition-all duration-500 ease-in-out"
       />
       <div className="card-overlay absolute inset-0 flex flex-col items-center justify-center gap-3 bg-black bg-opacity-50 p-2 text-3xl font-semibold text-white opacity-0 transition-all duration-500 ease-in-out">
-        <h1 className="semibold font-title text-xl">{data.title[language]}</h1>
+        <h1 className="semibold font-title text-2xl">{data.title[language]}</h1>
 
         {/* Desktop */}
         <Dialog onOpenChange={(e) => setHeaderVisible?.(!e)}>
           <DialogTrigger asChild className="hidden lg:block">
             <div className="hidden items-center gap-1 font-text hover:cursor-pointer lg:flex">
-              <p className="text-sm font-medium underline">
+              <p className="text-base font-medium underline">
                 {textVariants.others.labels.projects.card.text[language]}
               </p>
               <FiInfo className="text-base" />
@@ -110,7 +110,7 @@ export default function ProjectCard({
                   <CarouselPrevious />
                   <CarouselNext />
                 </Carousel>
-                <div className="flex items-center gap-2 text-xs text-neutral-400 md:text-sm">
+                <div className="flex items-center gap-2 text-xs text-neutral-600 dark:text-neutral-400 md:text-sm">
                   <LuClock4 />
                   <p>{data.date[language]}</p>
                 </div>
@@ -125,7 +125,7 @@ export default function ProjectCard({
                     }
                     :
                   </span>
-                  <p className="text-neutral-300">
+                  <p className="text-neutral-700 dark:text-neutral-300">
                     {data.description[language]}
                   </p>
                 </div>
@@ -139,7 +139,7 @@ export default function ProjectCard({
                     className={`tech flex h-8 w-2/3 items-center justify-center gap-1 ${showingOnTechContainer === "icons" ? "" : "flipped"}`}
                   >
                     <div className="tech-inner relative flex h-full w-full items-center justify-center">
-                      <div className="tech-front absolute flex w-full justify-start gap-2 text-xl">
+                      <div className="tech-front absolute flex w-full justify-start gap-2 text-2xl">
                         {projectStacks.map((stack) => (
                           <p key={stack.id}>{stack.component}</p>
                         ))}
@@ -240,13 +240,13 @@ export default function ProjectCard({
                     <CarouselPrevious />
                     <CarouselNext />
                   </Carousel>
-                  <div className="flex items-center gap-1 text-[11px] text-neutral-400 md:text-xs">
+                  <div className="flex items-center gap-1 text-[11px] text-neutral-600 dark:text-neutral-400 md:text-xs">
                     <LuClock4 />
                     <p>{data.date[language]}</p>
                   </div>
                 </div>
                 <div className="flex h-full w-full flex-col items-start justify-center gap-1.5 text-base md:w-1/2 md:gap-3">
-                  <div className="flex flex-col gap-[2px] text-sm">
+                  <div className="flex flex-col gap-[2px]">
                     <span className="font-bold">
                       {
                         textVariants.others.labels.projects.modal.description[
@@ -255,7 +255,7 @@ export default function ProjectCard({
                       }
                       :
                     </span>
-                    <p className="text-neutral-300">
+                    <p className="text-neutral-700 dark:text-neutral-300">
                       {data.description[language]}
                     </p>
                   </div>

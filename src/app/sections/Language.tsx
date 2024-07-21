@@ -12,14 +12,15 @@ export default function Language() {
 
   return (
     <BgImageContainer
-      src="/images/background/language-bg-img.jpg"
+      darkImgSrc="/images/background/dark/language-bg-img.jpg"
+      lightImgSrc="/images/background/light/language-bg-img.jpg"
       id="language"
     >
       <Title
         mainText={textVariants.sections.language.title.main[language]}
         bgText={textVariants.sections.language.title.bg[language]}
       />
-      <h2 className="font-semibold">
+      <h2 className="font-semibold text-black dark:text-white">
         {textVariants.sections.language.subtitle[language]}
       </h2>
       <LanguageSwitch />

@@ -4,6 +4,9 @@ import { v4 as uuidv4 } from "uuid";
 import { TfiLinkedin } from "react-icons/tfi";
 import { BsGithub, BsInstagram, BsWhatsapp } from "react-icons/bs";
 import { TextVariants } from "../types/TextVariants";
+import { IoMoonOutline, IoSunnyOutline } from "react-icons/io5";
+import { PiDevices } from "react-icons/pi";
+import { FiSun } from "react-icons/fi";
 
 export const textVariants: TextVariants = {
   sections: {
@@ -353,8 +356,8 @@ export const textVariants: TextVariants = {
             list: ["1.png", "2.png", "3.png"],
           },
           description: {
-            br: "Loja virtual fictícia de suplementos para musculação chamada React Supplements.",
-            us: "Fictional online bodybuilding supplement store called React Supplements.",
+            br: "Loja virtual fictícia de suplementos para musculação.",
+            us: "Fictional online bodybuilding supplement store.",
           },
           date: {
             br: "2 Ago. 2023",
@@ -395,7 +398,7 @@ export const textVariants: TextVariants = {
             text: "GitHub",
             username: "@luissshc29",
             link: "https://github.com/luissshc29",
-            component: <BsGithub />,
+            component: <BsGithub className="text-white dark:text-black" />,
           },
           {
             id: 3,
@@ -528,6 +531,34 @@ export const textVariants: TextVariants = {
           us: "Social media",
         },
       },
+    },
+    themeSelector: {
+      options: [
+        {
+          id: 1,
+          text: {
+            br: "Sistema",
+            us: "System",
+          },
+          icon: <PiDevices />,
+        },
+        {
+          id: 2,
+          text: {
+            br: "Claro",
+            us: "Light",
+          },
+          icon: <FiSun />,
+        },
+        {
+          id: 3,
+          text: {
+            br: "Escuro",
+            us: "Dark",
+          },
+          icon: <IoMoonOutline />,
+        },
+      ],
     },
   },
 };

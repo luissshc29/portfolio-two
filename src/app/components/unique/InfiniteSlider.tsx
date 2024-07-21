@@ -3,23 +3,23 @@ import React from "react";
 
 export default function InfiniteSlider({ items }: { items: Stack[] }) {
   return (
-    <div className="relative flex items-center mx-auto w-[80vw] md:w-[50vw] h-[10vh] overflow-hidden slider">
-      <div className="flex justify-around animate-slide slide-track">
+    <div className="slider relative mx-auto flex h-[10vh] w-[80vw] items-center overflow-hidden md:w-[50vw]">
+      <div className="slide-track flex animate-slide justify-around">
         {/* Original list */}
         {items.map((item) => (
-          <div className="mx-4 w-[25px] h-fit slide" key={item.id}>
+          <div className="slide mx-4 h-fit w-[25px]" key={item.id}>
             {item.component}
           </div>
         ))}
         {/* Duplicate list */}
         {items.map((item) => (
-          <div className="mx-4 w-[25px] h-fit slide" key={item.id}>
+          <div className="slide mx-4 h-fit w-[25px]" key={item.id}>
             {item.component}
           </div>
         ))}
       </div>
-      <div className="top-0 left-0 z-1 absolute bg-gradient-to-r from-black to-transparent w-[40px] h-full"></div>
-      <div className="top-0 right-0 z-1 absolute bg-gradient-to-l from-black to-transparent w-[40px] h-full"></div>
+      <div className="z-1 absolute left-0 top-0 h-full w-[40px] bg-gradient-to-r from-white to-transparent dark:from-black"></div>
+      <div className="z-1 absolute right-0 top-0 h-full w-[40px] bg-gradient-to-l from-white to-transparent dark:from-black"></div>
     </div>
   );
 }

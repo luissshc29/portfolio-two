@@ -65,6 +65,7 @@
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
+    color: #00d2dd;
   }
 }
 
@@ -102,7 +103,6 @@ body {
     border-left: 0;
     border-right: 0;
     border-style: solid;
-    border-color: white;
     position: absolute;
     bottom: 0;
     width: 0%;
@@ -188,12 +188,11 @@ body {
 
 .linkedin {
   background-color: #0e44a8;
-  color: white;
+  color: #ffffff;
 }
 
 .github {
-  background-color: white;
-  color: black;
+  @apply bg-black dark:bg-white;
 }
 
 .instagram {

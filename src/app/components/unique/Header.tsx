@@ -13,6 +13,7 @@ import NavigationButton from "../common/NavigationButton";
 import { HiMagnifyingGlass } from "react-icons/hi2";
 import { IoMdMenu } from "react-icons/io";
 import { useHeaderContext } from "@/utils/context/HeaderContext";
+import { useTheme } from "next-themes";
 
 export default function Header() {
   const { language } = useLanguageContext();
@@ -26,15 +27,25 @@ export default function Header() {
     undefined,
   );
 
+  const { resolvedTheme } = useTheme();
+
   function handleStyleOnPageScroll() {
     if (window.scrollY > headerYPosition) {
-      setStyle({
-        position: "fixed",
-        top: 0,
-        left: 0,
-        backgroundColor: "#000",
-        padding: "0em 2em",
-      });
+      resolvedTheme === "light"
+        ? setStyle({
+            position: "fixed",
+            top: 0,
+            left: 0,
+            backgroundColor: "#fff",
+            padding: "0em 2em",
+          })
+        : setStyle({
+            position: "fixed",
+            top: 0,
+            left: 0,
+            backgroundColor: "#000",
+            padding: "0em 2em",
+          });
     } else {
       setStyle(undefined);
     }
@@ -42,13 +53,14 @@ export default function Header() {
 
   useEffect(() => {
     setHeader(document.getElementById("header") as HTMLElement);
+    handleStyleOnPageScroll();
     if (header) {
       setHeaderYPosition(header.offsetTop);
     }
     window?.addEventListener("scroll", () => {
       handleStyleOnPageScroll();
     });
-  }, []);
+  }, [resolvedTheme]);
 
   if (headerVisible) {
     return (
@@ -58,10 +70,26 @@ export default function Header() {
         style={style}
       >
         <img
-          src="/images/logo/logo-white-text-full.png"
-          className="w-[45%] hover:cursor-pointer md:w-1/4 lg:w-1/5"
+          src="/images/logo/logo-white-full.png"
+          className="hidden w-[45%] hover:cursor-pointer dark:inline-block md:w-1/4 lg:w-1/5"
           style={
-            style
+            style && resolvedTheme === "dark"
+              ? { display: "block", transition: "300ms" }
+              : { display: "none", transition: "300ms" }
+          }
+          alt="White logo full"
+          onClick={() =>
+            document
+              .getElementById("welcome")
+              ?.scrollIntoView({ block: "start", behavior: "smooth" })
+          }
+        />
+
+        <img
+          src="/images/logo/logo-black-full.png"
+          className="inline-block w-[45%] hover:cursor-pointer dark:hidden md:w-1/4 lg:w-1/5"
+          style={
+            style && resolvedTheme === "light"
               ? { display: "block", transition: "300ms" }
               : { display: "none", transition: "300ms" }
           }
@@ -82,7 +110,7 @@ export default function Header() {
         </div>
 
         <DropdownMenu>
-          <DropdownMenuTrigger className="rounded-full border-[1px] border-white p-[3px] text-base lg:hidden">
+          <DropdownMenuTrigger className="rounded-full border-[1px] border-black p-[3px] text-base text-black dark:border-white dark:text-white lg:hidden">
             {style ? <IoMdMenu /> : <HiMagnifyingGlass />}
           </DropdownMenuTrigger>
           <DropdownMenuContent>

@@ -7,6 +7,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import HeaderProvider from "@/utils/context/HeaderContext";
 import PageLoader from "./components/unique/PageLoader";
+import { ThemeProvider } from "@/utils/context/ThemeContext";
 
 export const metadata: Metadata = {
   title: "Luis Henrique | Desenvolvedor Web",
@@ -20,7 +21,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-Br">
+    <html lang="pt-Br" suppressHydrationWarning>
       <head>
         <meta
           name="google-site-verification"
@@ -31,15 +32,17 @@ export default function RootLayout({
       </head>
       <LanguageProvider>
         <HeaderProvider>
-          <body className="dark relative bg-bg-primary font-text">
-            <PageLoader>
-              {children}
-              <Toaster />
-              <Footer />
-            </PageLoader>
+          <body className="relative bg-white font-text text-black dark:bg-bg-primary dark:text-white">
+            <ThemeProvider>
+              <PageLoader>
+                {children}
+                <Toaster />
+                <Footer />
+              </PageLoader>
 
-            <Analytics />
-            <SpeedInsights />
+              <Analytics />
+              <SpeedInsights />
+            </ThemeProvider>
           </body>
         </HeaderProvider>
       </LanguageProvider>

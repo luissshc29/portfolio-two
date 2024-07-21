@@ -12,7 +12,11 @@ export default function Welcome() {
   const { language } = useLanguageContext();
 
   return (
-    <BgImageContainer src="/images/background/welcome-bg-img.jpg" id="welcome">
+    <BgImageContainer
+      darkImgSrc="/images/background/dark/welcome-bg-img.jpg"
+      lightImgSrc="/images/background/light/welcome-bg-img.jpg"
+      id="welcome"
+    >
       <Title
         mainText={textVariants.sections.welcome.title.main[language]}
         bgText={textVariants.sections.welcome.title.bg[language]}
@@ -25,7 +29,7 @@ export default function Welcome() {
         <Header />
       </div>
       <IoIosArrowDown
-        className="absolute bottom-20 animate-bounce text-4xl hover:cursor-pointer"
+        className="absolute bottom-20 animate-bounce text-4xl text-black hover:cursor-pointer dark:text-white"
         onClick={() =>
           document
             .getElementById("language")

@@ -102,10 +102,7 @@ export default function AudioPlayer({ url }: { url: string }) {
               setAudioReset(true);
             }}
           />
-          <div
-            className="hover:cursor-pointer"
-            onClick={() => handlePlayPauseReset()}
-          >
+          <button onClick={() => handlePlayPauseReset()}>
             {audioPlaying ? (
               <IoIosPause />
             ) : audioReset ? (
@@ -113,7 +110,7 @@ export default function AudioPlayer({ url }: { url: string }) {
             ) : (
               <IoIosPlay />
             )}
-          </div>
+          </button>
           <div className="flex w-fit items-center gap-[1px] text-xs md:text-sm">
             {Math.floor(audioCurrentTime / 60)}:
             {Math.floor(audioCurrentTime % 60)
@@ -136,9 +133,9 @@ export default function AudioPlayer({ url }: { url: string }) {
             onTouchEnd={() => handleSeekEnd()}
             className="w-1/2 scale-[.8] hover:cursor-pointer lg:w-2/3 lg:scale-100"
           />
-          <div className="hover:cursor-pointer" onClick={() => handleMute()}>
+          <button onClick={() => handleMute()}>
             {isMuted ? <IoVolumeMute /> : <IoVolumeHigh />}
-          </div>
+          </button>
         </div>
       </div>
     </div>

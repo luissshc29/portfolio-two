@@ -1,22 +1,31 @@
 import React from "react";
 
 interface BgImageContainerProps {
-  src: string;
+  darkImgSrc: string;
+  lightImgSrc: string;
 }
 
 export default function BgImageContainer({
   children,
-  src,
+  darkImgSrc,
+  lightImgSrc,
   ...rest
 }: {
   children: React.ReactNode;
 } & React.HTMLAttributes<HTMLDivElement> &
   BgImageContainerProps) {
   return (
-    <div className="relative w-screen min-h-screen overflow-clip" {...rest}>
-      <img src={src} className="z-[-10] absolute min-w-[1024px] min-h-screen" />
-      <div className="z-[-10] absolute bg-black bg-opacity-95 w-screen h-full min-h-screen"></div>
-      <div className="relative flex flex-col justify-center items-center gap-8 md:gap-16 p-8 md:p-10 w-full min-h-screen text-center">
+    <div className="relative min-h-screen w-screen overflow-clip" {...rest}>
+      <img
+        src={darkImgSrc}
+        className="absolute z-[-10] hidden h-full w-full min-w-[1024px] dark:block"
+      />
+      <img
+        src={lightImgSrc}
+        className="absolute z-[-10] block h-full w-full min-w-[1024px] dark:hidden"
+      />
+      <div className="absolute z-[-9] h-full min-h-screen w-screen bg-white bg-opacity-95 dark:bg-black dark:bg-opacity-95"></div>
+      <div className="relative flex min-h-screen w-full flex-col items-center justify-center gap-8 p-8 text-center md:gap-16 md:p-10">
         {children}
       </div>
     </div>

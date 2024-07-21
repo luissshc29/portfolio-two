@@ -12,7 +12,8 @@ export default function Experience() {
 
   return (
     <BgImageContainer
-      src="/images/background/experience-bg-img.jpg"
+      darkImgSrc="/images/background/dark/experience-bg-img.jpg"
+      lightImgSrc="/images/background/light/experience-bg-img.jpg"
       id="experience"
     >
       <Title

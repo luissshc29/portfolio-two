@@ -24,7 +24,7 @@ export default function NavigationButton({
 
   return (
     <button
-      className={`button relative z-[101] m-0 flex h-fit scale-[.85] items-center gap-1 border-none pb-2 text-base ${className}`}
+      className={`button relative z-[101] m-0 flex h-fit scale-[.85] items-center gap-1 border-none pb-2 text-base text-black after:[border-color:black] dark:text-white dark:after:[border-color:white] ${className}`}
       onClick={() => {
         element?.scrollIntoView({ block: "start", behavior: "smooth" });
       }}

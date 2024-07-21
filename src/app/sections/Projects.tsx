@@ -14,7 +14,8 @@ export default function Projects() {
 
   return (
     <BgImageContainer
-      src="/images/background/projects-bg-img.jpg"
+      darkImgSrc="/images/background/dark/projects-bg-img.jpg"
+      lightImgSrc="/images/background/light/projects-bg-img.jpg"
       id="projects"
     >
       <Title

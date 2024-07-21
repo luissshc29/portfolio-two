@@ -2,7 +2,8 @@ import React from "react";
 import { Job } from "./Job";
 import { Project } from "./Project";
 import { Social } from "./Social";
-import { HeaderOptions } from "./HeaderOptions";
+import { HeaderOption } from "./HeaderOption";
+import { ThemeSelectorOption } from "./ThemeSelectorOption";
 
 export type TextVariants = {
   sections: {
@@ -145,7 +146,7 @@ export type TextVariants = {
   };
   others: {
     header: {
-      options: HeaderOptions[];
+      options: HeaderOption[];
     };
     labels: {
       projects: {
@@ -192,6 +193,9 @@ export type TextVariants = {
           us: string;
         };
       };
+    };
+    themeSelector: {
+      options: ThemeSelectorOption[];
     };
   };
 };

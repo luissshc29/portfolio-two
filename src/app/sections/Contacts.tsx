@@ -25,7 +25,8 @@ export default function Contacts() {
 
   return (
     <BgImageContainer
-      src="/images/background/contacts-bg-img.jpg"
+      darkImgSrc="/images/background/dark/contacts-bg-img.jpg"
+      lightImgSrc="/images/background/light/contacts-bg-img.jpg"
       id="contacts"
     >
       <div>
