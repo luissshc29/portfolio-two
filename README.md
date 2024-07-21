@@ -1,6 +1,6 @@
 # v2.0 Changelog - Portfolio
 
-[**https://luishenrique.vercel.app** :link:](https://luishenrique.vercel.app)<br/>
+[**https://luishenrique-dev.com.br/** :link:](https://luishenrique-dev.com.br/)<br/>
 Jun. 17, 2024
 
 ### Pt-BR :earth_americas:
@@ -27,7 +27,7 @@ Jun. 17, 2024
 
 9. Player de áudio adicionado para o texto na seção _Sobre mim_.
 
-10. Seleção de temas (_Claro_, _escuro_ e _padrão do sistema_).
+10. Seleção de temas (_Claro_, _escuro_ e _padrão do sistema_) adicionada.
 
 11. UX/UI melhorada.
 
