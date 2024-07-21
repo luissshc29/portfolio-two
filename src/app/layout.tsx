@@ -23,10 +23,6 @@ export default function RootLayout({
   return (
     <html lang="pt-Br" suppressHydrationWarning>
       <head>
-        <meta
-          name="google-site-verification"
-          content="5WYCOXw59AxMbUclhEquVd7hbceqzxZRztDtehQ5NVs"
-        />
         <link rel="icon" href="/images/favicon.ico" />
         <link rel="apple-touch-icon" href="/images/favicon.ico" />
       </head>
