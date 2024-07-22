@@ -83,7 +83,11 @@ export default function ProjectCard({
                   {data.title[language]}
                 </DialogTitle>
                 <DialogDescription>
-                  <Link variant="tertiary" href={data.url}>
+                  <Link
+                    variant="tertiary"
+                    className="text-base"
+                    href={data.url}
+                  >
                     {data.url}
                     <FiLink />
                   </Link>
