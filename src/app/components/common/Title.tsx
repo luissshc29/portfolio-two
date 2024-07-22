@@ -10,6 +10,8 @@ export default function Title({
   mainText: string;
   bgText?: string;
 }) {
+
+
   let i = 0;
   function typing() {
     if (i < mainText.length) {

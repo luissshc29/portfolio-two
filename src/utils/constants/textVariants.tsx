@@ -13,7 +13,7 @@ export const textVariants: TextVariants = {
     welcome: {
       title: {
         main: {
-          br: "Seja bem vindo(a)!",
+          br: "Bem vindo(a)!",
           us: "Welcome!",
         },
         bg: {
