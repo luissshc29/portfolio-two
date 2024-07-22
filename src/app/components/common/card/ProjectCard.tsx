@@ -215,11 +215,15 @@ export default function ProjectCard({
           >
             <div className="z-[1500] mx-auto min-h-fit w-[90%] pb-6 pt-4">
               <DrawerHeader className="w-fit gap-0">
-                <DrawerTitle className="font-title text-2xl">
+                <DrawerTitle className="font-title text-xl md:text-2xl">
                   {data.title[language]}
                 </DrawerTitle>
                 <DrawerDescription>
-                  <Link variant="tertiary" href={data.url} className="text-base">
+                  <Link
+                    variant="tertiary"
+                    href={data.url}
+                    className="text-sm md:text-base"
+                  >
                     {data.url}
                     <FiLink />
                   </Link>
@@ -253,7 +257,7 @@ export default function ProjectCard({
                 </div>
                 <div className="flex h-full w-full flex-col items-start justify-center gap-1.5 text-base md:w-1/2 md:gap-3">
                   <div className="flex flex-col gap-[2px]">
-                    <span className="font-bold">
+                    <span className="text-sm font-bold md:text-base">
                       {
                         textVariants.others.labels.projects.modal.description[
                           language
@@ -261,13 +265,13 @@ export default function ProjectCard({
                       }
                       :
                     </span>
-                    <p className="text-neutral-700 dark:text-neutral-300">
+                    <p className="text-sm text-neutral-700 dark:text-neutral-300 md:text-base">
                       {data.description[language]}
                     </p>
                   </div>
                   <Separator />
                   <div className="flex w-full items-center justify-start gap-2">
-                    <span className="w-fit text-sm font-bold">
+                    <span className="w-fit text-sm font-bold md:text-base">
                       {
                         textVariants.others.labels.projects.modal.stacks[
                           language
@@ -284,7 +288,7 @@ export default function ProjectCard({
                             <p key={stack.id}>{stack.component}</p>
                           ))}
                         </div>
-                        <div className="tech-back absolute flex w-full flex-wrap justify-start gap-2 gap-y-0 text-sm font-medium">
+                        <div className="tech-back absolute flex w-full flex-wrap justify-start gap-2 gap-y-0 text-sm font-medium md:text-[15px]">
                           {projectStacks.map((stack) => (
                             <p key={stack.id}>{stack.name}</p>
                           ))}
@@ -308,7 +312,7 @@ export default function ProjectCard({
                   <Separator />
                   {data.repository && (
                     <div className="flex flex-col items-start gap-[2px]">
-                      <span className="text-sm font-bold">
+                      <span className="text-sm font-bold md:text-base">
                         {
                           textVariants.others.labels.projects.modal.repo[
                             language
@@ -319,7 +323,7 @@ export default function ProjectCard({
                       <Link
                         variant="tertiary"
                         href={data.repository}
-                        className="text-sm"
+                        className="text-sm md:text-base"
                       >
                         {data.repository}
                         <FiLink />

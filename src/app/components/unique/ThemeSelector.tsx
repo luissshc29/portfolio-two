@@ -6,6 +6,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/shadcn/components/ui/dropdown-menu";
+import { Separator } from "@/shadcn/components/ui/separator";
 import { textVariants } from "@/utils/constants/textVariants";
 import { useHeaderContext } from "@/utils/context/HeaderContext";
 import { useLanguageContext } from "@/utils/context/LanguageContext";
@@ -39,19 +40,29 @@ export default function ThemeSelector() {
           id="theme-selector"
         >
           {textVariants.others.themeSelector.options.map((option) => (
-            <DropdownMenuItem
-              key={option.id}
-              className="flex items-center gap-2 hover:cursor-pointer hover:bg-neutral-400 dark:hover:bg-neutral-700"
-              onClick={() => setTheme(option.text.us.toLowerCase())}
-            >
-              <>
-                <div className="text-base md:text-xl">{option.icon}</div>
-                <p className="text-sm md:text-base">{option.text[language]}</p>
-                {theme === option.text.us.toLowerCase() && (
-                  <IoMdCheckmarkCircle className="text-base md:text-lg" />
-                )}
-              </>
-            </DropdownMenuItem>
+            <>
+              <DropdownMenuItem
+                key={option.id}
+                className="flex items-center gap-2 hover:cursor-pointer hover:bg-neutral-400 dark:hover:bg-neutral-700"
+                onClick={() => setTheme(option.text.us.toLowerCase())}
+              >
+                <>
+                  <div className="text-base md:text-xl">{option.icon}</div>
+                  <p className="text-sm md:text-base">
+                    {option.text[language]}
+                  </p>
+                  {theme === option.text.us.toLowerCase() && (
+                    <IoMdCheckmarkCircle className="text-base md:text-lg" />
+                  )}
+                </>
+              </DropdownMenuItem>
+              {option.id !==
+              textVariants.others.themeSelector.options.length ? (
+                <Separator className="z-[1001] mx-auto w-[95%] bg-neutral-400 dark:bg-neutral-700" />
+              ) : (
+                ""
+              )}
+            </>
           ))}
         </DropdownMenuContent>
       </DropdownMenu>
