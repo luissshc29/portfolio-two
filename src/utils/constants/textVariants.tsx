@@ -203,8 +203,8 @@ export const textVariants: TextVariants = {
             list: ["1.png", "2.png", "3.png"],
           },
           description: {
-            br: "Interface para uma aplicação CRUD.",
-            us: "Interface for CRUD application.",
+            br: "Interface para uma API GraphQL.",
+            us: "Interface for a GraphQL API.",
           },
           date: {
             br: "28 Jun. 2024",
@@ -217,8 +217,8 @@ export const textVariants: TextVariants = {
         {
           id: uuidv4(),
           title: {
-            br: "Bike4Cash - Aluguel de bicicletas",
-            us: "Bike4Cash - Bike Rentals",
+            br: "Bike4Cash",
+            us: "Bike4Cash",
           },
           images: {
             path: "/images/projects/bike4cash/",
@@ -304,8 +304,8 @@ export const textVariants: TextVariants = {
         {
           id: uuidv4(),
           title: {
-            br: "Bloco de notas online",
-            us: "Online notepad",
+            br: "Bloco de notas",
+            us: "Notepad",
           },
           images: {
             path: "/images/projects/notepad/",

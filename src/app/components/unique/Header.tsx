@@ -110,7 +110,7 @@ export default function Header() {
         </div>
 
         <DropdownMenu>
-          <DropdownMenuTrigger className="rounded-full border-[1px] border-black p-[3px] text-base text-black dark:border-white dark:text-white lg:hidden">
+          <DropdownMenuTrigger className="rounded-full border-[1px] border-black p-[3px] text-xl text-black dark:border-white dark:text-white lg:hidden">
             {style ? <IoMdMenu /> : <HiMagnifyingGlass />}
           </DropdownMenuTrigger>
           <DropdownMenuContent>

@@ -34,7 +34,7 @@ export default function Title({
 
   return (
     <div
-      className="relative flex w-full items-center justify-center text-center font-title text-2xl font-bold md:text-4xl"
+      className="relative flex w-full items-center justify-center text-center font-title text-3xl font-bold md:text-5xl"
       ref={ref}
     >
       <h1 className="absolute z-[-2] text-5xl text-[#585858] opacity-20 dark:text-[#9b9b9b] md:text-7xl">

@@ -27,7 +27,7 @@ export default function ThemeSelector() {
   if (headerVisible) {
     return (
       <DropdownMenu onOpenChange={() => setSelectorOpen(!selectorOpen)}>
-        <DropdownMenuTrigger className="fixed bottom-4 right-4 z-[1000] scale-[1.2] rounded-sm border-[1px] border-black bg-white p-[2px] text-xl text-black shadow-sm shadow-neutral-500 hover:cursor-pointer dark:border-white dark:bg-black dark:text-white dark:shadow-black md:p-[3px] md:text-[22px]">
+        <DropdownMenuTrigger className="fixed bottom-4 right-4 z-[1000] scale-[1.2] rounded-sm border-[1px] border-black bg-white p-[2px] text-xl text-black hover:cursor-pointer dark:border-white dark:bg-black dark:text-white dark:shadow-black md:p-[3px] md:text-[22px]">
           {
             textVariants.others.themeSelector.options.find(
               (item) => item.text.us.toLowerCase() === theme,

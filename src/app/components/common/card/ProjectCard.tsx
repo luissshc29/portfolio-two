@@ -79,7 +79,7 @@ export default function ProjectCard({
           <DialogContent className="max-h-[80vh] min-w-[85vw]">
             <div className="z-[1500]">
               <DialogHeader>
-                <DialogTitle className="font-title text-xl">
+                <DialogTitle className="font-title text-2xl">
                   {data.title[language]}
                 </DialogTitle>
                 <DialogDescription>
@@ -149,7 +149,7 @@ export default function ProjectCard({
                           <p key={stack.id}>{stack.component}</p>
                         ))}
                       </div>
-                      <div className="tech-back absolute flex w-full flex-wrap justify-start gap-2 text-sm font-medium">
+                      <div className="tech-back absolute flex w-full flex-wrap justify-start gap-x-2 text-base font-medium">
                         {projectStacks.map((stack) => (
                           <p key={stack.id}>{stack.name}</p>
                         ))}
@@ -215,11 +215,11 @@ export default function ProjectCard({
           >
             <div className="z-[1500] mx-auto min-h-fit w-[90%] pb-6 pt-4">
               <DrawerHeader className="w-fit gap-0">
-                <DrawerTitle className="font-title text-xl">
+                <DrawerTitle className="font-title text-2xl">
                   {data.title[language]}
                 </DrawerTitle>
                 <DrawerDescription>
-                  <Link variant="tertiary" href={data.url}>
+                  <Link variant="tertiary" href={data.url} className="text-base">
                     {data.url}
                     <FiLink />
                   </Link>
