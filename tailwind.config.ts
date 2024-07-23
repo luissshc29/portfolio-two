@@ -110,6 +110,7 @@ const config = {
       },
       fontFamily: {
         title: "var(--title)",
+        'title-bg': "var(--title-bg)",
         text: "var(--text)",
       },
     },

@@ -42,7 +42,6 @@ export default function ThemeSelector() {
           {textVariants.others.themeSelector.options.map((option) => (
             <>
               <DropdownMenuItem
-                key={option.id}
                 className="flex items-center gap-2 hover:cursor-pointer hover:bg-neutral-400 dark:hover:bg-neutral-700"
                 onClick={() => setTheme(option.text.us.toLowerCase())}
               >
