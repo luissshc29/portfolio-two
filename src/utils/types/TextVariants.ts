@@ -115,8 +115,8 @@ export type TextVariants = {
         };
       };
       subtitle: {
-        br: string;
-        us: string;
+        br: React.ReactElement;
+        us: React.ReactElement;
       };
       info: {
         social: Social[];

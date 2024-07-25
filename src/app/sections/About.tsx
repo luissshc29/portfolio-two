@@ -24,18 +24,18 @@ export default function About() {
         bgText={textVariants.sections.about.title.bg[language]}
       />
 
-      <div className="flex w-full flex-col items-center justify-evenly gap-10 md:flex-row">
+      <div className="flex md:flex-row flex-col justify-evenly items-center gap-10 w-full">
         <img
           src="/images/avatar.jpg"
           alt="Avatar"
-          className="w-1/2 rounded-full border-4 border-neutral-800 dark:border-white md:w-1/4"
+          className="border-4 border-neutral-800 dark:border-white rounded-full w-1/2 md:w-1/4"
           loading="eager"
         />
         <div className="flex flex-col items-center gap-5">
-          <div className="text-center text-sm md:text-left lg:text-base">
+          <div className="mx-auto w-[90%] text-center text-sm md:text-left lg:text-base">
             {textVariants.sections.about.paragraph[language]}
           </div>
-          <div className="flex w-full flex-col-reverse items-center justify-evenly lg:flex-row">
+          <div className="flex lg:flex-row flex-col-reverse justify-evenly items-center w-full">
             <Link
               href="curriculo-luis-henrique-da-cunha-cavalcante.pdf"
               variant="primary"

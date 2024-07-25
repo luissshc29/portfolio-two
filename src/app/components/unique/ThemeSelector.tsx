@@ -28,7 +28,7 @@ export default function ThemeSelector() {
   if (headerVisible) {
     return (
       <DropdownMenu onOpenChange={() => setSelectorOpen(!selectorOpen)}>
-        <DropdownMenuTrigger className="fixed bottom-4 right-4 z-[1000] scale-[1.2] rounded-sm border-[1px] border-black bg-white p-[2px] text-xl text-black hover:cursor-pointer dark:border-white dark:bg-black dark:text-white dark:shadow-black md:p-[3px] md:text-[22px]">
+        <DropdownMenuTrigger className="right-4 bottom-4 z-[1000] fixed border-[1px] dark:border-white bg-white dark:bg-black dark:shadow-black p-[2px] md:p-[3px] border-black rounded-sm text-black text-xl md:text-[22px] dark:text-white hover:cursor-pointer scale-[1.2]">
           {
             textVariants.others.themeSelector.options.find(
               (item) => item.text.us.toLowerCase() === theme,
@@ -36,13 +36,14 @@ export default function ThemeSelector() {
           }
         </DropdownMenuTrigger>
         <DropdownMenuContent
-          className="flex min-h-[20vh] w-[45vw] flex-col justify-evenly md:w-[15vw]"
+          className="flex flex-col justify-evenly w-[45vw] md:w-[15vw] min-h-[20vh]"
           id="theme-selector"
         >
           {textVariants.others.themeSelector.options.map((option) => (
             <>
               <DropdownMenuItem
-                className="flex items-center gap-2 hover:cursor-pointer hover:bg-neutral-400 dark:hover:bg-neutral-700"
+                key={option.id}
+                className="flex items-center gap-2 hover:bg-neutral-400 dark:hover:bg-neutral-700 hover:cursor-pointer"
                 onClick={() => setTheme(option.text.us.toLowerCase())}
               >
                 <>
@@ -57,7 +58,7 @@ export default function ThemeSelector() {
               </DropdownMenuItem>
               {option.id !==
               textVariants.others.themeSelector.options.length ? (
-                <Separator className="z-[1001] mx-auto w-[95%] bg-neutral-400 dark:bg-neutral-700" />
+                <Separator className="z-[1001] bg-neutral-400 dark:bg-neutral-700 mx-auto w-[95%]" />
               ) : (
                 ""
               )}

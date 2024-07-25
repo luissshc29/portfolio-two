@@ -103,14 +103,14 @@ const config = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        slide: "slide 40s linear infinite",
+        slide: "slide 45s linear infinite",
         blink: "blink 1s infinite",
         "show-up": "show-up 1s 1",
         fade: "fade 2s 1",
       },
       fontFamily: {
         title: "var(--title)",
-        'title-bg': "var(--title-bg)",
+        "title-bg": "var(--title-bg)",
         text: "var(--text)",
       },
     },

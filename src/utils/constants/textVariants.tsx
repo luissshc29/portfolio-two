@@ -56,26 +56,31 @@ export const textVariants: TextVariants = {
       paragraph: {
         br: (
           <p>
-            Me chamo <span className="font-semibold">Luis Henrique</span> e sou
-            um grande entusiasta do <i>desenvolvimento web</i>. Atualmente,
-            desenvolvo aplicações há quase dois anos utilizando ferramentas
-            muito difundidas no mercado. Dentre as quais estão HTML, CSS,
-            Javascript, Typescript, React, Redux, Next.js, MySQL, GraphQL,
-            Apollo Client e Server, Git e GitHub. Ao longo desse portfólio você
-            verá mais sobre os meus principais projetos e poderá acessar todos
-            que tiver interesse. Aproveite a visita!
+            Como <i>desenvolvedor web</i>, eu, <strong>Luis Henrique</strong>,
+            sou especializado em criar sites personalizados sob demanda para
+            atender às necessidades específicas dos meus clientes. Utilizando
+            tecnologias difundidas no mercado full stack e minha expertise em{" "}
+            <i>TypeScript, React, Next.js</i> e <i>MySQL</i>, entrego soluções
+            web de alta qualidade, responsivas e amigáveis. Minhas habilidades
+            abrangem tanto o desenvolvimento front-end quanto o back-end,
+            garantindo uma experiência web de <u>alta qualidade</u> e{" "}
+            <u>eficiente</u> para os usuários. Estou comprometido em me manter
+            atualizado com as últimas tendências e melhores práticas do setor
+            para fornecer <u>soluções inovadoras</u> e <u>eficazes</u>.
           </p>
         ),
         us: (
           <p>
-            My name is <span className="font-semibold">Luis Henrique</span> and
-            I'm a huge <i>web development</i> enthusiast. Currently, I've been
-            developing applications for nearly two years using tools that are
-            widespread on the market. These include HTML, CSS, Javascript,
-            Typescript, React, Redux, Next.js, MySQL, GraphQL, Apollo Client and
-            Server, Git and GitHub. Throughout this portfolio you will see more
-            about my main projects and be able to access any projects you are
-            interested in. Enjoy your visit!
+            As a <i>web developer</i>, I, <strong>Luis Henrique</strong>,
+            specialize in creating customized websites tailored to meet the
+            specific needs of my clients. Leveraging popular full-stack
+            technologies and my expertise in <i>TypeScript, React, Next.js</i>,
+            and <i>MySQL</i>, I deliver high-quality, responsive, and
+            user-friendly web solutions. My skills encompass both front-end and
+            back-end development, ensuring a <u>high-quality</u> and{" "}
+            <u>efficient</u> web experience for users. I am dedicated to staying
+            updated with the latest industry trends and best practices to
+            provide <u>innovative</u> and <u>effective solutions</u>.
           </p>
         ),
       },
@@ -381,8 +386,18 @@ export const textVariants: TextVariants = {
         },
       },
       subtitle: {
-        br: "Sinta-se à vontade para me contatar de algum dos modos abaixo!",
-        us: "Feel free to contact me in any of the ways below!",
+        br: (
+          <p>
+            Sinta-se à vontade para <u>me contatar</u> e/ou{" "}
+            <u>fazer um orçamento</u> em algum dos meios abaixo!
+          </p>
+        ),
+        us: (
+          <p>
+            Feel free to <u>contact me</u> and/or <u>request a quote</u> in any
+            of the ways below!
+          </p>
+        ),
       },
       info: {
         social: [
