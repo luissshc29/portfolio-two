@@ -59,7 +59,7 @@ export const textVariants: TextVariants = {
             Como <i>desenvolvedor web</i>, eu, <strong>Luis Henrique</strong>,
             sou especializado em criar sites personalizados sob demanda para
             atender às necessidades específicas dos meus clientes. Utilizando
-            tecnologias difundidas no mercado full stack e minha expertise em{" "}
+            tecnologias difundidas no mercado web e minha expertise em{" "}
             <i>TypeScript, React, Next.js</i> e <i>MySQL</i>, entrego soluções
             web de alta qualidade, responsivas e amigáveis. Minhas habilidades
             abrangem tanto o desenvolvimento front-end quanto o back-end,
@@ -73,7 +73,7 @@ export const textVariants: TextVariants = {
           <p>
             As a <i>web developer</i>, I, <strong>Luis Henrique</strong>,
             specialize in creating customized websites tailored to meet the
-            specific needs of my clients. Leveraging popular full-stack
+            specific needs of my clients. Leveraging popular web
             technologies and my expertise in <i>TypeScript, React, Next.js</i>,
             and <i>MySQL</i>, I deliver high-quality, responsive, and
             user-friendly web solutions. My skills encompass both front-end and
