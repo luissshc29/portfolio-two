@@ -12,7 +12,7 @@ import { ThemeProvider } from "@/utils/context/ThemeContext";
 export const metadata: Metadata = {
   title: "Luis Henrique | Desenvolvedor Web",
   description:
-    "Desenvolvedor Web com experiência em HTML, CSS, Javascript, Typescript, React, Redux, Next.js, MySQL, GraphQL, Apollo Client e Server, Git e GitHub",
+    "Desenvolvedor Web com experiência em HTML5, CSS3, Javascript, Typescript, React, Next.js, MySQL, GraphQL, Apollo, Git e GitHub. Especialista na criação de websites responsivos e aplicações escaláveis, focando em SEO, desempenho e acessibilidade. Habilidades em desenvolvimento front-end com Next.js e Typescript, e back-end com Node.js e MySQL. Integração de APIs REST e GraphQL em projetos complexos. Explore meu portfólio para ver como posso ajudar a melhorar sua presença online.",
 };
 
 export default function RootLayout({
