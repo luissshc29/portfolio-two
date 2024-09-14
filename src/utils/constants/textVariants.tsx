@@ -73,14 +73,14 @@ export const textVariants: TextVariants = {
           <p>
             As a <i>web developer</i>, I, <strong>Luis Henrique</strong>,
             specialize in creating customized websites tailored to meet the
-            specific needs of my clients. Leveraging popular web
-            technologies and my expertise in <i>TypeScript, React, Next.js</i>,
-            and <i>MySQL</i>, I deliver high-quality, responsive, and
-            user-friendly web solutions. My skills encompass both front-end and
-            back-end development, ensuring a <u>high-quality</u> and{" "}
-            <u>efficient</u> web experience for users. I am dedicated to staying
-            updated with the latest industry trends and best practices to
-            provide <u>innovative</u> and <u>effective solutions</u>.
+            specific needs of my clients. Leveraging popular web technologies
+            and my expertise in <i>TypeScript, React, Next.js</i>, and{" "}
+            <i>MySQL</i>, I deliver high-quality, responsive, and user-friendly
+            web solutions. My skills encompass both front-end and back-end
+            development, ensuring a <u>high-quality</u> and <u>efficient</u> web
+            experience for users. I am dedicated to staying updated with the
+            latest industry trends and best practices to provide{" "}
+            <u>innovative</u> and <u>effective solutions</u>.
           </p>
         ),
       },
@@ -237,7 +237,7 @@ export const textVariants: TextVariants = {
             br: "27 Dez. 2023",
             us: "Dec. 27, 2023",
           },
-          stacks: [4, 6, 10, 11],
+          stacks: [4, 6, 10, 11, 13],
           url: "https://bike4cash.vercel.app/",
           repository: "https://github.com/luissshc29/bike4cash",
         },
