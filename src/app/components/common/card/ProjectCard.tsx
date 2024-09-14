@@ -95,7 +95,7 @@ export default function ProjectCard({
               </DialogHeader>
             </div>
             <div className="z-[1500] flex h-full w-full items-center gap-10">
-              <div className="flex w-1/2 flex-col items-start gap-4">
+              <div className="flex w-1/2 flex-col items-start gap-[6px]">
                 <Carousel className="w-full">
                   <CarouselContent>
                     {data.images.list.map((url) => (
