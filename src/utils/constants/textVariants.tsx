@@ -178,6 +178,50 @@ export const textVariants: TextVariants = {
         {
           id: uuidv4(),
           title: {
+            br: "Bike4Cash - API",
+            us: "Bike4Cash - API",
+          },
+          images: {
+            path: "/images/projects/bike4cash-api/",
+            list: ["1.png"],
+          },
+          description: {
+            br: "API Web para o Bike4Cash.",
+            us: "Web API for Bike4Cash.",
+          },
+          date: {
+            br: "14 Set. 2024",
+            us: "Sep. 14, 2024",
+          },
+          stacks: [6, 13, 12, 11],
+          url: "https://bike4cash-api.vercel.app/",
+          repository: "https://github.com/luissshc29/bike4cash--API",
+        },
+        {
+          id: uuidv4(),
+          title: {
+            br: "Bike4Cash - Página Web",
+            us: "Bike4Cash - Webpage",
+          },
+          images: {
+            path: "/images/projects/bike4cash/",
+            list: ["1.png", "2.png", "3.png"],
+          },
+          description: {
+            br: "Plataforma fictícia de aluguel de bicicletas.",
+            us: "Fictional bike rental web platform.",
+          },
+          date: {
+            br: "27 Dez. 2023",
+            us: "Dec. 27, 2023",
+          },
+          stacks: [4, 6, 10, 11, 13],
+          url: "https://bike4cash.vercel.app/",
+          repository: "https://github.com/luissshc29/bike4cash",
+        },
+        {
+          id: uuidv4(),
+          title: {
             br: "API View - API",
             us: "API View - API",
           },
@@ -218,28 +262,6 @@ export const textVariants: TextVariants = {
           stacks: [4, 6, 10, 13],
           url: "https://api-view-mu.vercel.app/",
           repository: "https://github.com/luissshc29/api-view",
-        },
-        {
-          id: uuidv4(),
-          title: {
-            br: "Bike4Cash",
-            us: "Bike4Cash",
-          },
-          images: {
-            path: "/images/projects/bike4cash/",
-            list: ["1.png", "2.png", "3.png"],
-          },
-          description: {
-            br: "Plataforma fictícia de aluguel de bicicletas.",
-            us: "Fictional bike rental web platform.",
-          },
-          date: {
-            br: "27 Dez. 2023",
-            us: "Dec. 27, 2023",
-          },
-          stacks: [4, 6, 10, 11, 13],
-          url: "https://bike4cash.vercel.app/",
-          repository: "https://github.com/luissshc29/bike4cash",
         },
         {
           id: uuidv4(),
