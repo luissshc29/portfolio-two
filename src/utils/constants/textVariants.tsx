@@ -60,7 +60,7 @@ export const textVariants: TextVariants = {
             sou especializado em criar sites personalizados sob demanda para
             atender às necessidades específicas dos meus clientes. Utilizando
             tecnologias difundidas no mercado web e minha expertise em{" "}
-            <i>TypeScript, React, Next.js</i> e <i>MySQL</i>, entrego soluções
+            <i>TypeScript, React, Next.js</i>, <i>MySQL</i> e <i>GraphQL</i>, entrego soluções
             web de alta qualidade, responsivas e amigáveis. Minhas habilidades
             abrangem tanto o desenvolvimento front-end quanto o back-end,
             garantindo uma experiência web de <u>alta qualidade</u> e{" "}
@@ -74,8 +74,7 @@ export const textVariants: TextVariants = {
             As a <i>web developer</i>, I, <strong>Luis Henrique</strong>,
             specialize in creating customized websites tailored to meet the
             specific needs of my clients. Leveraging popular web technologies
-            and my expertise in <i>TypeScript, React, Next.js</i>, and{" "}
-            <i>MySQL</i>, I deliver high-quality, responsive, and user-friendly
+            and my expertise in <i>TypeScript, React, Next.js</i>, <i>MySQL</i> and <i>GraphQL</i>, I deliver high-quality, responsive, and user-friendly
             web solutions. My skills encompass both front-end and back-end
             development, ensuring a <u>high-quality</u> and <u>efficient</u> web
             experience for users. I am dedicated to staying updated with the
