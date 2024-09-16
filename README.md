@@ -9,7 +9,7 @@ Jun. 17, 2024
 
 2. Componentes melhorados:
 
-- Código desnecessário Removido.
+- Código desnecessário removido.
 
 - Componentes desnecessários removidos.
 
