@@ -63,7 +63,7 @@ export const metadata: Metadata = {
     description: "Desenvolvedor web com expertise em HTML5, CSS3, React, Next.js, MySQL, GraphQL e integração de APIs. Especialista em SEO, acessibilidade e performance de websites.",
     siteName: "Portfólio Luis Henrique - Desenvolvedor Web",
     images: [{
-      url: "https://i.imgur.com/5B1LJNs.png",
+      url: "https://i.imgur.com/cUgrAeU.png",
     }],
   },
 
