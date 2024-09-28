@@ -21,12 +21,12 @@ const loadingTexts = [
   "Carregando recursos",
 ];
 
+// Component that makes the page render only when fully loaded
 export default function PageLoader({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  // Component that makes the page render only when fully loaded
   const [loading, setLoading] = useState<boolean>(true);
   const [loadingText, setLoadingText] = useState<string>("");
 
@@ -68,21 +68,21 @@ export default function PageLoader({
       <div
         className={`flex h-screen w-screen flex-col items-center justify-center gap-2 bg-white dark:bg-black md:gap-4 ${animate}`}
       >
-        <div className="relative flex h-fit w-fit scale-[.8] flex-col items-center justify-center md:scale-100">
+        <div className="relative flex flex-col justify-center items-center w-fit h-fit scale-[.8] md:scale-100">
           <img
             src="/images/logo/logo-white-small.png"
             alt="Small white logo"
-            className="absolute hidden h-[35px] w-[35px] dark:inline-block"
+            className="dark:inline-block absolute hidden w-[35px] h-[35px]"
           />
           <img
             src="/images/logo/logo-black-small.png"
             alt="Small black logo"
-            className="absolute inline-block h-[35px] w-[35px] dark:hidden"
+            className="inline-block absolute dark:hidden w-[35px] h-[35px]"
           />
           <img
             src="/images/loading/loading-circle-white.svg"
             alt="Loading image"
-            className="hidden dark:block"
+            className="dark:block hidden"
           />
           <img
             src="/images/loading/loading-circle-black.svg"
@@ -97,7 +97,7 @@ export default function PageLoader({
           <img
             src="/images/loading/loading-dots-white.svg"
             alt="Loading image"
-            className="hidden dark:block"
+            className="dark:block hidden"
           />
           <img
             src="/images/loading/loading-dots-black.svg"

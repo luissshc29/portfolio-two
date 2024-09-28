@@ -132,6 +132,12 @@ export type TextVariants = {
           us: string;
         };
       };
+      form: {
+        text: {
+          br: React.ReactElement;
+          us: React.ReactElement;
+        };
+      };
       toast: {
         title: {
           br: string;

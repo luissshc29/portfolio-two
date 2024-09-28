@@ -6,7 +6,8 @@ import { BsGithub, BsInstagram, BsWhatsapp } from "react-icons/bs";
 import { TextVariants } from "../types/TextVariants";
 import { IoMoonOutline, IoSunnyOutline } from "react-icons/io5";
 import { PiDevices } from "react-icons/pi";
-import { FiSun } from "react-icons/fi";
+import { FiInfo, FiSun } from "react-icons/fi";
+import { RiExternalLinkLine } from "react-icons/ri";
 
 export const textVariants: TextVariants = {
   sections: {
@@ -461,6 +462,37 @@ export const textVariants: TextVariants = {
         whatsappMessage: {
           br: "Olá!%20Vim%20pelo%20seu%20portfólio.",
           us: "Hello!%20I%20came%20from%20your%20portfolio.",
+        },
+      },
+      form: {
+        text: {
+          br: (
+            <div className="flex items-center gap-1">
+              <FiInfo className="text-base" />
+              Você também pode preencher um formulário,{" "}
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSeoaZv_XB15-3QHgqdHm-qDVGggPj1XSYlA0wIvf4L9BysZdw/viewform"
+                target="_blank"
+                className="flex items-center gap-[2px] w-fit underline"
+              >
+                clicando aqui
+                <RiExternalLinkLine className="text-lg" />
+              </a>
+            </div>
+          ),
+          us: (
+            <div className="flex items-center gap-1">
+              <FiInfo className="text-base" /> You can also fill out a form, by{" "}
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSfr4SLa31PNH489ktl2jPJriFJl3P-se7zCW1X3VzeLZAI8Aw/viewform"
+                target="_blank"
+                className="flex items-center gap-[2px] w-fit underline"
+              >
+                clicking here
+                <RiExternalLinkLine className="text-lg" />
+              </a>
+            </div>
+          ),
         },
       },
       toast: {

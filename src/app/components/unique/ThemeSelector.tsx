@@ -11,7 +11,7 @@ import { textVariants } from "@/utils/constants/textVariants";
 import { useHeaderContext } from "@/utils/context/HeaderContext";
 import { useLanguageContext } from "@/utils/context/LanguageContext";
 import { useTheme } from "next-themes";
-import React, { useEffect, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import { IoMdCheckmarkCircle } from "react-icons/io";
 
 export default function ThemeSelector() {
@@ -40,9 +40,8 @@ export default function ThemeSelector() {
           id="theme-selector"
         >
           {textVariants.others.themeSelector.options.map((option) => (
-            <>
+            <Fragment key={option.id}>
               <DropdownMenuItem
-                key={option.id}
                 className="flex items-center gap-2 hover:bg-neutral-400 dark:hover:bg-neutral-700 hover:cursor-pointer"
                 onClick={() => setTheme(option.text.us.toLowerCase())}
               >
@@ -62,7 +61,7 @@ export default function ThemeSelector() {
               ) : (
                 ""
               )}
-            </>
+            </Fragment>
           ))}
         </DropdownMenuContent>
       </DropdownMenu>

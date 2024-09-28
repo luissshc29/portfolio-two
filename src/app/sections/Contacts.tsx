@@ -117,6 +117,9 @@ export default function Contacts() {
           </div>
         </div>
       </div>
+      <div className="my-6 text-sm md:text-base">
+        {textVariants.sections.contacts.form.text[language]}
+      </div>
     </BgImageContainer>
   );
 }
