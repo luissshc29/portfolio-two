@@ -8,6 +8,12 @@ import { textVariants } from "@/utils/constants/textVariants";
 import Link from "../components/common/Link";
 import { FaGithub } from "react-icons/fa6";
 import ProjectCard from "../components/common/card/ProjectCard";
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "@/shadcn/components/ui/tabs";
 
 export default function Projects() {
   const { language } = useLanguageContext();
@@ -25,12 +31,44 @@ export default function Projects() {
       <p className="text-sm md:text-base">
         {textVariants.sections.projects.subtitle[language]}
       </p>
-      <div className="grid w-full grid-cols-1 items-center justify-evenly gap-2 md:grid-cols-2 lg:grid-cols-3">
-        {textVariants.sections.projects.list.map((proj) => (
-          <ProjectCard key={proj.id} data={proj} language={language} />
+
+      <Tabs defaultValue="all" className="w-fit">
+        <TabsList className="grid grid-cols-4 grid-row-1 mb-5 p-1 w-full h-fit">
+          {textVariants.sections.projects.tabs.map((t) => (
+            <TabsTrigger
+              key={t.id}
+              value={t.value}
+              className="text-[13px] md:text-base"
+            >
+              {t.text[language]}
+            </TabsTrigger>
+          ))}
+        </TabsList>
+        {textVariants.sections.projects.tabs.map((t) => (
+          <TabsContent value={t.value} key={t.id}>
+            <div className="justify-evenly items-center gap-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 opacity-100 mx-auto w-[90vw] animate-show-up [animation-duration:350ms]">
+              {t.value === "all"
+                ? textVariants.sections.projects.list.map((proj) => (
+                    <ProjectCard
+                      key={proj.id}
+                      data={proj}
+                      language={language}
+                    />
+                  ))
+                : textVariants.sections.projects.list
+                    .filter((p) => p.tag === t.value)
+                    .map((proj) => (
+                      <ProjectCard
+                        key={proj.id}
+                        data={proj}
+                        language={language}
+                      />
+                    ))}
+            </div>
+          </TabsContent>
         ))}
-      </div>
-      <div className="flex items-center justify-center gap-1 text-sm md:text-base">
+      </Tabs>
+      <div className="flex justify-center items-center gap-1 text-sm md:text-base">
         <p>{textVariants.sections.projects.caption[language]}</p>
         <Link variant="secondary" href="https://github.com/luissshc29">
           <p>GitHub</p>

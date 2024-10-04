@@ -171,6 +171,40 @@ export const textVariants: TextVariants = {
         br: "Clique em qualquer projeto para saber os detalhes",
         us: "Click on any project to learn more details",
       },
+      tabs: [
+        {
+          id: 1,
+          value: "all",
+          text: {
+            br: "Todos",
+            us: "All",
+          },
+        },
+        {
+          id: 2,
+          value: "fullstack",
+          text: {
+            br: "Full Stack",
+            us: "Full Stack",
+          },
+        },
+        {
+          id: 3,
+          value: "frontend",
+          text: {
+            br: "Frontend",
+            us: "Frontend",
+          },
+        },
+        {
+          id: 4,
+          value: "backend",
+          text: {
+            br: "Backend",
+            us: "Backend",
+          },
+        },
+      ],
       caption: {
         br: "Lista completa no",
         us: "Full list on",
@@ -178,6 +212,7 @@ export const textVariants: TextVariants = {
       list: [
         {
           id: uuidv4(),
+          tag: "backend",
           title: {
             br: "Bike4Cash - API",
             us: "Bike4Cash - API",
@@ -200,6 +235,7 @@ export const textVariants: TextVariants = {
         },
         {
           id: uuidv4(),
+          tag: "fullstack",
           title: {
             br: "Bike4Cash - Página Web",
             us: "Bike4Cash - Webpage",
@@ -222,6 +258,7 @@ export const textVariants: TextVariants = {
         },
         {
           id: uuidv4(),
+          tag: "backend",
           title: {
             br: "API View - API",
             us: "API View - API",
@@ -244,6 +281,7 @@ export const textVariants: TextVariants = {
         },
         {
           id: uuidv4(),
+          tag: "fullstack",
           title: {
             br: "API View - Página Web",
             us: "API View - Webpage",
@@ -266,6 +304,7 @@ export const textVariants: TextVariants = {
         },
         {
           id: uuidv4(),
+          tag: "frontend",
           title: {
             br: "Catálogo Unicapas ®",
             us: "Unicapas® catalog",
@@ -287,6 +326,7 @@ export const textVariants: TextVariants = {
         },
         {
           id: uuidv4(),
+          tag: "fullstack",
           title: {
             br: "AuthSystem",
             us: "AuthSystem",
@@ -309,6 +349,7 @@ export const textVariants: TextVariants = {
         },
         {
           id: uuidv4(),
+          tag: "frontend",
           title: {
             br: "Pokédex",
             us: "Pokédex",
@@ -331,6 +372,7 @@ export const textVariants: TextVariants = {
         },
         {
           id: uuidv4(),
+          tag: "frontend",
           title: {
             br: "Bloco de notas",
             us: "Notepad",
@@ -353,6 +395,7 @@ export const textVariants: TextVariants = {
         },
         {
           id: uuidv4(),
+          tag: "frontend",
           title: {
             br: "Countries Wiki",
             us: "Countries Wiki",
@@ -375,6 +418,7 @@ export const textVariants: TextVariants = {
         },
         {
           id: uuidv4(),
+          tag: "frontend",
           title: {
             br: "React Supplements",
             us: "React Supplements",

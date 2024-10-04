@@ -4,6 +4,7 @@ import { Project } from "./Project";
 import { Social } from "./Social";
 import { HeaderOption } from "./HeaderOption";
 import { ThemeSelectorOption } from "./ThemeSelectorOption";
+import { Tab } from "./Tab";
 
 export type TextVariants = {
   sections: {
@@ -97,6 +98,7 @@ export type TextVariants = {
         br: string;
         us: string;
       };
+      tabs: Tab[];
       caption: {
         br: string;
         us: string;
