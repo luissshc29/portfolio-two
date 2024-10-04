@@ -46,7 +46,7 @@ export default function Projects() {
         </TabsList>
         {textVariants.sections.projects.tabs.map((t) => (
           <TabsContent value={t.value} key={t.id}>
-            <div className="justify-evenly items-center gap-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 opacity-100 mx-auto w-[90vw] animate-show-up [animation-duration:350ms]">
+            <div className="flex flex-col justify-start md:justify-evenly items-center gap-2 md:grid md:grid-cols-2 lg:grid-cols-3 opacity-100 mx-auto w-[90vw] min-h-[65vh] animate-show-up [animation-duration:350ms] md:min-h-[40vh]">
               {t.value === "all"
                 ? textVariants.sections.projects.list.map((proj) => (
                     <ProjectCard
