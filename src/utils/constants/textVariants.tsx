@@ -212,29 +212,6 @@ export const textVariants: TextVariants = {
       list: [
         {
           id: uuidv4(),
-          tag: "backend",
-          title: {
-            br: "Bike4Cash - API",
-            us: "Bike4Cash - API",
-          },
-          images: {
-            path: "/images/projects/bike4cash-api/",
-            list: ["1.png"],
-          },
-          description: {
-            br: "API Web para o Bike4Cash.",
-            us: "Web API for Bike4Cash.",
-          },
-          date: {
-            br: "14 Set. 2024",
-            us: "Sep. 14, 2024",
-          },
-          stacks: [6, 13, 12, 11],
-          url: "https://bike4cash-api.vercel.app/",
-          repository: "https://github.com/luissshc29/bike4cash--API",
-        },
-        {
-          id: uuidv4(),
           tag: "fullstack",
           title: {
             br: "Bike4Cash - Página Web",
@@ -255,29 +232,31 @@ export const textVariants: TextVariants = {
           stacks: [4, 6, 10, 11, 13],
           url: "https://bike4cash.vercel.app/",
           repository: "https://github.com/luissshc29/bike4cash",
+          complexity: 5,
         },
         {
           id: uuidv4(),
           tag: "backend",
           title: {
-            br: "API View - API",
-            us: "API View - API",
+            br: "Bike4Cash - API",
+            us: "Bike4Cash - API",
           },
           images: {
-            path: "/images/projects/api-view-url/",
+            path: "/images/projects/bike4cash-api/",
             list: ["1.png"],
           },
           description: {
-            br: "API Web com operações CRUD.",
-            us: "Web API with CRUD operations.",
+            br: "API Web para o Bike4Cash.",
+            us: "Web API for Bike4Cash.",
           },
           date: {
-            br: "28 Jun. 2024",
-            us: "Jun. 28, 2024",
+            br: "14 Set. 2024",
+            us: "Sep. 14, 2024",
           },
           stacks: [6, 13, 12, 11],
-          url: "https://api-view-url.vercel.app/",
-          repository: "https://github.com/luissshc29/API--api-view",
+          url: "https://bike4cash-api.vercel.app/",
+          repository: "https://github.com/luissshc29/bike4cash--API",
+          complexity: 4,
         },
         {
           id: uuidv4(),
@@ -301,6 +280,31 @@ export const textVariants: TextVariants = {
           stacks: [4, 6, 10, 13],
           url: "https://api-view-mu.vercel.app/",
           repository: "https://github.com/luissshc29/api-view",
+          complexity: 3,
+        },
+        {
+          id: uuidv4(),
+          tag: "backend",
+          title: {
+            br: "API View - API",
+            us: "API View - API",
+          },
+          images: {
+            path: "/images/projects/api-view-url/",
+            list: ["1.png"],
+          },
+          description: {
+            br: "API Web com operações CRUD.",
+            us: "Web API with CRUD operations.",
+          },
+          date: {
+            br: "28 Jun. 2024",
+            us: "Jun. 28, 2024",
+          },
+          stacks: [6, 13, 12, 11],
+          url: "https://api-view-url.vercel.app/",
+          repository: "https://github.com/luissshc29/API--api-view",
+          complexity: 3,
         },
         {
           id: uuidv4(),
@@ -323,6 +327,7 @@ export const textVariants: TextVariants = {
           },
           stacks: [4, 7, 6],
           url: "https://unicapas.com.br",
+          complexity: 1,
         },
         {
           id: uuidv4(),
@@ -346,6 +351,7 @@ export const textVariants: TextVariants = {
           stacks: [4, 6, 10, 11],
           url: "https://auth-system-iota.vercel.app/",
           repository: "https://github.com/luissshc29/Auth-system",
+          complexity: 3,
         },
         {
           id: uuidv4(),
@@ -369,6 +375,7 @@ export const textVariants: TextVariants = {
           stacks: [3, 7, 6, 10],
           url: "https://pokedex-omega-tan-81.vercel.app/",
           repository: "https://github.com/luissshc29/pokedex",
+          complexity: 2,
         },
         {
           id: uuidv4(),
@@ -392,6 +399,7 @@ export const textVariants: TextVariants = {
           stacks: [4, 6, 9, 10],
           url: "https://notepad-luissshc29.vercel.app/",
           repository: "https://github.com/luissshc29/Notepad",
+          complexity: 3,
         },
         {
           id: uuidv4(),
@@ -415,6 +423,7 @@ export const textVariants: TextVariants = {
           stacks: [4, 6, 10],
           url: "https://countries-wiki-tau.vercel.app/",
           repository: "https://github.com/luissshc29/Countries-Wiki",
+          complexity: 2,
         },
         {
           id: uuidv4(),
@@ -438,6 +447,7 @@ export const textVariants: TextVariants = {
           stacks: [3, 6, 7],
           url: "https://react-supplements.vercel.app/",
           repository: "https://github.com/luissshc29/react-supplements",
+          complexity: 1,
         },
       ],
     },
@@ -627,6 +637,10 @@ export const textVariants: TextVariants = {
           repo: {
             br: "Repositório",
             us: "Repository",
+          },
+          complexity: {
+            br: "Complexidade:",
+            us: "Complexity:",
           },
         },
       },

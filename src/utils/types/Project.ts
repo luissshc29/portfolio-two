@@ -20,4 +20,5 @@ export type Project = {
   stacks: number[];
   url: string;
   repository?: string;
+  complexity: number;
 };

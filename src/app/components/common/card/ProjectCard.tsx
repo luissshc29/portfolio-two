@@ -34,6 +34,7 @@ import { LuClock4 } from "react-icons/lu";
 import { Separator } from "@/shadcn/components/ui/separator";
 import { useHeaderContext } from "@/utils/context/HeaderContext";
 import { Project } from "@/utils/types/Project";
+import { IoStarOutline, IoStarSharp } from "react-icons/io5";
 
 export default function ProjectCard({
   data,
@@ -42,6 +43,24 @@ export default function ProjectCard({
   data: Project;
   language: "br" | "us";
 }) {
+  const complexityStars = [
+    {
+      value: 1,
+    },
+    {
+      value: 2,
+    },
+    {
+      value: 3,
+    },
+    {
+      value: 4,
+    },
+    {
+      value: 5,
+    },
+  ];
+
   const [showingOnTechContainer, setShowingOnTechContainer] = useState<
     "icons" | "texts"
   >("icons");
@@ -123,76 +142,105 @@ export default function ProjectCard({
                   <div>#{data.tag}</div>
                 </div>
               </div>
-              <div className="flex flex-col justify-center items-start gap-3 w-[calc(50%-2.5rem)] h-full text-base">
-                <div className="flex flex-col gap-1">
-                  <span className="font-bold">
+              <div className="flex flex-col justify-around items-start w-1/2 h-full">
+                <div className="flex flex-col justify-center items-start gap-3 w-full text-base">
+                  <div className="flex flex-col gap-1">
+                    <span className="font-bold">
+                      {
+                        textVariants.others.labels.projects.modal.description[
+                          language
+                        ]
+                      }
+                      :
+                    </span>
+                    <p className="text-neutral-700 dark:text-neutral-300">
+                      {data.description[language]}
+                    </p>
+                  </div>
+                  <Separator />
+                  <div className="flex justify-start items-center gap-2 w-full">
+                    <span className="w-fit font-bold">
+                      {
+                        textVariants.others.labels.projects.modal.stacks[
+                          language
+                        ]
+                      }
+                      :
+                    </span>
+                    <div
+                      className={`tech flex h-8 w-2/3 items-center justify-center gap-1 ${showingOnTechContainer === "icons" ? "" : "flipped"}`}
+                    >
+                      <div className="relative flex justify-center items-center w-full h-full tech-inner">
+                        <div className="absolute flex justify-start gap-2 w-full tech-front text-2xl">
+                          {projectStacks.map((stack) => (
+                            <p key={stack.id}>{stack.component}</p>
+                          ))}
+                        </div>
+                        <div className="absolute flex flex-wrap justify-start gap-x-2 w-full tech-back font-medium text-base">
+                          {projectStacks.map((stack) => (
+                            <p key={stack.id}>{stack.name}</p>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                    <div className="w-fit">
+                      {showingOnTechContainer === "icons" ? (
+                        <FiInfo
+                          className="text-xl hover:cursor-pointer"
+                          onClick={() => setShowingOnTechContainer("texts")}
+                        />
+                      ) : (
+                        <FiXCircle
+                          className="text-xl hover:cursor-pointer"
+                          onClick={() => setShowingOnTechContainer("icons")}
+                        />
+                      )}
+                    </div>
+                  </div>
+                  <Separator />
+                  {data.repository && (
+                    <div className="flex items-center gap-1">
+                      <span className="font-bold">
+                        {
+                          textVariants.others.labels.projects.modal.repo[
+                            language
+                          ]
+                        }
+                        :
+                      </span>
+                      <Link
+                        variant="tertiary"
+                        href={data.repository}
+                        className="text-base"
+                      >
+                        {data.repository}
+                        <FiLink />
+                      </Link>
+                    </div>
+                  )}
+                </div>
+                <div className="flex items-center gap-2">
+                  <p>
                     {
-                      textVariants.others.labels.projects.modal.description[
+                      textVariants.others.labels.projects.modal.complexity[
                         language
                       ]
                     }
-                    :
-                  </span>
-                  <p className="text-neutral-700 dark:text-neutral-300">
-                    {data.description[language]}
                   </p>
-                </div>
-                <Separator />
-                <div className="flex justify-start items-center gap-2 w-full">
-                  <span className="w-fit font-bold">
-                    {textVariants.others.labels.projects.modal.stacks[language]}
-                    :
-                  </span>
-                  <div
-                    className={`tech flex h-8 w-2/3 items-center justify-center gap-1 ${showingOnTechContainer === "icons" ? "" : "flipped"}`}
-                  >
-                    <div className="relative flex justify-center items-center w-full h-full tech-inner">
-                      <div className="absolute flex justify-start gap-2 w-full tech-front text-2xl">
-                        {projectStacks.map((stack) => (
-                          <p key={stack.id}>{stack.component}</p>
-                        ))}
+                  <div className="flex items-center gap-1 text-lg">
+                    {complexityStars.map((item) => (
+                      <div key={item.value}>
+                        {item.value <= data.complexity ? (
+                          <IoStarSharp className="text-black dark:text-white" />
+                        ) : (
+                          <IoStarSharp className="opacity-20 dark:opacity-10" />
+                        )}
                       </div>
-                      <div className="absolute flex flex-wrap justify-start gap-x-2 w-full tech-back font-medium text-base">
-                        {projectStacks.map((stack) => (
-                          <p key={stack.id}>{stack.name}</p>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                  <div className="w-fit">
-                    {showingOnTechContainer === "icons" ? (
-                      <FiInfo
-                        className="text-xl hover:cursor-pointer"
-                        onClick={() => setShowingOnTechContainer("texts")}
-                      />
-                    ) : (
-                      <FiXCircle
-                        className="text-xl hover:cursor-pointer"
-                        onClick={() => setShowingOnTechContainer("icons")}
-                      />
-                    )}
+                    ))}
                   </div>
                 </div>
-                <Separator />
-                {data.repository && (
-                  <div className="flex items-center gap-1">
-                    <span className="font-bold">
-                      {textVariants.others.labels.projects.modal.repo[language]}
-                      :
-                    </span>
-                    <Link
-                      variant="tertiary"
-                      href={data.repository}
-                      className="text-base"
-                    >
-                      {data.repository}
-                      <FiLink />
-                    </Link>
-                  </div>
-                )}
               </div>
             </div>
-            <DialogFooter></DialogFooter>
           </DialogContent>
         </Dialog>
 
@@ -216,7 +264,7 @@ export default function ProjectCard({
             className="[touch-action:manipulation] [-webkit-overflow-scrolling:touch]"
             id="drawer-content"
           >
-            <div className="z-[1500] mx-auto pt-4 pb-6 w-[90%] min-h-fit">
+            <div className="z-[1500] mx-auto pt-4 pb-6 w-[90%] h-fit max-h-[70vh] overflow-scroll">
               <DrawerHeader className="gap-0 w-fit">
                 <DrawerTitle className="font-title text-xl md:text-2xl">
                   {data.title[language]}
@@ -261,7 +309,7 @@ export default function ProjectCard({
                     <div>#{data.tag}</div>
                   </div>
                 </div>
-                <div className="flex flex-col justify-center items-start gap-1.5 md:gap-3 w-full md:w-1/2 h-full text-base">
+                <div className="flex flex-col justify-around items-start gap-1.5 md:gap-3 w-full md:w-1/2 h-full text-base">
                   <div className="flex flex-col gap-[2px]">
                     <span className="font-bold text-sm md:text-base">
                       {
@@ -336,6 +384,27 @@ export default function ProjectCard({
                       </Link>
                     </div>
                   )}
+                  <Separator />
+                  <div className="flex items-center gap-2 my-2 text-sm md:text-base">
+                    <p>
+                      {
+                        textVariants.others.labels.projects.modal.complexity[
+                          language
+                        ]
+                      }
+                    </p>
+                    <div className="flex items-center gap-1 text-base">
+                      {complexityStars.map((item) => (
+                        <div key={item.value}>
+                          {item.value <= data.complexity ? (
+                            <IoStarSharp className="text-black dark:text-white" />
+                          ) : (
+                            <IoStarSharp className="opacity-20 dark:opacity-10" />
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

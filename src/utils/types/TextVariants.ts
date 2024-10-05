@@ -185,6 +185,10 @@ export type TextVariants = {
             br: string;
             us: string;
           };
+          complexity: {
+            br: string;
+            us: string;
+          };
         };
       };
       contacts: {
