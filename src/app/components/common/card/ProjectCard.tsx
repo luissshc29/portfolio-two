@@ -233,7 +233,7 @@ export default function ProjectCard({
                         {item.value <= data.complexity ? (
                           <IoStarSharp className="text-black dark:text-white" />
                         ) : (
-                          <IoStarSharp className="opacity-20 dark:opacity-[.15]" />
+                          <IoStarSharp className="opacity-[.15]" />
                         )}
                       </div>
                     ))}
@@ -399,7 +399,7 @@ export default function ProjectCard({
                           {item.value <= data.complexity ? (
                             <IoStarSharp className="text-black dark:text-white" />
                           ) : (
-                            <IoStarSharp className="opacity-20 dark:opacity-[.15]" />
+                            <IoStarSharp className="opacity-[.15]" />
                           )}
                         </div>
                       ))}
