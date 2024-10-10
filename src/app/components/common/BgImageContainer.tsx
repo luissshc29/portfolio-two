@@ -29,11 +29,9 @@ export default function BgImageContainer({
 
   // Checking if there's already a hash on the url and scrolling to it
   useEffect(() => {
-    if (window) {
-      const hash = window.location.hash.substring(1);
-      if (hash) {
-        window.location.hash = hash;
-      }
+    const hash = window.location.hash.substring(1);
+    if (hash) {
+      window.location.hash = hash;
     }
   }, []);
 
