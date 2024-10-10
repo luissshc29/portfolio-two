@@ -68,26 +68,30 @@ export default function PageLoader({
       <div
         className={`flex h-screen w-screen flex-col items-center justify-center gap-2 bg-white dark:bg-black md:gap-4 ${animate}`}
       >
-        <div className="relative flex flex-col justify-center items-center w-fit h-fit scale-[.8] md:scale-100">
+        <div className="relative flex h-fit w-fit scale-[.8] flex-col items-center justify-center md:scale-100">
           <img
             src="/images/logo/logo-white-small.png"
             alt="Small white logo"
-            className="dark:inline-block absolute hidden w-[35px] h-[35px]"
+            className="absolute hidden h-[35px] w-[35px] dark:inline-block"
+            loading="eager"
           />
           <img
             src="/images/logo/logo-black-small.png"
             alt="Small black logo"
-            className="inline-block absolute dark:hidden w-[35px] h-[35px]"
+            className="absolute inline-block h-[35px] w-[35px] dark:hidden"
+            loading="eager"
           />
           <img
             src="/images/loading/loading-circle-white.svg"
             alt="Loading image"
-            className="dark:block hidden"
+            className="hidden dark:block"
+            loading="eager"
           />
           <img
             src="/images/loading/loading-circle-black.svg"
             alt="Loading image"
             className="block dark:hidden"
+            loading="eager"
           />
         </div>
         <div className="flex items-center gap-2">
@@ -97,12 +101,14 @@ export default function PageLoader({
           <img
             src="/images/loading/loading-dots-white.svg"
             alt="Loading image"
-            className="dark:block hidden"
+            className="hidden dark:block"
+            loading="eager"
           />
           <img
             src="/images/loading/loading-dots-black.svg"
             alt="Loading image"
             className="block dark:hidden"
+            loading="eager"
           />
         </div>
       </div>

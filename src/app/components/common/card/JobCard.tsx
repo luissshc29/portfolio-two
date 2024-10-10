@@ -30,6 +30,7 @@ export default function JobCard({
           src={data.logo}
           className="w-1/6 rounded-sm md:w-[10%] lg:w-1/6"
           alt={data.company[language]}
+          loading="lazy"
         />
       </CardHeader>
       <Separator className="mx-auto mb-4 w-[calc(100%-2rem)] bg-neutral-800 md:w-[calc(100%-3rem)]" />
