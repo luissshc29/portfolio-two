@@ -14,6 +14,7 @@ import { HiMagnifyingGlass } from "react-icons/hi2";
 import { IoMdMenu } from "react-icons/io";
 import { useHeaderContext } from "@/utils/context/HeaderContext";
 import { useTheme } from "next-themes";
+import { useInView } from "react-intersection-observer";
 
 export default function Header() {
   const { language } = useLanguageContext();
@@ -28,6 +29,7 @@ export default function Header() {
   );
 
   const { resolvedTheme } = useTheme();
+  const { ref, inView } = useInView();
 
   function handleStyleOnPageScroll() {
     if (window.scrollY > headerYPosition) {
@@ -46,6 +48,13 @@ export default function Header() {
             backgroundColor: "#000",
             padding: "0em 2em",
           });
+
+      if (!inView) {
+        setStyle((prev) => ({
+          ...prev,
+          opacity: "100%",
+        }));
+      }
     } else {
       setStyle(undefined);
     }
@@ -60,7 +69,7 @@ export default function Header() {
     window?.addEventListener("scroll", () => {
       handleStyleOnPageScroll();
     });
-  }, [resolvedTheme]);
+  }, [resolvedTheme, inView]);
 
   if (headerVisible) {
     return (

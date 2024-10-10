@@ -8,17 +8,17 @@ import { ImLoop2 } from "react-icons/im";
 import { useLanguageContext } from "@/utils/context/LanguageContext";
 
 export default function LanguageSwitch() {
-  const { language, setLanguage } = useLanguageContext();
+  const { language, changeLanguage } = useLanguageContext();
 
   const generalButtonClasses = "duration-300 hover:cursor-pointer";
   const activeButtonClasses = "hover:cursor-pointer duration-300 scale-[1.3]";
 
-  function changeLanguage() {
+  function alterLanguage() {
     if (language === "br") {
-      setLanguage?.("us");
+      changeLanguage?.("us");
       document.title = "Luis Henrique | Web Developer";
     } else {
-      setLanguage?.("br");
+      changeLanguage?.("br");
       document.title = "Luis Henrique | Desenvolvedor Web";
     }
   }
@@ -35,7 +35,7 @@ export default function LanguageSwitch() {
           ["opacity-100"]: language === "br",
           ["opacity-30 dark:opacity-50"]: language === "us",
         })}
-        onClick={() => changeLanguage()}
+        onClick={() => alterLanguage()}
       >
         {brFlag}
       </div>
@@ -54,7 +54,7 @@ export default function LanguageSwitch() {
           ["opacity-100"]: language === "us",
           ["opacity-30 dark:opacity-50"]: language === "br",
         })}
-        onClick={() => changeLanguage()}
+        onClick={() => alterLanguage()}
       >
         {usFlag}
       </div>

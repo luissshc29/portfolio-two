@@ -13,6 +13,7 @@ import { useLanguageContext } from "@/utils/context/LanguageContext";
 import { useTheme } from "next-themes";
 import React, { Fragment, useEffect, useState } from "react";
 import { IoMdCheckmarkCircle } from "react-icons/io";
+import { MdOutlineQuestionMark } from "react-icons/md";
 
 export default function ThemeSelector() {
   const { language } = useLanguageContext();
@@ -32,7 +33,9 @@ export default function ThemeSelector() {
           {
             textVariants.others.themeSelector.options.find(
               (item) => item.text.us.toLowerCase() === theme,
-            )?.icon
+            )?.icon || (
+              <MdOutlineQuestionMark />
+            )
           }
         </DropdownMenuTrigger>
         <DropdownMenuContent
