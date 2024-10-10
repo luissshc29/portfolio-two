@@ -37,7 +37,7 @@ export default function BgImageContainer({
 
   return (
     <div
-      className={`relative min-h-[120vh] w-screen overflow-clip md:min-h-[110vh]`}
+      className={`relative min-h-screen w-screen overflow-clip md:min-h-[110vh]`}
       {...rest}
       ref={ref}
       id={id}
@@ -54,7 +54,7 @@ export default function BgImageContainer({
       />
       <div className="absolute z-[-9] h-full min-h-screen w-screen bg-white bg-opacity-[.94] dark:bg-black dark:bg-opacity-[.92]" />
       <div
-        className={`relative flex min-h-[120vh] w-full flex-col items-center justify-center gap-8 p-8 text-center transition-all duration-1000 md:gap-16 md:p-10`}
+        className={`relative flex min-h-screen w-full flex-col items-center justify-center gap-8 p-8 text-center transition-all duration-1000 md:gap-16 md:p-10`}
         style={
           // Conditional to fix Header desapearing on scroll
           id !== "welcome"
