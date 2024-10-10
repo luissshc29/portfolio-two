@@ -23,15 +23,17 @@ export default function BgImageContainer({
   });
   useEffect(() => {
     if (inView) {
-      window.history.pushState(null, "", `#${id}`);
+      if (window) window.history.pushState(null, "", `#${id}`);
     }
   }, [inView]);
 
   // Checking if there's already a hash on the url and scrolling to it
   useEffect(() => {
-    const hash = window.location.hash.substring(1);
-    if (hash) {
-      window.location.hash = hash;
+    if (window) {
+      const hash = window.location.hash.substring(1);
+      if (hash) {
+        window.location.hash = hash;
+      }
     }
   }, []);
 

@@ -6,6 +6,7 @@ import {
   ReactNode,
   SetStateAction,
   useContext,
+  useEffect,
   useState,
 } from "react";
 
@@ -19,13 +20,15 @@ export default function LanguageProvider({
 }: {
   children: ReactNode;
 }) {
-  const url = new URL(window.location.href);
-  const langParams = url.searchParams.get("lang");
-  const isValidLangParams = langParams === "br" || langParams === "us";
-
-  const [language, setLanguage] = useState<"br" | "us">(
-    isValidLangParams ? langParams : "br",
-  );
+  const [language, setLanguage] = useState<"br" | "us">("br");
+  useEffect(() => {
+    if (window) {
+      const url = new URL(window.location.href);
+      const langParams = url.searchParams.get("lang");
+      const isValidLangParams = langParams === "br" || langParams === "us";
+      setLanguage(isValidLangParams ? langParams : "br");
+    }
+  }, []);
   return (
     <languageContext.Provider value={{ language, setLanguage }}>
       {children}
@@ -37,11 +40,13 @@ export function useLanguageContext() {
   const { language, setLanguage } = useContext(languageContext);
 
   function changeLanguage(lang: "br" | "us") {
-    const url = new URL(window.location.href);
-    url.searchParams.set("lang", lang);
+    if (window) {
+      const url = new URL(window.location.href);
+      url.searchParams.set("lang", lang);
 
-    window.history.pushState(null, "", url.toString());
-    setLanguage?.(lang);
+      window.history.pushState(null, "", url.toString());
+      setLanguage?.(lang);
+    }
   }
 
   return {
