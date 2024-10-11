@@ -11,9 +11,8 @@ const loadingTexts = [
   { br: "Carregando conteúdo", us: "Loading content" },
   { br: "Em processamento", us: "Processing" },
   { br: "Configurando sua experiência", us: "Setting up your experience" },
-  { br: "Carregando recursos", us: "Loading resources" }
+  { br: "Carregando recursos", us: "Loading resources" },
 ];
-
 
 // Component that makes the page render only when fully loaded
 export default function PageLoader({
@@ -27,12 +26,14 @@ export default function PageLoader({
   const [animate, setAnimate] = useState<string>("");
 
   useEffect(() => {
-    const url = new URL(window.location.href)
-    const langParam = url.searchParams.get('lang')
-    const isValidLangParam = langParam === 'br' || langParam === 'us'
+    const url = new URL(window.location.href);
+    const langParam = url.searchParams.get("lang");
+    const isValidLangParam = langParam === "br" || langParam === "us";
     // Selects a random loading text
     const randomText =
-      loadingTexts[Math.floor(Math.random() * loadingTexts.length)][isValidLangParam ? langParam : 'br'];
+      loadingTexts[Math.floor(Math.random() * loadingTexts.length)][
+        isValidLangParam ? langParam : "br"
+      ];
     setLoadingText(randomText);
 
     // Sets loading false when window finishes loading
@@ -91,22 +92,26 @@ export default function PageLoader({
             loading="eager"
           />
         </div>
-        <div className="flex items-center gap-2">
-          <p className="text-black dark:text-white duration-500 transition-all">
-            {loadingText}
-          </p>
-          <img
-            src="/images/loading/loading-dots-white.svg"
-            alt="Loading image"
-            className="hidden dark:block"
-            loading="eager"
-          />
-          <img
-            src="/images/loading/loading-dots-black.svg"
-            alt="Loading image"
-            className="block dark:hidden"
-            loading="eager"
-          />
+        <div className="flex h-[18px] items-center gap-2">
+          {loadingText && (
+            <>
+              <p className="text-black transition-all duration-500 dark:text-white">
+                {loadingText}
+              </p>
+              <img
+                src="/images/loading/loading-dots-white.svg"
+                alt="Loading image"
+                className="hidden dark:block"
+                loading="eager"
+              />
+              <img
+                src="/images/loading/loading-dots-black.svg"
+                alt="Loading image"
+                className="block dark:hidden"
+                loading="eager"
+              />
+            </>
+          )}
         </div>
       </div>
     );

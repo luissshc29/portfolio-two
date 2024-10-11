@@ -9,6 +9,7 @@ import { MdContentCopy } from "react-icons/md";
 import { IoMdCall } from "react-icons/io";
 import { HiOutlineMail } from "react-icons/hi";
 import { useToast } from "@/shadcn/components/ui/use-toast";
+import { Alert, AlertTitle } from "@/shadcn/components/ui/alert";
 
 export default function Contacts() {
   const { language } = useLanguageContext();
@@ -38,12 +39,12 @@ export default function Contacts() {
           {textVariants.sections.contacts.subtitle[language]}
         </div>
       </div>
-      <div className="flex md:flex-row flex-col gap-6">
+      <div className="flex flex-col gap-6 md:flex-row">
         <div className="flex flex-col gap-2">
-          <span className="font-semibold text-sm md:text-base">
+          <span className="text-sm font-semibold md:text-base">
             {textVariants.others.labels.contacts.social[language]}:
           </span>
-          <div className="flex flex-row justify-center items-center gap-2">
+          <div className="flex flex-row items-center justify-center gap-2">
             {textVariants.sections.contacts.info.social.map((item) => (
               <div
                 className={`icon relative flex w-fit flex-col items-center rounded-[30px] p-2.5 transition-all duration-200 ease-in-out hover:cursor-pointer ${item.text.toLowerCase()}`}
@@ -71,8 +72,8 @@ export default function Contacts() {
           </div>
         </div>
         <div className="flex flex-col items-start gap-4">
-          <div className="flex flex-col justify-center items-start gap-[2px]">
-            <span className="font-semibold text-sm md:text-base">
+          <div className="flex flex-col items-start justify-center gap-[2px]">
+            <span className="text-sm font-semibold md:text-base">
               {textVariants.others.labels.contacts.phone[language]}:
             </span>
             <div className="flex justify-center gap-2">
@@ -93,8 +94,8 @@ export default function Contacts() {
               </a>
             </div>
           </div>
-          <div className="flex flex-col justify-center items-start gap-[2px]">
-            <span className="font-semibold text-sm md:text-base">
+          <div className="flex flex-col items-start justify-center gap-[2px]">
+            <span className="text-sm font-semibold md:text-base">
               {textVariants.others.labels.contacts.email[language]}:
             </span>
             <div className="flex justify-center gap-2">
@@ -117,9 +118,11 @@ export default function Contacts() {
           </div>
         </div>
       </div>
-      <div className="my-6 text-sm md:text-base">
-        {textVariants.sections.contacts.form.text[language]}
-      </div>
+      <Alert className="w-fit">
+        <AlertTitle>
+          {textVariants.sections.contacts.form.text[language]}
+        </AlertTitle>
+      </Alert>
     </BgImageContainer>
   );
 }

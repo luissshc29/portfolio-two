@@ -14,6 +14,8 @@ import {
   TabsList,
   TabsTrigger,
 } from "@/shadcn/components/ui/tabs";
+import { Alert, AlertTitle } from "@/shadcn/components/ui/alert";
+import { FiInfo } from "react-icons/fi";
 
 export default function Projects() {
   const { language } = useLanguageContext();
@@ -28,12 +30,12 @@ export default function Projects() {
         mainText={textVariants.sections.projects.title.main[language]}
         bgText={textVariants.sections.projects.title.bg[language]}
       />
-      <p className="text-sm md:text-base">
+      <p className="flex w-fit items-center gap-2 text-left text-sm md:text-base">
         {textVariants.sections.projects.subtitle[language]}
       </p>
 
       <Tabs defaultValue="all" className="w-fit">
-        <TabsList className="grid grid-cols-4 grid-row-1 mb-5 p-1 w-full h-fit">
+        <TabsList className="grid-row-1 mb-5 grid h-fit w-full grid-cols-4 p-1">
           {textVariants.sections.projects.tabs.map((t) => (
             <TabsTrigger
               key={t.id}
@@ -46,7 +48,7 @@ export default function Projects() {
         </TabsList>
         {textVariants.sections.projects.tabs.map((t) => (
           <TabsContent value={t.value} key={t.id}>
-            <div className="flex flex-col justify-start md:justify-evenly items-center gap-2 md:grid md:grid-cols-2 lg:grid-cols-3 opacity-100 mx-auto w-[90vw] min-h-[65vh] animate-show-up [animation-duration:350ms] md:min-h-[40vh]">
+            <div className="mx-auto flex min-h-[65vh] w-[90vw] animate-show-up flex-col items-center justify-start gap-2 opacity-100 [animation-duration:350ms] md:grid md:min-h-[40vh] md:grid-cols-2 md:justify-evenly lg:grid-cols-3">
               {t.value === "all"
                 ? textVariants.sections.projects.list.map((proj) => (
                     <ProjectCard
@@ -68,13 +70,16 @@ export default function Projects() {
           </TabsContent>
         ))}
       </Tabs>
-      <div className="flex justify-center items-center gap-1 text-sm md:text-base">
-        <p>{textVariants.sections.projects.caption[language]}</p>
-        <Link variant="secondary" href="https://github.com/luissshc29">
-          <p>GitHub</p>
-          <FaGithub />
-        </Link>
-      </div>
+      <Alert className="w-fit">
+        <AlertTitle className="flex items-center justify-center gap-1 text-sm md:text-base">
+          <FiInfo className="text-lg" />
+          <p>{textVariants.sections.projects.caption[language]}</p>
+          <Link variant="secondary" href="https://github.com/luissshc29">
+            <p>GitHub</p>
+            <FaGithub />
+          </Link>
+        </AlertTitle>
+      </Alert>
     </BgImageContainer>
   );
 }

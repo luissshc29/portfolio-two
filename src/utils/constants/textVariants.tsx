@@ -168,8 +168,8 @@ export const textVariants: TextVariants = {
         },
       },
       subtitle: {
-        br: "Clique em qualquer projeto para saber os detalhes",
-        us: "Click on any project to learn more details",
+        br: "Clique em qualquer projeto para saber os detalhes.",
+        us: "Click on any project to learn more details.",
       },
       tabs: [
         {
@@ -206,8 +206,8 @@ export const textVariants: TextVariants = {
         },
       ],
       caption: {
-        br: "Lista completa no",
-        us: "Full list on",
+        br: "Você pode ver a lista completa no",
+        us: "Check out the full list on",
       },
       list: [
         {
@@ -521,13 +521,13 @@ export const textVariants: TextVariants = {
       form: {
         text: {
           br: (
-            <div className="flex flex-wrap justify-center items-center gap-1">
-              <FiInfo className="text-base" />
-              Você também pode preencher um formulário,{" "}
+            <div className="flex flex-wrap items-center justify-center gap-1">
+              <FiInfo className="text-lg" /> Você também pode preencher um
+              formulário,{" "}
               <a
                 href="https://docs.google.com/forms/d/e/1FAIpQLSeoaZv_XB15-3QHgqdHm-qDVGggPj1XSYlA0wIvf4L9BysZdw/viewform"
                 target="_blank"
-                className="flex items-center gap-[2px] w-fit underline"
+                className="flex w-fit items-center gap-[2px] underline"
               >
                 clicando aqui
                 <RiExternalLinkLine className="text-lg" />
@@ -535,12 +535,12 @@ export const textVariants: TextVariants = {
             </div>
           ),
           us: (
-            <div className="flex flex-wrap justify-center items-center gap-1">
-              <FiInfo className="text-base" /> You can also fill out a form, by{" "}
+            <div className="flex flex-wrap items-center justify-center gap-1">
+              <FiInfo className="text-lg" /> You can also fill out a form, by{" "}
               <a
                 href="https://docs.google.com/forms/d/e/1FAIpQLSfr4SLa31PNH489ktl2jPJriFJl3P-se7zCW1X3VzeLZAI8Aw/viewform"
                 target="_blank"
-                className="flex items-center gap-[2px] w-fit underline"
+                className="flex w-fit items-center gap-[2px] underline"
               >
                 clicking here
                 <RiExternalLinkLine className="text-lg" />

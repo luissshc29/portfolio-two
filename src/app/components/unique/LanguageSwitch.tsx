@@ -6,6 +6,7 @@ import { usFlag } from "@/utils/svg/us";
 import classNames from "classnames";
 import { ImLoop2 } from "react-icons/im";
 import { useLanguageContext } from "@/utils/context/LanguageContext";
+import { PiArrowFatLinesRightFill } from "react-icons/pi";
 
 export default function LanguageSwitch() {
   const { language, changeLanguage } = useLanguageContext();
@@ -41,10 +42,10 @@ export default function LanguageSwitch() {
         className={
           language === "us"
             ? "transition-all duration-1000 [transform:rotateZ(360deg)]"
-            : "transition-all duration-1000 [transform:rotateZ(-360deg)]"
+            : "transition-all duration-1000 [transform:rotateZ(-180deg)]"
         }
       >
-        <ImLoop2 className="text-lg md:text-xl" />
+        <PiArrowFatLinesRightFill className="text-lg md:text-xl" />
       </div>
       <div
         className={classNames(generalButtonClasses, {

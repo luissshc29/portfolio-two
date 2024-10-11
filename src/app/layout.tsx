@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import LanguageProvider from "@/utils/context/LanguageContext";
-import Footer from "./components/unique/Footer";
 import { Toaster } from "@/shadcn/components/ui/toaster";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -49,24 +48,26 @@ export const metadata: Metadata = {
     "Next.js Developer",
     "Typescript Developer",
     "MySQL Database",
-    "Web Performance"
+    "Web Performance",
   ],
-  applicationName: 'Portfólio Luis Henrique - Desenvolvedor Web',
-  creator: 'Luis Henrique',
-  publisher: 'Vercel',
-  alternates: {canonical: 'https://luishenrique-dev.com.br/'},
+  applicationName: "Portfólio Luis Henrique - Desenvolvedor Web",
+  creator: "Luis Henrique",
+  publisher: "Vercel",
+  alternates: { canonical: "https://luishenrique-dev.com.br/" },
   robots: "index, follow",
   openGraph: {
     type: "website",
     url: "https://luishenrique-dev.com.br/",
     title: "Luis Henrique | Desenvolvedor Web",
-    description: "Desenvolvedor web com expertise em HTML5, CSS3, React, Next.js, MySQL, GraphQL e integração de APIs. Especialista em SEO, acessibilidade e performance de websites.",
+    description:
+      "Desenvolvedor web com expertise em HTML5, CSS3, React, Next.js, MySQL, GraphQL e integração de APIs. Especialista em SEO, acessibilidade e performance de websites.",
     siteName: "Portfólio Luis Henrique - Desenvolvedor Web",
-    images: [{
-      url: "https://i.imgur.com/cUgrAeU.png",
-    }],
+    images: [
+      {
+        url: "https://i.imgur.com/cUgrAeU.png",
+      },
+    ],
   },
-
 };
 
 export default function RootLayout({
@@ -91,7 +92,6 @@ export default function RootLayout({
               <PageLoader>
                 {children}
                 <Toaster />
-                <Footer />
               </PageLoader>
 
               <Analytics />
