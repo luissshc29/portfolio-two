@@ -28,6 +28,14 @@ export default function LanguageProvider({
       const isValidLangParams = langParams === "br" || langParams === "us";
       setLanguage(isValidLangParams ? langParams : "br");
     }
+
+    if (document) {
+      if (language === "br") {
+        document.title = "Luis Henrique | Web Developer";
+      } else {
+        document.title = "Luis Henrique | Desenvolvedor Web";
+      }
+    }
   }, []);
   return (
     <languageContext.Provider value={{ language, setLanguage }}>

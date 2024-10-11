@@ -16,10 +16,8 @@ export default function LanguageSwitch() {
   function alterLanguage() {
     if (language === "br") {
       changeLanguage?.("us");
-      document.title = "Luis Henrique | Web Developer";
     } else {
       changeLanguage?.("br");
-      document.title = "Luis Henrique | Desenvolvedor Web";
     }
   }
 
