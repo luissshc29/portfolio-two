@@ -92,7 +92,7 @@ export default function AudioPlayer({ url }: { url: string }) {
   return (
     <div>
       <div className="flex h-10 w-[280px] items-center justify-center rounded-sm border-[2px] border-neutral-600 bg-transparent p-2 md:w-[350px] lg:w-[500px]">
-        <div className="flex w-full items-center justify-evenly gap-1 text-lg md:text-2xl">
+        <div className="flex w-full items-center justify-between gap-1 text-lg md:text-2xl">
           <audio
             ref={audioRef}
             src={url}
@@ -111,15 +111,20 @@ export default function AudioPlayer({ url }: { url: string }) {
               <IoIosPlay />
             )}
           </button>
-          <div className="flex w-fit items-center gap-[1px] text-xs md:text-sm">
-            {Math.floor(audioCurrentTime / 60)}:
-            {Math.floor(audioCurrentTime % 60)
-              .toString()
-              .padStart(2, "0")}{" "}
-            / {Math.floor(audioDuration / 60)}:
-            {Math.floor(audioDuration % 60)
-              .toString()
-              .padStart(2, "0")}
+          <div className="mx-auto flex w-[25%] items-center justify-between justify-items-center gap-[1px] text-xs md:text-sm lg:w-[15%]">
+            <p className="w-4/5">
+              {Math.floor(audioCurrentTime / 60)}:
+              {Math.floor(audioCurrentTime % 60)
+                .toString()
+                .padStart(2, "0")}{" "}
+            </p>
+            <p className="w-1/5">/</p>
+            <p className="w-4/5">
+              {Math.floor(audioDuration / 60)}:
+              {Math.floor(audioDuration % 60)
+                .toString()
+                .padStart(2, "0")}
+            </p>
           </div>
           <Slider
             max={audioDuration}
@@ -131,7 +136,7 @@ export default function AudioPlayer({ url }: { url: string }) {
             onPointerUp={() => handleSeekEnd()}
             onTouchStart={() => handleSeekStart()}
             onTouchEnd={() => handleSeekEnd()}
-            className="w-1/2 scale-[.8] hover:cursor-pointer lg:w-2/3 lg:scale-100"
+            className="w-2/3 scale-[.8] hover:cursor-pointer lg:w-2/3 lg:scale-100"
           />
           <button onClick={() => handleMute()}>
             {isMuted ? <IoVolumeMute /> : <IoVolumeHigh />}
