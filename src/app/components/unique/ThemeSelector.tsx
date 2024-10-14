@@ -39,7 +39,7 @@ export default function ThemeSelector() {
           }
         </DropdownMenuTrigger>
         <DropdownMenuContent
-          className="flex flex-col justify-evenly w-[45vw] md:w-[15vw] min-h-[20vh] dark:font-normal font-bold"
+          className="flex flex-col justify-evenly w-[45vw] md:w-[15vw] min-h-[20vh]"
           id="theme-selector"
         >
           {textVariants.others.themeSelector.options.map((option) => (
