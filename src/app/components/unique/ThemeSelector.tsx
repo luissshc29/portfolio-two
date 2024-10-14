@@ -39,13 +39,13 @@ export default function ThemeSelector() {
           }
         </DropdownMenuTrigger>
         <DropdownMenuContent
-          className="flex flex-col justify-evenly w-[45vw] md:w-[15vw] min-h-[20vh]"
+          className="flex flex-col justify-evenly w-[45vw] md:w-[15vw] min-h-[20vh] dark:font-normal font-bold"
           id="theme-selector"
         >
           {textVariants.others.themeSelector.options.map((option) => (
             <Fragment key={option.id}>
               <DropdownMenuItem
-                className="flex items-center gap-2 hover:bg-neutral-400 dark:hover:bg-neutral-700 hover:cursor-pointer"
+                className="flex items-center gap-2 hover:bg-neutral-400 dark:hover:bg-neutral-700 z-[1001] hover:cursor-pointer"
                 onClick={() => setTheme(option.text.us.toLowerCase())}
               >
                 <>
@@ -60,7 +60,7 @@ export default function ThemeSelector() {
               </DropdownMenuItem>
               {option.id !==
               textVariants.others.themeSelector.options.length ? (
-                <Separator className="z-[1001] bg-neutral-400 dark:bg-neutral-700 mx-auto w-[95%]" />
+                <Separator className="z-[1001] bg-neutral-500 dark:bg-neutral-700 mx-auto w-[95%]" />
               ) : (
                 ""
               )}

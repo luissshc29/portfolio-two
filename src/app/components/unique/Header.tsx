@@ -33,22 +33,12 @@ export default function Header() {
 
   function handleStyleOnPageScroll() {
     if (window.scrollY > headerYPosition) {
-      resolvedTheme === "light"
-        ? setStyle({
+        setStyle({
             position: "fixed",
             top: 0,
             left: 0,
-            backgroundColor: "#fff",
             padding: "0em 2em",
           })
-        : setStyle({
-            position: "fixed",
-            top: 0,
-            left: 0,
-            backgroundColor: "#000",
-            padding: "0em 2em",
-          });
-
       if (!inView) {
         setStyle((prev) => ({
           ...prev,
@@ -74,13 +64,13 @@ export default function Header() {
   if (headerVisible) {
     return (
       <div
-        className="z-[999] flex h-[8vh] w-full flex-wrap-reverse items-center justify-around gap-4 py-1 duration-300 md:h-[10vh]"
+        className={`z-[999] relative flex h-[9vh] w-full flex-wrap-reverse items-center justify-around gap-4 py-1 duration-300 md:h-[10vh] before:absolute before:left-0 before:top-0 before:z-[51] before:h-[9vh] before:w-full before:bg-white before:dark:bg-black before:bg-opacity-70 dark:before:bg-opacity-70 before:backdrop-blur-md before:[-webkit-backdrop-filter:blur(12px)]`}
         id="header"
         style={style}
       >
         <img
           src="/images/logo/logo-white-full.png"
-          className="hidden w-[45%] hover:cursor-pointer dark:inline-block md:w-1/4 lg:w-1/5"
+          className="hidden w-[45%] hover:cursor-pointer dark:inline-block md:w-1/4 lg:w-1/5 z-[999] "
           style={
             style && resolvedTheme === "dark"
               ? { display: "block", transition: "300ms" }
@@ -96,7 +86,7 @@ export default function Header() {
 
         <img
           src="/images/logo/logo-black-full.png"
-          className="inline-block w-[45%] hover:cursor-pointer dark:hidden md:w-1/4 lg:w-1/5"
+          className="inline-block w-[45%] hover:cursor-pointer dark:hidden md:w-1/4 lg:w-1/5 z-[999] "
           style={
             style && resolvedTheme === "light"
               ? { display: "block", transition: "300ms" }
@@ -119,7 +109,7 @@ export default function Header() {
         </div>
 
         <DropdownMenu>
-          <DropdownMenuTrigger className="rounded-full border-[1px] border-black p-[3px] text-xl text-black dark:border-white dark:text-white lg:hidden">
+          <DropdownMenuTrigger className="rounded-full border-[1px] border-black p-[3px] text-xl text-black dark:border-white dark:text-white lg:hidden z-[999]">
             {style ? <IoMdMenu /> : <HiMagnifyingGlass />}
           </DropdownMenuTrigger>
           <DropdownMenuContent>

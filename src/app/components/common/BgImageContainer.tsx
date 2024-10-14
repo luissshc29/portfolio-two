@@ -6,6 +6,7 @@ import { useInView } from "react-intersection-observer";
 interface BgImageContainerProps {
   darkImgSrc: string;
   lightImgSrc: string;
+  slideAnimation?: 'right' | 'left'
 }
 
 export default function BgImageContainer({
@@ -13,13 +14,14 @@ export default function BgImageContainer({
   darkImgSrc,
   lightImgSrc,
   id,
+  slideAnimation = 'right',
   ...rest
 }: {
   children: React.ReactNode;
 } & React.HTMLAttributes<HTMLDivElement> &
   BgImageContainerProps) {
   const { ref, inView } = useInView({
-    threshold: id !== "projects" ? 0.3 : 0.1,
+    threshold: id !== "projects" ? 0.2 : 0.1,
   });
   useEffect(() => {
     if (inView) {
@@ -37,7 +39,7 @@ export default function BgImageContainer({
 
   return (
     <div
-      className={`relative min-h-screen w-screen overflow-clip md:min-h-[110vh]`}
+      className={`relative w-screen overflow-x-clip min-h-[110vh]`}
       {...rest}
       ref={ref}
       id={id}
@@ -54,13 +56,13 @@ export default function BgImageContainer({
       />
       <div className="absolute z-[-9] h-full min-h-screen w-screen bg-white bg-opacity-[.94] dark:bg-black dark:bg-opacity-[.92]" />
       <div
-        className={`relative flex min-h-screen w-full flex-col items-center justify-center gap-8 p-8 text-center transition-all duration-1000 md:gap-16 md:p-10`}
+        className={`flex min-h-screen md:min-h-[110vh] w-full flex-col items-center justify-center gap-8 p-8 text-center transition-all duration-1000 md:gap-16 md:p-10`}
         style={
           // Conditional to fix Header desapearing on scroll
           id !== "welcome"
             ? inView
-              ? { opacity: "100%" }
-              : { opacity: "0%" }
+              ? { transform: `translateX(0)`, opacity: "1" }
+              : { transform: `translateX(${slideAnimation === 'right' ? '-6%' : '6%'})`, opacity: "0" }
             : {}
         }
       >

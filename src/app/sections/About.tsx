@@ -18,6 +18,7 @@ export default function About() {
       id="about"
       darkImgSrc="/images/background/dark/about-bg-img.jpg"
       lightImgSrc="/images/background/light/about-bg-img.jpg"
+      slideAnimation="left"
     >
       <Title
         mainText={textVariants.sections.about.title.main[language]}
@@ -28,7 +29,7 @@ export default function About() {
         <img
           src="/images/avatar.jpg"
           alt="Avatar"
-          className="border-4 border-neutral-800 dark:border-white rounded-full w-1/2 md:w-1/4"
+          className="border-4 dark:border-neutral-500 border-neutral-400 rounded-full w-1/2 md:w-1/4"
           loading="eager"
         />
         <div className="flex flex-col items-center gap-5">

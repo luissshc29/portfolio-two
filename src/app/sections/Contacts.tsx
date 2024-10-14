@@ -29,6 +29,7 @@ export default function Contacts() {
       darkImgSrc="/images/background/dark/contacts-bg-img.jpg"
       lightImgSrc="/images/background/light/contacts-bg-img.jpg"
       id="contacts"
+      slideAnimation="right"
     >
       <div>
         <Title

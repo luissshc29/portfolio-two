@@ -15,6 +15,7 @@ export default function Language() {
       darkImgSrc="/images/background/dark/language-bg-img.jpg"
       lightImgSrc="/images/background/light/language-bg-img.jpg"
       id="language"
+      slideAnimation="right"
     >
       <Title
         mainText={textVariants.sections.language.title.main[language]}
