@@ -72,7 +72,11 @@ export default function ProjectCard({
   // Checking if Drawer is open and focusing on it
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   useEffect(() => {
-    document.getElementById("drawer-content")?.focus();
+    if (isDrawerOpen) {
+      document.getElementById("drawer-content")?.focus();
+    } else {
+      document.getElementById("drawer-content")?.blur();
+    }
   }, [isDrawerOpen]);
 
   return (
@@ -150,7 +154,7 @@ export default function ProjectCard({
                     <span className="font-bold">
                       {
                         textVariants.others.labels.projects.modal.description[
-                          language
+                        language
                         ]
                       }
                       :
@@ -164,7 +168,7 @@ export default function ProjectCard({
                     <span className="w-fit font-bold">
                       {
                         textVariants.others.labels.projects.modal.stacks[
-                          language
+                        language
                         ]
                       }
                       :
@@ -205,7 +209,7 @@ export default function ProjectCard({
                       <span className="font-bold">
                         {
                           textVariants.others.labels.projects.modal.repo[
-                            language
+                          language
                           ]
                         }
                         :
@@ -225,7 +229,7 @@ export default function ProjectCard({
                   <p>
                     {
                       textVariants.others.labels.projects.modal.complexity[
-                        language
+                      language
                       ]
                     }
                   </p>
@@ -252,7 +256,7 @@ export default function ProjectCard({
             setHeaderVisible?.(!e);
             setIsDrawerOpen(e);
           }}
-          disablePreventScroll={true}
+          shouldScaleBackground={true}
         >
           <DrawerTrigger asChild className="block lg:hidden">
             <div className="flex items-center gap-1 hover:cursor-pointer lg:hidden">
@@ -267,7 +271,7 @@ export default function ProjectCard({
             id="drawer-content"
           >
             <div className="z-[1500] mx-auto h-fit max-h-[70vh] w-[90%] overflow-scroll pb-6 pt-4">
-              <DrawerHeader className="w-fit gap-0">
+              <DrawerHeader className="w-fit gap-0 px-0">
                 <DrawerTitle className="font-title text-xl md:text-2xl">
                   {data.title[language]}
                 </DrawerTitle>
@@ -317,7 +321,7 @@ export default function ProjectCard({
                     <span className="text-sm font-bold md:text-base">
                       {
                         textVariants.others.labels.projects.modal.description[
-                          language
+                        language
                         ]
                       }
                       :
@@ -331,7 +335,7 @@ export default function ProjectCard({
                     <span className="w-fit text-sm font-bold md:text-base">
                       {
                         textVariants.others.labels.projects.modal.stacks[
-                          language
+                        language
                         ]
                       }
                       :
@@ -372,7 +376,7 @@ export default function ProjectCard({
                       <span className="text-sm font-bold md:text-base">
                         {
                           textVariants.others.labels.projects.modal.repo[
-                            language
+                          language
                           ]
                         }
                         :
@@ -392,7 +396,7 @@ export default function ProjectCard({
                     <p>
                       {
                         textVariants.others.labels.projects.modal.complexity[
-                          language
+                        language
                         ]
                       }
                     </p>

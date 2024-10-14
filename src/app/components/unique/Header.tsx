@@ -67,6 +67,7 @@ export default function Header() {
         className={`z-[999] relative flex h-[9vh] w-full flex-wrap-reverse items-center justify-around gap-4 py-1 duration-300 md:h-[10vh] before:absolute before:left-0 before:top-0 before:z-[51] before:h-[9vh] before:w-full before:bg-white before:dark:bg-black before:bg-opacity-80 dark:before:bg-opacity-70 before:backdrop-blur-md before:[-webkit-backdrop-filter:blur(12px)]`}
         id="header"
         style={style}
+        ref={ref}
       >
         <img
           src="/images/logo/logo-white-full.png"
