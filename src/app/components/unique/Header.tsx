@@ -33,12 +33,12 @@ export default function Header() {
 
   function handleStyleOnPageScroll() {
     if (window.scrollY > headerYPosition) {
-        setStyle({
-            position: "fixed",
-            top: 0,
-            left: 0,
-            padding: "0em 2em",
-          })
+      setStyle({
+        position: "fixed",
+        top: 0,
+        left: 0,
+        padding: "0em 2em",
+      });
       if (!inView) {
         setStyle((prev) => ({
           ...prev,
@@ -64,14 +64,14 @@ export default function Header() {
   if (headerVisible) {
     return (
       <div
-        className={`z-[999] relative flex h-[9vh] w-full flex-wrap-reverse items-center justify-around gap-4 py-1 duration-300 md:h-[10vh] before:absolute before:left-0 before:top-0 before:z-[51] before:h-[9vh] before:w-full before:bg-white before:dark:bg-black before:bg-opacity-80 dark:before:bg-opacity-70 before:backdrop-blur-md before:[-webkit-backdrop-filter:blur(12px)]`}
+        className={`relative z-[999] flex h-[9vh] w-full flex-wrap-reverse items-center justify-around gap-4 py-1 duration-300 before:absolute before:left-0 before:top-0 before:z-[51] before:h-[9vh] before:w-full before:bg-white before:bg-opacity-80 before:backdrop-blur-md before:[-webkit-backdrop-filter:blur(12px)] before:dark:bg-black dark:before:bg-opacity-70 md:h-[15vh] md:before:h-[15vh]`}
         id="header"
         style={style}
         ref={ref}
       >
         <img
           src="/images/logo/logo-white-full.png"
-          className="hidden w-[45%] hover:cursor-pointer dark:inline-block md:w-1/4 lg:w-1/5 z-[999] "
+          className="dark:inline-block z-[999] hidden w-[45%] md:w-1/4 lg:w-1/5 hover:cursor-pointer"
           style={
             style && resolvedTheme === "dark"
               ? { display: "block", transition: "300ms" }
@@ -87,7 +87,7 @@ export default function Header() {
 
         <img
           src="/images/logo/logo-black-full.png"
-          className="inline-block w-[45%] hover:cursor-pointer dark:hidden md:w-1/4 lg:w-1/5 z-[999] "
+          className="inline-block z-[999] dark:hidden w-[45%] md:w-1/4 lg:w-1/5 hover:cursor-pointer"
           style={
             style && resolvedTheme === "light"
               ? { display: "block", transition: "300ms" }
@@ -101,7 +101,7 @@ export default function Header() {
           }
         />
 
-        <div className="hidden flex-wrap items-center justify-center text-sm md:gap-4 md:text-base lg:flex">
+        <div className="lg:flex flex-wrap justify-center items-center md:gap-4 hidden text-sm md:text-base">
           {textVariants.others.header.options.map((option) => (
             <NavigationButton navigateTo={option.navigateTo} key={option.id}>
               {option.text[language]}
@@ -110,7 +110,7 @@ export default function Header() {
         </div>
 
         <DropdownMenu>
-          <DropdownMenuTrigger className="rounded-full border-[1px] border-black p-[3px] text-xl text-black dark:border-white dark:text-white lg:hidden z-[999]">
+          <DropdownMenuTrigger className="z-[999] border-[1px] dark:border-white lg:hidden p-[3px] border-black rounded-full text-black text-xl dark:text-white">
             {style ? <IoMdMenu /> : <HiMagnifyingGlass />}
           </DropdownMenuTrigger>
           <DropdownMenuContent>
