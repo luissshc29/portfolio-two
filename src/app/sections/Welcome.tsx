@@ -34,34 +34,42 @@ export default function Welcome() {
         item.ref.replace("www.", "") === document.referrer.replace("www.", ""),
     );
 
+    const userAgent = navigator.userAgent.toLowerCase();
+
     if (referrer) {
-      toast(
-        <div className="relative flex h-fit w-full flex-col items-start gap-3 bg-yellow-200 p-4 text-sm md:text-base">
-          <button
-            className="absolute right-2 top-2 text-3xl text-yellow-900"
-            onClick={() => {
-              toast.dismiss();
-            }}
-          >
-            <IoIosClose />
-          </button>
-          <div className="flex flex-wrap items-center gap-2 text-left font-bold text-yellow-900">
-            {textVariants.sections.welcome.toast.title[language]}
-            <p className="pr-4 font-normal text-yellow-700">
-              {textVariants.sections.welcome.toast.subtitle[language]}{" "}
-              <u>{referrer?.ref}</u>
-            </p>
-          </div>
-          <p
-            className="text-left text-xs md:text-sm"
-            dangerouslySetInnerHTML={{
-              __html: textVariants.sections.welcome.toast.description[
-                language
-              ].replace("[APP]", referrer?.name || " "),
-            }}
-          />
-        </div>,
-      );
+      if (
+        userAgent.includes("mobile") ||
+        userAgent.includes("android") ||
+        userAgent.includes("iphone")
+      ) {
+        toast(
+          <div className="relative flex h-fit w-full flex-col items-start gap-3 bg-yellow-200 p-4 text-sm md:text-base">
+            <button
+              className="absolute right-2 top-2 text-3xl text-yellow-900"
+              onClick={() => {
+                toast.dismiss();
+              }}
+            >
+              <IoIosClose />
+            </button>
+            <div className="flex flex-wrap items-center gap-2 text-left font-bold text-yellow-900">
+              {textVariants.sections.welcome.toast.title[language]}
+              <p className="pr-4 font-normal text-yellow-700">
+                {textVariants.sections.welcome.toast.subtitle[language]}{" "}
+                <u>{referrer?.ref}</u>
+              </p>
+            </div>
+            <p
+              className="text-left text-xs md:text-sm"
+              dangerouslySetInnerHTML={{
+                __html: textVariants.sections.welcome.toast.description[
+                  language
+                ].replace("[APP]", referrer?.name || " "),
+              }}
+            />
+          </div>,
+        );
+      }
     }
   }, []);
 
