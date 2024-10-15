@@ -10,7 +10,10 @@ import Footer from "./components/unique/Footer";
 
 export default function Home() {
   return (
-    <div className="max-w-screen flex w-screen flex-col justify-between gap-4"  vaul-drawer-wrapper="">
+    <div
+      className="max-w-screen flex w-screen flex-col justify-between gap-4"
+      vaul-drawer-wrapper=""
+    >
       <div>
         <ThemeSelector />
         <Welcome />

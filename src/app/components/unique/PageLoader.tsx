@@ -9,7 +9,7 @@ const loadingTexts = [
   { br: "Estamos ajustando tudo", us: "We're adjusting everything" },
   { br: "Finalizando a preparação", us: "Finalizing preparation" },
   { br: "Carregando conteúdo", us: "Loading content" },
-  { br: "Em processamento", us: "Processing" },
+  { br: "Processando", us: "Processing" },
   { br: "Configurando sua experiência", us: "Setting up your experience" },
   { br: "Carregando recursos", us: "Loading resources" },
 ];
@@ -66,23 +66,23 @@ export default function PageLoader({
       <div
         className={`flex h-screen w-screen flex-col items-center justify-center gap-2 bg-white dark:bg-black md:gap-4 ${animate}`}
       >
-        <div className="relative flex h-fit w-fit scale-[.8] flex-col items-center justify-center md:scale-100">
+        <div className="relative flex flex-col justify-center items-center w-fit h-fit scale-[.8] md:scale-100">
           <img
             src="/images/logo/logo-white-small.png"
             alt="Small white logo"
-            className="absolute hidden h-[35px] w-[35px] dark:inline-block"
+            className="dark:inline-block absolute hidden w-[35px] h-[35px]"
             loading="eager"
           />
           <img
             src="/images/logo/logo-black-small.png"
             alt="Small black logo"
-            className="absolute inline-block h-[35px] w-[35px] dark:hidden"
+            className="inline-block absolute dark:hidden w-[35px] h-[35px]"
             loading="eager"
           />
           <img
             src="/images/loading/loading-circle-white.svg"
             alt="Loading image"
-            className="hidden dark:block"
+            className="dark:block hidden"
             loading="eager"
           />
           <img
@@ -92,16 +92,16 @@ export default function PageLoader({
             loading="eager"
           />
         </div>
-        <div className="flex h-[18px] items-center gap-2">
+        <div className="flex items-center gap-2 h-[18px]">
           {loadingText && (
             <>
-              <p className="text-black transition-all duration-500 dark:text-white">
+              <p className="text-black dark:text-white transition-all duration-500">
                 {loadingText}
               </p>
               <img
                 src="/images/loading/loading-dots-white.svg"
                 alt="Loading image"
-                className="hidden dark:block"
+                className="dark:block hidden"
                 loading="eager"
               />
               <img

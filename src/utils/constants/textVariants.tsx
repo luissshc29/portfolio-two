@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from "uuid";
 import { TfiLinkedin } from "react-icons/tfi";
 import { BsGithub, BsInstagram, BsWhatsapp } from "react-icons/bs";
 import { TextVariants } from "../types/TextVariants";
-import { IoMoonOutline, IoSunnyOutline } from "react-icons/io5";
+import { IoMoonOutline, IoWarning } from "react-icons/io5";
 import { PiDevices } from "react-icons/pi";
 import { FiInfo, FiSun } from "react-icons/fi";
 import { RiExternalLinkLine } from "react-icons/ri";
@@ -25,6 +25,30 @@ export const textVariants: TextVariants = {
       subtitle: {
         br: "Por onde devemos começar?",
         us: "Where should we start?",
+      },
+      toast: {
+        title: {
+          br: (
+            <div className="flex items-center gap-1">
+              <IoWarning className="text-xl" />
+              <p>Atenção!</p>
+            </div>
+          ),
+          us: (
+            <div className="flex items-center gap-1">
+              <IoWarning className="text-xl" />
+              <p>Warning!</p>
+            </div>
+          ),
+        },
+        subtitle: {
+          br: "Parece que você veio de ",
+          us: "It seems that you came from ",
+        },
+        description: {
+          br: `Caso você esteja utilizando o navegador nativo do [APP], é recomendado que opte por usar um navegador externo (Ex.: Safari, Google Chrome, ...) para prosseguir na página.<br/><br/>Caso decida continuar, podem ocorrer bugs, lentidões e/ou erros em algumas funcionalidades, devido às limitações desses navegadores nativos.`,
+          us: `If you are using the [APP]'s native browser, it is recommended that you use an external browser (E.g.: Safari, Google Chrome, ...) to continue on the page.<br/><br/>If you decide to go on, bugs, slowdowns and/or errors in some features may occur, due to the limitations of these native browsers.`,
+        },
       },
     },
     language: {
@@ -233,7 +257,7 @@ export const textVariants: TextVariants = {
           url: "https://bike4cash.vercel.app/",
           repository: "https://github.com/luissshc29/bike4cash",
           complexity: 5,
-          highlight: true
+          highlight: true,
         },
         {
           id: uuidv4(),
@@ -377,7 +401,7 @@ export const textVariants: TextVariants = {
           url: "https://pokedex-omega-tan-81.vercel.app/",
           repository: "https://github.com/luissshc29/pokedex",
           complexity: 2,
-          highlight: true
+          highlight: true,
         },
         {
           id: uuidv4(),
@@ -402,7 +426,7 @@ export const textVariants: TextVariants = {
           url: "https://notepad-luissshc29.vercel.app/",
           repository: "https://github.com/luissshc29/Notepad",
           complexity: 3,
-          highlight: true
+          highlight: true,
         },
         {
           id: uuidv4(),

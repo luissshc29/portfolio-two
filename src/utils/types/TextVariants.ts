@@ -23,6 +23,20 @@ export type TextVariants = {
         br: string;
         us: string;
       };
+      toast: {
+        title: {
+          br: React.ReactNode;
+          us: React.ReactNode;
+        };
+        subtitle: {
+          br: React.ReactNode;
+          us: React.ReactNode;
+        };
+        description: {
+          br: string;
+          us: string;
+        };
+      };
     };
     language: {
       title: {
