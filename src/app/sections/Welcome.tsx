@@ -97,7 +97,7 @@ export default function Welcome() {
             toast: "w-[80vw] p-0 rounded-none",
           },
         }}
-        position="top-left"
+        position="bottom-left"
       />
     </BgImageContainer>
   );
