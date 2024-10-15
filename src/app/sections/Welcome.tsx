@@ -31,8 +31,7 @@ export default function Welcome() {
   useEffect(() => {
     const referrer = possibleReferrers.find(
       (item) =>
-        item.ref.replace("www.", "") ===
-        "https://vercel.live/".replace("www.", ""),
+        item.ref.replace("www.", "") === document.referrer.replace("www.", ""),
     );
 
     if (referrer) {
