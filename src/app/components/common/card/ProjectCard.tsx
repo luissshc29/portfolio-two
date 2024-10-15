@@ -305,13 +305,13 @@ export default function ProjectCard({
             id={`drawer-content-${data.title.br.toLowerCase().replaceAll(" ", "-")}`}
           >
             <div className="z-[1500] mx-auto h-fit w-full overflow-y-scroll px-4 pb-6 pt-4 md:max-h-[70vh] md:px-8">
-              <DrawerHeader className="w-fit gap-0 px-0">
-                <DrawerTitle className="flex items-center gap-2 font-title text-2xl w-fit">
+              <DrawerHeader className="w-full gap-0 px-0">
+                <DrawerTitle className="flex items-center gap-2 font-title text-2xl min-w-[66%] w-fit">
                   {data.title[language]}
                   {data.highlight && (
                     <Badge
                       variant="secondary"
-                      className="flex w-fit min-w-[33%] items-center gap-[3px] bg-green-400 font-text text-white  hover:bg-green-400 dark:bg-opacity-50 hover:dark:bg-opacity-50 justify-center"
+                      className="flex min-w-fit items-center gap-[3px] bg-green-400 font-text text-white  hover:bg-green-400 dark:bg-opacity-50 hover:dark:bg-opacity-50 justify-center"
                     >
                       <IoMdCheckmarkCircleOutline className="text-lg" />
                       <p>{language === "br" ? "Em destaque" : "Featured"}</p>
