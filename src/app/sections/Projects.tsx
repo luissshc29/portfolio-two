@@ -20,6 +20,8 @@ import { FiInfo } from "react-icons/fi";
 export default function Projects() {
   const { language } = useLanguageContext();
 
+  const projects = [...textVariants.sections.projects.list.filter(item => item.highlight), ...textVariants.sections.projects.list.filter(item => !item.highlight)]
+
   return (
     <BgImageContainer
       darkImgSrc="/images/background/dark/projects-bg-img.jpg"
@@ -51,14 +53,14 @@ export default function Projects() {
           <TabsContent value={t.value} key={t.id}>
             <div className="mx-auto flex min-h-[65vh] w-[90vw] animate-show-up flex-col items-center justify-start gap-2 opacity-100 [animation-duration:350ms] md:grid md:min-h-[40vh] md:grid-cols-2 md:justify-evenly lg:grid-cols-3">
               {t.value === "all"
-                ? textVariants.sections.projects.list.map((proj) => (
+                ? projects.map((proj) => (
                     <ProjectCard
                       key={proj.id}
                       data={proj}
                       language={language}
                     />
                   ))
-                : textVariants.sections.projects.list
+                : projects
                     .filter((p) => p.tag === t.value)
                     .map((proj) => (
                       <ProjectCard

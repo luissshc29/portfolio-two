@@ -43,13 +43,17 @@ const DrawerContent = React.forwardRef<
     <DrawerPrimitive.Content
       ref={ref}
       className={cn(
-        "fixed inset-x-0 bottom-0 z-50 mt-24 flex min-h-[70vh] flex-col rounded-t-[10px] before:absolute before:left-0 before:top-0 before:z-[51] before:h-full before:w-full before:bg-white before:bg-opacity-95 before:backdrop-blur-md before:[-webkit-backdrop-filter:blur(12px)] dark:before:bg-black dark:before:bg-opacity-70",
+        "fixed inset-x-0 bottom-0 z-50 mt-24 flex min-h-[70vh] flex-col rounded-t-[10px] before:absolute before:left-0 before:top-0 before:z-[51] before:h-full before:w-full before:bg-white before:backdrop-blur-md before:[-webkit-backdrop-filter:blur(12px)] dark:before:bg-black dark:before:bg-opacity-85",
         className,
       )}
       {...props}
     >
-      <div className="z-[52] bg-neutral-300 dark:bg-neutral-800 mx-auto mt-4 rounded-full w-[100px] h-2" />
-      {children}
+      <div className="z-[52] bg-neutral-300 dark:bg-neutral-800 mx-auto my-3 rounded-full w-[100px] h-2" />
+      <div className="relative w-screen full h-full z-[52]">      
+        <div className="z-[53] absolute right-0 top-0 h-[25px] w-screen bg-gradient-to-b from-white to-transparent dark:from-black"></div>
+        {children}
+        <div className="z-[53] absolute right-0 bottom-0 h-[25px] w-screen bg-gradient-to-t from-white to-transparent dark:from-black"></div>
+      </div>
     </DrawerPrimitive.Content>
   </DrawerPortal>
 ));

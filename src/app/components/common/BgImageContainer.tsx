@@ -21,7 +21,7 @@ export default function BgImageContainer({
 } & React.HTMLAttributes<HTMLDivElement> &
   BgImageContainerProps) {
   const { ref, inView } = useInView({
-    threshold: id !== "projects" ? 0.2 : 0.1,
+    threshold: id !== "projects" ? 0.5 : 0.1,
   });
   useEffect(() => {
     if (inView) {

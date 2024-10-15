@@ -99,6 +99,11 @@ const config = {
             opacity: "0",
           },
         },
+        pulse: {
+          '50%': {
+            'opacity': '.7'
+          }
+        }
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",

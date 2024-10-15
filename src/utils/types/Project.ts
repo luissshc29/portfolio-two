@@ -21,4 +21,5 @@ export type Project = {
   url: string;
   repository?: string;
   complexity: number;
+  highlight?: boolean
 };
