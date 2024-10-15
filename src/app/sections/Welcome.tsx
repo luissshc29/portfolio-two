@@ -29,48 +29,40 @@ export default function Welcome() {
   ];
 
   useEffect(() => {
-    const warningToastDismissed = localStorage.getItem("warningToastDismissed");
     const referrer = possibleReferrers.find(
       (item) =>
-        item.ref.replace("www.", "") === document.referrer.replace("www.", ""),
+        item.ref.replace("www.", "") ===
+        "https://vercel.live/".replace("www.", ""),
     );
 
     if (referrer) {
-      if (!warningToastDismissed || warningToastDismissed === "false") {
-        toast(
-          <div className="relative flex h-full w-full flex-col items-start gap-3 bg-yellow-200 p-4 text-sm md:text-base">
-            <button
-              className="absolute right-2 top-2 text-3xl text-yellow-900"
-              onClick={() => {
-                toast.dismiss();
-                localStorage.setItem("warningToastDismissed", "true");
-              }}
-            >
-              <IoIosClose />
-            </button>
-            <div className="flex flex-wrap items-center gap-2 text-left font-bold text-yellow-900">
-              {textVariants.sections.welcome.toast.title[language]}
-              <p className="pr-4 font-normal text-yellow-700">
-                {textVariants.sections.welcome.toast.subtitle[language]}{" "}
-                <u>{referrer?.ref}</u>
-              </p>
-            </div>
-            <p
-              className="text-left text-xs md:text-sm"
-              dangerouslySetInnerHTML={{
-                __html: textVariants.sections.welcome.toast.description[
-                  language
-                ].replace("[APP]", referrer?.name || " "),
-              }}
-            />
-          </div>,
-          {
-            onDismiss: () => {
-              localStorage.setItem("warningToastDismissed", "true");
-            },
-          },
-        );
-      }
+      toast(
+        <div className="relative flex h-fit w-full flex-col items-start gap-3 bg-yellow-200 p-4 text-sm md:text-base">
+          <button
+            className="absolute right-2 top-2 text-3xl text-yellow-900"
+            onClick={() => {
+              toast.dismiss();
+            }}
+          >
+            <IoIosClose />
+          </button>
+          <div className="flex flex-wrap items-center gap-2 text-left font-bold text-yellow-900">
+            {textVariants.sections.welcome.toast.title[language]}
+            <p className="pr-4 font-normal text-yellow-700">
+              {textVariants.sections.welcome.toast.subtitle[language]}{" "}
+              <u>{referrer?.ref}</u>
+            </p>
+          </div>
+          <p
+            className="text-left text-xs md:text-sm"
+            dangerouslySetInnerHTML={{
+              __html: textVariants.sections.welcome.toast.description[
+                language
+              ].replace("[APP]", referrer?.name || " "),
+            }}
+          />
+        </div>,
+      );
     }
   }, []);
 
@@ -103,7 +95,7 @@ export default function Welcome() {
         duration={Infinity}
         toastOptions={{
           classNames: {
-            toast: "w-[80vw] h-fit p-0 rounded-none",
+            toast: "w-[80vw] p-0 rounded-none",
           },
         }}
         position="top-left"
