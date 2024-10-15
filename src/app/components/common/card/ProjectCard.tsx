@@ -128,7 +128,7 @@ export default function ProjectCard({
                   {data.highlight && (
                     <Badge
                       variant="secondary"
-                      className="flex w-fit items-center gap-[3px] bg-green-400 font-text text-white [letter-spacing:1px] hover:bg-green-400 dark:bg-opacity-50 hover:dark:bg-opacity-50"
+                      className="flex w-fit items-center gap-[3px] bg-green-400 font-text text-white hover:bg-green-400 dark:bg-opacity-50 hover:dark:bg-opacity-50"
                     >
                       <IoMdCheckmarkCircleOutline className="text-lg" />
                       <p>{language === "br" ? "Em destaque" : "Featured"}</p>
@@ -304,14 +304,14 @@ export default function ProjectCard({
             className="[-webkit-overflow-scrolling:touch] [touch-action:manipulation]"
             id={`drawer-content-${data.title.br.toLowerCase().replaceAll(" ", "-")}`}
           >
-            <div className="z-[1500] mx-auto h-fit w-full overflow-y-scroll px-5 pb-6 pt-4 md:max-h-[70vh] md:px-8">
+            <div className="z-[1500] mx-auto h-fit w-full overflow-y-scroll px-4 pb-6 pt-4 md:max-h-[70vh] md:px-8">
               <DrawerHeader className="w-fit gap-0 px-0">
-                <DrawerTitle className="flex items-center gap-2 font-title text-2xl">
+                <DrawerTitle className="flex items-center gap-2 font-title text-2xl w-fit">
                   {data.title[language]}
                   {data.highlight && (
                     <Badge
                       variant="secondary"
-                      className="flex w-fit items-center gap-[3px] bg-green-400 font-text text-white [letter-spacing:1px] hover:bg-green-400 dark:bg-opacity-50 hover:dark:bg-opacity-50"
+                      className="flex w-fit min-w-[33%] items-center gap-[3px] bg-green-400 font-text text-white  hover:bg-green-400 dark:bg-opacity-50 hover:dark:bg-opacity-50 justify-center"
                     >
                       <IoMdCheckmarkCircleOutline className="text-lg" />
                       <p>{language === "br" ? "Em destaque" : "Featured"}</p>
