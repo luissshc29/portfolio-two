@@ -46,8 +46,8 @@ export const textVariants: TextVariants = {
           us: "It seems that you came from ",
         },
         description: {
-          br: `Caso você esteja utilizando o navegador nativo do [APP], é recomendado que opte por usar um navegador externo (Ex.: Safari, Google Chrome, ...) para prosseguir na página.<br/><br/>Caso decida continuar, podem ocorrer bugs, lentidões e/ou erros em algumas funcionalidades, devido às limitações desses navegadores nativos.`,
-          us: `If you are using the [APP]'s native browser, it is recommended that you use an external browser (E.g.: Safari, Google Chrome, ...) to continue on the page.<br/><br/>If you decide to go on, bugs, slowdowns and/or errors in some features may occur, due to the limitations of these native browsers.`,
+          br: `Caso esteja utilizando o navegador nativo do [APP], é recomendado que você troque para um <u>navegador externo</u> (Ex.: Safari, Google Chrome, ...) para prosseguir na página.<br/><br/>Caso decida continuar por aqui, podem ocorrer bugs, lentidões e/ou erros em algumas funcionalidades, devido às limitações desses navegadores nativos.`,
+          us: `If you are using [APP]'s native browser, it is recommended that you switch to an <u>external browser</u> (E.g.: Safari, Google Chrome, ...) to continue on the page.<br/><br/>If you decide to go on, bugs, slowdowns and/or errors in some features may occur, due to the limitations of these native browsers.`,
         },
       },
     },
