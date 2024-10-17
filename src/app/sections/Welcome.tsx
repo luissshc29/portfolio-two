@@ -9,6 +9,7 @@ import { useLanguageContext } from "@/utils/context/LanguageContext";
 import { IoIosArrowDown, IoIosClose } from "react-icons/io";
 import { toast } from "sonner";
 import { Toaster as SonnerToaster } from "sonner";
+import { Button } from "@/shadcn/components/ui/button";
 
 export default function Welcome() {
   const { language } = useLanguageContext();
@@ -42,33 +43,65 @@ export default function Welcome() {
         userAgent.includes("android") ||
         userAgent.includes("iphone")
       ) {
-        toast(
-          <div className="relative flex h-fit w-full flex-col items-start gap-3 bg-yellow-200 p-4 text-sm md:text-base">
-            <button
-              className="absolute right-2 top-2 text-3xl text-yellow-900"
-              onClick={() => {
-                toast.dismiss();
-              }}
-            >
-              <IoIosClose />
-            </button>
-            <div className="flex flex-wrap items-center gap-2 text-left font-bold text-yellow-900">
-              {textVariants.sections.welcome.toast.title[language]}
-              <p className="pr-4 font-normal text-yellow-700">
-                {textVariants.sections.welcome.toast.subtitle[language]}{" "}
-                <u>{referrer?.ref}</u>
-              </p>
-            </div>
-            <p
-              className="text-left text-xs md:text-sm"
-              dangerouslySetInnerHTML={{
-                __html: textVariants.sections.welcome.toast.description[
-                  language
-                ].replace("[APP]", referrer?.name || " "),
-              }}
-            />
-          </div>,
-        );
+        if (
+          !localStorage.getItem("warningToastDismissed") ||
+          localStorage.getItem("warningToastDismissed") === "false"
+        ) {
+          toast(
+            <div className="relative flex h-fit w-full flex-col items-start gap-4 bg-yellow-200 p-4 text-sm md:text-base">
+              <button
+                className="absolute right-2 top-2 text-3xl text-yellow-900"
+                onClick={() => {
+                  toast.dismiss();
+                }}
+              >
+                <IoIosClose />
+              </button>
+              <div className="flex flex-wrap items-center gap-2 text-left font-bold text-yellow-900">
+                {textVariants.sections.welcome.toast.title[language]}
+                <p className="pr-4 font-normal text-yellow-700">
+                  {textVariants.sections.welcome.toast.subtitle[language]}{" "}
+                  <u>{referrer?.ref}</u>
+                </p>
+              </div>
+              <p
+                className="text-left text-xs md:text-sm"
+                dangerouslySetInnerHTML={{
+                  __html: textVariants.sections.welcome.toast.description[
+                    language
+                  ].replace("[APP]", referrer?.name || " "),
+                }}
+              />
+              <div className="flex flex-wrap items-center gap-2">
+                <Button
+                  className="h-fit rounded-none border-[2px] border-yellow-900 bg-yellow-800 p-1.5 text-xs text-yellow-200 hover:bg-yellow-950 md:text-sm"
+                  onClick={() => {
+                    toast.dismiss();
+                  }}
+                >
+                  {
+                    textVariants.sections.welcome.toast.buttons.continue[
+                      language
+                    ]
+                  }
+                </Button>
+                <Button
+                  className="border-none bg-transparent px-0 text-xs text-yellow-700 underline hover:bg-transparent hover:dark:bg-transparent md:px-2 md:text-sm"
+                  onClick={() => {
+                    toast.dismiss();
+                    localStorage.setItem("warningToastDismissed", "true");
+                  }}
+                >
+                  {
+                    textVariants.sections.welcome.toast.buttons.notShow[
+                      language
+                    ]
+                  }
+                </Button>
+              </div>
+            </div>,
+          );
+        }
       }
     }
   }, []);

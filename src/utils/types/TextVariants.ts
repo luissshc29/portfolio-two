@@ -36,6 +36,16 @@ export type TextVariants = {
           br: string;
           us: string;
         };
+        buttons: {
+          continue: {
+            br: string;
+            us: string;
+          };
+          notShow: {
+            br: string;
+            us: string;
+          };
+        };
       };
     };
     language: {
