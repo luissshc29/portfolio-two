@@ -30,7 +30,6 @@ export default function Welcome() {
   ];
 
   useEffect(() => {
-    localStorage.removeItem("warningToastDismissed");
     const referrer = possibleReferrers.find(
       (item) =>
         item.ref.replace("www.", "") === document.referrer.replace("www.", ""),
