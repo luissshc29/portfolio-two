@@ -64,15 +64,25 @@ export default function PageLoader({
       }
     }
 
+    let windowMounted = false
+
     const handleLoad = () => {
+      windowMounted = true
       typing(randomText);
       window.removeEventListener('load', handleLoad); 
     };
 
     window.addEventListener('load', handleLoad);
 
+    const typingTimeout = setTimeout(() => {
+      if (!windowMounted) {
+        typing(randomText);
+      }
+    }, 1000);
+
     return () => {
       window.removeEventListener('load', handleLoad);
+      clearTimeout(typingTimeout)
     };
 
   }, []);
