@@ -16,10 +16,6 @@ const loadingTexts = [
   { br: "Preparando novos recursos", us: "Preparing new features" },
   { br: "Otimizando sua experiência", us: "Optimizing your experience" },
   { br: "Verificando a integridade da página", us: "Checking page integrity" },
-  {
-    br: "Atualizando informações essenciais",
-    us: "Updating essential information",
-  },
   { br: "Ajustando exibição", us: "Adjusting display" },
   { br: "Finalizando ajustes", us: "Finalizing adjustments" },
   { br: "Preparando visualização", us: "Preparing visualization" },
