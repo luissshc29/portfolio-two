@@ -16,7 +16,10 @@ const loadingTexts = [
   { br: "Preparando novos recursos", us: "Preparing new features" },
   { br: "Otimizando sua experiência", us: "Optimizing your experience" },
   { br: "Verificando a integridade da página", us: "Checking page integrity" },
-  { br: "Atualizando informações essenciais", us: "Updating essential information" },
+  {
+    br: "Atualizando informações essenciais",
+    us: "Updating essential information",
+  },
   { br: "Ajustando exibição", us: "Adjusting display" },
   { br: "Finalizando ajustes", us: "Finalizing adjustments" },
   { br: "Preparando visualização", us: "Preparing visualization" },
@@ -50,7 +53,7 @@ export default function PageLoader({
         setTimeout(() => {
           i++;
           typing(text);
-        }, 85);
+        }, 100);
       } else {
         const randomLoadingTime = Math.random() * 500 + 1000;
 
@@ -66,52 +69,52 @@ export default function PageLoader({
       }
     }
 
-    let windowMounted = false
+    let windowMounted = false;
 
     const handleLoad = () => {
-      windowMounted = true
+      windowMounted = true;
       typing(randomText);
-      window.removeEventListener('load', handleLoad); 
+      window.removeEventListener("load", handleLoad);
     };
 
-    window.addEventListener('load', handleLoad);
+    window.addEventListener("load", handleLoad);
 
     const typingTimeout = setTimeout(() => {
       if (!windowMounted) {
         typing(randomText);
       }
-    }, 500);
+    }, 1000);
 
     return () => {
-      window.removeEventListener('load', handleLoad);
-      clearTimeout(typingTimeout)
+      window.removeEventListener("load", handleLoad);
+      clearTimeout(typingTimeout);
     };
-
   }, []);
 
   if (loading) {
     return (
       <BgImageContainer
         slideAnimation={false}
-        className={`flex max-h-screen w-screen flex-col justify-center bg-white dark:bg-black ${animate} `}
+        className={`flex max-h-screen w-screen flex-col justify-start bg-white dark:bg-black ${animate} `}
       >
-        <div className="fixed bottom-2 right-2 flex h-fit w-fit scale-[.8] flex-col items-center justify-center md:scale-100">
+        {/* Loading SVG */}
+        <div className="right-2 bottom-2 fixed flex flex-col justify-center items-center w-fit h-fit scale-[.8] md:scale-100">
           <img
             src="/images/logo/logo-white-small.png"
             alt="Small white logo"
-            className="absolute hidden h-[20px] w-[20px] dark:inline-block"
+            className="dark:inline-block absolute hidden w-[20px] h-[20px]"
             loading="eager"
           />
           <img
             src="/images/logo/logo-black-small.png"
             alt="Small black logo"
-            className="absolute inline-block h-[20px] w-[20px] dark:hidden"
+            className="inline-block absolute dark:hidden w-[20px] h-[20px]"
             loading="eager"
           />
           <img
             src="/images/loading/loading-circle-white.svg"
             alt="Loading image"
-            className="hidden dark:block"
+            className="dark:block hidden"
             loading="eager"
           />
           <img
@@ -121,10 +124,10 @@ export default function PageLoader({
             loading="eager"
           />
         </div>
-        <div className="flex min-h-[64px] w-full items-end gap-2 text-left font-title text-4xl md:justify-center">
+        <div className="flex md:justify-center items-start md:items-center gap-2 mt-[30vh] md:mt-0 w-full h-screen font-title text-4xl text-left">
           {loadingText && (
             <>
-              <p className="text-black transition-all duration-500 dark:text-white">
+              <p className="text-black dark:text-white transition-all duration-500">
                 {loadingText}
                 <span className="animate-blink">_</span>
               </p>
