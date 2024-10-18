@@ -5,19 +5,21 @@ import BgImageContainer from "../common/BgImageContainer";
 
 const loadingTexts = [
   { br: "Preparando o conteúdo", us: "Preparing content" },
-  { br: "Ajustando tudo", us: "Adjusting everything" },
-  { br: "Finalizando a preparação", us: "Finalizing preparation" },
+  { br: "Ajustando conteúdo", us: "Adjusting content" },
   { br: "Carregando conteúdo", us: "Loading content" },
   { br: "Configurando sua experiência", us: "Setting up your experience" },
   { br: "Carregando recursos", us: "Loading resources" },
   { br: "Otimizando performance", us: "Optimizing performance" },
-  { br: "Carregando recursos", us: "Loading features" },
-  { br: "Verificando atualizações", us: "Checking for updates" },
+  { br: "Carregando funções", us: "Loading features" },
   { br: "Preparando interface", us: "Preparing interface" },
   { br: "Ajustando a interface", us: "Adjusting the interface" },
   { br: "Preparando novos recursos", us: "Preparing new features" },
   { br: "Otimizando sua experiência", us: "Optimizing your experience" },
   { br: "Verificando a integridade da página", us: "Checking page integrity" },
+  { br: "Atualizando informações essenciais", us: "Updating essential information" },
+  { br: "Ajustando exibição", us: "Adjusting display" },
+  { br: "Finalizando ajustes", us: "Finalizing adjustments" },
+  { br: "Preparando visualização", us: "Preparing visualization" },
 ];
 
 // Component that makes the page render only when fully loaded
