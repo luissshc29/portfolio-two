@@ -31,30 +31,6 @@ export default function PageLoader({
 
   const [animate, setAnimate] = useState<string>("");
 
-  let i = 0;
-  function typing(text: string) {
-    if (i < text.length) {
-      setLoadingText((previous) => (previous += text.charAt(i)));
-      setTimeout(() => {
-        i++;
-        typing(text);
-      }, 85);
-    } else {
-      const randomLoadingTime = Math.random() * 500 + 1000;
-
-      setTimeout(() => {
-        setAnimate(
-          "animate-fade [animation-duration:500ms] [animation-fill-mode:forwards]",
-        );
-
-        setTimeout(() => {
-          setLoading(false);
-        }, 500);
-      }, randomLoadingTime);
-
-    }
-  }
-
   useEffect(() => {
     const url = new URL(window.location.href);
     const langParam = url.searchParams.get("lang");
@@ -65,25 +41,47 @@ export default function PageLoader({
         isValidLangParam ? langParam : "br"
       ];
 
-    var windowLoaded = false
-    // Starts typing loadingText when window finishes loading
-    window.onload = () => {
-      windowLoaded = true
+    let i = 0;
+    function typing(text: string) {
+      if (i < text.length) {
+        setLoadingText((previous) => (previous += text.charAt(i)));
+        setTimeout(() => {
+          i++;
+          typing(text);
+        }, 85);
+      } else {
+        const randomLoadingTime = Math.random() * 500 + 1000;
+
+        setTimeout(() => {
+          setAnimate(
+            "animate-fade [animation-duration:500ms] [animation-fill-mode:forwards]",
+          );
+
+          setTimeout(() => {
+            setLoading(false);
+          }, 500);
+        }, randomLoadingTime);
+      }
+    }
+
+    const handleLoad = () => {
       typing(randomText);
+      window.removeEventListener('load', handleLoad); 
     };
 
-    // Sets loading false manually in case window.onload doesn't work
-    if(windowLoaded) {
-      typing(randomText)
-    }
-    
+    window.addEventListener('load', handleLoad);
+
+    return () => {
+      window.removeEventListener('load', handleLoad);
+    };
+
   }, []);
 
   if (loading) {
     return (
-      <BgImageContainer    
+      <BgImageContainer
         slideAnimation={false}
-        className={`flex max-h-screen w-screen flex-col justify-center dark:bg-black bg-white ${animate} `}
+        className={`flex max-h-screen w-screen flex-col justify-center bg-white dark:bg-black ${animate} `}
       >
         <div className="fixed bottom-2 right-2 flex h-fit w-fit scale-[.8] flex-col items-center justify-center md:scale-100">
           <img
@@ -111,7 +109,7 @@ export default function PageLoader({
             loading="eager"
           />
         </div>
-        <div className="flex min-h-[64px] w-full items-end gap-2 font-title text-4xl md:justify-center text-left">
+        <div className="flex min-h-[64px] w-full items-end gap-2 text-left font-title text-4xl md:justify-center">
           {loadingText && (
             <>
               <p className="text-black transition-all duration-500 dark:text-white">
