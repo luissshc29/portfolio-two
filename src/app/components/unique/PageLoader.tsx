@@ -78,7 +78,7 @@ export default function PageLoader({
       if (!windowMounted) {
         typing(randomText);
       }
-    }, 1000);
+    }, 500);
 
     return () => {
       window.removeEventListener('load', handleLoad);
