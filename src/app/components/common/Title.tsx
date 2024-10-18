@@ -11,7 +11,6 @@ export default function Title({
   bgText?: string;
 }) {
 
-
   let i = 0;
   function typing() {
     if (i < mainText.length) {

@@ -1,17 +1,23 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import BgImageContainer from "../common/BgImageContainer";
 
 const loadingTexts = [
-  { br: "Carregando", us: "Loading" },
   { br: "Preparando o conteúdo", us: "Preparing content" },
-  { br: "Só um instante", us: "Just a moment" },
-  { br: "Estamos ajustando tudo", us: "We're adjusting everything" },
+  { br: "Ajustando tudo", us: "Adjusting everything" },
   { br: "Finalizando a preparação", us: "Finalizing preparation" },
   { br: "Carregando conteúdo", us: "Loading content" },
-  { br: "Processando", us: "Processing" },
   { br: "Configurando sua experiência", us: "Setting up your experience" },
   { br: "Carregando recursos", us: "Loading resources" },
+  { br: "Otimizando performance", us: "Optimizing performance" },
+  { br: "Carregando recursos", us: "Loading features" },
+  { br: "Verificando atualizações", us: "Checking for updates" },
+  { br: "Preparando interface", us: "Preparing interface" },
+  { br: "Ajustando a interface", us: "Adjusting the interface" },
+  { br: "Preparando novos recursos", us: "Preparing new features" },
+  { br: "Otimizando sua experiência", us: "Optimizing your experience" },
+  { br: "Verificando a integridade da página", us: "Checking page integrity" },
 ];
 
 // Component that makes the page render only when fully loaded
@@ -25,6 +31,44 @@ export default function PageLoader({
 
   const [animate, setAnimate] = useState<string>("");
 
+  let i = 0;
+  function typing(text: string) {
+    if (i < text.length) {
+      setLoadingText((previous) => (previous += text.charAt(i)));
+      setTimeout(() => {
+        i++;
+        typing(text);
+      }, 85);
+    } else {
+      const randomLoadingTime = Math.random() * 500 + 1000;
+
+      setTimeout(() => {
+        setAnimate(
+          "animate-fade [animation-duration:500ms] [animation-fill-mode:forwards]",
+        );
+
+        setTimeout(() => {
+          setLoading(false);
+        }, 500);
+      }, randomLoadingTime);
+
+      // Sets loading false manually in case window.onload doesn't work
+      setTimeout(() => {
+        if (loading) {
+          setTimeout(() => {
+            setAnimate(
+              "animate-fade [animation-duration:500ms] [animation-fill-mode:forwards]",
+            );
+    
+            setTimeout(() => {
+              setLoading(false);
+            }, 500);
+          }, randomLoadingTime);
+        }
+      }, randomLoadingTime + 500);
+    }
+  }
+
   useEffect(() => {
     const url = new URL(window.location.href);
     const langParam = url.searchParams.get("lang");
@@ -34,55 +78,38 @@ export default function PageLoader({
       loadingTexts[Math.floor(Math.random() * loadingTexts.length)][
         isValidLangParam ? langParam : "br"
       ];
-    setLoadingText(randomText);
 
-    // Sets loading false when window finishes loading
+    // Starts typing loadingText when window finishes loading
     window.onload = () => {
-      setTimeout(() => {
-        setAnimate(
-          "animate-fade [animation-duration:500ms] [animation-fill-mode:forwards]",
-        );
-      }, 500);
-      setTimeout(() => {
-        setLoading(false);
-      }, 1000);
+      typing(randomText);
     };
 
-    // Sets loading false in case window.onload doesn't work
-    if (loading) {
-      setTimeout(() => {
-        setAnimate(
-          "animate-fade [animation-duration:500ms] [animation-fill-mode:forwards]",
-        );
-      }, 500);
-      setTimeout(() => {
-        setLoading(false);
-      }, 1000);
-    }
+  
   }, []);
 
   if (loading) {
     return (
-      <div
-        className={`flex h-screen w-screen flex-col items-center justify-center gap-2 bg-white dark:bg-black md:gap-4 ${animate}`}
+      <BgImageContainer    
+        slideAnimation="left"
+        className={`flex max-h-screen w-screen flex-col justify-center dark:bg-black bg-white ${animate} `}
       >
-        <div className="relative flex flex-col justify-center items-center w-fit h-fit scale-[.8] md:scale-100">
+        <div className="fixed bottom-2 right-2 flex h-fit w-fit scale-[.8] flex-col items-center justify-center md:scale-100">
           <img
             src="/images/logo/logo-white-small.png"
             alt="Small white logo"
-            className="dark:inline-block absolute hidden w-[35px] h-[35px]"
+            className="absolute hidden h-[20px] w-[20px] dark:inline-block"
             loading="eager"
           />
           <img
             src="/images/logo/logo-black-small.png"
             alt="Small black logo"
-            className="inline-block absolute dark:hidden w-[35px] h-[35px]"
+            className="absolute inline-block h-[20px] w-[20px] dark:hidden"
             loading="eager"
           />
           <img
             src="/images/loading/loading-circle-white.svg"
             alt="Loading image"
-            className="dark:block hidden"
+            className="hidden dark:block"
             loading="eager"
           />
           <img
@@ -92,13 +119,14 @@ export default function PageLoader({
             loading="eager"
           />
         </div>
-        <div className="flex items-center gap-2 h-[18px]">
+        <div className="flex min-h-[64px] w-full items-end gap-2 font-title text-4xl md:justify-center text-left">
           {loadingText && (
             <>
-              <p className="text-black dark:text-white transition-all duration-500">
+              <p className="text-black transition-all duration-500 dark:text-white">
                 {loadingText}
+                <span className="animate-blink">_</span>
               </p>
-              <img
+              {/* <img
                 src="/images/loading/loading-dots-white.svg"
                 alt="Loading image"
                 className="dark:block hidden"
@@ -109,11 +137,11 @@ export default function PageLoader({
                 alt="Loading image"
                 className="block dark:hidden"
                 loading="eager"
-              />
+              /> */}
             </>
           )}
         </div>
-      </div>
+      </BgImageContainer>
     );
   }
 

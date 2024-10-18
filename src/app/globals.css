@@ -32,8 +32,8 @@
     --chart-5: 27 87% 67%;
 
     /* Fonts */
-    --text: "SF-Pro-Display-Regular", sans-serif;
-    --title: "SF-Pro-Display-Bold", sans-serif;
+    --text: "HelveticaNeueRoman", sans-serif;
+    --title: "HelveticaNeueBold", sans-serif;
     --title-bg: "LeagueSpartan-Bold", sans-serif;
 
     /* Background Colors */
@@ -76,13 +76,13 @@ body {
 }
 
 @font-face {
-  font-family: "SF-Pro-Display-Regular";
-  src: url("../utils/fonts/SF-Pro-Display-Regular.otf");
+  font-family: "HelveticaNeueRoman";
+  src: url("../utils/fonts/HelveticaNeueRoman.otf");
 }
 
 @font-face {
-  font-family: "SF-Pro-Display-Bold";
-  src: url("../utils/fonts/SF-Pro-Display-Bold.otf");
+  font-family: "HelveticaNeueBold";
+  src: url("../utils/fonts/HelveticaNeueBold.otf");
 }
 
 @font-face {
