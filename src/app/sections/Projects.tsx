@@ -27,7 +27,7 @@ export default function Projects() {
       darkImgSrc="/images/background/dark/projects-bg-img.jpg"
       lightImgSrc="/images/background/light/projects-bg-img.jpg"
       id="projects"
-      slideAnimation="left"
+      slideAnimationDirecion="left"
     >
       <Title
         mainText={textVariants.sections.projects.title.main[language]}

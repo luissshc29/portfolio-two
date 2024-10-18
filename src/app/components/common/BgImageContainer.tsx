@@ -7,7 +7,8 @@ import { useInView } from "react-intersection-observer";
 interface BgImageContainerProps {
   darkImgSrc?: string;
   lightImgSrc?: string;
-  slideAnimation?: "right" | "left";
+  slideAnimation?: boolean
+  slideAnimationDirecion?: "right" | "left";
 }
 
 export default function BgImageContainer({
@@ -16,7 +17,8 @@ export default function BgImageContainer({
   lightImgSrc = "",
   id,
   className = "",
-  slideAnimation = "right",
+  slideAnimation = true,
+  slideAnimationDirecion = "right",
   ...rest
 }: {
   children: React.ReactNode;
@@ -69,12 +71,16 @@ export default function BgImageContainer({
         style={
           // Conditional to fix Header desapearing on scroll
           id !== "welcome"
-            ? inView
+            ? slideAnimation ? 
+            
+            
+            inView
               ? { transform: `translateX(0)`, opacity: "1" }
               : {
-                  transform: `translateX(${slideAnimation === "right" ? "-6%" : "6%"})`,
+                  transform: `translateX(${slideAnimationDirecion === "right" ? "-6%" : "6%"})`,
                   opacity: "0",
                 }
+            : {}
             : {}
         }
       >

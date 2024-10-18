@@ -15,7 +15,7 @@ export default function Experience() {
       darkImgSrc="/images/background/dark/experience-bg-img.jpg"
       lightImgSrc="/images/background/light/experience-bg-img.jpg"
       id="experience"
-      slideAnimation="right"
+      slideAnimationDirecion="right"
     >
       <Title
         mainText={textVariants.sections.experience.title.main[language]}

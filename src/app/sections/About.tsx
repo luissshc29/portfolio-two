@@ -18,7 +18,7 @@ export default function About() {
       id="about"
       darkImgSrc="/images/background/dark/about-bg-img.jpg"
       lightImgSrc="/images/background/light/about-bg-img.jpg"
-      slideAnimation="left"
+      slideAnimationDirecion="left"
     >
       <Title
         mainText={textVariants.sections.about.title.main[language]}

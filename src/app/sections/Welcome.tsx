@@ -110,6 +110,7 @@ export default function Welcome() {
     <BgImageContainer
       darkImgSrc="/images/background/dark/welcome-bg-img.jpg"
       lightImgSrc="/images/background/light/welcome-bg-img.jpg"
+      className=""
       id="welcome"
     >
       <Title

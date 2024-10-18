@@ -52,20 +52,6 @@ export default function PageLoader({
         }, 500);
       }, randomLoadingTime);
 
-      // Sets loading false manually in case window.onload doesn't work
-      setTimeout(() => {
-        if (loading) {
-          setTimeout(() => {
-            setAnimate(
-              "animate-fade [animation-duration:500ms] [animation-fill-mode:forwards]",
-            );
-    
-            setTimeout(() => {
-              setLoading(false);
-            }, 500);
-          }, randomLoadingTime);
-        }
-      }, randomLoadingTime + 500);
     }
   }
 
@@ -79,18 +65,24 @@ export default function PageLoader({
         isValidLangParam ? langParam : "br"
       ];
 
+    var windowLoaded = false
     // Starts typing loadingText when window finishes loading
     window.onload = () => {
+      windowLoaded = true
       typing(randomText);
     };
 
-  
+    // Sets loading false manually in case window.onload doesn't work
+    if(windowLoaded) {
+      typing(randomText)
+    }
+    
   }, []);
 
   if (loading) {
     return (
       <BgImageContainer    
-        slideAnimation="left"
+        slideAnimation={false}
         className={`flex max-h-screen w-screen flex-col justify-center dark:bg-black bg-white ${animate} `}
       >
         <div className="fixed bottom-2 right-2 flex h-fit w-fit scale-[.8] flex-col items-center justify-center md:scale-100">
