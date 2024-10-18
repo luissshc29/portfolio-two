@@ -134,16 +134,16 @@ export default function PageLoader({
             loading="eager"
           />
         </div>
-        <div className="flex flex-col justify-evenly items-center gap-2 md:mt-0 w-full h-screen font-title text-4xl text-left">
+        <div className="gap-2 md:mt-0 w-full h-screen font-title text-4xl text-left md:text-center">
           {loadingText && (
-            <p className="min-h-fit text-black dark:text-white transition-all duration-500 self-start md:self-center">
+            <p className="mt-[25vh] min-h-fit text-black dark:text-white transition-all duration-500 self-start md:self-center">
               {loadingText}
               <span className="animate-blink">_</span>
             </p>
           )}
         </div>
-        <div className="top-[80vh] right-0 left-0 absolute flex gap-1 opacity-[.275] dark:opacity-[.125] mx-auto w-fit text-lg text-neutral-600 dark:text-neutral-200">
-          <p className="font-bold text-sm">Made with</p>
+        <div className="top-[80vh] right-0 left-0 absolute flex gap-1 opacity-25 dark:opacity-15 mx-auto w-fit text-lg text-neutral-600 dark:text-neutral-200">
+          <p className="text-sm">Made with</p>
           <Separator
             orientation="vertical"
             className="bg-neutral-600 dark:bg-neutral-200 opacity-100 w-[1px] h-5"
