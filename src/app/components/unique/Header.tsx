@@ -15,6 +15,7 @@ import { IoMdMenu } from "react-icons/io";
 import { useHeaderContext } from "@/utils/context/HeaderContext";
 import { useTheme } from "next-themes";
 import { useInView } from "react-intersection-observer";
+import { Progress } from "@/shadcn/components/ui/progress";
 
 export default function Header() {
   const { language } = useLanguageContext();
@@ -30,6 +31,8 @@ export default function Header() {
 
   const { resolvedTheme } = useTheme();
   const { ref, inView } = useInView();
+
+  const [maxScrollPosition, setMaxScrollPosition] = useState<number>(0);
 
   function handleStyleOnPageScroll() {
     if (window.scrollY > headerYPosition) {
@@ -51,6 +54,9 @@ export default function Header() {
   }
 
   useEffect(() => {
+    setMaxScrollPosition(
+      document.documentElement.scrollHeight - window.innerHeight,
+    );
     setHeader(document.getElementById("header") as HTMLElement);
     handleStyleOnPageScroll();
     if (header) {
@@ -123,6 +129,12 @@ export default function Header() {
             ))}
           </DropdownMenuContent>
         </DropdownMenu>
+        {style && (
+          <Progress
+            value={(window.scrollY / maxScrollPosition) * 100}
+            className="bottom-0 z-[1000] absolute w-screen h-[2px]"
+          />
+        )}
       </div>
     );
   }

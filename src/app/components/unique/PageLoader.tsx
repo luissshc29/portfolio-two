@@ -38,6 +38,45 @@ export default function PageLoader({
   const textIndex = useRef(0);
   const typingTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
+  // Setting progress bar values
+  // const [progress, setProgress] = useState<number>(0);
+
+  function typing(text: string) {
+    if (textIndex.current < text.length) {
+      // setProgress(
+      //   Math.floor((textIndex.current / 1.5 / (text.length - 1)) * 100),
+      // );
+      const nextChar = text.charAt(textIndex.current);
+      setLoadingText((previous) => previous + nextChar);
+      textIndex.current += 1;
+      typingTimeoutRef.current = setTimeout(() => typing(text), 100);
+    } else {
+      const randomLoadingTime = Math.random() * 500 + 1000;
+      // var currentProgress = 66;
+      // const remainingLoadingInterval = setInterval(
+      //   () => {
+      //     if (currentProgress < 100) {
+      //       currentProgress++;
+      //       setProgress(currentProgress);
+      //     }
+      //   },
+      //   randomLoadingTime / (100 - currentProgress),
+      // );
+      // setTimeout(() => {
+      //   clearInterval(remainingLoadingInterval);
+      // }, randomLoadingTime);
+
+      setTimeout(() => {
+        setAnimate(
+          "animate-fade [animation-duration:500ms] [animation-fill-mode:forwards]",
+        );
+        setTimeout(() => {
+          setLoading(false);
+        }, 500);
+      }, randomLoadingTime);
+    }
+  }
+
   useEffect(() => {
     const url = new URL(window.location.href);
     const langParam = url.searchParams.get("lang");
@@ -47,25 +86,6 @@ export default function PageLoader({
       loadingTexts[Math.floor(Math.random() * loadingTexts.length)][
         langParam === "br" || langParam === "us" ? langParam : "br"
       ];
-
-    function typing(text: string) {
-      if (textIndex.current < text.length) {
-        const nextChar = text.charAt(textIndex.current);
-        setLoadingText((previous) => previous + nextChar);
-        textIndex.current += 1;
-        typingTimeoutRef.current = setTimeout(() => typing(text), 100);
-      } else {
-        const randomLoadingTime = Math.random() * 500 + 1000;
-        setTimeout(() => {
-          setAnimate(
-            "animate-fade [animation-duration:500ms] [animation-fill-mode:forwards]",
-          );
-          setTimeout(() => {
-            setLoading(false);
-          }, 500);
-        }, randomLoadingTime);
-      }
-    }
 
     let windowMounted = false;
 
@@ -80,7 +100,7 @@ export default function PageLoader({
 
     window.addEventListener("load", handleLoad);
 
-    // Checks after 1 second if event load worked, and manually types if not
+    // Checks after 1 second if event load worked, and manually starts typing if not
     const typingTimeout = setTimeout(() => {
       if (!windowMounted) {
         typing(randomText);
@@ -132,7 +152,7 @@ export default function PageLoader({
             loading="eager"
           />
         </div>
-        <div className="gap-2 md:mt-0 w-full h-screen font-title text-4xl text-left md:text-center">
+        <div className="gap-2 md:mt-0 md:ml-16 w-full h-screen font-title text-4xl text-left">
           {loadingText && (
             <p className="mt-[25vh] min-h-fit text-black dark:text-white transition-all duration-500 self-start md:self-center">
               {loadingText}
@@ -140,6 +160,14 @@ export default function PageLoader({
             </p>
           )}
         </div>
+        {/* <div className="top-[85vh] md:top-[90vh] absolute flex opacity-70 w-screen">
+          <div className="flex flex-col items-center opacity-100 mr-auto ml-0 w-2/3">
+            <Progress
+              value={progress}
+              className="w-full h-1 transition-all duration-1000"
+            />
+          </div>
+        </div> */}
       </BgImageContainer>
     );
   }
