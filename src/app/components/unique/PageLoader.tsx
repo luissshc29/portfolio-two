@@ -142,20 +142,6 @@ export default function PageLoader({
             </p>
           )}
         </div>
-        <div className="top-[80vh] right-0 left-0 absolute flex gap-2 opacity-25 dark:opacity-20 mx-auto w-fit text-lg text-neutral-600 dark:text-neutral-200">
-          <p className="text-sm">Made with</p>
-          <Separator
-            orientation="vertical"
-            className="bg-neutral-600 dark:bg-neutral-200 opacity-100 w-[1px] h-5"
-          />
-          <div className="flex items-center gap-2">
-            {stacks
-              .filter((item) => [4, 6, 10].includes(item.id))
-              .map((s) => (
-                <Fragment key={s.id}>{s.component}</Fragment>
-              ))}
-          </div>
-        </div>
       </BgImageContainer>
     );
   }

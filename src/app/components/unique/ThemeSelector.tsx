@@ -29,7 +29,7 @@ export default function ThemeSelector() {
   if (headerVisible) {
     return (
       <DropdownMenu onOpenChange={() => setSelectorOpen(!selectorOpen)}>
-        <DropdownMenuTrigger className="right-4 bottom-4 z-[1000] fixed border-[1px] dark:border-white bg-white dark:bg-black dark:shadow-black p-[2px] md:p-[3px] border-black rounded-sm text-black text-xl md:text-[22px] dark:text-white hover:cursor-pointer scale-[1.2]">
+        <DropdownMenuTrigger className="right-4 bottom-4 z-[1001] fixed border-[1px] dark:border-white bg-white dark:bg-black dark:shadow-black p-[2px] md:p-[3px] border-black rounded-sm text-black text-xl md:text-[22px] dark:text-white hover:cursor-pointer scale-[1.2]">
           {textVariants.others.themeSelector.options.find(
             (item) => item.text.us.toLowerCase() === theme,
           )?.icon || <MdOutlineQuestionMark />}
@@ -41,7 +41,7 @@ export default function ThemeSelector() {
           {textVariants.others.themeSelector.options.map((option) => (
             <Fragment key={option.id}>
               <DropdownMenuItem
-                className="z-[1001] flex items-center gap-2 hover:bg-neutral-400 dark:hover:bg-neutral-700 hover:cursor-pointer"
+                className="z-[1001] flex items-center gap-2 hover:bg-neutral-400 dark:hover:bg-neutral-700 w-full hover:cursor-pointer"
                 onClick={() => setTheme(option.text.us.toLowerCase())}
               >
                 <>
@@ -49,11 +49,16 @@ export default function ThemeSelector() {
                   <p className="text-sm lg:text-base">
                     {option.text[language]}
                   </p>
-                  {theme === option.text.us.toLowerCase() && (
-                    <span className="text-[#00c217] dark:text-[#00ff1e]">
-                      <IoMdCheckmarkCircle className="text-base md:text-lg" />
-                    </span>
-                  )}
+                  <span
+                    className="opacity-0 text-[#00c217] dark:text-[#00ff1e] transition-all duration-500"
+                    style={
+                      theme === option.text.us.toLowerCase()
+                        ? { opacity: 1 }
+                        : {}
+                    }
+                  >
+                    <IoMdCheckmarkCircle className="text-base md:text-lg" />
+                  </span>
                 </>
               </DropdownMenuItem>
               {option.id !==
