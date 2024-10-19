@@ -1,9 +1,7 @@
 "use client";
 
-import React, { Fragment, useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import BgImageContainer from "../common/BgImageContainer";
-import { stacks } from "@/utils/constants/stacks";
-import { Separator } from "@radix-ui/react-separator";
 import { useInView } from "react-intersection-observer";
 
 const loadingTexts = [
@@ -15,7 +13,7 @@ const loadingTexts = [
   { br: "Otimizando performance", us: "Optimizing performance" },
   { br: "Preparando interface", us: "Preparing interface" },
   { br: "Ajustando a interface", us: "Adjusting the interface" },
-  { br: "Preparando nrecursos", us: "Preparing features" },
+  { br: "Preparando recursos", us: "Preparing features" },
   { br: "Otimizando sua experiência", us: "Optimizing your experience" },
   { br: "Verificando a integridade da página", us: "Checking page integrity" },
   { br: "Ajustando exibição", us: "Adjusting display" },

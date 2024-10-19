@@ -35,20 +35,22 @@ export default function ThemeSelector() {
           )?.icon || <MdOutlineQuestionMark />}
         </DropdownMenuTrigger>
         <DropdownMenuContent
-          className="flex flex-col justify-evenly items-start w-[45vw] md:w-[20vw] h-fit min-h-[20vh]"
+          className="flex flex-col justify-evenly items-start w-[45vw] md:w-[25vw] lg:w-[15vw] h-fit min-h-[20vh]"
           id="theme-selector"
         >
           {textVariants.others.themeSelector.options.map((option) => (
             <Fragment key={option.id}>
               <DropdownMenuItem
-                className="z-[1001] flex items-center gap-2 hover:bg-neutral-400 dark:hover:bg-neutral-700 w-full hover:cursor-pointer"
+                className="z-[1001] flex justify-between items-center gap-2 hover:bg-neutral-400 dark:hover:bg-neutral-700 w-full hover:cursor-pointer"
                 onClick={() => setTheme(option.text.us.toLowerCase())}
               >
                 <>
-                  <div className="text-base md:text-xl">{option.icon}</div>
-                  <p className="text-sm lg:text-base">
-                    {option.text[language]}
-                  </p>
+                  <div className="flex items-center gap-2">
+                    <div className="text-base md:text-lg">{option.icon}</div>
+                    <p className="text-sm lg:text-base">
+                      {option.text[language]}
+                    </p>
+                  </div>
                   <span
                     className="opacity-0 text-[#00c217] dark:text-[#00ff1e] transition-all duration-500"
                     style={
@@ -57,7 +59,7 @@ export default function ThemeSelector() {
                         : {}
                     }
                   >
-                    <IoMdCheckmarkCircle className="text-base md:text-lg" />
+                    <IoMdCheckmarkCircle className="text-base md:text-xl" />
                   </span>
                 </>
               </DropdownMenuItem>
