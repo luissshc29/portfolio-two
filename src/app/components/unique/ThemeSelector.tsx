@@ -35,7 +35,7 @@ export default function ThemeSelector() {
           )?.icon || <MdOutlineQuestionMark />}
         </DropdownMenuTrigger>
         <DropdownMenuContent
-          className="flex flex-col justify-between w-[45vw] md:w-[20vw] min-h-[20vh]"
+          className="flex flex-col justify-evenly items-start w-[45vw] md:w-[20vw] h-fit min-h-[20vh]"
           id="theme-selector"
         >
           {textVariants.others.themeSelector.options.map((option) => (
