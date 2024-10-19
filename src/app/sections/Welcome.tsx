@@ -30,20 +30,12 @@ export default function Welcome() {
   ];
 
   useEffect(() => {
-    // const referrer = possibleReferrers.find(
-    //   (item) =>
-    //     item.ref.replace("www.", "") === document.referrer.replace("www.", ""),
-    // );
-
-    // const userAgent = navigator.userAgent.toLowerCase();
-
     const referrer = possibleReferrers.find(
       (item) =>
-        item.ref.replace("www.", "") ===
-        "https://l.instagram.com/".replace("www.", ""),
+        item.ref.replace("www.", "") === document.referrer.replace("www.", ""),
     );
 
-    const userAgent = "mobile";
+    const userAgent = navigator.userAgent.toLowerCase();
 
     if (referrer) {
       if (
