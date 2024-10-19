@@ -35,7 +35,7 @@ export default function ThemeSelector() {
           )?.icon || <MdOutlineQuestionMark />}
         </DropdownMenuTrigger>
         <DropdownMenuContent
-          className="flex flex-col justify-evenly w-[45vw] md:w-[15vw] min-h-[20vh]"
+          className="flex flex-col justify-evenly w-[45vw] md:w-[20vw] min-h-[20vh]"
           id="theme-selector"
         >
           {textVariants.others.themeSelector.options.map((option) => (
@@ -46,14 +46,7 @@ export default function ThemeSelector() {
               >
                 <>
                   <div className="text-base md:text-xl">{option.icon}</div>
-                  <p
-                    className="text-sm md:text-base"
-                    style={
-                      theme === option.text.us.toLowerCase()
-                        ? { fontWeight: "bold" }
-                        : {}
-                    }
-                  >
+                  <p className="text-sm lg:text-base">
                     {option.text[language]}
                   </p>
                   {theme === option.text.us.toLowerCase() && (
