@@ -142,7 +142,7 @@ export default function PageLoader({
             </p>
           )}
         </div>
-        <div className="top-[80vh] right-0 left-0 absolute flex gap-1 opacity-25 dark:opacity-15 mx-auto w-fit text-lg text-neutral-600 dark:text-neutral-200">
+        <div className="top-[80vh] right-0 left-0 absolute flex gap-2 opacity-25 dark:opacity-20 mx-auto w-fit text-lg text-neutral-600 dark:text-neutral-200">
           <p className="text-sm">Made with</p>
           <Separator
             orientation="vertical"

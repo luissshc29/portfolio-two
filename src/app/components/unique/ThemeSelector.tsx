@@ -30,13 +30,9 @@ export default function ThemeSelector() {
     return (
       <DropdownMenu onOpenChange={() => setSelectorOpen(!selectorOpen)}>
         <DropdownMenuTrigger className="right-4 bottom-4 z-[1000] fixed border-[1px] dark:border-white bg-white dark:bg-black dark:shadow-black p-[2px] md:p-[3px] border-black rounded-sm text-black text-xl md:text-[22px] dark:text-white hover:cursor-pointer scale-[1.2]">
-          {
-            textVariants.others.themeSelector.options.find(
-              (item) => item.text.us.toLowerCase() === theme,
-            )?.icon || (
-              <MdOutlineQuestionMark />
-            )
-          }
+          {textVariants.others.themeSelector.options.find(
+            (item) => item.text.us.toLowerCase() === theme,
+          )?.icon || <MdOutlineQuestionMark />}
         </DropdownMenuTrigger>
         <DropdownMenuContent
           className="flex flex-col justify-evenly w-[45vw] md:w-[15vw] min-h-[20vh]"
@@ -45,16 +41,25 @@ export default function ThemeSelector() {
           {textVariants.others.themeSelector.options.map((option) => (
             <Fragment key={option.id}>
               <DropdownMenuItem
-                className="flex items-center gap-2 hover:bg-neutral-400 dark:hover:bg-neutral-700 z-[1001] hover:cursor-pointer"
+                className="z-[1001] flex items-center gap-2 hover:bg-neutral-400 dark:hover:bg-neutral-700 hover:cursor-pointer"
                 onClick={() => setTheme(option.text.us.toLowerCase())}
               >
                 <>
                   <div className="text-base md:text-xl">{option.icon}</div>
-                  <p className="text-sm md:text-base">
+                  <p
+                    className="text-sm md:text-base"
+                    style={
+                      theme === option.text.us.toLowerCase()
+                        ? { fontWeight: "bold" }
+                        : {}
+                    }
+                  >
                     {option.text[language]}
                   </p>
                   {theme === option.text.us.toLowerCase() && (
-                    <IoMdCheckmarkCircle className="text-base md:text-lg" />
+                    <span className="text-[#00c217] dark:text-[#00ff1e]">
+                      <IoMdCheckmarkCircle className="text-base md:text-lg" />
+                    </span>
                   )}
                 </>
               </DropdownMenuItem>
