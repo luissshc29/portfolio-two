@@ -86,10 +86,7 @@ export const stacks: Stack[] = [
     name: "Next.js",
     url: "https://nextjs.org/",
     component: (
-      <SiNextdotjs
-        className="w-full h-full text-black dark:text-white"
-        size={20}
-      />
+      <SiNextdotjs className="w-full h-full text-black dark:text-white" />
     ),
   },
   {

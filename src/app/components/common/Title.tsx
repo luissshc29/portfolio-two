@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useInView } from "react-intersection-observer";
 
 export default function Title({
@@ -10,15 +10,16 @@ export default function Title({
   mainText: string;
   bgText?: string;
 }) {
+  // Avoiding wrong typing
+  const textIndex = useRef(0);
+  const typingTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-  let i = 0;
   function typing() {
-    if (i < mainText.length) {
-      setTitle((previous) => (previous += mainText.charAt(i)));
-      setTimeout(() => {
-        i++;
-        typing();
-      }, 100);
+    if (textIndex.current < mainText.length) {
+      const nextChar = mainText.charAt(textIndex.current);
+      setTitle((previous) => previous + nextChar);
+      textIndex.current += 1;
+      typingTimeoutRef.current = setTimeout(() => typing(), 100);
     }
   }
 
@@ -28,6 +29,7 @@ export default function Title({
 
   useEffect(() => {
     setTitle("");
+    textIndex.current = 0;
     if (inView) {
       typing();
     }
@@ -35,10 +37,10 @@ export default function Title({
 
   return (
     <div
-      className="relative flex w-full items-center justify-center text-center font-font-medium font-title text-4xl md:text-5xl"
+      className="relative flex justify-center items-center w-full font-font-medium font-title text-4xl text-center md:text-5xl"
       ref={ref}
     >
-      <h1 className="absolute z-[-2] text-5xl text-[#838383] opacity-20 dark:text-[#9b9b9b] top-0  md:text-7xl font-title-bg">
+      <h1 className="top-0 z-[-2] absolute opacity-20 font-title-bg text-[#838383] text-5xl md:text-7xl dark:text-[#9b9b9b]">
         {bgText}
       </h1>
       <h2>{title}</h2>
