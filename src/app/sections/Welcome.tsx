@@ -30,12 +30,20 @@ export default function Welcome() {
   ];
 
   useEffect(() => {
+    // const referrer = possibleReferrers.find(
+    //   (item) =>
+    //     item.ref.replace("www.", "") === document.referrer.replace("www.", ""),
+    // );
+
+    // const userAgent = navigator.userAgent.toLowerCase();
+
     const referrer = possibleReferrers.find(
       (item) =>
-        item.ref.replace("www.", "") === document.referrer.replace("www.", ""),
+        item.ref.replace("www.", "") ===
+        "https://l.instagram.com/".replace("www.", ""),
     );
 
-    const userAgent = navigator.userAgent.toLowerCase();
+    const userAgent = "mobile";
 
     if (referrer) {
       if (
@@ -57,9 +65,9 @@ export default function Welcome() {
               >
                 <IoIosClose />
               </button>
-              <div className="flex flex-wrap items-center gap-2 text-left font-bold text-yellow-900">
+              <div className="items-center gap-3 text-left text-base font-bold text-yellow-900">
                 {textVariants.sections.welcome.toast.title[language]}
-                <p className="pr-4 font-normal text-yellow-700">
+                <p className="text-sm font-normal text-yellow-700">
                   {textVariants.sections.welcome.toast.subtitle[language]}{" "}
                   <u>{referrer?.ref}</u>
                 </p>
