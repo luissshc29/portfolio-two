@@ -256,8 +256,8 @@ export const textVariants: TextVariants = {
             list: ["1.png", "2.png", "3.png"],
           },
           description: {
-            br: "Plataforma fictícia de aluguel de bicicletas.",
-            us: "Fictional bike rental web platform.",
+            br: "Plataforma fictícia de aluguel de bicicletas, com cadastro de usuários, login com <i>OAuth 2.0</i>, avaliação de experiência e comentários, e vários modelos de bicicletas, obtidas pela API GraphQL feita para o Bike4Cash.",
+            us: "Fictional bike rental web platform, with user registration, login with <i>OAuth 2.0</i>, experience rating and comments, and various bike models, provided by the GraphQL API made for Bike4Cash.",
           },
           date: {
             br: "27 Dez. 2023",
@@ -281,8 +281,8 @@ export const textVariants: TextVariants = {
             list: ["1.png"],
           },
           description: {
-            br: "API Web para o Bike4Cash.",
-            us: "Web API for Bike4Cash.",
+            br: "API Web para o Bike4Cash, com <i>resolvers</i> para obter a lista de bicicletas, filtradas por categoria, preço máximo e busca, e para listar as categorias disponíveis.<br/>Saiba mais no <code>README.md</code> no repositório.",
+            us: "Web API for Bike4Cash, with resolvers to obtain the list of bikes, filtered by category, maximum price and search, and to list the available categories.<br/>Learn more in the <code>README.md</code> in the repository.",
           },
           date: {
             br: "14 Set. 2024",
@@ -305,8 +305,8 @@ export const textVariants: TextVariants = {
             list: ["1.png", "2.png", "3.png"],
           },
           description: {
-            br: "Interface para uma API GraphQL.",
-            us: "Interface for a GraphQL API.",
+            br: "Interface para uma API GraphQL, com rotas para criação, edição e exclusão de usuários e posts.",
+            us: "Interface for a GraphQL API, with routes for creating, editing and deleting users and posts.",
           },
           date: {
             br: "28 Jun. 2024",
@@ -329,8 +329,8 @@ export const textVariants: TextVariants = {
             list: ["1.png"],
           },
           description: {
-            br: "API Web com operações CRUD.",
-            us: "Web API with CRUD operations.",
+            br: "API Web com operações CRUD. Com <i>resolvers</i> para criação, edição e exclusão de usuários e posts.<br/>Saiba mais no <code>README.md</code> no repositório.",
+            us: "Web API with CRUD operations. With resolvers for creating, editing and deleting users and posts.<br/>Learn more at <code>README.md</code> in the repository.",
           },
           date: {
             br: "28 Jun. 2024",
@@ -345,7 +345,7 @@ export const textVariants: TextVariants = {
           id: uuidv4(),
           tag: "frontend",
           title: {
-            br: "Catálogo Unicapas ®",
+            br: "Catálogo Unicapas®",
             us: "Unicapas® catalog",
           },
           images: {
@@ -353,8 +353,8 @@ export const textVariants: TextVariants = {
             list: ["1.png", "2.png", "3.png"],
           },
           description: {
-            br: "Catálogo virtual de produtos de uma empresa.",
-            us: "Virtual product showcase of a company.",
+            br: "Catálogo virtual de produtos de uma empresa real de acessórios para moto. Saiba mais sobre produtos, endereço e contatos acessando a página.",
+            us: "Virtual product catalog from a real motorcycle accessories company. Find out more about products, address and contacts by accessing the page.",
           },
           date: {
             br: "25 Out. 2023",
@@ -376,8 +376,8 @@ export const textVariants: TextVariants = {
             list: ["1.png", "2.png"],
           },
           description: {
-            br: "Modelo simples de página de login com OAuth.",
-            us: "Simple login page model using OAuth.",
+            br: "Modelo de página de login com <i>OAuth 2.0</i>, guardando as informações dos usuários em uma tabela simples no banco de dados.",
+            us: "Login page template with OAuth 2.0, storing user information in a simple table in the database.",
           },
           date: {
             br: "14 Dez. 2023",
@@ -400,8 +400,8 @@ export const textVariants: TextVariants = {
             list: ["1.png", "2.png"],
           },
           description: {
-            br: "Pokédex online, com várias informações valiosas sobre Pokémon.",
-            us: "Online Pokédex, with lots of valuable information about Pokémon.",
+            br: "Pokédex online, com várias informações valiosas sobre Pokémon.<br/>A página consome dados da API <i>PokéAPI</i>, que você pode acessar <a href='https://pokeapi.co/' target='_blank'><u>clicando aqui</u></a>.",
+            us: "Online Pokédex, with lots of valuable information about Pokémon.<br/>The page consumes data from the <i>PokéAPI</i> API, which you can access by <a href='https://pokeapi.co/' target='_blank'><u>clicking here</u></a>.",
           },
           date: {
             br: "8 Set. 2023",
@@ -425,8 +425,8 @@ export const textVariants: TextVariants = {
             list: ["1.png"],
           },
           description: {
-            br: "Bloco de notas online que guardará suas anotações para sempre.",
-            us: "An online notebook that will save your notes forever.",
+            br: "Bloco de notas online que guardará suas anotações para sempre. O site guarda as notas no <i>localStorage</i> do navegador, cada uma com seu título, descrição e cor.",
+            us: "Online notepad that will save your notes forever. The site stores the notes in the browser's <i>localStorage</i>, each with its title, description and color.",
           },
           date: {
             br: "1 Nov. 2023",
@@ -450,8 +450,8 @@ export const textVariants: TextVariants = {
             list: ["1.png", "2.png"],
           },
           description: {
-            br: "Enciclopédia de páises, com informações de cada um.",
-            us: "Encyclopedia of countries, with information about each one.",
+            br: "Enciclopédia de páises, com informações de cada um.<br/>A página foi feita para um desafio no <a href='https://www.frontendmentor.io/' target='_blank'><u>Frontend Mentor</u></a> e consome dados da API <i>REST Countries</i>, que você pode acessar <a href='https://restcountries.com/' target='_blank'><u>clicando aqui</u></a>.",
+            us: "Encyclopedia of countries, with information about each one.<br/>The page was made for a challenge on <a href='https://www.frontendmentor.io/' target='_blank'><u>Frontend Mentor</u></a> and consumes data from the <i>REST Countries</i> API, which you can access by <a href='https://restcountries.com/' target='_blank'><u>clicking here</u></a>.",
           },
           date: {
             br: "5 Nov. 2023",
@@ -474,8 +474,8 @@ export const textVariants: TextVariants = {
             list: ["1.png", "2.png", "3.png"],
           },
           description: {
-            br: "Loja virtual fictícia de suplementos para musculação.",
-            us: "Fictional online bodybuilding supplement store.",
+            br: "Loja virtual fictícia de suplementos para musculação, feita para prática do uso do <i>Context</i> no React, com as páginas de carrinho e de finalização da compra conectadas aos estados globais.",
+            us: "Fictional online bodybuilding supplement store, made to practice the use of Context in React, with cart and checkout pages connected to global states.",
           },
           date: {
             br: "2 Ago. 2023",

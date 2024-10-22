@@ -10,8 +10,8 @@ import { PiArrowFatLinesRightFill } from "react-icons/pi";
 export default function LanguageSwitch() {
   const { language, changeLanguage } = useLanguageContext();
 
-  const generalButtonClasses = "duration-300 hover:cursor-pointer";
-  const activeButtonClasses = "hover:cursor-pointer duration-300 scale-[1.3]";
+  const generalButtonClasses = "duration-300 hover:cursor-pointer active:scale-[.85]";
+  const activeButtonClasses = "hover:cursor-pointer duration-300 scale-[1.3] active:scale-[1.3]";
 
   function alterLanguage() {
     if (language === "br") {
@@ -27,7 +27,7 @@ export default function LanguageSwitch() {
         "relative flex w-fit scale-[1.4] items-center gap-4 text-center md:scale-[2.0]"
       }
     >
-      <div
+      <button
         className={classNames(generalButtonClasses, {
           [activeButtonClasses]: language === "br",
           ["opacity-100"]: language === "br",
@@ -36,7 +36,7 @@ export default function LanguageSwitch() {
         onClick={() => alterLanguage()}
       >
         {brFlag}
-      </div>
+      </button>
       <div
         className={
           language === "us"
@@ -46,7 +46,7 @@ export default function LanguageSwitch() {
       >
         <PiArrowFatLinesRightFill className="text-lg md:text-xl" />
       </div>
-      <div
+      <button
         className={classNames(generalButtonClasses, {
           [activeButtonClasses]: language === "us",
           ["opacity-100"]: language === "us",
@@ -55,7 +55,7 @@ export default function LanguageSwitch() {
         onClick={() => alterLanguage()}
       >
         {usFlag}
-      </div>
+      </button>
     </div>
   );
 }

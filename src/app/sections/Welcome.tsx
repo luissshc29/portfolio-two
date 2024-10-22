@@ -81,7 +81,7 @@ export default function Welcome() {
                 >
                   {
                     textVariants.sections.welcome.toast.buttons.continue[
-                      language
+                    language
                     ]
                   }
                 </Button>
@@ -94,7 +94,7 @@ export default function Welcome() {
                 >
                   {
                     textVariants.sections.welcome.toast.buttons.notShow[
-                      language
+                    language
                     ]
                   }
                 </Button>
@@ -124,14 +124,17 @@ export default function Welcome() {
         </h1>
         <Header />
       </div>
-      <IoIosArrowDown
-        className="absolute bottom-20 animate-bounce text-4xl text-black hover:cursor-pointer dark:text-white"
+      <button 
         onClick={() =>
           document
             .getElementById("language")
             ?.scrollIntoView({ block: "start", behavior: "smooth" })
         }
-      />
+        className="absolute bottom-20 animate-bounce text-4xl text-black dark:text-white hover:cursor-pointer active:scale-[.85]"
+      >
+        <IoIosArrowDown/>
+      </button>
+
       <SonnerToaster
         duration={Infinity}
         toastOptions={{

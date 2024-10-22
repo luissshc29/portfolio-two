@@ -12,8 +12,7 @@ import { useHeaderContext } from "@/utils/context/HeaderContext";
 import { useLanguageContext } from "@/utils/context/LanguageContext";
 import { useTheme } from "next-themes";
 import React, { Fragment, useEffect, useState } from "react";
-import { IoMdCheckmarkCircle } from "react-icons/io";
-import { MdOutlineQuestionMark } from "react-icons/md";
+import { MdCheckCircle, MdOutlineQuestionMark } from "react-icons/md";
 
 export default function ThemeSelector() {
   const { language } = useLanguageContext();
@@ -52,19 +51,22 @@ export default function ThemeSelector() {
                     </p>
                   </div>
                   <span
-                    className="opacity-0 text-[#00c217] dark:text-[#00ff1e] transition-all duration-500"
+                    className="opacity-0 text-[#007bff] transition-all duration-500"
                     style={
                       theme === option.text.us.toLowerCase()
                         ? { opacity: 1 }
                         : {}
                     }
                   >
-                    <IoMdCheckmarkCircle className="text-base md:text-xl" />
+                    <div className="relative p-0 h-fit w-fit flex justify-center items-center">
+                      <MdCheckCircle className="text-base md:text-xl z-[1002]" />
+                      <div className="absolute h-[10px] w-[10px] md:h-[14px] md:w-[14px] bg-white rounded-full z-[1000]"></div>
+                    </div>
                   </span>
                 </>
               </DropdownMenuItem>
               {option.id !==
-              textVariants.others.themeSelector.options.length ? (
+                textVariants.others.themeSelector.options.length ? (
                 <Separator className="z-[1001] bg-neutral-500 dark:bg-neutral-700 mx-auto w-[95%]" />
               ) : (
                 ""

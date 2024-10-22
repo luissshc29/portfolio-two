@@ -40,6 +40,7 @@ export default function About() {
             <Link
               href="curriculo-luis-henrique-da-cunha-cavalcante.pdf"
               variant="primary"
+              className="active:scale-[.90]"
               download
             >
               <>{textVariants.sections.about.link[language]}</>

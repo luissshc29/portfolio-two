@@ -36,7 +36,7 @@ import { Project } from "@/utils/types/Project";
 import { IoStarSharp } from "react-icons/io5";
 import Autoplay from "embla-carousel-autoplay";
 import { Badge } from "@/shadcn/components/ui/badge";
-import { IoMdCheckmarkCircleOutline } from "react-icons/io";
+import { RiMedalLine } from "react-icons/ri";
 
 export default function ProjectCard({
   data,
@@ -97,7 +97,7 @@ export default function ProjectCard({
     <div className="card relative overflow-hidden shadow-lg">
       {data.highlight && (
         <Badge className="duration-2000 absolute right-0 top-0 flex w-fit animate-pulse items-center gap-1 rounded-none rounded-bl-xl bg-green-600 px-2 py-1 text-xs text-white shadow-md shadow-green-800 transition-all">
-          <IoMdCheckmarkCircleOutline className="text-lg" />
+          <RiMedalLine className="text-lg" />
           <p>{language === "br" ? "Em destaque" : "Featured"}</p>
         </Badge>
       )}
@@ -128,9 +128,9 @@ export default function ProjectCard({
                   {data.highlight && (
                     <Badge
                       variant="secondary"
-                      className="flex w-fit items-center gap-[3px] bg-green-400 font-text text-white hover:bg-green-400 dark:bg-opacity-50 hover:dark:bg-opacity-50"
+                      className="flex w-fit items-center gap-[3px] bg-green-500 dark:bg-green-400 font-text text-white hover:bg-green-500 hover:dark:bg-green-400 dark:bg-opacity-50 hover:dark:bg-opacity-50"
                     >
-                      <IoMdCheckmarkCircleOutline className="text-lg" />
+                      <RiMedalLine className="text-lg" />
                       <p>{language === "br" ? "Em destaque" : "Featured"}</p>
                     </Badge>
                   )}
@@ -157,7 +157,7 @@ export default function ProjectCard({
                 >
                   <CarouselContent>
                     {data.images.list.map((url) => (
-                      <CarouselItem key={url}>
+                      <CarouselItem key={url} className={data.images.list.length > 1 ? "basis-[90%]" : ''}>
                         <Card className="p-0 md:p-0">
                           <CardContent className="flex items-center justify-center p-0 md:p-0">
                             <img
@@ -193,9 +193,7 @@ export default function ProjectCard({
                       }
                       :
                     </span>
-                    <p className="text-neutral-700 dark:text-neutral-300">
-                      {data.description[language]}
-                    </p>
+                    <p className="text-neutral-700 dark:text-neutral-300" dangerouslySetInnerHTML={{ __html: data.description[language]}}/>
                   </div>
                   <Separator />
                   <div className="flex w-full items-center justify-start gap-2">
@@ -311,9 +309,9 @@ export default function ProjectCard({
                   {data.highlight && (
                     <Badge
                       variant="secondary"
-                      className="flex min-w-fit items-center gap-[3px] bg-green-400 font-text text-white  hover:bg-green-400 dark:bg-opacity-50 hover:dark:bg-opacity-50 justify-center"
+                      className="flex min-w-fit items-center gap-[3px] bg-green-500 dark:bg-green-400 font-text text-white hover:bg-green-500 hover:dark:bg-green-400 dark:bg-opacity-50 hover:dark:bg-opacity-50 justify-center"
                     >
-                      <IoMdCheckmarkCircleOutline className="text-lg" />
+                      <RiMedalLine className="text-lg" />
                       <p>{language === "br" ? "Em destaque" : "Featured"}</p>
                     </Badge>
                   )}
@@ -341,7 +339,7 @@ export default function ProjectCard({
                   >
                     <CarouselContent>
                       {data.images.list.map((url) => (
-                        <CarouselItem key={url}>
+                        <CarouselItem key={url}  className={data.images.list.length > 1 ? "basis-[90%]" : ''}>
                           <Card className="p-0 md:p-0">
                             <CardContent className="flex items-center justify-center p-0 md:p-0">
                               <img
@@ -376,9 +374,7 @@ export default function ProjectCard({
                       }
                       :
                     </span>
-                    <p className="text-sm text-neutral-700 dark:text-neutral-300 md:text-base">
-                      {data.description[language]}
-                    </p>
+                    <p className="text-sm text-neutral-700 dark:text-neutral-300 md:text-base"  dangerouslySetInnerHTML={{ __html: data.description[language]}}/>
                   </div>
                   <Separator />
                   <div className="flex w-full items-center justify-start gap-2">
