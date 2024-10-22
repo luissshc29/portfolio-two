@@ -281,8 +281,8 @@ export const textVariants: TextVariants = {
             list: ["1.png"],
           },
           description: {
-            br: "API Web para o Bike4Cash, com <i>resolvers</i> para obter a lista de bicicletas, filtradas por categoria, preço máximo e busca, e para listar as categorias disponíveis.<br/>Saiba mais no <code>README.md</code> no repositório.",
-            us: "Web API for Bike4Cash, with resolvers to obtain the list of bikes, filtered by category, maximum price and search, and to list the available categories.<br/>Learn more in the <code>README.md</code> in the repository.",
+            br: "API Web para o Bike4Cash, com <i>resolvers</i> para obter a lista de bicicletas, filtradas por categoria, preço máximo e busca, e para listar as categorias disponíveis.<br/>Saiba mais no <code>README.md</code> do repositório.",
+            us: "Web API for Bike4Cash, with resolvers to obtain the list of bikes, filtered by category, maximum price and search, and to list the available categories.<br/>Learn more in the <code>README.md</code> of the repository.",
           },
           date: {
             br: "14 Set. 2024",
@@ -329,8 +329,8 @@ export const textVariants: TextVariants = {
             list: ["1.png"],
           },
           description: {
-            br: "API Web com operações CRUD. Com <i>resolvers</i> para criação, edição e exclusão de usuários e posts.<br/>Saiba mais no <code>README.md</code> no repositório.",
-            us: "Web API with CRUD operations. With resolvers for creating, editing and deleting users and posts.<br/>Learn more at <code>README.md</code> in the repository.",
+            br: "API Web com operações CRUD. Com <i>resolvers</i> para criação, edição e exclusão de usuários e posts.<br/>Saiba mais no <code>README.md</code> do repositório.",
+            us: "Web API with CRUD operations. With resolvers for creating, editing and deleting users and posts.<br/>Learn more at <code>README.md</code> of the repository.",
           },
           date: {
             br: "28 Jun. 2024",
