@@ -302,7 +302,7 @@ export default function ProjectCard({
             className="[-webkit-overflow-scrolling:touch] [touch-action:manipulation]"
             id={`drawer-content-${data.title.br.toLowerCase().replaceAll(" ", "-")}`}
           >
-            <div className="z-[1500] mx-auto h-fit w-full overflow-y-scroll px-4 pb-6 pt-4 md:max-h-[70vh] md:px-8">
+            <div className="z-[1500] mx-auto max-h-[80vh] h-fit w-full overflow-y-scroll px-4 pb-6 pt-4 md:max-h-[70vh] md:px-8">
               <DrawerHeader className="w-full gap-0 px-0">
                 <DrawerTitle className="flex items-center gap-2 font-title text-2xl min-w-[66%] w-fit">
                   {data.title[language]}
