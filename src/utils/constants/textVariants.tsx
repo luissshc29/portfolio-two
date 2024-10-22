@@ -450,8 +450,8 @@ export const textVariants: TextVariants = {
             list: ["1.png", "2.png"],
           },
           description: {
-            br: "Enciclopédia de páises, com informações de cada um.<br/>A página foi feita para um desafio no <a href='https://www.frontendmentor.io/' target='_blank'><u>Frontend Mentor</u></a> e consome dados da API <i>REST Countries</i>, que você pode acessar <a href='https://restcountries.com/' target='_blank'><u>clicando aqui</u></a>.",
-            us: "Encyclopedia of countries, with information about each one.<br/>The page was made for a challenge on <a href='https://www.frontendmentor.io/' target='_blank'><u>Frontend Mentor</u></a> and consumes data from the <i>REST Countries</i> API, which you can access by <a href='https://restcountries.com/' target='_blank'><u>clicking here</u></a>.",
+            br: "Enciclopédia de páises feita para um desafio no <a href='https://www.frontendmentor.io/' target='_blank'><u>Frontend Mentor</u></a>.<br/>A página consome dados da API <i>REST Countries</i>, que você pode acessar <a href='https://restcountries.com/' target='_blank'><u>clicando aqui</u></a>.",
+            us: "Encyclopedia of countries made for a challenge on <a href='https://www.frontendmentor.io/' target='_blank'><u>Frontend Mentor</u></a>.<br/>The page consumes data from the <i>REST Countries</i> API, which you can access by <a href='https://restcountries.com/' target='_blank'><u>clicking here</u></a>.",
           },
           date: {
             br: "5 Nov. 2023",
