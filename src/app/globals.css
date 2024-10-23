@@ -76,17 +76,17 @@ body {
 }
 
 code {
-  background-color: #b9b9b9; 
-  padding: 2px 4px; 
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 90%; 
+  background-color: #b9b9b9;
+  padding: 2px 4px;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 90%;
   border-radius: 3px;
   color: #141414;
 }
 
 .dark code {
   background-color: #525252;
-  color: white
+  color: white;
 }
 
 ::selection {
@@ -96,7 +96,7 @@ code {
 
 .dark *::selection {
   background-color: white;
-  color: black
+  color: black;
 }
 
 @font-face {
@@ -176,6 +176,61 @@ code {
   display: none;
 }
 
+/* Job cards */
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes spin {
+  from {
+    --angle: 0deg;
+  }
+  to {
+    --angle: 360deg;
+  }
+}
+
+.job_card {
+  position: relative;
+}
+
+.job_card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  scale: 1.015;
+  background-image: conic-gradient(
+    from var(--angle),
+    white,
+    rgb(115, 115, 115),
+    white,
+    white,
+    rgb(115, 115, 115),
+    white,
+    white
+  );
+  z-index: -50;
+  animation: 13s spin linear infinite;
+  @apply rounded-sm;
+}
+
+.dark .job_card::before {
+  content: "";
+  background-image: conic-gradient(
+    from var(--angle),
+    black,
+    rgb(120, 120, 120),
+    black,
+    black,
+    rgb(120, 120, 120),
+    black,
+    black
+  );
+}
+
 /* Project cards */
 .card:hover .card-image {
   @apply blur-sm;
@@ -212,7 +267,7 @@ code {
 }
 
 .icon:hover .tooltip {
-  @apply visible top-[-35px] opacity-100;
+  @apply visible top-[-35px] opacity-100 [animation:bounce_1000ms_infinite];
 }
 
 .linkedin {
@@ -220,8 +275,16 @@ code {
   color: #ffffff;
 }
 
+.linkedin .tooltip svg {
+  color: #0e44a8;
+}
+
 .github {
   @apply bg-black text-white dark:bg-white dark:text-black;
+}
+
+.github .tooltip svg {
+  @apply text-black dark:text-white;
 }
 
 .instagram {
@@ -235,7 +298,32 @@ code {
   );
   color: white;
 }
+
+.instagram .tooltip svg {
+  content: "";
+  background: linear-gradient(
+    90deg,
+    #fa7e1e 25%,
+    rgba(236, 92, 65, 1) 50%,
+    #962fbf 75%
+  );
+  bottom: -85%;
+  color: transparent;
+  -webkit-mask-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIiBmaWxsPSJjdXJyZW50Q29sb3IiPgo8cGF0aCBkPSJNIDIwIDIwIFEgNTAgNSA4MCAyMCBMIDY1IDcwIFEgNTAgODUgMzUgNzAgWiIgLz4KPC9zdmc+");
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIiBmaWxsPSJjdXJyZW50Q29sb3IiPgo8cGF0aCBkPSJNIDIwIDIwIFEgNTAgNSA4MCAyMCBMIDY1IDcwIFEgNTAgODUgMzUgNzAgWiIgLz4KPC9zdmc+");
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+}
+
 .whatsapp {
   background-color: #25d366;
   color: white;
+}
+
+.whatsapp .tooltip svg {
+  color: #25d366;
 }

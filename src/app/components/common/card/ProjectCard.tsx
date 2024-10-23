@@ -120,15 +120,15 @@ export default function ProjectCard({
               <FiInfo className="text-base" />
             </div>
           </DialogTrigger>
-          <DialogContent className="max-h-[80vh] min-w-[85vw] px-8">
-            <div className="z-[1500]">
+          <DialogContent className="h-fit min-h-[70vh] min-w-[85vw] px-8">
+            <div className="z-[1500] h-fit">
               <DialogHeader>
                 <DialogTitle className="flex items-center gap-2 font-title text-2xl">
                   {data.title[language]}
                   {data.highlight && (
                     <Badge
                       variant="secondary"
-                      className="flex w-fit items-center gap-[3px] bg-green-500 dark:bg-green-400 font-text text-white hover:bg-green-500 hover:dark:bg-green-400 dark:bg-opacity-50 hover:dark:bg-opacity-50"
+                      className="flex w-fit items-center gap-[3px] bg-green-500 font-text text-white hover:bg-green-500 dark:bg-green-400 dark:bg-opacity-50 hover:dark:bg-green-400 hover:dark:bg-opacity-50"
                     >
                       <RiMedalLine className="text-lg" />
                       <p>{language === "br" ? "Em destaque" : "Featured"}</p>
@@ -157,7 +157,14 @@ export default function ProjectCard({
                 >
                   <CarouselContent>
                     {data.images.list.map((url) => (
-                      <CarouselItem key={url} className={data.images.list.length > 1 ? "basis-[90%]" : ''}>
+                      <CarouselItem
+                        key={url}
+                        className={
+                          data.images.list.length > 1
+                            ? "basis-[95%]"
+                            : "basis-full"
+                        }
+                      >
                         <Card className="p-0 md:p-0">
                           <CardContent className="flex items-center justify-center p-0 md:p-0">
                             <img
@@ -193,7 +200,12 @@ export default function ProjectCard({
                       }
                       :
                     </span>
-                    <p className="text-neutral-700 dark:text-neutral-300" dangerouslySetInnerHTML={{ __html: data.description[language]}}/>
+                    <p
+                      className="text-neutral-700 dark:text-neutral-300"
+                      dangerouslySetInnerHTML={{
+                        __html: data.description[language],
+                      }}
+                    />
                   </div>
                   <Separator />
                   <div className="flex w-full items-center justify-start gap-2">
@@ -302,14 +314,14 @@ export default function ProjectCard({
             className="[-webkit-overflow-scrolling:touch] [touch-action:manipulation]"
             id={`drawer-content-${data.title.br.toLowerCase().replaceAll(" ", "-")}`}
           >
-            <div className="z-[1500] mx-auto max-h-[80vh] h-fit w-full overflow-y-scroll px-4 pb-6 pt-4 md:max-h-[70vh] md:px-8">
+            <div className="z-[1500] mx-auto h-fit max-h-[80vh] w-full overflow-y-scroll px-4 pb-6 pt-4 md:max-h-[70vh] md:px-8">
               <DrawerHeader className="w-full gap-0 px-0">
-                <DrawerTitle className="flex items-center gap-2 font-title text-2xl min-w-[66%] w-fit">
+                <DrawerTitle className="flex w-fit min-w-[66%] items-center gap-2 font-title text-2xl">
                   {data.title[language]}
                   {data.highlight && (
                     <Badge
                       variant="secondary"
-                      className="flex min-w-fit items-center gap-[3px] bg-green-500 dark:bg-green-400 font-text text-white hover:bg-green-500 hover:dark:bg-green-400 dark:bg-opacity-50 hover:dark:bg-opacity-50 justify-center"
+                      className="flex min-w-fit items-center justify-center gap-[3px] bg-green-500 font-text text-white hover:bg-green-500 dark:bg-green-400 dark:bg-opacity-50 hover:dark:bg-green-400 hover:dark:bg-opacity-50"
                     >
                       <RiMedalLine className="text-lg" />
                       <p>{language === "br" ? "Em destaque" : "Featured"}</p>
@@ -339,7 +351,14 @@ export default function ProjectCard({
                   >
                     <CarouselContent>
                       {data.images.list.map((url) => (
-                        <CarouselItem key={url}  className={data.images.list.length > 1 ? "basis-[90%]" : ''}>
+                        <CarouselItem
+                          key={url}
+                          className={
+                            data.images.list.length > 1
+                              ? "basis-[90%]"
+                              : "basis-full"
+                          }
+                        >
                           <Card className="p-0 md:p-0">
                             <CardContent className="flex items-center justify-center p-0 md:p-0">
                               <img
@@ -374,7 +393,12 @@ export default function ProjectCard({
                       }
                       :
                     </span>
-                    <p className="text-sm text-neutral-700 dark:text-neutral-300 md:text-base"  dangerouslySetInnerHTML={{ __html: data.description[language]}}/>
+                    <p
+                      className="text-sm text-neutral-700 dark:text-neutral-300 md:text-base"
+                      dangerouslySetInnerHTML={{
+                        __html: data.description[language],
+                      }}
+                    />
                   </div>
                   <Separator />
                   <div className="flex w-full items-center justify-start gap-2">

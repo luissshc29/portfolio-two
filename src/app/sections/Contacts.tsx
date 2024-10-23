@@ -10,6 +10,7 @@ import { IoMdCall } from "react-icons/io";
 import { HiOutlineMail } from "react-icons/hi";
 import { useToast } from "@/shadcn/components/ui/use-toast";
 import { Alert, AlertTitle } from "@/shadcn/components/ui/alert";
+import { TbTriangleInvertedFilled } from "react-icons/tb";
 
 export default function Contacts() {
   const { language } = useLanguageContext();
@@ -54,7 +55,10 @@ export default function Contacts() {
                 <span
                   className={`tooltip pointer-events-none absolute top-0 min-w-[100px] rounded-md py-1 text-sm opacity-0 shadow-md transition-all duration-300 ease-in-out ${item.text.toLowerCase()}`}
                 >
-                  {item.username || item.text}
+                  <div className="relative flex w-full justify-center">
+                    <TbTriangleInvertedFilled className="absolute bottom-[-60%]" />
+                    {item.username || item.text}
+                  </div>
                 </span>
                 <a
                   key={item.id}
