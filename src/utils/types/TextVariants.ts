@@ -157,6 +157,20 @@ export type TextVariants = {
           br: string;
           us: string;
         };
+        location: {
+          city: {
+            br: string
+            us: string
+          }
+          state: {
+            br: string
+            us: string
+          }
+          country: {
+            br: string
+            us: string
+          }
+        }
       };
       form: {
         text: {
@@ -228,6 +242,10 @@ export type TextVariants = {
           br: string;
           us: string;
         };
+        location: {
+          br: string,
+          us: string
+        }
       };
     };
     themeSelector: {

@@ -5,12 +5,12 @@ import BgImageContainer from "../components/common/BgImageContainer";
 import { useLanguageContext } from "@/utils/context/LanguageContext";
 import { textVariants } from "@/utils/constants/textVariants";
 import Title from "../components/common/Title";
-import { MdContentCopy } from "react-icons/md";
-import { IoMdCall } from "react-icons/io";
-import { HiOutlineMail } from "react-icons/hi";
+import { MdContentCopy, MdGroups2, MdPhoneForwarded } from "react-icons/md";
 import { useToast } from "@/shadcn/components/ui/use-toast";
 import { Alert, AlertTitle } from "@/shadcn/components/ui/alert";
-import { TbTriangleInvertedFilled } from "react-icons/tb";
+import { TbMailShare, TbTriangleInvertedFilled } from "react-icons/tb";
+import { PiMailboxFill, PiMapPinAreaFill } from "react-icons/pi";
+import { GiRotaryPhone } from "react-icons/gi";
 
 export default function Contacts() {
   const { language } = useLanguageContext();
@@ -41,11 +41,13 @@ export default function Contacts() {
           {textVariants.sections.contacts.subtitle[language]}
         </div>
       </div>
-      <div className="flex flex-col gap-6 md:flex-row">
-        <div className="flex flex-col gap-2">
-          <span className="text-sm font-semibold md:text-base">
-            {textVariants.others.labels.contacts.social[language]}:
-          </span>
+      <div className="flex flex-col gap-12 md:gap-2 md:flex-row w-full lg:w-[90%] mx-auto justify-center">
+        <div className="flex flex-col gap-2 w-full md:w-1/3">
+          <Title
+            variant="with-bg-icon"
+            mainText={textVariants.others.labels.contacts.social[language]}
+            bgIcon={<MdGroups2 />}
+          />
           <div className="flex flex-row items-center justify-center gap-2">
             {textVariants.sections.contacts.info.social.map((item) => (
               <div
@@ -76,11 +78,13 @@ export default function Contacts() {
             ))}
           </div>
         </div>
-        <div className="flex flex-col items-start gap-4">
-          <div className="flex flex-col items-start justify-center gap-[2px]">
-            <span className="text-sm font-semibold md:text-base">
-              {textVariants.others.labels.contacts.phone[language]}:
-            </span>
+        <div className="flex flex-col items-center gap-8 md:gap-12 w-full md:w-1/3">
+          <div className="flex flex-col items-center justify-center gap-1">
+            <Title
+              variant="with-bg-icon"
+              mainText={textVariants.others.labels.contacts.phone[language]}
+              bgIcon={<GiRotaryPhone />}
+            />
             <div className="flex justify-center gap-2">
               <p className="text-sm">
                 {textVariants.sections.contacts.info.phone.text}
@@ -95,14 +99,16 @@ export default function Contacts() {
                 className="text-lg"
                 href={`tel:${textVariants.sections.contacts.info.phone.raw}`}
               >
-                <IoMdCall />
+                <MdPhoneForwarded />
               </a>
             </div>
           </div>
-          <div className="flex flex-col items-start justify-center gap-[2px]">
-            <span className="text-sm font-semibold md:text-base">
-              {textVariants.others.labels.contacts.email[language]}:
-            </span>
+          <div className="flex flex-col items-center justify-center gap-1">
+            <Title
+              variant="with-bg-icon"
+              mainText={textVariants.others.labels.contacts.email[language]}
+              bgIcon={<PiMailboxFill />}
+            />
             <div className="flex justify-center gap-2">
               <p className="text-sm">
                 {textVariants.sections.contacts.info.email.text}
@@ -117,8 +123,22 @@ export default function Contacts() {
                 className="text-lg"
                 href={`mailto:${textVariants.sections.contacts.info.email.text}`}
               >
-                <HiOutlineMail />
+                <TbMailShare />
               </a>
+            </div>
+          </div>
+        </div>
+        <div className="flex flex-col gap-2 md:gap-4 w-full md:w-1/3">
+          <Title
+            variant="with-bg-icon"
+            mainText={textVariants.others.labels.contacts.location[language]}
+            bgIcon={<PiMapPinAreaFill />}
+          />
+          <div className="flex flex-col items-center justify-center gap-2">
+            <div className="flex flex-col justify-center items-center gap-1 text-neutral-800 dark:text-neutral-300">
+              <p>{textVariants.sections.contacts.info.location.city[language]}</p>
+              <p>{textVariants.sections.contacts.info.location.state[language]}</p>
+              <p>{textVariants.sections.contacts.info.location.country[language]}</p>
             </div>
           </div>
         </div>

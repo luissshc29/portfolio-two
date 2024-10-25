@@ -554,6 +554,20 @@ export const textVariants: TextVariants = {
           br: "Olá!%20Vim%20pelo%20seu%20portfólio.",
           us: "Hello!%20I%20came%20from%20your%20portfolio.",
         },
+        location: {
+          city: {
+            br: 'Fortaleza',
+            us: 'Fortaleza'
+          },
+          state: {
+            br: "Ceará",
+            us: 'Ceará'
+          },
+          country: {
+            br: 'Brasil',
+            us: 'Brazil'
+          }
+        }
       },
       form: {
         text: {
@@ -694,6 +708,10 @@ export const textVariants: TextVariants = {
           br: "Redes sociais",
           us: "Social media",
         },
+        location: {
+          br: 'Localização',
+          us: 'Location'
+        }
       },
     },
     themeSelector: {
