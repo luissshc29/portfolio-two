@@ -53,10 +53,7 @@ export default function Header() {
     }
   }
 
-  useEffect(() => {
-    setMaxScrollPosition(
-      document.documentElement.scrollHeight - window.innerHeight,
-    );
+  useEffect(() => {   
     setHeader(document.getElementById("header") as HTMLElement);
     handleStyleOnPageScroll();
     if (header) {
@@ -66,6 +63,12 @@ export default function Header() {
       handleStyleOnPageScroll();
     });
   }, [resolvedTheme, inView]);
+
+  useEffect (() => {
+    setMaxScrollPosition(
+      document.documentElement.scrollHeight - window.innerHeight,
+    );
+  }, [document.documentElement.scrollHeight])
 
   if (headerVisible) {
     return (
