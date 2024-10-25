@@ -60,7 +60,7 @@ export default function Title({
       <div
         className="relative flex justify-center items-center text-center"
       >
-        <h1 className="mx-auto top-[-100%] z-[-2] absolute opacity-20 font-title-bg text-[#1a1a1a] text-3xl md:text-4xl dark:text-[#ececec]">
+        <h1 className="mx-auto top-[-100%] z-[-2] absolute font-title-bg text-[#adadad] text-3xl md:text-4xl dark:text-[#363636]">
           {bgIcon}
         </h1>
         <h2 className="font-title text-base md:text-lg">{mainText}</h2>

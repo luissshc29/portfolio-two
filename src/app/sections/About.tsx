@@ -29,7 +29,7 @@ export default function About() {
         <img
           src="/images/avatar.jpg"
           alt="Avatar"
-          className="border-4 dark:border-neutral-500 border-neutral-400 rounded-full w-1/2 md:w-1/4"
+          className="border-4 dark:border-neutral-500 border-neutral-400 w-1/2 md:w-1/4 rounded-full"
           loading="eager"
         />
         <div className="flex flex-col items-center gap-5">

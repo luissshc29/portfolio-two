@@ -176,6 +176,29 @@ code {
   display: none;
 }
 
+/* Avatar Clip Path animation*/
+/* .avatar {
+  animation: rotateClipPath 15s infinite both linear;
+}
+
+@keyframes rotateClipPath {
+  0% {
+    clip-path: polygon(5% 5%, 100% 0, 95% 95%, 0 100%);
+  } 
+  25% {
+    clip-path: polygon(0 0, 95% 5%, 95% 95%, 0% 100%);
+  }
+  50% {
+    clip-path: polygon(0 0, 95% 5%, 100% 100%, 5% 95%);
+  }
+  75% {
+    clip-path: polygon(5% 5%, 100% 0, 100% 100%, 5% 95%);
+  }
+  100% {
+    clip-path: polygon(5% 5%, 100% 0, 95% 95%, 0 100%);
+  }
+} */
+
 /* Job cards */
 @property --angle {
   syntax: "<angle>";
