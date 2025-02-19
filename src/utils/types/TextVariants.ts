@@ -83,9 +83,15 @@ export type TextVariants = {
         br: string;
         us: string;
       };
-      link: {
-        br: string;
-        us: string;
+      resume: {
+        text: {
+          br: string;
+          us: string;
+        };
+        url: {
+          br: string;
+          us: string;
+        };
       };
       audio: {
         url: {
@@ -159,18 +165,18 @@ export type TextVariants = {
         };
         location: {
           city: {
-            br: string
-            us: string
-          }
+            br: string;
+            us: string;
+          };
           state: {
-            br: string
-            us: string
-          }
+            br: string;
+            us: string;
+          };
           country: {
-            br: string
-            us: string
-          }
-        }
+            br: string;
+            us: string;
+          };
+        };
       };
       form: {
         text: {
@@ -243,9 +249,9 @@ export type TextVariants = {
           us: string;
         };
         location: {
-          br: string,
-          us: string
-        }
+          br: string;
+          us: string;
+        };
       };
     };
     themeSelector: {
