@@ -29,7 +29,7 @@ export default function About() {
         <img
           src="/images/avatar.jpg"
           alt="Avatar"
-          className="border-4 dark:border-neutral-500 border-neutral-400 w-1/2 md:w-1/4 rounded-full"
+          className="border-4 border-neutral-400 dark:border-neutral-500 rounded-full w-1/2 md:w-1/4"
           loading="eager"
         />
         <div className="flex flex-col items-center gap-5">
@@ -38,12 +38,12 @@ export default function About() {
           </div>
           <div className="flex lg:flex-row flex-col-reverse justify-evenly items-center w-full">
             <Link
-              href="curriculo-luis-henrique-da-cunha-cavalcante.pdf"
+              href={textVariants.sections.about.resume.url[language]}
               variant="primary"
               className="active:scale-[.90]"
               download
             >
-              <>{textVariants.sections.about.link[language]}</>
+              <>{textVariants.sections.about.resume.text[language]}</>
               <LuDownload size={18} />
             </Link>
             <AudioPlayer
