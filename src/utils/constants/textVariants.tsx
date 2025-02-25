@@ -162,11 +162,34 @@ export const textVariants: TextVariants = {
             br: "",
             us: "",
           },
-          description: {
-            br: "Atuei no desenvolvimento de páginas web sob medida para algumas empresas, construindo aplicações como catálogos e vitrines virtuais para lojas. Nesses trabalhos, utilizei as mais diversas stacks Front-end, com as principais sendo React, Typescript e TailwindCSS.",
-            us: "I worked on the development of web pages on demand for some companies, building applications such as catalogs and virtual showcases for stores. In these works, I used the most diverse Front-end technologies, with the main ones being React, Typescript and TailwindCSS.",
-          },
-          logo: "",
+          description: [
+            {
+              id: 1,
+              br: `Desenvolvimento de aplicações web sob demanda para empresas, incluindo catálogos virtuais e plataformas interativas, utilizando React, Next.js, TypeScript e TailwindCSS.`,
+              us: `Development of on-demand web applications for companies, including virtual catalogs and interactive platforms, using React, Next.js, TypeScript and TailwindCSS.`,
+            },
+            {
+              id: 2,
+              br: `Implementação de design responsivo e otimizado para diferentes dispositivos, com foco em UI/UX e acessibilidade.`,
+              us: `Implementation of responsive design optimized for different devices, focusing on UI/UX and accessibility.`,
+            },
+            {
+              id: 3,
+              br: `Integração de APIs REST e GraphQL (Apollo Client e Apollo Server) para consumo de dados dinâmicos.`,
+              us: `Integration with REST and GraphQL APIs (Apollo Client and Apollo Server) for dynamic data consumption.`,
+            },
+            {
+              id: 4,
+              br: `Manutenção e aprimoramento de código visando performance, otimização de SEO e escalabilidade.`,
+              us: `Code maintenance and improvement aimed at performance, SEO optimization and scalability.`,
+            },
+            {
+              id: 5,
+              br: `Desenvolvimento e manutenção do site Unicapas, aplicando React, TypeScript e TailwindCSS.`,
+              us: `Development and maintenance of the Unicapas website, applying React, TypeScript and TailwindCSS.`,
+            },
+          ],
+          logo: "/images/jobs/freelancer.png",
           date: {
             br: "Out 2023 - Hoje",
             us: "Oct 2023 - Today",
@@ -183,10 +206,28 @@ export const textVariants: TextVariants = {
             br: "Secretaria Municipal da Gestão Regional",
             us: "Secretaria Municipal da Gestão Regional",
           },
-          description: {
-            br: "Auxiliei na prestação de suporte na programação de micros, acompanhei atividades relacionadas ao departamento de informática, acompanhei projetos e auxiliei no gerenciamento da informática.",
-            us: "I helped provide support in computer programming, monitored activities related to the IT department, monitored projects and helped with IT management.",
-          },
+          description: [
+            {
+              id: 1,
+              br: `Suporte técnico e acompanhamento de infraestrutura de TI, incluindo instalação, configuração e manutenção de hardware e software.`,
+              us: `Technical support and monitoring of IT infrastructure, including installation, configuration and maintenance of hardware and software.`,
+            },
+            {
+              id: 2,
+              br: `Monitoramento e auxílio no setor de informática, garantindo o funcionamento eficiente dos sistemas e redes internas.`,
+              us: `Monitoring and assistance in the IT sector, ensuring the efficient functioning of internal systems and networks.`,
+            },
+            {
+              id: 3,
+              br: `Gerenciamento de equipamentos, realizando chamados, diagnósticos e substituição de componentes defeituosos para garantir alta disponibilidade.`,
+              us: `Equipment management, carrying out calls, diagnostics and replacement of defective components to ensure high availability.`,
+            },
+            {
+              id: 4,
+              br: `Apoio a usuários, oferecendo suporte técnico para resolução de dúvidas e incidentes, promovendo maior eficiência operacional.`,
+              us: `Support for users, offering technical support to resolve doubts and incidents, promoting greater operational efficiency.`,
+            },
+          ],
           logo: "/images/jobs/logo-prefeitura.png",
           date: {
             br: "Fev 2024 - Hoje",
@@ -525,7 +566,7 @@ export const textVariants: TextVariants = {
             id: 1,
             text: "Linkedin",
             username: "Luis Henrique",
-            link: "https://www.linkedin.com/in/luis-henrique-6a7425165/",
+            link: "https://www.linkedin.com/in/luis-henrique-dev",
             component: <TfiLinkedin />,
           },
           {

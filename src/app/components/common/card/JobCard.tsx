@@ -1,4 +1,3 @@
-import { textVariants } from "@/utils/constants/textVariants";
 import React from "react";
 import {
   Card,
@@ -22,32 +21,36 @@ export default function JobCard({
   return (
     <Card
       key={data.id}
-      className="job_card flex w-full flex-col justify-between border-none"
+      className="flex flex-col justify-between border-none w-full job_card"
     >
-      <CardHeader className="flex flex-row items-center justify-between">
-        <div className="flex w-fit flex-col justify-center gap-1">
+      <CardHeader className="flex flex-row justify-between items-center">
+        <div className="flex flex-col justify-center gap-1 w-fit">
           <CardTitle>{data.function[language]}</CardTitle>
           <CardDescription>{data.company[language]}</CardDescription>
         </div>
         <img
           src={data.logo}
-          className="w-1/6 rounded-sm md:w-[10%] lg:w-1/6"
+          className="rounded-sm w-1/6 md:w-[10%] lg:w-1/6"
           alt={data.company[language]}
           loading="lazy"
         />
       </CardHeader>
-      <Separator className="mx-auto mb-4 w-[calc(100%-2rem)] bg-neutral-800 md:w-[calc(100%-3rem)]" />
+      <Separator className="bg-neutral-800 mx-auto mb-4 w-[calc(100%-2rem)] md:w-[calc(100%-3rem)]" />
       <CardContent>
-        <div>
-          <p className="text-sm lg:text-base">{data.description[language]}</p>
-        </div>
+        <ul className="flex flex-col gap-2">
+          {data.description.map((t) => (
+            <li className="flex items-start gap-1 text-sm lg:text-base">
+              <span>•</span> {t[language]}
+            </li>
+          ))}
+        </ul>
       </CardContent>
-      <CardFooter className="mb-0 mt-auto flex w-full items-center justify-between p-4">
+      <CardFooter className="flex justify-between items-center mt-auto mb-0 p-4 w-full">
         <div className="flex items-center gap-1 text-neutral-600 dark:text-neutral-400">
           <LuClock4 />
           <p className="text-xs md:text-sm">{data.date[language]}</p>
         </div>
-        <div className="text-xl">{data.icon}</div>
+        <div className="text-xl md:text-2xl">{data.icon}</div>
       </CardFooter>
     </Card>
   );
