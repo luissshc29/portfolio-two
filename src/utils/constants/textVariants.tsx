@@ -1,5 +1,5 @@
 import { HiMiniCommandLine } from "react-icons/hi2";
-import { FaComputer } from "react-icons/fa6";
+import { FaCode, FaComputer } from "react-icons/fa6";
 import { v4 as uuidv4 } from "uuid";
 import { TfiLinkedin } from "react-icons/tfi";
 import { BsGithub, BsInstagram, BsWhatsapp } from "react-icons/bs";
@@ -155,8 +155,52 @@ export const textVariants: TextVariants = {
         {
           id: 1,
           function: {
-            br: "Desenvolvedor Web Freelancer",
-            us: "Freelance Web Developer",
+            br: "Desenvolvedor de Sistemas • Estágio",
+            us: "Systems Developer • Internship",
+          },
+          company: {
+            br: "Ministério Público do Estado do Ceará",
+            us: "Ministério Público do Estado do Ceará",
+          },
+          description: [
+            {
+              id: 1,
+              br: `Elaboração de roteiros de teste, baseados nos requisitos definidos pelos clientes, garantindo a cobertura e a qualidade das entregas.`,
+              us: `Preparation of test scripts based on the requirements defined by the clients, ensuring coverage and quality of deliveries.`,
+            },
+            {
+              id: 2,
+              br: `Análise de documentação técnica, incluindo diagramas de classes, fluxogramas e especificações de requisitos funcionais, assegurando o correto entendimento das demandas.`,
+              us: `Analysis of technical documentation, including class diagrams, flowcharts and functional requirements specifications, ensuring correct understanding of demands.`,
+            },
+            {
+              id: 3,
+              br: `Colaboração no desenvolvimento, testes e entrega de novas funcionalidades, contribuindo para a evolução contínua dos sistemas da empresa.`,
+              us: `Collaboration in the development, testing and delivery of new features, contributing to the continuous evolution of the company's systems.`,
+            },
+            {
+              id: 4,
+              br: `Manutenção e aprimoramento de sistemas internos e de clientes, utilizando a plataforma digital SYDLE ONE como base para as operações.`,
+              us: `Maintenance and improvement of internal and client systems, using the SYDLE ONE digital platform as the basis for operations.`,
+            },
+            {
+              id: 5,
+              br: `Participação ativa em cerimônias ágeis, como reuniões diárias (dailies), semanais e mensais, contribuindo para a definição de metas, acompanhamento de entregas e retrospectivas.`,
+              us: `Active participation in agile ceremonies, such as daily, weekly and monthly meetings, contributing to the definition of goals, monitoring of deliveries and retrospectives.`,
+            },
+          ],
+          logo: "/images/jobs/logo-mpce.png",
+          date: {
+            br: "Mar 2025 - Hoje",
+            us: "Mar 2025 - Today",
+          },
+          icon: <HiMiniCommandLine />,
+        },
+        {
+          id: 2,
+          function: {
+            br: "Desenvolvedor Web • Freelancer",
+            us: "Web Developer • Freelancer",
           },
           company: {
             br: "",
@@ -194,13 +238,13 @@ export const textVariants: TextVariants = {
             br: "Out 2023 - Hoje",
             us: "Oct 2023 - Today",
           },
-          icon: <HiMiniCommandLine />,
+          icon: <FaCode />,
         },
         {
-          id: 2,
+          id: 3,
           function: {
-            br: "Estagiário de TI",
-            us: "IT Intern",
+            br: "Suporte de TI • Estágio",
+            us: "IT Support • Internship",
           },
           company: {
             br: "Secretaria Municipal da Gestão Regional",
@@ -230,8 +274,8 @@ export const textVariants: TextVariants = {
           ],
           logo: "/images/jobs/logo-prefeitura.png",
           date: {
-            br: "Fev 2024 - Hoje",
-            us: "Feb 2024 - Today",
+            br: "Fev 2024 - Fev 2025",
+            us: "Feb 2024 - Feb 2025",
           },
           icon: <FaComputer />,
         },

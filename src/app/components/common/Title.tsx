@@ -44,20 +44,20 @@ export default function Title({
   if (variant === "text-only") {
     return (
       <div
-        className="relative flex w-full items-center justify-center text-center"
+        className="relative flex justify-center items-center w-full text-center"
         ref={ref}
       >
-        <h1 className="absolute top-0 z-[-2] font-title-bg text-5xl text-[#838383] opacity-20 dark:text-[#9b9b9b] md:text-7xl">
+        <h1 className="top-0 z-[-2] absolute opacity-20 font-title-bg text-[#838383] text-5xl md:text-7xl dark:text-[#9b9b9b]">
           {bgText}
         </h1>
         <h2 className="font-title text-4xl md:text-5xl">{title}</h2>
-        <span className="animate-blink text-4xl md:text-5xl">_</span>
+        <span className="text-4xl md:text-5xl animate-blink">_</span>
       </div>
     );
   } else {
     return (
-      <div className="relative flex items-center justify-center text-center">
-        <h1 className="absolute top-[-100%] z-[-2] mx-auto font-title-bg text-3xl text-[#adadad] dark:text-[#363636] md:text-4xl">
+      <div className="relative flex justify-center items-center text-center">
+        <h1 className="top-[-110%] z-[-2] absolute mx-auto font-title-bg text-[#adadad] text-3xl md:text-4xl dark:text-[#363636]">
           {bgIcon}
         </h1>
         <h2 className="font-title text-base md:text-lg">{mainText}</h2>
