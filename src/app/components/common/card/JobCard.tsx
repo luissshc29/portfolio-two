@@ -40,7 +40,7 @@ export default function JobCard({
           <CardTitle>{data.function[language]}</CardTitle>
           <CardDescription>{data.company[language]}</CardDescription>
           <div className="mb-0 mt-2 flex w-full items-center justify-between">
-            <div className="flex items-center gap-1 text-xs text-neutral-600 dark:text-neutral-400 md:text-sm">
+            <div className="flex h-fit items-center gap-1 text-xs text-neutral-600 dark:text-neutral-400 md:text-sm">
               <LuClock4 />
               <p>{data.date[language]}</p>
             </div>
@@ -58,8 +58,9 @@ export default function JobCard({
       <Accordion type="multiple" className="w-full">
         <AccordionItem value={`item-${data.id}`} className="border-none">
           <AccordionTrigger className="p-4 pb-6 pt-2 md:p-6">
-            <div className="flex items-center gap-1.5 text-sm lg:text-base">
-              <FiInfo /> {textVariants.others.labels.jobs.accordion[language]}
+            <div className="flex h-fit items-center gap-1.5 text-sm lg:text-base">
+              <FiInfo />{" "}
+              <span>{textVariants.others.labels.jobs.accordion[language]}</span>
             </div>
           </AccordionTrigger>
           <AccordionContent className="py-0">

@@ -22,7 +22,7 @@ export const stacks: Stack[] = [
   {
     id: 1,
     name: "HTML",
-    url: "https://developer.mozilla.org/pt-BR/docs/Web/HTML",
+    url: "https://developer.mozilla.org/en-US/docs/Web/HTML",
     component: BiLogoHtml5,
     description: {
       br: "HTML (HyperText Markup Language) é a base da web, responsável por definir a estrutura e o significado do conteúdo online.",
@@ -36,7 +36,7 @@ export const stacks: Stack[] = [
   {
     id: 2,
     name: "CSS",
-    url: "https://developer.mozilla.org/pt-BR/docs/Web/CSS",
+    url: "https://developer.mozilla.org/en-US/docs/Web/CSS",
     component: BiLogoCss3,
     description: {
       br: "CSS (Cascading Style Sheets) é uma linguagem usada para definir o estilo/aparência de documentos escritos em HTML ou XML.",
@@ -78,7 +78,7 @@ export const stacks: Stack[] = [
   {
     id: 5,
     name: "Javascript",
-    url: "https://developer.mozilla.org/pt-BR/docs/Web/JavaScript",
+    url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
     component: BiLogoJavascript,
     description: {
       br: "JavaScript é uma linguagem leve, interpretada e orientada a objetos, com suporte a funções de primeira classe, amplamente utilizada em páginas da Web.",
