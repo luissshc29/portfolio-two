@@ -30,7 +30,6 @@ export default function Contacts() {
       darkImgSrc="/images/background/dark/contacts-bg-img.jpg"
       lightImgSrc="/images/background/light/contacts-bg-img.jpg"
       id="contacts"
-      slideAnimationDirecion="right"
     >
       <div>
         <Title
@@ -41,14 +40,14 @@ export default function Contacts() {
           {textVariants.sections.contacts.subtitle[language]}
         </div>
       </div>
-      <div className="flex md:flex-row flex-col justify-center gap-12 md:gap-2 mx-auto w-full lg:w-[90%]">
-        <div className="flex flex-col gap-2 w-full md:w-1/3">
+      <div className="mx-auto flex w-full flex-col justify-center gap-12 md:flex-row md:gap-2 lg:w-[90%]">
+        <div className="flex w-full flex-col gap-2 md:w-1/3">
           <Title
             variant="with-bg-icon"
             mainText={textVariants.others.labels.contacts.social[language]}
             bgIcon={<MdGroups2 />}
           />
-          <div className="flex flex-row justify-center items-center gap-2">
+          <div className="flex flex-row items-center justify-center gap-2">
             {textVariants.sections.contacts.info.social.map((item) => (
               <div
                 className={`icon relative flex w-fit flex-col items-center rounded-[30px] p-2.5 transition-all duration-200 ease-in-out hover:cursor-pointer ${item.text.toLowerCase()}`}
@@ -57,8 +56,8 @@ export default function Contacts() {
                 <span
                   className={`tooltip pointer-events-none absolute top-0 min-w-[100px] rounded-md py-1 text-sm opacity-0 shadow-md transition-all duration-300 ease-in-out ${item.text.toLowerCase()}`}
                 >
-                  <div className="relative flex justify-center w-full">
-                    <TbTriangleInvertedFilled className="bottom-[-60%] absolute" />
+                  <div className="relative flex w-full justify-center">
+                    <TbTriangleInvertedFilled className="absolute bottom-[-60%]" />
                     {item.username || item.text}
                   </div>
                 </span>
@@ -78,8 +77,8 @@ export default function Contacts() {
             ))}
           </div>
         </div>
-        <div className="flex flex-col items-center gap-8 md:gap-12 w-full md:w-1/3">
-          <div className="flex flex-col justify-center items-center gap-1">
+        <div className="flex w-full flex-col items-center gap-8 md:w-1/3 md:gap-12">
+          <div className="flex flex-col items-center justify-center gap-1">
             <Title
               variant="with-bg-icon"
               mainText={textVariants.others.labels.contacts.phone[language]}
@@ -103,7 +102,7 @@ export default function Contacts() {
               </a>
             </div>
           </div>
-          <div className="flex flex-col justify-center items-center gap-1">
+          <div className="flex flex-col items-center justify-center gap-1">
             <Title
               variant="with-bg-icon"
               mainText={textVariants.others.labels.contacts.email[language]}
@@ -128,14 +127,14 @@ export default function Contacts() {
             </div>
           </div>
         </div>
-        <div className="flex flex-col gap-2 md:gap-4 w-full md:w-1/3">
+        <div className="flex w-full flex-col gap-2 md:w-1/3 md:gap-4">
           <Title
             variant="with-bg-icon"
             mainText={textVariants.others.labels.contacts.location[language]}
             bgIcon={<PiMapPinAreaFill />}
           />
-          <div className="flex flex-col justify-center items-center gap-2">
-            <div className="flex flex-col justify-center items-center gap-1 text-neutral-800 dark:text-neutral-300">
+          <div className="flex flex-col items-center justify-center gap-2">
+            <div className="flex flex-col items-center justify-center gap-1 text-sm text-neutral-800 dark:text-neutral-300">
               <p>
                 {textVariants.sections.contacts.info.location.city[language]}
               </p>

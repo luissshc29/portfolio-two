@@ -18,25 +18,24 @@ export default function About() {
       id="about"
       darkImgSrc="/images/background/dark/about-bg-img.jpg"
       lightImgSrc="/images/background/light/about-bg-img.jpg"
-      slideAnimationDirecion="left"
     >
       <Title
         mainText={textVariants.sections.about.title.main[language]}
         bgText={textVariants.sections.about.title.bg[language]}
       />
 
-      <div className="flex md:flex-row flex-col justify-evenly items-center gap-10 w-full">
+      <div className="flex w-full flex-col items-center justify-evenly gap-10 md:flex-row">
         <img
           src="/images/avatar.jpg"
           alt="Avatar"
-          className="border-4 border-neutral-400 dark:border-neutral-500 rounded-full w-1/2 md:w-1/4"
+          className="w-1/2 rounded-full border-4 border-neutral-400 dark:border-neutral-500 md:w-1/4"
           loading="eager"
         />
         <div className="flex flex-col items-center gap-5">
           <div className="mx-auto w-[90%] text-center text-sm md:text-left lg:text-base">
             {textVariants.sections.about.paragraph[language]}
           </div>
-          <div className="flex lg:flex-row flex-col-reverse justify-evenly items-center w-full">
+          <div className="flex w-full flex-col-reverse items-center justify-evenly lg:flex-row">
             <Link
               href={textVariants.sections.about.resume.url[language]}
               variant="primary"
@@ -53,9 +52,9 @@ export default function About() {
         </div>
       </div>
       <div className="flex flex-col items-center text-black dark:text-white">
-        <p className="font-semibold">
+        {/* <p className="font-semibold">
           {textVariants.sections.about.subtitle[language]}
-        </p>
+        </p> */}
         <InfiniteSlider items={stacks} />
       </div>
     </BgImageContainer>

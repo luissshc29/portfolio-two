@@ -16,18 +16,22 @@ import {
 } from "@/shadcn/components/ui/tabs";
 import { Alert, AlertTitle } from "@/shadcn/components/ui/alert";
 import { FiInfo } from "react-icons/fi";
+import { useTheme } from "next-themes";
 
 export default function Projects() {
   const { language } = useLanguageContext();
+  const { resolvedTheme } = useTheme();
 
-  const projects = [...textVariants.sections.projects.list.filter(item => item.highlight), ...textVariants.sections.projects.list.filter(item => !item.highlight)]
+  const projects = [
+    ...textVariants.sections.projects.list.filter((item) => item.highlight),
+    ...textVariants.sections.projects.list.filter((item) => !item.highlight),
+  ];
 
   return (
     <BgImageContainer
       darkImgSrc="/images/background/dark/projects-bg-img.jpg"
       lightImgSrc="/images/background/light/projects-bg-img.jpg"
       id="projects"
-      slideAnimationDirecion="left"
     >
       <Title
         mainText={textVariants.sections.projects.title.main[language]}
@@ -58,6 +62,7 @@ export default function Projects() {
                       key={proj.id}
                       data={proj}
                       language={language}
+                      theme={resolvedTheme as "light" | "dark"}
                     />
                   ))
                 : projects
@@ -67,6 +72,7 @@ export default function Projects() {
                         key={proj.id}
                         data={proj}
                         language={language}
+                        theme={resolvedTheme as "light" | "dark"}
                       />
                     ))}
             </div>

@@ -100,6 +100,28 @@ export type TextVariants = {
         };
       };
     };
+    tech: {
+      title: {
+        main: {
+          br: string;
+          us: string;
+        };
+        bg: {
+          br: string;
+          us: string;
+        };
+      };
+      subtitle: {
+        touch: {
+          br: string;
+          us: string;
+        };
+        hover: {
+          br: string;
+          us: string;
+        };
+      };
+    };
     experience: {
       title: {
         main: {
@@ -201,6 +223,12 @@ export type TextVariants = {
       options: HeaderOption[];
     };
     labels: {
+      jobs: {
+        accordion: {
+          br: string;
+          us: string;
+        };
+      };
       projects: {
         card: {
           text: {

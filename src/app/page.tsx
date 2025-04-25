@@ -7,6 +7,7 @@ import Projects from "./sections/Projects";
 import Contacts from "./sections/Contacts";
 import ThemeSelector from "./components/unique/ThemeSelector";
 import Footer from "./components/unique/Footer";
+import Tech from "./sections/Tech";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
         <Welcome />
         <Language />
         <About />
+        <Tech />
         <Experience />
         <Projects />
         <Contacts />

@@ -69,19 +69,33 @@ const config = {
       },
       keyframes: {
         "accordion-down": {
-          from: { height: "0" },
-          to: { height: "var(--radix-accordion-content-height)" },
+          from: {
+            height: "0",
+          },
+          to: {
+            height: "var(--radix-accordion-content-height)",
+          },
         },
         "accordion-up": {
-          from: { height: "var(--radix-accordion-content-height)" },
-          to: { height: "0" },
+          from: {
+            height: "var(--radix-accordion-content-height)",
+          },
+          to: {
+            height: "0",
+          },
         },
         slide: {
-          "0%": { transform: "translateX(0)" },
-          "100%": { transform: "translateX(-50%)" },
+          "0%": {
+            transform: "translateX(0)",
+          },
+          "100%": {
+            transform: "translateX(-50%)",
+          },
         },
         blink: {
-          "50%": { opacity: "0" },
+          "50%": {
+            opacity: "0",
+          },
         },
         "show-up": {
           "0%": {
@@ -100,10 +114,10 @@ const config = {
           },
         },
         pulse: {
-          '50%': {
-            'opacity': '.7'
-          }
-        }
+          "50%": {
+            opacity: ".7",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",

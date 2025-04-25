@@ -140,6 +140,28 @@ export const textVariants: TextVariants = {
         },
       },
     },
+    tech: {
+      title: {
+        main: {
+          br: "Tecnologias",
+          us: "Stacks",
+        },
+        bg: {
+          br: "Tech",
+          us: "Tech",
+        },
+      },
+      subtitle: {
+        touch: {
+          br: "Toque para saber mais detalhes",
+          us: "Touch to learn more details",
+        },
+        hover: {
+          br: "Passe o mouse para saber mais detalhes",
+          us: "Hover to learn more details",
+        },
+      },
+    },
     experience: {
       title: {
         main: {
@@ -180,8 +202,8 @@ export const textVariants: TextVariants = {
             },
             {
               id: 4,
-              br: `Manutenção e aprimoramento de sistemas internos e de clientes, utilizando a plataforma digital SYDLE ONE como base para as operações.`,
-              us: `Maintenance and improvement of internal and client systems, using the SYDLE ONE digital platform as the basis for operations.`,
+              br: `Manutenção e aprimoramento de sistemas internos e de clientes, utilizando a plataforma digital SYDLE ONE® como base para as operações.`,
+              us: `Maintenance and improvement of internal and client systems, using the SYDLE ONE® digital platform as the basis for operations.`,
             },
             {
               id: 5,
@@ -663,13 +685,13 @@ export const textVariants: TextVariants = {
       form: {
         text: {
           br: (
-            <div className="flex flex-wrap justify-center items-center gap-1">
+            <div className="flex flex-wrap items-center justify-center gap-1">
               <FiInfo className="text-lg" /> Você também pode preencher um
               formulário,{" "}
               <a
                 href="https://docs.google.com/forms/d/e/1FAIpQLSeoaZv_XB15-3QHgqdHm-qDVGggPj1XSYlA0wIvf4L9BysZdw/viewform"
                 target="_blank"
-                className="flex items-center gap-[2px] w-fit underline"
+                className="flex w-fit items-center gap-[2px] underline"
               >
                 clicando aqui
                 <RiExternalLinkLine className="text-lg" />
@@ -677,12 +699,12 @@ export const textVariants: TextVariants = {
             </div>
           ),
           us: (
-            <div className="flex flex-wrap justify-center items-center gap-1">
+            <div className="flex flex-wrap items-center justify-center gap-1">
               <FiInfo className="text-lg" /> You can also fill out a form, by{" "}
               <a
                 href="https://docs.google.com/forms/d/e/1FAIpQLSfr4SLa31PNH489ktl2jPJriFJl3P-se7zCW1X3VzeLZAI8Aw/viewform"
                 target="_blank"
-                className="flex items-center gap-[2px] w-fit underline"
+                className="flex w-fit items-center gap-[2px] underline"
               >
                 clicking here
                 <RiExternalLinkLine className="text-lg" />
@@ -722,9 +744,16 @@ export const textVariants: TextVariants = {
           },
           navigateTo: "about",
         },
-
         {
           id: 3,
+          text: {
+            br: "Tecnologias",
+            us: "Stacks",
+          },
+          navigateTo: "tech",
+        },
+        {
+          id: 4,
           text: {
             br: "Experiências",
             us: "Experience",
@@ -733,7 +762,7 @@ export const textVariants: TextVariants = {
         },
 
         {
-          id: 4,
+          id: 5,
           text: {
             br: "Projetos",
             us: "Projects",
@@ -742,7 +771,7 @@ export const textVariants: TextVariants = {
         },
 
         {
-          id: 5,
+          id: 6,
           text: {
             br: "Contatos",
             us: "Contacts",
@@ -752,6 +781,12 @@ export const textVariants: TextVariants = {
       ],
     },
     labels: {
+      jobs: {
+        accordion: {
+          br: "Detalhes",
+          us: "Details",
+        },
+      },
       projects: {
         card: {
           text: {

@@ -10,48 +10,74 @@ import {
 import { Separator } from "@/shadcn/components/ui/separator";
 import { LuClock4 } from "react-icons/lu";
 import { Job } from "@/utils/types/Job";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/shadcn/components/ui/accordion";
+import { textVariants } from "@/utils/constants/textVariants";
+import { FiInfo } from "react-icons/fi";
 
 export default function JobCard({
   data,
   language,
+  className,
+  ...rest
 }: {
   data: Job;
   language: "br" | "us";
-}) {
+} & React.HTMLAttributes<HTMLDivElement> &
+  React.RefAttributes<HTMLDivElement>) {
   return (
     <Card
       key={data.id}
-      className="flex flex-col justify-between border-none w-full job_card"
+      className={`job_card flex w-full break-inside-avoid flex-col justify-between gap-0 border-none ${className}`}
+      {...rest}
     >
-      <CardHeader className="flex flex-row justify-between items-center">
-        <div className="flex flex-col justify-center gap-1 w-fit">
+      <CardHeader className="flex flex-row items-center justify-between gap-2">
+        <div className="flex w-fit flex-col justify-items-start gap-2 text-left">
           <CardTitle>{data.function[language]}</CardTitle>
           <CardDescription>{data.company[language]}</CardDescription>
+          <div className="mb-0 mt-2 flex w-full items-center justify-between">
+            <div className="flex items-center gap-1 text-xs text-neutral-600 dark:text-neutral-400 md:text-sm">
+              <LuClock4 />
+              <p>{data.date[language]}</p>
+            </div>
+            {/* <div className="text-xl">{data.icon}</div> */}
+          </div>
         </div>
         <img
           src={data.logo}
-          className="rounded-sm w-1/6 md:w-[10%] lg:w-1/6"
+          className="w-1/6 rounded-sm md:w-[10%] lg:w-1/6"
           alt={data.company[language]}
           loading="lazy"
         />
       </CardHeader>
-      <Separator className="bg-neutral-800 mx-auto mb-4 w-[calc(100%-2rem)] md:w-[calc(100%-3rem)]" />
-      <CardContent>
-        <ul className="flex flex-col gap-2">
-          {data.description.map((t) => (
-            <li className="flex items-start gap-1 text-sm lg:text-base">
-              <span>•</span> {t[language]}
-            </li>
-          ))}
-        </ul>
-      </CardContent>
-      <CardFooter className="flex justify-between items-center mt-auto mb-0 p-4 w-full">
-        <div className="flex items-center gap-1 text-neutral-600 dark:text-neutral-400">
-          <LuClock4 />
-          <p className="text-xs md:text-sm">{data.date[language]}</p>
-        </div>
-        <div className="text-xl md:text-2xl">{data.icon}</div>
-      </CardFooter>
+      <Separator className="mx-auto my-2 w-[calc(100%-2rem)] bg-neutral-800 md:w-[calc(100%-3rem)]" />
+      <Accordion type="multiple" className="w-full">
+        <AccordionItem value={`item-${data.id}`} className="border-none">
+          <AccordionTrigger className="p-4 pb-6 pt-2 md:p-6">
+            <div className="flex items-center gap-1.5 text-sm lg:text-base">
+              <FiInfo /> {textVariants.others.labels.jobs.accordion[language]}
+            </div>
+          </AccordionTrigger>
+          <AccordionContent className="py-0">
+            <CardContent className="pt-0 md:pt-0">
+              <ul className="flex flex-col gap-2 text-left">
+                {data.description.map((t) => (
+                  <li
+                    className="flex items-start gap-1 text-sm lg:text-base"
+                    key={t.id}
+                  >
+                    <span>•</span> {t[language]}
+                  </li>
+                ))}
+              </ul>
+            </CardContent>
+          </AccordionContent>
+        </AccordionItem>
+      </Accordion>
     </Card>
   );
 }

@@ -8,7 +8,6 @@ interface BgImageContainerProps {
   darkImgSrc?: string;
   lightImgSrc?: string;
   slideAnimation?: boolean;
-  slideAnimationDirecion?: "right" | "left";
 }
 
 export default function BgImageContainer({
@@ -18,7 +17,6 @@ export default function BgImageContainer({
   id,
   className = "",
   slideAnimation = true,
-  slideAnimationDirecion = "right",
   ...rest
 }: {
   children: React.ReactNode;
@@ -52,7 +50,7 @@ export default function BgImageContainer({
         <Image
           fill
           src={darkImgSrc}
-          className="dark:block z-[-10] absolute hidden w-full min-w-[1024px] h-full"
+          className="absolute z-[-10] hidden h-full w-full min-w-[1024px] dark:block"
           alt="Background image"
         />
       )}
@@ -60,12 +58,12 @@ export default function BgImageContainer({
         <Image
           fill
           src={lightImgSrc}
-          className="block z-[-10] absolute dark:hidden w-full min-w-[1024px] h-full"
+          className="absolute z-[-10] block h-full w-full min-w-[1024px] dark:hidden"
           alt="Background image"
         />
       )}
 
-      <div className="z-[-9] absolute bg-white dark:bg-black bg-opacity-[.94] dark:bg-opacity-[.92] w-screen h-full min-h-screen" />
+      <div className="absolute z-[-9] h-full min-h-screen w-screen bg-white bg-opacity-[.94] dark:bg-black dark:bg-opacity-[.92]" />
       <div
         className={`flex min-h-screen w-full flex-col items-center justify-center gap-8 p-8 text-center transition-all duration-1000 md:gap-16 md:p-10`}
         style={
@@ -73,9 +71,9 @@ export default function BgImageContainer({
           id !== "welcome"
             ? slideAnimation
               ? inView
-                ? { transform: `translateX(0)`, opacity: "1" }
+                ? { transform: `translateY(0)`, opacity: "1" }
                 : {
-                    transform: `translateX(${slideAnimationDirecion === "right" ? "-6%" : "6%"})`,
+                    transform: `translateY(6%)`,
                     opacity: "0",
                   }
               : {}
