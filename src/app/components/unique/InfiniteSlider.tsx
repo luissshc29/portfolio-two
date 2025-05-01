@@ -38,8 +38,8 @@ export default function InfiniteSlider({ items }: { items: Stack[] }) {
           </a>
         ))}
       </div>
-      <div className="z-1 absolute left-0 top-0 h-full w-[40px] bg-gradient-to-r from-white to-transparent dark:from-black"></div>
-      <div className="z-1 absolute right-0 top-0 h-full w-[40px] bg-gradient-to-l from-white to-transparent dark:from-black"></div>
+      <div className="z-1 absolute left-0 top-0 h-full w-[40px] rounded-full bg-gradient-to-l from-transparent to-white dark:from-transparent dark:to-black"></div>
+      <div className="z-1 absolute right-0 top-0 h-full w-[40px] rounded-full bg-gradient-to-r from-transparent to-white dark:from-transparent dark:to-black"></div>
     </div>
   );
 }
