@@ -65,7 +65,9 @@ export default function BgImageContainer({
 
       <div className="absolute z-[-9] h-full min-h-screen w-screen bg-white bg-opacity-[.94] dark:bg-black dark:bg-opacity-[.92]" />
       <div
-        className={`flex min-h-screen w-full flex-col items-center justify-center gap-8 p-8 text-center transition-all duration-1000 md:gap-16 md:p-10`}
+        className={
+          `flex min-h-screen w-full flex-col items-center justify-center gap-8 p-8 text-center transition-all duration-1000 md:gap-16 md:p-10` /* + ${ id !== "welcome" && "animate-up opacity-0 [animation-range:entry_0%_cover_50%] [animation-timeline:view()]" } */
+        }
         style={
           // Conditional to fix Header desapearing on scroll
           id !== "welcome"

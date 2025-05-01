@@ -118,6 +118,16 @@ const config = {
             opacity: ".7",
           },
         },
+        // up: {
+        //   from: {
+        //     opacity: "0",
+        //     "clip-path": "inset(100% 100% 0 0)",
+        //   },
+        //   to: {
+        //     opacity: "1",
+        //     "clip-path": "inset(0 0 0 0)",
+        //   },
+        // },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -126,6 +136,7 @@ const config = {
         blink: "blink 1s infinite",
         "show-up": "show-up 1s 1",
         fade: "fade 2s 1",
+        // up: "up linear forwards",
       },
       fontFamily: {
         title: "var(--title)",

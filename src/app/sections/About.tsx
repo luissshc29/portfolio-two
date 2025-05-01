@@ -10,9 +10,11 @@ import { textVariants } from "@/utils/constants/textVariants";
 import { LuDownload } from "react-icons/lu";
 import Link from "../components/common/Link";
 import AudioPlayer from "../components/unique/AudioPlayer";
+import { useTheme } from "next-themes";
 
 export default function About() {
   const { language } = useLanguageContext();
+  const { resolvedTheme } = useTheme();
   return (
     <BgImageContainer
       id="about"
@@ -24,11 +26,11 @@ export default function About() {
         bgText={textVariants.sections.about.title.bg[language]}
       />
 
-      <div className="flex w-full flex-col items-center justify-evenly gap-10 md:flex-row">
+      <div className="flex w-full flex-col items-center justify-evenly gap-10 lg:flex-row">
         <img
-          src="/images/avatar.jpg"
+          src={`/images/avatar-${resolvedTheme}.png`}
           alt="Avatar"
-          className="w-1/2 rounded-full border-4 border-neutral-400 dark:border-neutral-500 md:w-1/4"
+          className="w-[57%] rounded-full border-4 border-neutral-200 dark:border-neutral-900 md:w-1/3"
           loading="eager"
         />
         <div className="flex flex-col items-center gap-5">
