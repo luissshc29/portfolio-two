@@ -53,7 +53,7 @@ export default function Header() {
     }
   }
 
-  useEffect(() => {   
+  useEffect(() => {
     setHeader(document.getElementById("header") as HTMLElement);
     handleStyleOnPageScroll();
     if (header) {
@@ -64,23 +64,23 @@ export default function Header() {
     });
   }, [resolvedTheme, inView]);
 
-  useEffect (() => {
+  useEffect(() => {
     setMaxScrollPosition(
       document.documentElement.scrollHeight - window.innerHeight,
     );
-  }, [document.documentElement.scrollHeight])
+  }, [document.documentElement.scrollHeight]);
 
   if (headerVisible) {
     return (
       <div
-        className={`relative z-[999] flex h-[9vh] md:h-[11vh] lg:h-[9vh] w-full flex-wrap-reverse items-center justify-around gap-4 py-1 duration-300 before:absolute before:left-0 before:top-0 before:z-[51] before:h-[9vh] before:md:h-[11vh] before:lg:h-[9vh] before:w-full before:bg-white before:bg-opacity-80 before:backdrop-blur-md before:[-webkit-backdrop-filter:blur(12px)] before:dark:bg-black dark:before:bg-opacity-70`}
+        className={`relative z-[999] flex h-[9vh] w-full flex-wrap-reverse items-center justify-around gap-4 py-1 duration-300 before:absolute before:left-0 before:top-0 before:z-[51] before:h-[9vh] before:w-full before:bg-white before:bg-opacity-80 before:backdrop-blur-md before:[-webkit-backdrop-filter:blur(12px)] before:dark:bg-black dark:before:bg-opacity-70 md:h-[11vh] before:md:h-[11vh] lg:h-[9vh] before:lg:h-[9vh]`}
         id="header"
         style={style}
         ref={ref}
       >
         <img
           src="/images/logo/logo-white-full.png"
-          className="dark:inline-block z-[999] hidden w-[45%] md:w-1/4 lg:w-1/5 hover:cursor-pointer"
+          className="z-[999] hidden w-[45%] hover:cursor-pointer dark:inline-block md:w-1/4 lg:w-1/5"
           style={
             style && resolvedTheme === "dark"
               ? { display: "block", transition: "300ms" }
@@ -96,7 +96,7 @@ export default function Header() {
 
         <img
           src="/images/logo/logo-black-full.png"
-          className="inline-block z-[999] dark:hidden w-[45%] md:w-1/4 lg:w-1/5 hover:cursor-pointer"
+          className="z-[999] inline-block w-[45%] hover:cursor-pointer dark:hidden md:w-1/4 lg:w-1/5"
           style={
             style && resolvedTheme === "light"
               ? { display: "block", transition: "300ms" }
@@ -110,7 +110,7 @@ export default function Header() {
           }
         />
 
-        <div className="lg:flex flex-wrap justify-center items-center md:gap-4 hidden text-sm md:text-base">
+        <div className="hidden flex-wrap items-center justify-center text-sm md:gap-4 md:text-base lg:flex">
           {textVariants.others.header.options.map((option) => (
             <NavigationButton navigateTo={option.navigateTo} key={option.id}>
               {option.text[language]}
@@ -119,7 +119,7 @@ export default function Header() {
         </div>
 
         <DropdownMenu>
-          <DropdownMenuTrigger className="z-[999] border-[1px] dark:border-white lg:hidden p-[3px] border-black rounded-full text-black text-xl dark:text-white">
+          <DropdownMenuTrigger className="z-[999] rounded-full border-[1px] border-black bg-transparent p-[3px] text-xl text-black dark:border-white dark:text-white lg:hidden">
             {style ? <IoMdMenu /> : <HiMagnifyingGlass />}
           </DropdownMenuTrigger>
           <DropdownMenuContent>
@@ -135,7 +135,7 @@ export default function Header() {
         {style && (
           <Progress
             value={(window.scrollY / maxScrollPosition) * 100}
-            className="bottom-0 z-[1000] absolute w-screen h-[2px]"
+            className="absolute bottom-0 z-[1000] h-[2px] w-screen"
           />
         )}
       </div>

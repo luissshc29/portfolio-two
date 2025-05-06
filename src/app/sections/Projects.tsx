@@ -17,10 +17,12 @@ import {
 import { Alert, AlertTitle } from "@/shadcn/components/ui/alert";
 import { FiInfo } from "react-icons/fi";
 import { useTheme } from "next-themes";
+import { useInView } from "react-intersection-observer";
 
 export default function Projects() {
   const { language } = useLanguageContext();
   const { resolvedTheme } = useTheme();
+  const { ref, inView } = useInView();
 
   const projects = [
     ...textVariants.sections.projects.list.filter((item) => item.highlight),
@@ -40,45 +42,61 @@ export default function Projects() {
       <p className="flex w-fit items-center gap-2 text-left text-sm md:text-base">
         {textVariants.sections.projects.subtitle[language]}
       </p>
-
-      <Tabs defaultValue="all" className="w-fit">
-        <TabsList className="grid-row-1 mb-5 grid h-fit w-full grid-cols-4 p-1">
+      <div ref={ref}>
+        <Tabs defaultValue="all" className="w-full">
+          <TabsList className="grid-row-1 mb-5 grid h-fit w-full grid-cols-4 p-1">
+            {textVariants.sections.projects.tabs.map((t) => (
+              <TabsTrigger
+                key={t.id}
+                value={t.value}
+                className="text-[13px] md:text-base"
+              >
+                {t.text[language]}
+              </TabsTrigger>
+            ))}
+          </TabsList>
           {textVariants.sections.projects.tabs.map((t) => (
-            <TabsTrigger
-              key={t.id}
-              value={t.value}
-              className="text-[13px] md:text-base"
-            >
-              {t.text[language]}
-            </TabsTrigger>
+            <TabsContent value={t.value} key={t.id}>
+              <div className="mx-auto flex min-h-[65vh] w-[90vw] flex-col items-center justify-start gap-2 opacity-100 [animation-duration:350ms] md:grid md:min-h-[40vh] md:grid-cols-2 md:justify-evenly lg:grid-cols-3">
+                {inView ? (
+                  t.value === "all" ? (
+                    projects.map((proj, index) => (
+                      <React.Fragment key={`${proj.id}-${index}`}>
+                        <ProjectCard
+                          data={proj}
+                          language={language}
+                          theme={resolvedTheme as "light" | "dark"}
+                          style={{
+                            animationDelay: `${100 * index}ms`,
+                          }}
+                        />
+                      </React.Fragment>
+                    ))
+                  ) : (
+                    projects
+                      .filter((p) => p.tag === t.value)
+                      .map((proj, index) => (
+                        <React.Fragment key={`${proj.id}-${index}`}>
+                          <ProjectCard
+                            data={proj}
+                            language={language}
+                            theme={resolvedTheme as "light" | "dark"}
+                            style={{
+                              animationDelay: `${100 * index}ms`,
+                            }}
+                          />
+                        </React.Fragment>
+                      ))
+                  )
+                ) : (
+                  <div className="h-screen w-full"></div>
+                )}
+              </div>
+            </TabsContent>
           ))}
-        </TabsList>
-        {textVariants.sections.projects.tabs.map((t) => (
-          <TabsContent value={t.value} key={t.id}>
-            <div className="mx-auto flex min-h-[65vh] w-[90vw] animate-show-up flex-col items-center justify-start gap-2 opacity-100 [animation-duration:350ms] md:grid md:min-h-[40vh] md:grid-cols-2 md:justify-evenly lg:grid-cols-3">
-              {t.value === "all"
-                ? projects.map((proj) => (
-                    <ProjectCard
-                      key={proj.id}
-                      data={proj}
-                      language={language}
-                      theme={resolvedTheme as "light" | "dark"}
-                    />
-                  ))
-                : projects
-                    .filter((p) => p.tag === t.value)
-                    .map((proj) => (
-                      <ProjectCard
-                        key={proj.id}
-                        data={proj}
-                        language={language}
-                        theme={resolvedTheme as "light" | "dark"}
-                      />
-                    ))}
-            </div>
-          </TabsContent>
-        ))}
-      </Tabs>
+        </Tabs>
+      </div>
+
       <Alert className="w-fit">
         <AlertTitle className="flex items-center justify-center gap-1 text-sm md:text-base">
           <FiInfo className="text-lg" />

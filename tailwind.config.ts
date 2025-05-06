@@ -118,6 +118,16 @@ const config = {
             opacity: ".7",
           },
         },
+        "content-up": {
+          from: {
+            transform: "translateY(3%)",
+            opacity: "0",
+          },
+          to: {
+            transform: "translateY(0)",
+            opacity: "1",
+          },
+        },
         // up: {
         //   from: {
         //     opacity: "0",
@@ -136,6 +146,7 @@ const config = {
         blink: "blink 1s infinite",
         "show-up": "show-up 1s 1",
         fade: "fade 2s 1",
+        "content-up": "content-up 0.7s ease-in-out forwards",
         // up: "up linear forwards",
       },
       fontFamily: {

@@ -22,12 +22,14 @@ export default function TechCard({
   theme,
   language,
   isUserDeviceTouchscreen,
+  style,
+  ...rest
 }: {
   tech: Stack;
   theme: "light" | "dark";
   language: "br" | "us";
   isUserDeviceTouchscreen: boolean;
-}) {
+} & React.HTMLAttributes<HTMLDivElement>) {
   const ref = useRef(null);
   const isHovered = useHover(ref);
 
@@ -40,13 +42,18 @@ export default function TechCard({
           <HoverCard openDelay={200} closeDelay={200}>
             <HoverCardTrigger
               asChild
-              className={`flex h-fit w-fit items-center justify-center rounded-md border-[2px] p-6 duration-200 hover:cursor-pointer`}
+              className={`animate-content-up flex h-fit w-fit items-center justify-center rounded-md border-[2px] p-6 opacity-0 duration-200 hover:cursor-pointer`}
               style={
                 isHovered
-                  ? { borderColor: tech.color[theme], color: tech.color[theme] }
+                  ? {
+                      borderColor: tech.color[theme],
+                      color: tech.color[theme],
+                      ...style,
+                    }
                   : {
                       borderColor: "transparent",
                       color: "#525252",
+                      ...style,
                     }
               }
             >
@@ -54,7 +61,7 @@ export default function TechCard({
                 <tech.component />
               </button>
             </HoverCardTrigger>
-            <HoverCardContent className="max-w-screen min-w-80 md:max-w-[400px]">
+            <HoverCardContent className="max-w-screen relative z-[51] min-w-80 md:max-w-[400px]">
               <div className="relative z-[51]">
                 <div className="flex items-center gap-3">
                   <div
@@ -84,7 +91,14 @@ export default function TechCard({
           </HoverCard>
         </div>
       ) : (
-        <div>
+        <div
+          ref={ref}
+          className="animate-content-up opacity-0"
+          style={{
+            ...style,
+          }}
+          {...rest}
+        >
           <Popover onOpenChange={(o) => setDropdownOpen(o)}>
             <PopoverTrigger
               className={`flex h-fit w-fit items-center justify-center rounded-md border-[2px] p-6 text-6xl duration-200 hover:cursor-pointer`}

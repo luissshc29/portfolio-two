@@ -42,11 +42,13 @@ export default function ProjectCard({
   data,
   language,
   theme,
+  style,
+  ...rest
 }: {
   data: Project;
   language: "br" | "us";
   theme: "light" | "dark";
-}) {
+} & React.HTMLAttributes<HTMLDivElement>) {
   const plugin = React.useRef(
     Autoplay({ delay: 4000, stopOnInteraction: true }),
   );
@@ -96,7 +98,13 @@ export default function ProjectCard({
   }, [isDrawerOpen]);
 
   return (
-    <div className="card relative overflow-hidden shadow-lg">
+    <div
+      className="animate-content-up card relative overflow-hidden opacity-0 shadow-lg"
+      style={{
+        ...style,
+      }}
+      {...rest}
+    >
       {data.highlight && (
         <Badge className="duration-2000 absolute right-0 top-0 flex w-fit animate-pulse items-center gap-1 rounded-none rounded-bl-xl bg-green-600 px-2 py-1 text-xs text-white shadow-md shadow-green-800 transition-all">
           <RiMedalLine className="text-lg" />
