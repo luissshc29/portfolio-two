@@ -40,11 +40,11 @@ export default function Projects() {
           mainText={textVariants.sections.projects.title.main[language]}
           bgText={textVariants.sections.projects.title.bg[language]}
         />
-        <p className="flex w-fit items-center gap-2 text-center text-sm md:text-base">
+        <p className="flex items-center gap-2 w-fit text-sm md:text-base text-center">
           {textVariants.sections.projects.subtitle[language]}
         </p>
         <Tabs defaultValue="all" className="w-full">
-          <TabsList className="grid-row-1 mb-5 grid h-fit w-full grid-cols-4 p-1">
+          <TabsList className="grid grid-cols-4 grid-row-1 mb-5 p-1 w-full h-fit">
             {textVariants.sections.projects.tabs.map((t) => (
               <TabsTrigger
                 key={t.id}
@@ -57,25 +57,10 @@ export default function Projects() {
           </TabsList>
           {textVariants.sections.projects.tabs.map((t) => (
             <TabsContent value={t.value} key={t.id}>
-              <div className="mx-auto flex min-h-[65vh] w-full flex-col items-center justify-start gap-2 opacity-100 [animation-duration:350ms] md:grid md:min-h-[40vh] md:grid-cols-2 md:justify-evenly lg:grid-cols-3">
-                {inView ? (
-                  t.value === "all" ? (
-                    projects.map((proj, index) => (
-                      <React.Fragment key={`${proj.id}-${index}`}>
-                        <ProjectCard
-                          data={proj}
-                          language={language}
-                          theme={resolvedTheme as "light" | "dark"}
-                          style={{
-                            animationDelay: `${100 * index}ms`,
-                          }}
-                        />
-                      </React.Fragment>
-                    ))
-                  ) : (
-                    projects
-                      .filter((p) => p.tag === t.value)
-                      .map((proj, index) => (
+              <div className="flex flex-col justify-start md:justify-evenly items-center gap-2 md:grid md:grid-cols-2 lg:grid-cols-3 opacity-100 mx-auto w-full min-h-[65vh] md:min-h-[40vh] [animation-duration:350ms]">
+                {inView
+                  ? t.value === "all"
+                    ? projects.map((proj, index) => (
                         <React.Fragment key={`${proj.id}-${index}`}>
                           <ProjectCard
                             data={proj}
@@ -87,16 +72,56 @@ export default function Projects() {
                           />
                         </React.Fragment>
                       ))
-                  )
-                ) : (
-                  <div className="h-screen w-full"></div>
-                )}
+                    : projects
+                        .filter((p) => p.tag === t.value)
+                        .map((proj, index) => (
+                          <React.Fragment key={`${proj.id}-${index}`}>
+                            <ProjectCard
+                              data={proj}
+                              language={language}
+                              theme={resolvedTheme as "light" | "dark"}
+                              style={{
+                                animationDelay: `${100 * index}ms`,
+                              }}
+                            />
+                          </React.Fragment>
+                        ))
+                  : t.value === "all"
+                    ? projects.map((proj, index) => (
+                        <div key={`${proj.id}-${index}`} className="opacity-0">
+                          <ProjectCard
+                            data={proj}
+                            language={language}
+                            theme={resolvedTheme as "light" | "dark"}
+                            style={{
+                              animationDelay: `${100 * index}ms`,
+                            }}
+                          />
+                        </div>
+                      ))
+                    : projects
+                        .filter((p) => p.tag === t.value)
+                        .map((proj, index) => (
+                          <div
+                            key={`${proj.id}-${index}`}
+                            className="opacity-0"
+                          >
+                            <ProjectCard
+                              data={proj}
+                              language={language}
+                              theme={resolvedTheme as "light" | "dark"}
+                              style={{
+                                animationDelay: `${100 * index}ms`,
+                              }}
+                            />
+                          </div>
+                        ))}
               </div>
             </TabsContent>
           ))}
         </Tabs>
         <Alert className="w-fit">
-          <AlertTitle className="flex items-center justify-center gap-1 text-sm md:text-base">
+          <AlertTitle className="flex justify-center items-center gap-1 text-sm md:text-base">
             <FiInfo className="text-lg" />
             <p>{textVariants.sections.projects.caption[language]}</p>
             <Link variant="secondary" href="https://github.com/luissshc29">
