@@ -73,7 +73,7 @@ export default function Header() {
   if (headerVisible) {
     return (
       <div
-        className={`relative z-[999] flex h-[9vh] w-full flex-wrap-reverse items-center justify-around gap-4 py-1 duration-300 before:absolute before:left-0 before:top-0 before:z-[51] before:h-[9vh] before:w-full before:bg-white before:bg-opacity-80 before:backdrop-blur-md before:[-webkit-backdrop-filter:blur(12px)] before:dark:bg-black dark:before:bg-opacity-70 md:h-[11vh] before:md:h-[11vh] lg:h-[9vh] before:lg:h-[9vh]`}
+        className={`relative z-[999] flex h-[9vh] w-full flex-wrap-reverse items-center justify-around gap-4 py-1 duration-300 before:absolute before:left-0 before:top-0 before:z-[51] before:h-[9vh] before:w-full md:h-[11vh] before:md:h-[11vh] lg:h-[9vh] before:lg:h-[9vh] ${style ? "before:bg-white before:bg-opacity-80 before:backdrop-blur-md before:[-webkit-backdrop-filter:blur(12px)] before:dark:bg-black dark:before:bg-opacity-70" : "bg-transparent"}`}
         id="header"
         style={style}
         ref={ref}

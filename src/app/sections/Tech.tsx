@@ -17,12 +17,29 @@ export default function Tech() {
     useState<boolean>(false);
   const { ref, inView } = useInView();
 
-  useEffect(() => {
-    const isTouchDevice = window.matchMedia("(pointer: coarse)").matches;
-    const isMouseDevice = window.matchMedia("(hover: hover)").matches;
+  function getDeviceInfo() {
+    // Checking if the device is an Android, iOS or Desktop
+    const userAgent =
+      navigator.userAgent || navigator.vendor || (window as any).opera;
+    const isMobileUserAgent = /Mobi|Android|iPhone|iPad|iPod|Mobile/i.test(
+      userAgent,
+    );
+    const isAndroid = /Android/i.test(userAgent);
+    const isIOS = /iPhone|iPad|iPod/i.test(userAgent);
 
-    if (isTouchDevice) setIsUserDeviceTouchscreen(true);
-    if (isMouseDevice) setIsUserDeviceTouchscreen(false);
+    // Checking if the user is using a mouse or a touch screen
+    const isTouchByMedia = window.matchMedia("(pointer: coarse)").matches;
+    const isTouchFallback =
+      "ontouchstart" in window || navigator.maxTouchPoints > 0;
+    const isTouch = isTouchByMedia || isTouchFallback;
+
+    if (isMobileUserAgent || isAndroid || isIOS)
+      setIsUserDeviceTouchscreen(true);
+    if (isTouch) setIsUserDeviceTouchscreen(true);
+  }
+
+  useEffect(() => {
+    getDeviceInfo();
   }, []);
 
   return (
@@ -73,7 +90,6 @@ export default function Tech() {
                 />
               </div>
             ))}
-        {}
       </div>
     </BgImageContainer>
   );

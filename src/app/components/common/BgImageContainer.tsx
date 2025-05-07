@@ -3,6 +3,7 @@
 import Image from "next/image";
 import React, { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
+import { useMediaQuery } from "usehooks-ts";
 
 interface BgImageContainerProps {
   darkImgSrc?: string;
@@ -22,8 +23,14 @@ export default function BgImageContainer({
   children: React.ReactNode;
 } & React.HTMLAttributes<HTMLDivElement> &
   BgImageContainerProps) {
+  const isMdScreen = useMediaQuery("(min-width: 640px)");
   const { ref, inView } = useInView({
-    threshold: id !== "projects" && id !== "experience" ? 0.35 : 0.1,
+    threshold:
+      id !== "projects" && id !== "experience"
+        ? isMdScreen
+          ? 0.35
+          : 0.2
+        : 0.05,
   });
   useEffect(() => {
     if (inView && window && id) {
