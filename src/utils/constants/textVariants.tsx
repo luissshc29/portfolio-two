@@ -413,6 +413,7 @@ export const textVariants: TextVariants = {
           url: "https://bike4cash-api.vercel.app/",
           repository: "https://github.com/luissshc29/bike4cash--API",
           complexity: 4,
+          highlight: true,
         },
         {
           id: uuidv4(),
@@ -484,6 +485,7 @@ export const textVariants: TextVariants = {
           stacks: [4, 7, 6],
           url: "https://unicapas.com.br",
           complexity: 1,
+          highlight: true,
         },
         {
           id: uuidv4(),
@@ -532,7 +534,6 @@ export const textVariants: TextVariants = {
           url: "https://pokedex-omega-tan-81.vercel.app/",
           repository: "https://github.com/luissshc29/pokedex",
           complexity: 2,
-          highlight: true,
         },
         {
           id: uuidv4(),
@@ -557,7 +558,6 @@ export const textVariants: TextVariants = {
           url: "https://notepad-luissshc29.vercel.app/",
           repository: "https://github.com/luissshc29/Notepad",
           complexity: 3,
-          highlight: true,
         },
         {
           id: uuidv4(),
