@@ -120,7 +120,7 @@ export default function PageLoader({
     return (
       <BgImageContainer
         slideAnimation={false}
-        className={`pointer-events-none flex max-h-screen w-screen flex-col justify-start bg-white dark:bg-black ${animate} `}
+        className={`pointer-events-none flex max-h-[100dvh] w-screen flex-col justify-start bg-white dark:bg-black ${animate} `}
       >
         {/* Loading Component */}
         <div
@@ -130,13 +130,13 @@ export default function PageLoader({
           <img
             src="/images/logo/logo-white-small.png"
             alt="Small white logo"
-            className="absolute hidden h-[20px] w-[20px] dark:inline-block"
+            className="hidden dark:inline-block absolute w-[20px] h-[20px]"
             loading="eager"
           />
           <img
             src="/images/logo/logo-black-small.png"
             alt="Small black logo"
-            className="absolute inline-block h-[20px] w-[20px] dark:hidden"
+            className="dark:hidden inline-block absolute w-[20px] h-[20px]"
             loading="eager"
           />
           <img
@@ -148,13 +148,13 @@ export default function PageLoader({
           <img
             src="/images/loading/loading-circle-black.svg"
             alt="Loading image"
-            className="block dark:hidden"
+            className="dark:hidden block"
             loading="eager"
           />
         </div>
-        <div className="h-screen w-full gap-2 text-left font-title text-4xl md:ml-16 md:mt-0">
+        <div className="gap-2 md:mt-0 md:ml-16 w-full h-[100dvh] font-title text-4xl text-left">
           {loadingText && (
-            <p className="mt-[25vh] min-h-fit self-start text-black transition-all duration-500 dark:text-white md:self-center">
+            <p className="self-start md:self-center mt-[25vh] min-h-fit text-black dark:text-white transition-all duration-500">
               {loadingText}
               <span className="animate-blink">_</span>
             </p>

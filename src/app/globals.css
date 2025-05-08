@@ -114,7 +114,65 @@ code {
   src: url("../utils/fonts/LeagueSpartan-Bold.otf");
 }
 
-/* Slider */
+/* Header */
+.header-progress-bar {
+  width: 100%;
+  scale: 0 1;
+  transform-origin: left;
+  animation: progress-bar-increase linear;
+  animation-timeline: scroll();
+}
+
+@keyframes progress-bar-increase {
+  to {
+    scale: 1 1;
+  }
+}
+
+/* Resume download buttons */
+.resume-download-button {
+  position: relative;
+}
+
+.resume-download-button-primary-container {
+  position: absolute;
+  top: 20%;
+  transition: top 400ms ease-in-out;
+  transition-delay: 0.5s;
+}
+
+.resume-download-button-secondary-container {
+  position: absolute;
+  top: -80%;
+  transition: top 400ms ease-in-out;
+  transition-delay: 0.5s;
+}
+
+@media screen and (pointer: fine) {
+  .resume-download-button:hover .resume-download-button-primary-container {
+    top: 120%;
+    transition-delay: 0s;
+  }
+
+  .resume-download-button:hover .resume-download-button-secondary-container {
+    top: 20%;
+    transition-delay: 0s;
+  }
+}
+
+@media screen and (pointer: coarse) {
+  .resume-download-button:active .resume-download-button-primary-container {
+    top: 120%;
+    transition-delay: 0s;
+  }
+
+  .resume-download-button:active .resume-download-button-secondary-container {
+    top: 25%;
+    transition-delay: 0s;
+  }
+}
+
+/* Infinite Slider */
 .slider .slide-track {
   width: calc(250px * 14);
 }
@@ -303,7 +361,7 @@ code {
 }
 
 .github {
-  @apply bg-black text-white dark:bg-white dark:text-black;
+  @apply bg-black dark:bg-white text-white dark:text-black;
 }
 
 .github .tooltip svg {

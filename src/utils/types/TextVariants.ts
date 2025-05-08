@@ -84,11 +84,19 @@ export type TextVariants = {
         us: string;
       };
       resume: {
-        text: {
-          br: string;
-          us: string;
+        button: {
+          text: {
+            primary: {
+              br: string;
+              us: string;
+            };
+            secondary: {
+              br: string;
+              us: string;
+            };
+          };
         };
-        url: {
+        document_url: {
           br: string;
           us: string;
         };

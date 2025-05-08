@@ -15,7 +15,6 @@ import { IoMdMenu } from "react-icons/io";
 import { useHeaderContext } from "@/utils/context/HeaderContext";
 import { useTheme } from "next-themes";
 import { useInView } from "react-intersection-observer";
-import { Progress } from "@/shadcn/components/ui/progress";
 
 export default function Header() {
   const { language } = useLanguageContext();
@@ -31,8 +30,6 @@ export default function Header() {
 
   const { resolvedTheme } = useTheme();
   const { ref, inView } = useInView();
-
-  const [maxScrollPosition, setMaxScrollPosition] = useState<number>(0);
 
   function handleStyleOnPageScroll() {
     if (window.scrollY > headerYPosition) {
@@ -64,12 +61,6 @@ export default function Header() {
     });
   }, [resolvedTheme, inView]);
 
-  useEffect(() => {
-    setMaxScrollPosition(
-      document.documentElement.scrollHeight - window.innerHeight,
-    );
-  }, [document.documentElement.scrollHeight]);
-
   if (headerVisible) {
     return (
       <div
@@ -80,7 +71,7 @@ export default function Header() {
       >
         <img
           src="/images/logo/logo-white-full.png"
-          className="z-[999] hidden w-[45%] hover:cursor-pointer dark:inline-block md:w-1/4 lg:w-1/5"
+          className="hidden dark:inline-block z-[999] w-[45%] md:w-1/4 lg:w-1/5 hover:cursor-pointer"
           style={
             style && resolvedTheme === "dark"
               ? { display: "block", transition: "300ms" }
@@ -96,7 +87,7 @@ export default function Header() {
 
         <img
           src="/images/logo/logo-black-full.png"
-          className="z-[999] inline-block w-[45%] hover:cursor-pointer dark:hidden md:w-1/4 lg:w-1/5"
+          className="dark:hidden inline-block z-[999] w-[45%] md:w-1/4 lg:w-1/5 hover:cursor-pointer"
           style={
             style && resolvedTheme === "light"
               ? { display: "block", transition: "300ms" }
@@ -110,7 +101,7 @@ export default function Header() {
           }
         />
 
-        <div className="hidden flex-wrap items-center justify-center text-sm md:gap-4 md:text-base lg:flex">
+        <div className="hidden lg:flex flex-wrap justify-center items-center md:gap-4 text-sm md:text-base">
           {textVariants.others.header.options.map((option) => (
             <NavigationButton navigateTo={option.navigateTo} key={option.id}>
               {option.text[language]}
@@ -119,7 +110,7 @@ export default function Header() {
         </div>
 
         <DropdownMenu>
-          <DropdownMenuTrigger className="z-[999] rounded-full border-[1px] border-black bg-transparent p-[3px] text-xl text-black dark:border-white dark:text-white lg:hidden">
+          <DropdownMenuTrigger className="lg:hidden z-[999] bg-transparent p-[3px] border-[1px] dark:border-white border-black rounded-full text-black dark:text-white text-xl">
             {style ? <IoMdMenu /> : <HiMagnifyingGlass />}
           </DropdownMenuTrigger>
           <DropdownMenuContent>
@@ -133,10 +124,7 @@ export default function Header() {
           </DropdownMenuContent>
         </DropdownMenu>
         {style && (
-          <Progress
-            value={(window.scrollY / maxScrollPosition) * 100}
-            className="absolute bottom-0 z-[1000] h-[2px] w-screen"
-          />
+          <div className="bottom-0 z-[1000] absolute bg-neutral-300 dark:bg-neutral-700 h-[2px] header-progress-bar" />
         )}
       </div>
     );

@@ -48,7 +48,7 @@ export default function BgImageContainer({
 
   return (
     <div
-      className={`relative min-h-screen w-screen overflow-x-clip ${className}`}
+      className={`relative min-h-[100dvh] w-screen overflow-x-clip ${className}`}
       {...rest}
       ref={ref}
       id={id && id}
@@ -57,7 +57,7 @@ export default function BgImageContainer({
         <Image
           fill
           src={darkImgSrc}
-          className="absolute z-[-10] hidden h-full w-full min-w-[1024px] dark:block"
+          className="hidden dark:block z-[-10] absolute w-full min-w-[1024px] h-full"
           alt="Background image"
         />
       )}
@@ -65,15 +65,15 @@ export default function BgImageContainer({
         <Image
           fill
           src={lightImgSrc}
-          className="absolute z-[-10] block h-full w-full min-w-[1024px] dark:hidden"
+          className="dark:hidden block z-[-10] absolute w-full min-w-[1024px] h-full"
           alt="Background image"
         />
       )}
 
-      <div className="absolute z-[-9] h-full min-h-screen w-screen bg-white bg-opacity-[.94] dark:bg-black dark:bg-opacity-[.92]" />
+      <div className="z-[-9] absolute bg-white dark:bg-black bg-opacity-[.94] dark:bg-opacity-[.92] w-screen h-full min-h-[100dvh]" />
       <div
         className={
-          `flex min-h-screen w-full flex-col items-center justify-center gap-8 p-8 text-center transition-all duration-1000 md:gap-16 md:p-10` /* + ${ id !== "welcome" && "animate-up opacity-0 [animation-range:entry_0%_cover_50%] [animation-timeline:view()]" } */
+          `flex min-h-[100dvh] w-full flex-col items-center justify-center gap-8 p-8 text-center transition-all duration-1000 md:gap-16 md:p-10` /* + ${ id !== "welcome" && "animate-up opacity-0 [animation-range:entry_0%_cover_50%] [animation-timeline:view()]" } */
         }
         style={
           // Conditional to fix Header desapearing on scroll

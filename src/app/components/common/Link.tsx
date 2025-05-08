@@ -19,7 +19,7 @@ export default function Link({
     <>
       {variant === "primary" ? (
         <a
-          className={`my-4 flex h-fit w-fit items-center gap-4 rounded-sm border-2 border-neutral-700 px-4 py-3 text-center text-xs font-bold no-underline duration-300 hover:cursor-pointer hover:bg-neutral-300 dark:hover:bg-neutral-800 md:text-sm ${className}`}
+          className={`my-4 flex items-center gap-4 rounded-sm border-2 border-neutral-700 px-4 py-3 text-center text-xs font-bold no-underline duration-300 hover:cursor-pointer hover:bg-neutral-200 hover:shadow-sm hover:shadow-neutral-300 dark:hover:bg-neutral-900 dark:hover:shadow-neutral-800 md:text-sm ${className}`}
           target="_blank"
           {...rest}
         >

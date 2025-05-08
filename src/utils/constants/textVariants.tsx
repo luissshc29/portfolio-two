@@ -124,11 +124,19 @@ export const textVariants: TextVariants = {
         us: "Knowledge:",
       },
       resume: {
-        text: {
-          br: "Currículo",
-          us: "Resume",
+        button: {
+          text: {
+            primary: {
+              br: "Currículo",
+              us: "Resume",
+            },
+            secondary: {
+              br: "Baixar",
+              us: "Download",
+            },
+          },
         },
-        url: {
+        document_url: {
           br: "/curriculo-luis-henrique-da-cunha-cavalcante.pdf",
           us: "/resume-luis-henrique-da-cunha-cavalcante.pdf",
         },
@@ -685,13 +693,13 @@ export const textVariants: TextVariants = {
       form: {
         text: {
           br: (
-            <div className="flex flex-wrap items-center justify-center gap-1">
+            <div className="flex flex-wrap justify-center items-center gap-1">
               <FiInfo className="text-lg" /> Você também pode preencher um
               formulário,{" "}
               <a
                 href="https://docs.google.com/forms/d/e/1FAIpQLSeoaZv_XB15-3QHgqdHm-qDVGggPj1XSYlA0wIvf4L9BysZdw/viewform"
                 target="_blank"
-                className="flex w-fit items-center gap-[2px] underline"
+                className="flex items-center gap-[2px] w-fit underline"
               >
                 clicando aqui
                 <RiExternalLinkLine className="text-lg" />
@@ -699,12 +707,12 @@ export const textVariants: TextVariants = {
             </div>
           ),
           us: (
-            <div className="flex flex-wrap items-center justify-center gap-1">
+            <div className="flex flex-wrap justify-center items-center gap-1">
               <FiInfo className="text-lg" /> You can also fill out a form, by{" "}
               <a
                 href="https://docs.google.com/forms/d/e/1FAIpQLSfr4SLa31PNH489ktl2jPJriFJl3P-se7zCW1X3VzeLZAI8Aw/viewform"
                 target="_blank"
-                className="flex w-fit items-center gap-[2px] underline"
+                className="flex items-center gap-[2px] w-fit underline"
               >
                 clicking here
                 <RiExternalLinkLine className="text-lg" />
