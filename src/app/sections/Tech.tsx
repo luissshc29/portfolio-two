@@ -9,6 +9,7 @@ import { stacks } from "@/utils/constants/stacks";
 import { useTheme } from "next-themes";
 import TechCard from "../components/common/card/TechCard";
 import { useInView } from "react-intersection-observer";
+import { getDeviceInfo } from "@/utils/functions/getDeviceInfo";
 
 export default function Tech() {
   const { language } = useLanguageContext();
@@ -17,29 +18,8 @@ export default function Tech() {
     useState<boolean>(false);
   const { ref, inView } = useInView();
 
-  function getDeviceInfo() {
-    // Checking if the device is an Android, iOS or Desktop
-    const userAgent =
-      navigator.userAgent || navigator.vendor || (window as any).opera;
-    const isMobileUserAgent = /Mobi|Android|iPhone|iPad|iPod|Mobile/i.test(
-      userAgent,
-    );
-    const isAndroid = /Android/i.test(userAgent);
-    const isIOS = /iPhone|iPad|iPod/i.test(userAgent);
-
-    // Checking if the user is using a mouse or a touch screen
-    const isTouchByMedia = window.matchMedia("(pointer: coarse)").matches;
-    const isTouchFallback =
-      "ontouchstart" in window || navigator.maxTouchPoints > 0;
-    const isTouch = isTouchByMedia || isTouchFallback;
-
-    if (isMobileUserAgent || isAndroid || isIOS)
-      setIsUserDeviceTouchscreen(true);
-    if (isTouch) setIsUserDeviceTouchscreen(true);
-  }
-
   useEffect(() => {
-    getDeviceInfo();
+    setIsUserDeviceTouchscreen(getDeviceInfo().isTouch);
   }, []);
 
   return (
@@ -52,7 +32,7 @@ export default function Tech() {
         mainText={textVariants.sections.tech.title.main[language]}
         bgText={textVariants.sections.tech.title.bg[language]}
       />
-      <p className="flex w-fit items-center gap-2 text-left text-sm md:text-base">
+      <p className="flex items-center gap-2 w-fit text-sm md:text-base text-left">
         {
           textVariants.sections.tech.subtitle[
             isUserDeviceTouchscreen ? "touch" : "hover"
@@ -60,7 +40,7 @@ export default function Tech() {
         }
       </p>
       <div
-        className="grid w-full grid-cols-3 items-center justify-evenly justify-items-center gap-5 md:grid-cols-5 lg:grid-cols-7 [@media_(min-width:500px)_and_(max-width:639px)]:grid-cols-4 [@media_(min-width:800px)_and_(max-width:1023px)]:grid-cols-6"
+        className="justify-evenly justify-items-center items-center gap-5 grid grid-cols-3 [@media_(min-width:500px)_and_(max-width:639px)]:grid-cols-4 [@media_(min-width:800px)_and_(max-width:1023px)]:grid-cols-6 md:grid-cols-5 lg:grid-cols-7 w-full"
         ref={ref}
       >
         {inView

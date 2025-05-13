@@ -1,7 +1,7 @@
 import React from "react";
 import { Job } from "./Job";
 import { Project } from "./Project";
-import { Social } from "./Social";
+import { SocialMedia } from "./Social";
 import { HeaderOption } from "./HeaderOption";
 import { ThemeSelectorOption } from "./ThemeSelectorOption";
 import { Tab } from "./Tab";
@@ -180,20 +180,49 @@ export type TextVariants = {
         br: React.ReactElement;
         us: React.ReactElement;
       };
-      info: {
-        social: Social[];
+      social: {
+        media: SocialMedia[];
+        whatsapp_message: {
+          br: string;
+          us: string;
+        };
+      };
+      alert: {
+        google_form: {
+          br: React.ReactElement;
+          us: React.ReactElement;
+        };
+      };
+      contact: {
         phone: {
+          tooltip: {
+            icon: React.ReactElement;
+            text: {
+              br: string;
+              us: string;
+            };
+          };
           text: string;
           raw: string;
         };
         email: {
+          tooltip: {
+            icon: React.ReactElement;
+            text: {
+              br: string;
+              us: string;
+            };
+          };
           text: string;
         };
-        whatsappMessage: {
-          br: string;
-          us: string;
-        };
         location: {
+          tooltip: {
+            icon: React.ReactElement;
+            text: {
+              br: string;
+              us: string;
+            };
+          };
           city: {
             br: string;
             us: string;
@@ -206,22 +235,47 @@ export type TextVariants = {
             br: string;
             us: string;
           };
+          url: string;
         };
-      };
-      form: {
-        text: {
-          br: React.ReactElement;
-          us: React.ReactElement;
-        };
-      };
-      toast: {
-        title: {
-          br: string;
-          us: string;
-        };
-        description: {
-          br: string;
-          us: string;
+        form: {
+          title: {
+            br: string;
+            us: string;
+          };
+          subtitle: {
+            br: string;
+            us: string;
+          };
+          badge: {
+            br: string;
+            us: string;
+          };
+          button: {
+            br: string;
+            us: string;
+          };
+          toast: {
+            success: {
+              title: {
+                br: string;
+                us: string;
+              };
+              description: {
+                br: string;
+                us: string;
+              };
+            };
+            error: {
+              title: {
+                br: string;
+                us: string;
+              };
+              description: {
+                br: string;
+                us: string;
+              };
+            };
+          };
         };
       };
     };
@@ -272,26 +326,94 @@ export type TextVariants = {
         };
       };
       contacts: {
-        phone: {
-          br: string;
-          us: string;
-        };
-        email: {
-          br: string;
-          us: string;
-        };
         social: {
           br: string;
           us: string;
         };
-        location: {
-          br: string;
-          us: string;
+        contact: {
+          phone: {
+            br: string;
+            us: string;
+          };
+          email: {
+            br: string;
+            us: string;
+          };
+          location: {
+            br: string;
+            us: string;
+          };
+          form: {
+            fields: {
+              name: {
+                br: string;
+                us: string;
+              };
+              email: {
+                br: string;
+                us: string;
+              };
+              message: {
+                br: string;
+                us: string;
+              };
+            };
+            toast: {
+              success: {
+                accordion: {
+                  trigger: {
+                    br: string;
+                    us: string;
+                  };
+                  content: {
+                    message: {
+                      sentBy: {
+                        br: string;
+                        us: string;
+                      };
+                      sentAt: {
+                        br: string;
+                        us: string;
+                      };
+                      content: {
+                        br: string;
+                        us: string;
+                      };
+                    };
+                  };
+                };
+              };
+              error: {
+                accordion: {
+                  trigger: {
+                    br: string;
+                    us: string;
+                  };
+                  content: {
+                    error: {
+                      br: string;
+                      us: string;
+                    };
+                  };
+                };
+              };
+            };
+          };
         };
       };
     };
     themeSelector: {
       options: ThemeSelectorOption[];
+    };
+    functions: {
+      sendEmail: {
+        subject: {
+          prefix: {
+            br: string;
+            us: string;
+          };
+        };
+      };
     };
   };
 };

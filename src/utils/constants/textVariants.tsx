@@ -1,5 +1,5 @@
 import { HiMiniCommandLine } from "react-icons/hi2";
-import { FaCode, FaComputer } from "react-icons/fa6";
+import { FaCode, FaComputer, FaMapPin } from "react-icons/fa6";
 import { v4 as uuidv4 } from "uuid";
 import { TfiLinkedin } from "react-icons/tfi";
 import { BsGithub, BsInstagram, BsWhatsapp } from "react-icons/bs";
@@ -8,6 +8,8 @@ import { IoMoonOutline, IoWarning } from "react-icons/io5";
 import { PiDevices } from "react-icons/pi";
 import { FiInfo, FiSun } from "react-icons/fi";
 import { RiExternalLinkLine } from "react-icons/ri";
+import { BiSolidPhoneCall } from "react-icons/bi";
+import { MdEmail } from "react-icons/md";
 
 export const textVariants: TextVariants = {
   sections: {
@@ -623,19 +625,19 @@ export const textVariants: TextVariants = {
       subtitle: {
         br: (
           <p>
-            Sinta-se à vontade para <u>me contatar</u> e/ou{" "}
-            <u>fazer um orçamento</u> em algum dos meios abaixo!
+            Você pode <u>me contatar</u> e/ou <u>fazer um orçamento</u> em algum
+            dos meios abaixo!
           </p>
         ),
         us: (
           <p>
-            Feel free to <u>contact me</u> and/or <u>request a quote</u> in any
-            of the ways below!
+            You can <u>contact me</u> and/or <u>request a quote</u> in any of
+            the ways below!
           </p>
         ),
       },
-      info: {
-        social: [
+      social: {
+        media: [
           {
             id: 1,
             text: "Linkedin",
@@ -664,34 +666,13 @@ export const textVariants: TextVariants = {
             component: <BsWhatsapp />,
           },
         ],
-        phone: {
-          text: "+55 (85) 98951-3959",
-          raw: "5585989513959",
-        },
-        email: {
-          text: "luishcc2003@gmail.com",
-        },
-        whatsappMessage: {
+        whatsapp_message: {
           br: "Olá!%20Vim%20pelo%20seu%20portfólio.",
           us: "Hello!%20I%20came%20from%20your%20portfolio.",
         },
-        location: {
-          city: {
-            br: "Fortaleza",
-            us: "Fortaleza",
-          },
-          state: {
-            br: "Ceará",
-            us: "Ceará",
-          },
-          country: {
-            br: "Brasil",
-            us: "Brazil",
-          },
-        },
       },
-      form: {
-        text: {
+      alert: {
+        google_form: {
           br: (
             <div className="flex flex-wrap justify-center items-center gap-1">
               <FiInfo className="text-lg" /> Você também pode preencher um
@@ -721,14 +702,89 @@ export const textVariants: TextVariants = {
           ),
         },
       },
-      toast: {
-        title: {
-          br: "Feito!",
-          us: "Done!",
+      contact: {
+        phone: {
+          tooltip: {
+            icon: <BiSolidPhoneCall />,
+            text: {
+              br: "Ligar",
+              us: "Call",
+            },
+          },
+          text: "+55 (85) 98951-3959",
+          raw: "5585989513959",
         },
-        description: {
-          br: "O texto foi copiado para a área de transferência.",
-          us: "The text was copied to clipboard.",
+        email: {
+          tooltip: {
+            icon: <MdEmail />,
+            text: {
+              br: "Enviar",
+              us: "Send",
+            },
+          },
+          text: "luishcc2003@gmail.com",
+        },
+        location: {
+          tooltip: {
+            icon: <FaMapPin />,
+            text: {
+              br: "Visitar",
+              us: "Visit",
+            },
+          },
+          city: {
+            br: "Fortaleza",
+            us: "Fortaleza",
+          },
+          state: {
+            br: "Ceará",
+            us: "Ceará",
+          },
+          country: {
+            br: "Brasil",
+            us: "Brazil",
+          },
+          url: "https://maps.app.goo.gl/91iLggdvidxtsFwz7",
+        },
+        form: {
+          title: {
+            br: "Vamos conversar",
+            us: "Let's talk",
+          },
+          subtitle: {
+            br: "Sinta-se a vontade para enviar qualquer dúvida, feedback ou assunto relacionado.",
+            us: "Feel free to send any questions, feedback or related matters.",
+          },
+          badge: {
+            br: "Experimental",
+            us: "Experimental",
+          },
+          button: {
+            br: "Enviar",
+            us: "Send",
+          },
+          toast: {
+            success: {
+              title: {
+                br: "Feito!",
+                us: "Done!",
+              },
+              description: {
+                br: "Sua mensagem foi enviada.",
+                us: "Your message was sent.",
+              },
+            },
+            error: {
+              title: {
+                br: "Erro!",
+                us: "Error!",
+              },
+              description: {
+                br: "Algo inexperado aconteceu. Tente novamente.",
+                us: "Something unexpected has occurred. Try again.",
+              },
+            },
+          },
         },
       },
     },
@@ -830,21 +886,79 @@ export const textVariants: TextVariants = {
         },
       },
       contacts: {
-        phone: {
-          br: "Telefone",
-          us: "Phone number",
-        },
-        email: {
-          br: "Email",
-          us: "Email",
-        },
         social: {
           br: "Redes sociais",
           us: "Social media",
         },
-        location: {
-          br: "Localização",
-          us: "Location",
+        contact: {
+          phone: {
+            br: "Telefone",
+            us: "Phone number",
+          },
+          email: {
+            br: "Email",
+            us: "Email",
+          },
+          location: {
+            br: "Localização",
+            us: "Location",
+          },
+          form: {
+            fields: {
+              name: {
+                br: "Seu nome",
+                us: "Your name",
+              },
+              email: {
+                br: "Seu email",
+                us: "Your email",
+              },
+              message: {
+                br: "Sua mensagem",
+                us: "Your message",
+              },
+            },
+            toast: {
+              success: {
+                accordion: {
+                  trigger: {
+                    br: "Ver detalhes da mensagem",
+                    us: "Read message details",
+                  },
+                  content: {
+                    message: {
+                      sentBy: {
+                        br: "Enviado por:",
+                        us: "Sent by:",
+                      },
+                      sentAt: {
+                        br: "Enviado em:",
+                        us: "Sent at:",
+                      },
+                      content: {
+                        br: "Conteúdo:",
+                        us: "Content:",
+                      },
+                    },
+                  },
+                },
+              },
+              error: {
+                accordion: {
+                  trigger: {
+                    br: "Ver detalhes do erro",
+                    us: "Read error details",
+                  },
+                  content: {
+                    error: {
+                      br: "Erro:",
+                      us: "Error:",
+                    },
+                  },
+                },
+              },
+            },
+          },
         },
       },
     },
@@ -875,6 +989,16 @@ export const textVariants: TextVariants = {
           icon: <IoMoonOutline />,
         },
       ],
+    },
+    functions: {
+      sendEmail: {
+        subject: {
+          prefix: {
+            br: "Contato via Portfólio",
+            us: "Contact via Portfolio",
+          },
+        },
+      },
     },
   },
 };

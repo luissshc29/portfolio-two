@@ -48,24 +48,24 @@ export default function Welcome() {
           localStorage.getItem("warningToastDismissed") === "false"
         ) {
           toast(
-            <div className="relative flex h-fit w-full flex-col items-start gap-4 bg-yellow-200 p-4 text-sm md:text-base">
+            <div className="relative flex flex-col items-start gap-4 bg-yellow-200 p-4 w-full h-fit text-sm md:text-base">
               <button
-                className="absolute right-2 top-2 text-3xl text-yellow-900"
+                className="top-2 right-2 absolute text-yellow-900 text-3xl"
                 onClick={() => {
                   toast.dismiss();
                 }}
               >
                 <IoIosClose />
               </button>
-              <div className="items-center gap-3 text-left text-base font-bold text-yellow-900">
+              <div className="items-center gap-3 font-bold text-yellow-900 text-base text-left">
                 {textVariants.sections.welcome.toast.title[language]}
-                <p className="text-sm font-normal text-yellow-700">
+                <p className="font-normal text-yellow-700 text-sm">
                   {textVariants.sections.welcome.toast.subtitle[language]}{" "}
                   <u>{referrer?.ref}</u>
                 </p>
               </div>
               <p
-                className="text-left text-xs md:text-sm"
+                className="text-xs md:text-sm text-left"
                 dangerouslySetInnerHTML={{
                   __html: textVariants.sections.welcome.toast.description[
                     language
@@ -74,19 +74,19 @@ export default function Welcome() {
               />
               <div className="flex flex-wrap items-center gap-2">
                 <Button
-                  className="h-fit rounded-none border-[2px] border-yellow-900 bg-yellow-800 p-1.5 text-xs text-yellow-200 hover:bg-yellow-950 md:text-sm"
+                  className="bg-yellow-800 hover:bg-yellow-950 p-1.5 border-[2px] border-yellow-900 rounded-none h-fit text-yellow-200 text-xs md:text-sm"
                   onClick={() => {
                     toast.dismiss();
                   }}
                 >
                   {
                     textVariants.sections.welcome.toast.buttons.continue[
-                    language
+                      language
                     ]
                   }
                 </Button>
                 <Button
-                  className="border-none bg-transparent px-0 text-xs text-yellow-700 underline hover:bg-transparent hover:dark:bg-transparent md:px-2 md:text-sm"
+                  className="bg-transparent hover:bg-transparent hover:dark:bg-transparent px-0 md:px-2 border-none text-yellow-700 text-xs md:text-sm underline"
                   onClick={() => {
                     toast.dismiss();
                     localStorage.setItem("warningToastDismissed", "true");
@@ -94,12 +94,13 @@ export default function Welcome() {
                 >
                   {
                     textVariants.sections.welcome.toast.buttons.notShow[
-                    language
+                      language
                     ]
                   }
                 </Button>
               </div>
             </div>,
+            { id: "welcome-warning-sonner", className: "w-[80vw]" },
           );
         }
       }
@@ -118,31 +119,32 @@ export default function Welcome() {
         bgText={textVariants.sections.welcome.title.bg[language]}
       />
 
-      <div className="flex flex-col items-center justify-center md:mb-10 lg:gap-6">
-        <h1 className="text-sm font-medium md:text-base">
+      <div className="flex flex-col justify-center items-center lg:gap-6 md:mb-10">
+        <h1 className="font-medium text-sm md:text-base">
           {textVariants.sections.welcome.subtitle[language]}
         </h1>
         <Header />
       </div>
-      <button 
+      <button
         onClick={() =>
           document
             .getElementById("language")
             ?.scrollIntoView({ block: "start", behavior: "smooth" })
         }
-        className="absolute bottom-20 animate-bounce text-4xl text-black dark:text-white hover:cursor-pointer active:scale-[.85]"
+        className="bottom-20 absolute text-black dark:text-white text-4xl active:scale-[.85] animate-bounce hover:cursor-pointer"
       >
-        <IoIosArrowDown/>
+        <IoIosArrowDown />
       </button>
 
       <SonnerToaster
         duration={Infinity}
         toastOptions={{
           classNames: {
-            toast: "w-[80vw] p-0 rounded-none",
+            toast: "p-0 rounded-none",
           },
         }}
         position="bottom-left"
+        key={"welcome-warning-sonner"}
       />
     </BgImageContainer>
   );
