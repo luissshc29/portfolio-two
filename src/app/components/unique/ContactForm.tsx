@@ -19,7 +19,6 @@ import {
 } from "@/shadcn/components/ui/accordion";
 import { FiInfo } from "react-icons/fi";
 import { weekDays } from "@/utils/constants/weekDays";
-import { sendEmail } from "@/utils/functions/sendEmail";
 import LoadingSVG from "@/utils/svg/Loading";
 
 export type MessageData = {
@@ -59,14 +58,21 @@ export default function ContactForm() {
     };
 
     try {
-      const { data, error } = await sendEmail({
-        message: fullMessageData,
-        language,
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          message: fullMessageData,
+          language,
+        }),
       });
 
-      if (error) throw new Error(error);
+      const result = await response.json();
 
-      console.log({ data, error });
+      if (!response.ok)
+        throw new Error(JSON.stringify(result).replace("Error: ", ""));
       reset();
       setLoading(false);
       toast(
@@ -146,7 +152,7 @@ export default function ContactForm() {
           </div>
         </div>,
         {
-          duration: Infinity,
+          duration: 15000,
           classNames: {
             toast:
               "w-full min-w-[50vw] h-auto max-h-fit border-green-500 dark:border-green-900",
@@ -154,7 +160,9 @@ export default function ContactForm() {
         },
       );
     } catch (err: any) {
-      console.log(String(err));
+      const error: { message: string; name: string; statusCode: number } =
+        JSON.parse(err.message).error;
+
       setLoading(false);
       toast(
         <div className="relative flex flex-col items-start gap-4 bg-red-200 p-4 w-full h-fit text-sm md:text-base">
@@ -195,14 +203,13 @@ export default function ContactForm() {
                   <ul className="flex flex-col gap-2 text-left">
                     <li className="flex flex-col items-start gap-1 text-sm lg:text-base">
                       <p className="text-sm">
-                        {
+                        {error.name}
+                        {/* {
                           textVariants.others.labels.contacts.contact.form.toast
                             .error.accordion.content.error[language]
-                        }
+                        } */}
                       </p>
-                      <p className="font-normal text-xs">
-                        {String(err).replace("Error: ", "")}
-                      </p>
+                      <p className="font-normal text-xs">{`${error.statusCode} ${error.message}`}</p>
                     </li>
                   </ul>
                 </AccordionContent>
@@ -211,7 +218,7 @@ export default function ContactForm() {
           </div>
         </div>,
         {
-          duration: Infinity,
+          duration: 15000,
           classNames: {
             toast:
               "w-full min-w-[50vw] h-auto max-h-fit border-red-500 dark:border-red-900",

@@ -1,5 +1,5 @@
+import { SendEmailProps } from "@/app/api/send-email/route";
 import { textVariants } from "@/utils/constants/textVariants";
-import { SendEmailProps } from "@/utils/functions/sendEmail";
 import React from "react";
 
 export default function EmailTemplate({ message, language }: SendEmailProps) {
