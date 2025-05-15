@@ -47,7 +47,7 @@ export default function Title({
         className="relative flex justify-center items-center w-full text-center"
         ref={ref}
       >
-        <h1 className="top-0 z-[-2] absolute opacity-20 font-title-bg text-[#838383] text-5xl md:text-7xl dark:text-[#9b9b9b]">
+        <h1 className="top-0 z-[-2] absolute opacity-20 font-title-bg text-[#838383] dark:text-[#9b9b9b] text-5xl md:text-7xl">
           {bgText}
         </h1>
         <h2 className="font-title text-4xl md:text-5xl">{title}</h2>
@@ -57,7 +57,7 @@ export default function Title({
   } else {
     return (
       <div className="relative flex justify-center items-center text-center">
-        <h1 className="top-[-110%] z-[-2] absolute mx-auto font-title-bg text-[#adadad] text-3xl md:text-4xl dark:text-[#363636]">
+        <h1 className="-top-[30px] md:-top-[36px] z-[-2] absolute mx-auto font-title-bg text-[#adadad] dark:text-[#363636] text-3xl md:text-4xl">
           {bgIcon}
         </h1>
         <h2 className="font-title text-base md:text-lg">{mainText}</h2>

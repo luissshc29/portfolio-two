@@ -92,11 +92,15 @@ code {
 ::selection {
   background-color: black;
   color: white;
+  background-color: #00cc9960;
+  color: #00493dfd;
 }
 
 .dark *::selection {
   background-color: white;
   color: black;
+  background-color: #00fff61d;
+  color: #67ffded2;
 }
 
 @font-face {

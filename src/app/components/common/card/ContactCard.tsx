@@ -36,7 +36,7 @@ export default function ContactCard({
       <Tooltip delayDuration={100}>
         <TooltipTrigger
           asChild
-          className={`contact-card relative z-[51] flex flex-col items-center justify-center gap-1 rounded-md bg-opacity-20 p-4 pt-[38px] shadow-md shadow-transparent duration-300 hover:cursor-pointer hover:bg-white hover:shadow-neutral-300 hover:[backdrop-filter:blur(12px)] dark:hover:bg-transparent dark:hover:shadow-neutral-800 md:pt-[44px] ${className}`}
+          className={`contact-card relative z-[51] flex w-full flex-col items-center justify-center gap-1 rounded-md bg-opacity-20 p-4 pt-[38px] shadow-md shadow-transparent duration-300 hover:cursor-pointer hover:bg-white hover:shadow-neutral-200 hover:[backdrop-filter:blur(12px)] dark:hover:bg-transparent dark:hover:shadow-neutral-900 md:pt-[44px] ${className}`}
         >
           <a
             href={link}
