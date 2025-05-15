@@ -120,7 +120,7 @@ export default function PageLoader({
     return (
       <BgImageContainer
         slideAnimation={false}
-        className={`pointer-events-none flex max-h-[100dvh] w-screen flex-col justify-start bg-white dark:bg-black ${animate} `}
+        className={`pointer-events-none flex max-h-screen w-screen flex-col justify-start bg-white dark:bg-black ${animate} `}
       >
         {/* Loading Component */}
         <div
@@ -152,7 +152,7 @@ export default function PageLoader({
             loading="eager"
           />
         </div>
-        <div className="gap-2 md:mt-0 md:ml-16 w-full h-[100dvh] font-title text-4xl text-left">
+        <div className="gap-2 md:mt-0 md:ml-16 w-full h-screen font-title text-4xl text-left">
           {loadingText && (
             <p className="self-start md:self-center mt-[25vh] min-h-fit text-black dark:text-white transition-all duration-500">
               {loadingText}

@@ -48,7 +48,7 @@ export default function BgImageContainer({
 
   return (
     <div
-      className={`relative min-h-[100dvh] w-screen overflow-x-clip ${className}`}
+      className={`relative min-h-screen w-screen overflow-x-clip ${className}`}
       {...rest}
       ref={ref}
       id={id && id}
@@ -70,10 +70,10 @@ export default function BgImageContainer({
         />
       )}
 
-      <div className="z-[-9] absolute bg-white dark:bg-black bg-opacity-[.94] dark:bg-opacity-[.92] w-screen h-full min-h-[100dvh]" />
+      <div className="z-[-9] absolute bg-white dark:bg-black bg-opacity-[.94] dark:bg-opacity-[.92] w-screen h-full min-h-screen" />
       <div
         className={
-          `flex min-h-[100dvh] w-full flex-col items-center justify-center gap-8 p-8 text-center transition-all duration-1000 md:gap-16 md:p-10` /* + ${ id !== "welcome" && "animate-up opacity-0 [animation-range:entry_0%_cover_50%] [animation-timeline:view()]" } */
+          `flex min-h-screen w-full flex-col items-center justify-center gap-8 p-8 text-center transition-all duration-1000 md:gap-16 md:p-10` /* + ${ id !== "welcome" && "animate-up opacity-0 [animation-range:entry_0%_cover_50%] [animation-timeline:view()]" } */
         }
         style={
           // Conditional to fix Header desapearing on scroll
