@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Input } from "@/shadcn/components/ui/input";
 import { Textarea } from "@/shadcn/components/ui/textarea";
 import { Label } from "@/shadcn/components/ui/label";
@@ -19,6 +19,7 @@ import {
 } from "@/shadcn/components/ui/accordion";
 import { FiInfo } from "react-icons/fi";
 import { weekDays } from "@/utils/constants/weekDays";
+import { CgSpinner } from "react-icons/cg";
 import LoadingSVG from "@/utils/svg/Loading";
 
 export type MessageData = {
@@ -336,7 +337,8 @@ export default function ContactForm() {
         className="w-fit duration-300"
       >
         {loading ? (
-          <p className="font-bold text-lg">...</p>
+          // <CgSpinner className="text-xl animate-load" />
+          <LoadingSVG className="opacity-70 dark:opacity-50 w-5 h-5 dark:[filter:invert(.8)]" />
         ) : (
           textVariants.sections.contacts.contact.form.button[language]
         )}

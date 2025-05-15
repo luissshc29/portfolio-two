@@ -448,3 +448,12 @@ code {
 .contact-form-input:focus {
   @apply dark:border-white border-black;
 }
+
+@keyframes load {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.animate-load {
+  animation: load 1s linear infinite;
+}

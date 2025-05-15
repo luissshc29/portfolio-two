@@ -6,9 +6,8 @@ export default function LoadingSVG({
 }: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
-      aria-hidden="true"
       role="status"
-      className={`inline animate-spin ${className}`}
+      className={`animate-load inline ${className}`}
       viewBox="0 0 100 101"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
