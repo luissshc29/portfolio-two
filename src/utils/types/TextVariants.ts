@@ -276,6 +276,12 @@ export type TextVariants = {
               };
             };
           };
+          email: {
+            title: {
+              br: string;
+              us: string;
+            };
+          };
         };
       };
     };

@@ -15,10 +15,10 @@ export async function POST(request: Request) {
   try {
     const { message, language }: SendEmailProps = await request.json();
 
-    const emailSubject = `${textVariants.others.functions.sendEmail.subject.prefix[language]} - ${message.name}`;
+    const emailSubject = `${textVariants.others.functions.sendEmail.subject.prefix[language]}`;
 
     const emailObject = {
-      from: `Portfolio <no-reply@luishenrique-dev.com.br>`,
+      from: `${message.name} <no-reply@luishenrique-dev.com.br>`,
       to: [process.env.NEXT_PUBLIC_EMAIL as string],
       subject: emailSubject,
       react: EmailTemplate({ message, language }),

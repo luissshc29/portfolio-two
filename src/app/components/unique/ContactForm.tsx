@@ -158,6 +158,7 @@ export default function ContactForm() {
             toast:
               "w-full min-w-[50vw] h-auto max-h-fit border-green-500 dark:border-green-900",
           },
+          className: "contact-form-toast-success",
         },
       );
     } catch (err: any) {
@@ -224,6 +225,7 @@ export default function ContactForm() {
             toast:
               "w-full min-w-[50vw] h-auto max-h-fit border-red-500 dark:border-red-900",
           },
+          className: "contact-form-toast-error",
         },
       );
     }

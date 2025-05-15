@@ -99,14 +99,14 @@ export default function ProjectCard({
 
   return (
     <div
-      className="animate-content-up card relative overflow-hidden opacity-0 shadow-lg"
+      className="relative opacity-0 shadow-lg overflow-hidden animate-content-up card"
       style={{
         ...style,
       }}
       {...rest}
     >
       {data.highlight && (
-        <Badge className="duration-2000 absolute right-0 top-0 flex w-fit animate-pulse items-center gap-1 rounded-none rounded-bl-xl bg-green-600 px-2 py-1 text-xs text-white shadow-md shadow-green-800 transition-all">
+        <Badge className="top-0 right-0 absolute flex items-center gap-1 bg-green-600 shadow-green-800 shadow-md px-2 py-1 rounded-none rounded-bl-xl w-fit text-white text-xs transition-all animate-pulse duration-2000">
           <RiMedalLine className="text-lg" />
           <p>{language === "br" ? "Em destaque" : "Featured"}</p>
         </Badge>
@@ -114,23 +114,23 @@ export default function ProjectCard({
       <img
         src={`${data.images.path}${data.images.list[0]}`}
         alt={data.title[language]}
-        className="card-image h-full w-full object-cover transition-all duration-500 ease-in-out"
+        className="w-full h-full object-cover transition-all duration-500 ease-in-out card-image"
         loading="lazy"
       />
-      <div className="card-overlay absolute inset-0 flex flex-col items-center justify-center gap-3 bg-black bg-opacity-50 p-2 text-3xl font-semibold text-white opacity-0 transition-all duration-500 ease-in-out">
-        <h1 className="semibold font-title text-2xl">{data.title[language]}</h1>
+      <div className="absolute inset-0 flex flex-col justify-center items-center gap-3 bg-black bg-opacity-50 opacity-0 p-2 font-semibold text-white text-3xl transition-all duration-500 ease-in-out card-overlay">
+        <h1 className="font-title text-2xl semibold">{data.title[language]}</h1>
 
         {/* Desktop */}
         <Dialog onOpenChange={(e) => setHeaderVisible?.(!e)}>
           <DialogTrigger asChild className="hidden lg:block">
-            <div className="hidden items-center gap-1 font-text hover:cursor-pointer lg:flex">
-              <p className="text-base font-medium underline">
+            <div className="hidden lg:flex items-center gap-1 font-text hover:cursor-pointer">
+              <p className="font-medium text-base underline">
                 {textVariants.others.labels.projects.card.text[language]}
               </p>
               <FiInfo className="text-base" />
             </div>
           </DialogTrigger>
-          <DialogContent className="h-fit min-h-[70vh] min-w-[85vw] px-8">
+          <DialogContent className="px-8 min-w-[85vw] h-fit">
             <div className="z-[1500] h-fit">
               <DialogHeader>
                 <DialogTitle className="flex items-center gap-2 font-title text-2xl">
@@ -138,7 +138,7 @@ export default function ProjectCard({
                   {data.highlight && (
                     <Badge
                       variant="secondary"
-                      className="flex w-fit items-center gap-[3px] bg-green-500 font-text text-white hover:bg-green-500 dark:bg-green-400 dark:bg-opacity-50 hover:dark:bg-green-400 hover:dark:bg-opacity-50"
+                      className="flex items-center gap-[3px] bg-green-500 hover:bg-green-500 hover:dark:bg-green-400 dark:bg-green-400 hover:dark:bg-opacity-50 dark:bg-opacity-50 w-fit font-text text-white"
                     >
                       <RiMedalLine className="text-lg" />
                       <p>{language === "br" ? "Em destaque" : "Featured"}</p>
@@ -157,8 +157,8 @@ export default function ProjectCard({
                 </DialogDescription>
               </DialogHeader>
             </div>
-            <div className="z-[1500] flex h-full w-full items-center gap-10">
-              <div className="flex w-1/2 flex-col items-start gap-[6px]">
+            <div className="z-[1500] flex items-center gap-10 w-full h-full">
+              <div className="flex flex-col items-start gap-[6px] w-1/2">
                 <Carousel
                   className="w-full"
                   plugins={[plugin.current as any]}
@@ -178,7 +178,7 @@ export default function ProjectCard({
                         }
                       >
                         <Card className="p-0 md:p-0">
-                          <CardContent className="flex items-center justify-center p-0 md:p-0">
+                          <CardContent className="flex justify-center items-center p-0 md:p-0">
                             <img
                               src={`${data.images.path}${url}`}
                               className="rounded-sm"
@@ -193,7 +193,7 @@ export default function ProjectCard({
                   <CarouselPrevious />
                   <CarouselNext />
                 </Carousel>
-                <div className="flex w-full items-center justify-between text-xs text-neutral-600 dark:text-neutral-400 md:text-sm">
+                <div className="flex justify-between items-center w-full text-neutral-600 dark:text-neutral-400 text-xs md:text-sm">
                   <div className="flex items-center gap-2">
                     <LuClock4 />
                     <p>{data.date[language]}</p>
@@ -201,8 +201,8 @@ export default function ProjectCard({
                   <div>#{data.tag}</div>
                 </div>
               </div>
-              <div className="flex h-full w-1/2 flex-col items-start justify-around">
-                <div className="flex w-full flex-col items-start justify-center gap-3 text-base">
+              <div className="flex flex-col justify-around items-start w-1/2 h-full">
+                <div className="flex flex-col justify-center items-start gap-3 w-full text-base">
                   <div className="flex flex-col gap-1">
                     <span className="font-bold">
                       {
@@ -220,7 +220,7 @@ export default function ProjectCard({
                     />
                   </div>
                   <Separator />
-                  <div className="flex w-full items-center justify-start gap-2">
+                  <div className="flex justify-start items-center gap-2 w-full">
                     <span className="w-fit font-bold">
                       {
                         textVariants.others.labels.projects.modal.stacks[
@@ -232,8 +232,8 @@ export default function ProjectCard({
                     <div
                       className={`tech flex h-8 w-2/3 items-center justify-center gap-1 ${showingOnTechContainer === "icons" ? "" : "flipped"}`}
                     >
-                      <div className="tech-inner relative flex h-full w-full items-center justify-center">
-                        <div className="tech-front absolute flex w-full justify-start gap-2 text-2xl">
+                      <div className="relative flex justify-center items-center w-full h-full tech-inner">
+                        <div className="absolute flex justify-start gap-2 w-full text-2xl tech-front">
                           {projectStacks.map((stack) => (
                             <p key={stack.id}>
                               <stack.component
@@ -242,7 +242,7 @@ export default function ProjectCard({
                             </p>
                           ))}
                         </div>
-                        <div className="tech-back absolute flex w-full flex-wrap justify-start gap-x-2 text-base font-medium">
+                        <div className="absolute flex flex-wrap justify-start gap-x-2 w-full font-medium text-base tech-back">
                           {projectStacks.map((stack) => (
                             <p key={stack.id}>{stack.name}</p>
                           ))}
@@ -318,9 +318,9 @@ export default function ProjectCard({
           }}
           setBackgroundColorOnScale={false}
         >
-          <DrawerTrigger asChild className="block lg:hidden">
-            <div className="flex items-center gap-1 hover:cursor-pointer lg:hidden">
-              <p className="text-sm font-medium underline">
+          <DrawerTrigger asChild className="lg:hidden block">
+            <div className="lg:hidden flex items-center gap-1 hover:cursor-pointer">
+              <p className="font-medium text-sm underline">
                 {textVariants.others.labels.projects.card.text[language]}
               </p>
               <FiInfo className="text-base" />
@@ -330,14 +330,14 @@ export default function ProjectCard({
             className="[-webkit-overflow-scrolling:touch] [touch-action:manipulation]"
             id={`drawer-content-${data.title.br.toLowerCase().replaceAll(" ", "-")}`}
           >
-            <div className="z-[1500] mx-auto h-fit max-h-[80vh] w-full overflow-y-scroll px-4 pb-6 pt-4 md:max-h-[70vh] md:px-8">
-              <DrawerHeader className="w-full gap-0 px-0">
-                <DrawerTitle className="flex w-fit min-w-[66%] items-center gap-2 font-title text-2xl">
+            <div className="z-[1500] mx-auto px-4 md:px-8 pt-4 pb-6 w-full h-fit max-h-[80vh] md:max-h-[70vh] overflow-y-scroll">
+              <DrawerHeader className="gap-0 px-0 w-full">
+                <DrawerTitle className="flex items-center gap-2 w-fit min-w-[66%] font-title text-2xl">
                   {data.title[language]}
                   {data.highlight && (
                     <Badge
                       variant="secondary"
-                      className="flex min-w-fit items-center justify-center gap-[3px] bg-green-500 font-text text-white hover:bg-green-500 dark:bg-green-400 dark:bg-opacity-50 hover:dark:bg-green-400 hover:dark:bg-opacity-50"
+                      className="flex justify-center items-center gap-[3px] bg-green-500 hover:bg-green-500 hover:dark:bg-green-400 dark:bg-green-400 hover:dark:bg-opacity-50 dark:bg-opacity-50 min-w-fit font-text text-white"
                     >
                       <RiMedalLine className="text-lg" />
                       <p>{language === "br" ? "Em destaque" : "Featured"}</p>
@@ -355,8 +355,8 @@ export default function ProjectCard({
                   </Link>
                 </DrawerDescription>
               </DrawerHeader>
-              <div className="z-[1500] mx-auto mt-2 flex flex-col items-center gap-2 md:flex-row md:gap-8">
-                <div className="flex h-full w-[90%] flex-col items-start gap-1 overflow-visible md:w-1/2 md:gap-3">
+              <div className="z-[1500] flex [@media_(min-width:700px)]:flex-row flex-col items-center gap-2 md:gap-8 mx-auto mt-2">
+                <div className="flex flex-col items-start gap-1 md:gap-3 w-[90%] [@media_(min-width:700px)]:w-1/2 md:w-3/5 h-full overflow-visible">
                   <Carousel
                     className="mx-auto w-full"
                     plugins={[plugin.current as any]}
@@ -376,7 +376,7 @@ export default function ProjectCard({
                           }
                         >
                           <Card className="p-0 md:p-0">
-                            <CardContent className="flex items-center justify-center p-0 md:p-0">
+                            <CardContent className="flex justify-center items-center p-0 md:p-0">
                               <img
                                 src={`${data.images.path}${url}`}
                                 className="rounded-sm"
@@ -391,7 +391,7 @@ export default function ProjectCard({
                     <CarouselPrevious />
                     <CarouselNext />
                   </Carousel>
-                  <div className="flex w-full items-center justify-between text-[11px] text-neutral-600 dark:text-neutral-400 md:text-xs">
+                  <div className="flex justify-between items-center w-full text-[11px] text-neutral-600 dark:text-neutral-400 md:text-xs">
                     <div className="flex items-center gap-1">
                       <LuClock4 />
                       <p>{data.date[language]}</p>
@@ -399,9 +399,9 @@ export default function ProjectCard({
                     <div>#{data.tag}</div>
                   </div>
                 </div>
-                <div className="flex h-full w-full flex-col items-start justify-around gap-1.5 text-base md:w-1/2 md:gap-3">
+                <div className="flex flex-col justify-around items-start gap-1.5 md:gap-3 w-full [@media_(min-width:700px)]:w-1/2 h-full text-base">
                   <div className="flex flex-col gap-[2px]">
-                    <span className="text-sm font-bold md:text-base">
+                    <span className="font-bold text-sm md:text-base">
                       {
                         textVariants.others.labels.projects.modal.description[
                           language
@@ -410,15 +410,15 @@ export default function ProjectCard({
                       :
                     </span>
                     <p
-                      className="text-sm text-neutral-700 dark:text-neutral-300 md:text-base"
+                      className="text-neutral-700 dark:text-neutral-300 text-sm md:text-base"
                       dangerouslySetInnerHTML={{
                         __html: data.description[language],
                       }}
                     />
                   </div>
                   <Separator />
-                  <div className="flex w-full items-center justify-start gap-2">
-                    <span className="w-fit text-sm font-bold md:text-base">
+                  <div className="flex justify-start items-center gap-2 w-full">
+                    <span className="w-fit font-bold text-sm md:text-base">
                       {
                         textVariants.others.labels.projects.modal.stacks[
                           language
@@ -429,8 +429,8 @@ export default function ProjectCard({
                     <div
                       className={`tech flex h-8 w-2/3 items-center justify-center gap-1 ${showingOnTechContainer === "icons" ? "" : "flipped"}`}
                     >
-                      <div className="tech-inner relative flex h-full w-full items-center justify-center">
-                        <div className="tech-front absolute flex w-full justify-start gap-2 text-xl">
+                      <div className="relative flex justify-center items-center w-full h-full tech-inner">
+                        <div className="absolute flex justify-start gap-2 w-full text-xl tech-front">
                           {projectStacks.map((stack) => (
                             <p key={stack.id}>
                               <stack.component
@@ -439,7 +439,7 @@ export default function ProjectCard({
                             </p>
                           ))}
                         </div>
-                        <div className="tech-back absolute flex w-full flex-wrap justify-start gap-2 gap-y-0 text-sm font-medium md:text-[15px]">
+                        <div className="absolute flex flex-wrap justify-start gap-2 gap-y-0 w-full font-medium md:text-[15px] text-sm tech-back">
                           {projectStacks.map((stack) => (
                             <p key={stack.id}>{stack.name}</p>
                           ))}
@@ -464,7 +464,7 @@ export default function ProjectCard({
                   {data.repository && (
                     <>
                       <div className="flex flex-col items-start gap-[2px]">
-                        <span className="text-sm font-bold md:text-base">
+                        <span className="font-bold text-sm md:text-base">
                           {
                             textVariants.others.labels.projects.modal.repo[
                               language
@@ -484,7 +484,7 @@ export default function ProjectCard({
                       <Separator />
                     </>
                   )}
-                  <div className="my-2 flex items-center gap-2 text-sm md:text-base">
+                  <div className="flex items-center gap-2 my-2 text-sm md:text-base">
                     <p>
                       {
                         textVariants.others.labels.projects.modal.complexity[

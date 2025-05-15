@@ -785,6 +785,12 @@ export const textVariants: TextVariants = {
               },
             },
           },
+          email: {
+            title: {
+              br: "Nova mensagem",
+              us: "New message",
+            },
+          },
         },
       },
     },
@@ -928,11 +934,11 @@ export const textVariants: TextVariants = {
                   content: {
                     message: {
                       sentBy: {
-                        br: "Enviado por:",
+                        br: "Enviada por:",
                         us: "Sent by:",
                       },
                       sentAt: {
-                        br: "Enviado em:",
+                        br: "Enviada em:",
                         us: "Sent at:",
                       },
                       content: {
@@ -994,8 +1000,8 @@ export const textVariants: TextVariants = {
       sendEmail: {
         subject: {
           prefix: {
-            br: "Contato via Portfólio",
-            us: "Contact via Portfolio",
+            br: "Mensagem via Portfólio",
+            us: "Message via Portfolio",
           },
         },
       },
