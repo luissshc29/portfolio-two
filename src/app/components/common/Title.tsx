@@ -3,6 +3,12 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useInView } from "react-intersection-observer";
 
+// import { gsap } from "gsap";
+// import { SplitText } from "gsap/SplitText";
+// import { useGSAP } from "@gsap/react";
+
+// gsap.registerPlugin(SplitText);
+
 export default function Title({
   variant = "text-only",
   bgIcon = "",
@@ -18,6 +24,7 @@ export default function Title({
   const textIndex = useRef(0);
   const typingTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
+  const [title, setTitle] = useState("");
   function typing() {
     if (textIndex.current < mainText.length) {
       const nextChar = mainText.charAt(textIndex.current);
@@ -26,8 +33,6 @@ export default function Title({
       typingTimeoutRef.current = setTimeout(() => typing(), 100);
     }
   }
-
-  const [title, setTitle] = useState("");
 
   const { ref, inView } = useInView();
 
@@ -38,8 +43,24 @@ export default function Title({
       if (inView) {
         typing();
       }
+
+      // let split = new SplitText(".text", { type: "chars" });
+      // let chars = split.chars;
+
+      // if (inView) {
+      //   gsap.from(chars, {
+      //     x: 150,
+      //     opacity: 0,
+      //     duration: 0.7,
+      //     ease: "power4",
+      //     stagger: 0.04,
+      //   });
+      // } else {
+      //   // Reverte SplitText
+      //   split.revert();
+      // }
     }
-  }, [mainText, inView]);
+  }, [inView]);
 
   if (variant === "text-only") {
     return (
@@ -50,7 +71,7 @@ export default function Title({
         <h1 className="top-0 z-[-2] absolute opacity-20 font-title-bg text-[#838383] dark:text-[#9b9b9b] text-5xl md:text-7xl">
           {bgText}
         </h1>
-        <h2 className="font-title text-4xl md:text-5xl">{title}</h2>
+        <h2 className="font-title text-4xl md:text-5xl text">{title}</h2>
         <span className="text-4xl md:text-5xl animate-blink">_</span>
       </div>
     );

@@ -39,7 +39,7 @@ export default function EmailTemplate({ message, language }: SendEmailProps) {
                   color: "#ffffff",
                 }}
                 alt="Logo"
-                src="https://luishenrique.vercel.app/images/logo/logo-black-text-full-with-bg.png"
+                src="https://luishenrique.vercel.app/images/logo/logo-black-full.png"
               />
             </td>
           </tr>
@@ -66,9 +66,9 @@ export default function EmailTemplate({ message, language }: SendEmailProps) {
             <td
               style={{
                 verticalAlign: "top",
-                paddingLeft: "20px",
-                paddingRight: "20px",
-                paddingTop: "20px",
+                paddingLeft: "30px",
+                paddingRight: "30px",
+                paddingTop: "30px",
                 paddingBottom: "40px",
               }}
             >
