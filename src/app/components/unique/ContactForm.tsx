@@ -241,12 +241,12 @@ export default function ContactForm() {
           <h2 className="font-title font-bold text-2xl md:text-3xl">
             {textVariants.sections.contacts.contact.form.title[language]}
           </h2>{" "}
-          <Badge
+          {/* <Badge
             variant="secondary"
             className="flex items-center gap-[3px] bg-green-500 hover:bg-green-500 hover:dark:bg-green-400 dark:bg-green-400 hover:dark:bg-opacity-50 dark:bg-opacity-50 w-fit font-text text-[10px] text-white md:text-sm"
           >
             {textVariants.sections.contacts.contact.form.badge[language]}
-          </Badge>
+          </Badge> */}
         </div>
         <p className="text-neutral-600 dark:text-neutral-300 text-xs md:text-sm">
           {textVariants.sections.contacts.contact.form.subtitle[language]}
