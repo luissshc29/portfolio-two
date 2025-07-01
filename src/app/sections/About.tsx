@@ -27,25 +27,26 @@ export default function About() {
         bgText={textVariants.sections.about.title.bg[language]}
       />
 
-      <div className="flex lg:flex-row flex-col justify-evenly items-center gap-10 w-full">
+      <div className="flex w-full flex-col items-center justify-evenly gap-10 lg:flex-row">
         <img
           src={`/images/avatar-${resolvedTheme}.png`}
+          // src={`/images/avatar-bw.jpg`}
           alt="Avatar"
-          className="border-4 border-neutral-200 dark:border-neutral-900 rounded-full w-[57%] md:w-1/3"
+          className="w-[57%] rounded-full border-4 border-neutral-200 dark:border-neutral-900 md:w-1/3"
           loading="eager"
         />
         <div className="flex flex-col items-center gap-5">
-          <div className="mx-auto w-[90%] text-sm lg:text-base md:text-left text-center">
+          <div className="mx-auto w-[90%] text-center text-sm md:text-left lg:text-base">
             {textVariants.sections.about.paragraph[language]}
           </div>
-          <div className="flex lg:flex-row flex-col-reverse justify-evenly items-center w-full">
+          <div className="flex w-full flex-col-reverse items-center justify-evenly lg:flex-row">
             <Link
               href={textVariants.sections.about.resume.document_url[language]}
               variant="primary"
-              className="flex justify-center items-center active:dark:shadow-black active:shadow-[inset_0_2px_4px_0_rgb(0_0_0_/_0.2)] my-0 md:my-0 p-0 md:p-0 w-40 md:w-40 h-10 md:h-10 overflow-hidden resume-download-button"
+              className="resume-download-button my-0 flex h-10 w-40 items-center justify-center overflow-hidden p-0 active:shadow-[inset_0_2px_4px_0_rgb(0_0_0_/_0.2)] active:dark:shadow-black md:my-0 md:h-10 md:w-40 md:p-0"
               download
             >
-              <div className="flex items-center gap-2 w-fit resume-download-button-primary-container">
+              <div className="resume-download-button-primary-container flex w-fit items-center gap-2">
                 <>
                   {
                     textVariants.sections.about.resume.button.text.primary[
@@ -56,7 +57,7 @@ export default function About() {
                 <IoDocumentTextOutline className="text-xl" />
               </div>
 
-              <div className="flex items-center gap-2 w-fit resume-download-button-secondary-container">
+              <div className="resume-download-button-secondary-container flex w-fit items-center gap-2">
                 <>
                   {
                     textVariants.sections.about.resume.button.text.secondary[

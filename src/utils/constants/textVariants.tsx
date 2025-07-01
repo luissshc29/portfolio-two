@@ -197,26 +197,31 @@ export const textVariants: TextVariants = {
           description: [
             {
               id: 1,
+              br: `Atuação com HTML, CSS e JavaScript em tarefas de desenvolvimento e ajustes front-end, garantindo aderência às boas práticas de usabilidade e responsividade.`,
+              us: `Use of HTML, CSS, and JavaScript for front-end development and interface adjustments, ensuring usability and responsiveness.`,
+            },
+            {
+              id: 2,
               br: `Elaboração de roteiros de teste, baseados nos requisitos definidos pelos clientes, garantindo a cobertura e a qualidade das entregas.`,
               us: `Preparation of test scripts based on the requirements defined by the clients, ensuring coverage and quality of deliveries.`,
             },
             {
-              id: 2,
+              id: 3,
               br: `Análise de documentação técnica, incluindo diagramas de classes, fluxogramas e especificações de requisitos funcionais, assegurando o correto entendimento das demandas.`,
               us: `Analysis of technical documentation, including class diagrams, flowcharts and functional requirements specifications, ensuring correct understanding of demands.`,
             },
             {
-              id: 3,
+              id: 4,
               br: `Colaboração no desenvolvimento, testes e entrega de novas funcionalidades, contribuindo para a evolução contínua dos sistemas da empresa.`,
               us: `Collaboration in the development, testing and delivery of new features, contributing to the continuous evolution of the company's systems.`,
             },
             {
-              id: 4,
+              id: 5,
               br: `Manutenção e aprimoramento de sistemas internos e de clientes, utilizando a plataforma digital SYDLE ONE® como base para as operações.`,
               us: `Maintenance and improvement of internal and client systems, using the SYDLE ONE® digital platform as the basis for operations.`,
             },
             {
-              id: 5,
+              id: 6,
               br: `Participação ativa em cerimônias ágeis, como reuniões diárias (dailies), semanais e mensais, contribuindo para a definição de metas, acompanhamento de entregas e retrospectivas.`,
               us: `Active participation in agile ceremonies, such as daily, weekly and monthly meetings, contributing to the definition of goals, monitoring of deliveries and retrospectives.`,
             },
@@ -302,6 +307,11 @@ export const textVariants: TextVariants = {
               id: 4,
               br: `Apoio a usuários, oferecendo suporte técnico para resolução de dúvidas e incidentes, promovendo maior eficiência operacional.`,
               us: `Support for users, offering technical support to resolve doubts and incidents, promoting greater operational efficiency.`,
+            },
+            {
+              id: 5,
+              br: `Elaboração de planilhas e controle de dados operacionais utilizando Excel, otimizando rotinas administrativas e técnicas.`,
+              us: `Preparation of spreadsheets and control of operational data using Excel, optimizing administrative and technical routines.`,
             },
           ],
           logo: "/images/jobs/logo-prefeitura.png",
@@ -674,13 +684,13 @@ export const textVariants: TextVariants = {
       alert: {
         google_form: {
           br: (
-            <div className="flex flex-wrap justify-center items-center gap-1">
+            <div className="flex flex-wrap items-center justify-center gap-1">
               <FiInfo className="text-lg" /> Você também pode preencher um
               formulário,{" "}
               <a
                 href="https://docs.google.com/forms/d/e/1FAIpQLSeoaZv_XB15-3QHgqdHm-qDVGggPj1XSYlA0wIvf4L9BysZdw/viewform"
                 target="_blank"
-                className="flex items-center gap-[2px] w-fit underline"
+                className="flex w-fit items-center gap-[2px] underline"
               >
                 clicando aqui
                 <RiExternalLinkLine className="text-lg" />
@@ -688,12 +698,12 @@ export const textVariants: TextVariants = {
             </div>
           ),
           us: (
-            <div className="flex flex-wrap justify-center items-center gap-1">
+            <div className="flex flex-wrap items-center justify-center gap-1">
               <FiInfo className="text-lg" /> You can also fill out a form, by{" "}
               <a
                 href="https://docs.google.com/forms/d/e/1FAIpQLSfr4SLa31PNH489ktl2jPJriFJl3P-se7zCW1X3VzeLZAI8Aw/viewform"
                 target="_blank"
-                className="flex items-center gap-[2px] w-fit underline"
+                className="flex w-fit items-center gap-[2px] underline"
               >
                 clicking here
                 <RiExternalLinkLine className="text-lg" />
