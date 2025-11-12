@@ -19,16 +19,18 @@ export default function NavigationButton({
   const [element, setElement] = useState<HTMLElement>();
 
   useEffect(() => {
-    setElement(document.getElementById(navigateTo) as HTMLElement);
+    // setElement(document.getElementById(navigateTo) as HTMLElement);
   }, []);
 
   return (
     <button
       className={`button relative z-[101] m-0 flex h-fit scale-[.85] items-center gap-1 border-none pb-2 text-base text-black after:[border-color:black] dark:text-white dark:after:[border-color:white] ${className}`}
       onClick={(e) => {
-        e.preventDefault()
+        e.preventDefault();
         setTimeout(() => {
-          element?.scrollIntoView({ block: "start", behavior: "smooth" });
+          const el = document.getElementById(navigateTo);
+          el?.scrollIntoView({ block: "start", behavior: "smooth" });
+          // element?.scrollIntoView({ block: "start", behavior: "smooth" });
           if (window) window.history.pushState(null, "", `#${navigateTo}`);
         }, 100);
       }}

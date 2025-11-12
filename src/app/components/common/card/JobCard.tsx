@@ -62,9 +62,16 @@ export default function JobCard({
           />
         </CardHeader>
         <Separator className="mx-auto my-2 w-[calc(100%-2rem)] bg-neutral-800 md:w-[calc(100%-3rem)]" />
-        <Accordion type="multiple" className="w-full">
+        <Accordion
+          type="multiple"
+          className="w-full disabled:opacity-80"
+          disabled={data.description.length === 0}
+        >
           <AccordionItem value={`item-${data.id}`} className="border-none">
-            <AccordionTrigger className="p-4 pb-6 pt-2 md:p-6">
+            <AccordionTrigger
+              className="p-4 pb-6 pt-2 disabled:text-neutral-300 disabled:hover:[text-decoration:none] dark:disabled:text-neutral-600 md:p-6"
+              disabled={data.description.length === 0}
+            >
               <div className="flex h-fit items-center gap-1.5 text-sm lg:text-base">
                 <FiInfo />{" "}
                 <span>

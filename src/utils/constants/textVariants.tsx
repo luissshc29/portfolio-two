@@ -93,9 +93,9 @@ export const textVariants: TextVariants = {
       paragraph: {
         br: (
           <p>
-            Como <i>desenvolvedor web</i>, eu, <strong>Luis Henrique</strong>,
-            sou especializado em criar sites personalizados sob demanda para
-            atender às necessidades específicas dos meus clientes. Utilizando
+            Como <i>desenvolvedor</i>, eu, <strong>Luis Henrique</strong>, sou
+            especializado em criar sites personalizados sob demanda para atender
+            às necessidades específicas dos meus clientes. Utilizando
             tecnologias difundidas no mercado web e minha expertise em{" "}
             <i>TypeScript, React, Next.js</i>, <i>MySQL</i> e <i>GraphQL</i>,
             entrego soluções web de alta qualidade, responsivas e amigáveis.
@@ -108,11 +108,11 @@ export const textVariants: TextVariants = {
         ),
         us: (
           <p>
-            As a <i>web developer</i>, I, <strong>Luis Henrique</strong>,
-            specialize in creating customized websites tailored to meet the
-            specific needs of my clients. Leveraging popular web technologies
-            and my expertise in <i>TypeScript, React, Next.js</i>, <i>MySQL</i>{" "}
-            and <i>GraphQL</i>, I deliver high-quality, responsive, and
+            As a <i>developer</i>, I, <strong>Luis Henrique</strong>, specialize
+            in creating customized websites tailored to meet the specific needs
+            of my clients. Leveraging popular web technologies and my expertise
+            in <i>TypeScript, React, Next.js</i>, <i>MySQL</i> and{" "}
+            <i>GraphQL</i>, I deliver high-quality, responsive, and
             user-friendly web solutions. My skills encompass both front-end and
             back-end development, ensuring a <u>high-quality</u> and{" "}
             <u>efficient</u> web experience for users. I am dedicated to staying
@@ -187,6 +187,55 @@ export const textVariants: TextVariants = {
         {
           id: 1,
           function: {
+            br: "Desenvolvedor • Pleno",
+            us: "Developer • Mid-level",
+          },
+          company: {
+            br: "G4F",
+            us: "G4F",
+          },
+          description: [
+            // {
+            //   id: 1,
+            //   br: `Atuação com HTML, CSS e JavaScript em tarefas de desenvolvimento e ajustes front-end, garantindo aderência às boas práticas de usabilidade e responsividade.`,
+            //   us: `Use of HTML, CSS, and JavaScript for front-end development and interface adjustments, ensuring usability and responsiveness.`,
+            // },
+            // {
+            //   id: 2,
+            //   br: `Elaboração de roteiros de teste, baseados nos requisitos definidos pelos clientes, garantindo a cobertura e a qualidade das entregas.`,
+            //   us: `Preparation of test scripts based on the requirements defined by the clients, ensuring coverage and quality of deliveries.`,
+            // },
+            // {
+            //   id: 3,
+            //   br: `Análise de documentação técnica, incluindo diagramas de classes, fluxogramas e especificações de requisitos funcionais, assegurando o correto entendimento das demandas.`,
+            //   us: `Analysis of technical documentation, including class diagrams, flowcharts and functional requirements specifications, ensuring correct understanding of demands.`,
+            // },
+            // {
+            //   id: 4,
+            //   br: `Colaboração no desenvolvimento, testes e entrega de novas funcionalidades, contribuindo para a evolução contínua dos sistemas da empresa.`,
+            //   us: `Collaboration in the development, testing and delivery of new features, contributing to the continuous evolution of the company's systems.`,
+            // },
+            // {
+            //   id: 5,
+            //   br: `Manutenção e aprimoramento de sistemas internos e de clientes, utilizando a plataforma digital SYDLE ONE® como base para as operações.`,
+            //   us: `Maintenance and improvement of internal and client systems, using the SYDLE ONE® digital platform as the basis for operations.`,
+            // },
+            // {
+            //   id: 6,
+            //   br: `Participação ativa em cerimônias ágeis, como reuniões diárias (dailies), semanais e mensais, contribuindo para a definição de metas, acompanhamento de entregas e retrospectivas.`,
+            //   us: `Active participation in agile ceremonies, such as daily, weekly and monthly meetings, contributing to the definition of goals, monitoring of deliveries and retrospectives.`,
+            // },
+          ],
+          logo: "/images/jobs/logo-g4f.png",
+          date: {
+            br: "Out 2025 - Hoje",
+            us: "Oct 2025 - Today",
+          },
+          icon: <HiMiniCommandLine />,
+        },
+        {
+          id: 2,
+          function: {
             br: "Desenvolvedor de Sistemas • Estágio",
             us: "Systems Developer • Internship",
           },
@@ -228,13 +277,13 @@ export const textVariants: TextVariants = {
           ],
           logo: "/images/jobs/logo-mpce.png",
           date: {
-            br: "Mar 2025 - Hoje",
-            us: "Mar 2025 - Today",
+            br: "Mar 2025 - Out 2025",
+            us: "Mar 2025 - Oct 2025",
           },
           icon: <HiMiniCommandLine />,
         },
         {
-          id: 2,
+          id: 3,
           function: {
             br: "Desenvolvedor Web • Freelancer",
             us: "Web Developer • Freelancer",
@@ -278,7 +327,7 @@ export const textVariants: TextVariants = {
           icon: <FaCode />,
         },
         {
-          id: 3,
+          id: 4,
           function: {
             br: "Suporte de TI • Estágio",
             us: "IT Support • Internship",

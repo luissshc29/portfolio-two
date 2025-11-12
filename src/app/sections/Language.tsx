@@ -16,14 +16,18 @@ export default function Language() {
       lightImgSrc="/images/background/light/language-bg-img.jpg"
       id="language"
     >
-      <Title
-        mainText={textVariants.sections.language.title.main[language]}
-        bgText={textVariants.sections.language.title.bg[language]}
-      />
-      <h2 className="font-semibold text-black dark:text-white">
-        {textVariants.sections.language.subtitle[language]}
-      </h2>
-      <LanguageSwitch />
+      <div className="absolute left-0 top-0 flex h-full w-full flex-col justify-center gap-4">
+        <Title
+          mainText={textVariants.sections.language.title.main[language]}
+          bgText={textVariants.sections.language.title.bg[language]}
+        />
+        <div className="mx-auto flex h-fit w-fit flex-col justify-center gap-4">
+          <h2 className="font-semibold text-black dark:text-white">
+            {textVariants.sections.language.subtitle[language]}
+          </h2>
+          <LanguageSwitch />
+        </div>
+      </div>
     </BgImageContainer>
   );
 }
