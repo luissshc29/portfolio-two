@@ -1,20 +1,20 @@
 "use client";
 
-import { Stack } from "@/utils/types/Stack";
+import { stacks } from "@/utils/constants/stacks";
 import { useTheme } from "next-themes";
 import React from "react";
 
-export default function InfiniteSlider({ items }: { items: Stack[] }) {
+export default function InfiniteSlider({ items }: { items: typeof stacks }) {
   const { resolvedTheme } = useTheme();
   return (
-    <div className="slider relative mx-auto flex h-[10vh] w-[80vw] items-center overflow-hidden md:w-[50vw]">
-      <div className="slide-track flex animate-slide justify-around">
+    <div className="relative flex items-center mx-auto w-[80vw] md:w-[50vw] h-[10vh] overflow-hidden slider">
+      <div className="flex justify-around animate-slide slide-track">
         {/* Original list */}
         {items.map((item) => (
           <a
             href={item.url}
             target="_blank"
-            className="slide mx-4 h-fit text-2xl"
+            className="mx-4 h-fit text-2xl slide"
             key={item.id}
             title={item.name}
           >
@@ -28,7 +28,7 @@ export default function InfiniteSlider({ items }: { items: Stack[] }) {
           <a
             href={item.url}
             target="_blank"
-            className="slide mx-4 h-fit text-2xl"
+            className="mx-4 h-fit text-2xl slide"
             key={item.id}
             title={item.name}
           >
@@ -38,8 +38,8 @@ export default function InfiniteSlider({ items }: { items: Stack[] }) {
           </a>
         ))}
       </div>
-      <div className="z-1 absolute left-0 top-0 h-full w-[40px] rounded-full bg-gradient-to-l from-transparent to-white dark:from-transparent dark:to-black"></div>
-      <div className="z-1 absolute right-0 top-0 h-full w-[40px] rounded-full bg-gradient-to-r from-transparent to-white dark:from-transparent dark:to-black"></div>
+      <div className="top-0 left-0 z-1 absolute bg-gradient-to-l from-transparent dark:from-transparent to-white dark:to-black rounded-full w-[40px] h-full"></div>
+      <div className="top-0 right-0 z-1 absolute bg-gradient-to-r from-transparent dark:from-transparent to-white dark:to-black rounded-full w-[40px] h-full"></div>
     </div>
   );
 }
