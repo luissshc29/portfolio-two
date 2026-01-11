@@ -9,18 +9,21 @@ import {
   SiApollographql,
   SiGit,
   SiGraphql,
+  SiGreensock,
   SiNextdotjs,
+  SiPrisma,
   SiRecoil,
   SiTailwindcss,
 } from "react-icons/si";
 import { GrMysql } from "react-icons/gr";
 import { Stack } from "../types/Stack";
 import { IoLogoSass } from "react-icons/io";
-import { RiReactjsLine } from "react-icons/ri";
+import { RiReactjsLine, RiSupabaseFill } from "react-icons/ri";
+import { FaNodeJs } from "react-icons/fa6";
 
-export const stacks: Stack[] = [
+export const stacks /*: Stack[]*/ = [
   {
-    id: 1,
+    id: "html",
     name: "HTML",
     url: "https://developer.mozilla.org/en-US/docs/Web/HTML",
     component: BiLogoHtml5,
@@ -34,7 +37,7 @@ export const stacks: Stack[] = [
     },
   },
   {
-    id: 2,
+    id: "css",
     name: "CSS",
     url: "https://developer.mozilla.org/en-US/docs/Web/CSS",
     component: BiLogoCss3,
@@ -48,7 +51,7 @@ export const stacks: Stack[] = [
     },
   },
   {
-    id: 3,
+    id: "sass",
     name: "Sass",
     url: "https://sass-lang.com/",
     component: IoLogoSass,
@@ -62,7 +65,7 @@ export const stacks: Stack[] = [
     },
   },
   {
-    id: 4,
+    id: "tailwindcss",
     name: "TailwindCSS",
     url: "https://tailwindcss.com/",
     component: SiTailwindcss,
@@ -76,7 +79,7 @@ export const stacks: Stack[] = [
     },
   },
   {
-    id: 5,
+    id: "javascript",
     name: "Javascript",
     url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
     component: BiLogoJavascript,
@@ -90,7 +93,7 @@ export const stacks: Stack[] = [
     },
   },
   {
-    id: 6,
+    id: "typescript",
     name: "Typescript",
     url: "https://www.typescriptlang.org/",
     component: BiLogoTypescript,
@@ -104,7 +107,35 @@ export const stacks: Stack[] = [
     },
   },
   {
-    id: 7,
+    id: "gsap",
+    name: "GSAP",
+    url: "https://gsap.com/",
+    component: SiGreensock,
+    description: {
+      br: "GSAP (GreenSock Animation Platform) é uma biblioteca JavaScript de alta performance para criar animações complexas e fluidas na web, permitindo animar praticamente qualquer elemento.",
+      us: "GSAP (GreenSock Animation Platform) is a high-performance JavaScript library for creating complex and fluid web animations, allowing you to animate basically any element.",
+    },
+    color: {
+      light: "#0AE448",
+      dark: "#0AE448",
+    },
+  },
+  {
+    id: "nodejs",
+    name: "Node.js",
+    url: "https://nodejs.org/",
+    component: FaNodeJs,
+    description: {
+      br: "Node.js é um ambiente de execução JavaScript, de código aberto e multiplataforma, que permite rodar código JavaScript fora do navegador, principalmente no servidor.",
+      us: "Node.js is an open-source, cross-platform JavaScript runtime environment that allows you to run JavaScript code outside of a browser, primarily on the server.",
+    },
+    color: {
+      light: "#68A063",
+      dark: "#3c873a",
+    },
+  },
+  {
+    id: "react",
     name: "React",
     url: "https://react.dev/",
     component: RiReactjsLine,
@@ -118,7 +149,7 @@ export const stacks: Stack[] = [
     },
   },
   {
-    id: 8,
+    id: "recoil",
     name: "Recoil",
     url: "https://recoiljs.org/",
     component: SiRecoil,
@@ -132,7 +163,7 @@ export const stacks: Stack[] = [
     },
   },
   {
-    id: 9,
+    id: "redux",
     name: "Redux",
     url: "https://redux.js.org/",
     component: BiLogoRedux,
@@ -146,7 +177,7 @@ export const stacks: Stack[] = [
     },
   },
   {
-    id: 10,
+    id: "nextjs",
     name: "Next.js",
     url: "https://nextjs.org/",
     component: SiNextdotjs,
@@ -160,7 +191,21 @@ export const stacks: Stack[] = [
     },
   },
   {
-    id: 11,
+    id: "prismaOrm",
+    name: "Prisma ORM",
+    url: "https://www.prisma.io/",
+    component: SiPrisma,
+    description: {
+      br: "O Prisma é um mapeador objeto-relacional (ORM) moderno para Node.js e TypeScript, que simplifica a interação entre sua aplicação e o banco de dados.",
+      us: "Prisma is a modern Object-Relational Mapping (ORM) for Node.js and TypeScript that simplifies the interaction between your application and the database.",
+    },
+    color: {
+      light: "#02364E",
+      dark: "#ffffff",
+    },
+  },
+  {
+    id: "mysql",
     name: "MySQL",
     url: "https://www.mysql.com/",
     component: GrMysql,
@@ -174,7 +219,21 @@ export const stacks: Stack[] = [
     },
   },
   {
-    id: 12,
+    id: "supabase",
+    name: "Supabase",
+    url: "https://supabase.com/",
+    component: RiSupabaseFill,
+    description: {
+      br: "Supabase é uma plataforma Backend de código aberto, com um conjunto completo de ferramentas para aplicações web e móveis, com foco no banco de dados PostgreSQL.",
+      us: "Supabase is an open-source backend platform with a complete set of tools for web and mobile applications, focusing on the PostgreSQL database.",
+    },
+    color: {
+      light: "#45D092",
+      dark: "#45D092",
+    },
+  },
+  {
+    id: "graphql",
     name: "GraphQL",
     url: "https://graphql.org/",
     component: SiGraphql,
@@ -188,7 +247,7 @@ export const stacks: Stack[] = [
     },
   },
   {
-    id: 13,
+    id: "apollo",
     name: "Apollo",
     url: "https://www.apollographql.com/docs",
     component: SiApollographql,
@@ -202,7 +261,7 @@ export const stacks: Stack[] = [
     },
   },
   {
-    id: 14,
+    id: "git",
     name: "Git",
     url: "https://git-scm.com/",
     component: SiGit,
@@ -215,4 +274,4 @@ export const stacks: Stack[] = [
       dark: "#fc6203",
     },
   },
-];
+] as const;

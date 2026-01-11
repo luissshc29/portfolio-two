@@ -187,57 +187,52 @@ export const textVariants: TextVariants = {
         {
           id: 1,
           function: {
-            br: "Desenvolvedor • Pleno",
-            us: "Developer • Mid-level",
+            br: "Desenvolvedor de Software • Pleno",
+            us: "Software Developer • Mid-level",
           },
           company: {
             br: "G4F",
             us: "G4F",
           },
           description: [
-            // {
-            //   id: 1,
-            //   br: `Atuação com HTML, CSS e JavaScript em tarefas de desenvolvimento e ajustes front-end, garantindo aderência às boas práticas de usabilidade e responsividade.`,
-            //   us: `Use of HTML, CSS, and JavaScript for front-end development and interface adjustments, ensuring usability and responsiveness.`,
-            // },
-            // {
-            //   id: 2,
-            //   br: `Elaboração de roteiros de teste, baseados nos requisitos definidos pelos clientes, garantindo a cobertura e a qualidade das entregas.`,
-            //   us: `Preparation of test scripts based on the requirements defined by the clients, ensuring coverage and quality of deliveries.`,
-            // },
-            // {
-            //   id: 3,
-            //   br: `Análise de documentação técnica, incluindo diagramas de classes, fluxogramas e especificações de requisitos funcionais, assegurando o correto entendimento das demandas.`,
-            //   us: `Analysis of technical documentation, including class diagrams, flowcharts and functional requirements specifications, ensuring correct understanding of demands.`,
-            // },
-            // {
-            //   id: 4,
-            //   br: `Colaboração no desenvolvimento, testes e entrega de novas funcionalidades, contribuindo para a evolução contínua dos sistemas da empresa.`,
-            //   us: `Collaboration in the development, testing and delivery of new features, contributing to the continuous evolution of the company's systems.`,
-            // },
-            // {
-            //   id: 5,
-            //   br: `Manutenção e aprimoramento de sistemas internos e de clientes, utilizando a plataforma digital SYDLE ONE® como base para as operações.`,
-            //   us: `Maintenance and improvement of internal and client systems, using the SYDLE ONE® digital platform as the basis for operations.`,
-            // },
-            // {
-            //   id: 6,
-            //   br: `Participação ativa em cerimônias ágeis, como reuniões diárias (dailies), semanais e mensais, contribuindo para a definição de metas, acompanhamento de entregas e retrospectivas.`,
-            //   us: `Active participation in agile ceremonies, such as daily, weekly and monthly meetings, contributing to the definition of goals, monitoring of deliveries and retrospectives.`,
-            // },
+            {
+              id: 1,
+              br: `Uso intensivo de HTML, CSS, Javascript e consumo de APIs REST na elaboração de scripts e prototipagem de telas de serviços.`,
+              us: `Intensive use of HTML, CSS, JavaScript, and REST API consumption for scripting and service screen prototyping.`,
+            },
+            {
+              id: 2,
+              br: `Manutenção e atualização do Portal de Serviços do órgão contratante, atendendo mais de 2.500 colaboradores ativos.`,
+              us: `Maintenance and continuous updates of the Contracting Authority’s Services Portal, supporting over 2,500 active employees.`,
+            },
+            {
+              id: 3,
+              br: `Elaboração de queries em bancos de dados MySQL, com consultas a informações de avaliações de desempenho, cadastros de pessoas e demais dados institucionais.`,
+              us: `Development of MySQL database queries, retrieving data related to performance evaluations, personnel records, and other institutional information.`,
+            },
+            {
+              id: 4,
+              br: `Colaboração no desenvolvimento, testes e melhorias de novos recursos, incluindo funcionalidades críticas, como pagamento de benefícios, folhas de pagamento e avaliação de servidores.`,
+              us: `Collaboration in the development, testing, and enhancement of new features, including critical functionalities such as benefits payment, payroll processing, and employee performance evaluation.`,
+            },
+            {
+              id: 5,
+              br: `Participação diária em cerimônias ágeis (Scrum e Kanban), utilizando o Redmine para controle de tarefas, prazos, entregas, sprints e planejamentos.`,
+              us: `Daily participation in Agile ceremonies (Scrum and Kanban), using Redmine for task management, deadlines, deliveries, sprint planning, and tracking.`,
+            },
           ],
           logo: "/images/jobs/logo-g4f.png",
           date: {
-            br: "Out 2025 - Hoje",
-            us: "Oct 2025 - Today",
+            br: "Nov 2025 - Hoje",
+            us: "Nov 2025 - Today",
           },
           icon: <HiMiniCommandLine />,
         },
         {
           id: 2,
           function: {
-            br: "Desenvolvedor de Sistemas • Estágio",
-            us: "Systems Developer • Internship",
+            br: "Desenvolvedor de Software • Estágio",
+            us: "Software Developer • Internship",
           },
           company: {
             br: "Ministério Público do Estado do Ceará",
@@ -430,6 +425,51 @@ export const textVariants: TextVariants = {
           id: uuidv4(),
           tag: "fullstack",
           title: {
+            br: "Sistema Norimaq®",
+            us: "Norimaq® System",
+          },
+          images: {
+            path: "/images/projects/norimaq/",
+            list: ["1.png", "2.png", "3.png"],
+          },
+          description: {
+            br: "Sistema de controle de produção para a empresa Norimaq®, com cadastro de ordens de serviço, controle de roteiro, progresso, operadores, solicitações de produção e +10 relatórios para o gerente de produção.",
+            us: "Production control system for Norimaq®, featuring service order registration, workflow routing control, progress tracking, operator management, production requests, and 10+ reports for the production manager.",
+          },
+          date: {
+            br: "12 Ago. 2025",
+            us: "Aug. 12, 2025",
+          },
+          stacks: ["tailwindcss", "typescript", "nextjs", "nodejs", "supabase"],
+          complexity: 5,
+          highlight: true,
+        },
+        {
+          id: uuidv4(),
+          tag: "frontend",
+          title: {
+            br: "Flor de Açúcar®",
+            us: "Flor de Açúcar®",
+          },
+          images: {
+            path: "/images/projects/flor-de-acucar/",
+            list: ["1.png"],
+          },
+          description: {
+            br: "Landing page da loja de cookies Flor de Açúcar®, com informações dos produtos, essência da loja e belas animações feitas com GSAP.",
+            us: "Landing page for Flor de Açúcar® cookie shop, featuring product information, brand essence, and beautiful animations built with GSAP.",
+          },
+          date: {
+            br: "28 Jul. 2025",
+            us: "Jul. 28, 2025",
+          },
+          stacks: ["tailwindcss", "typescript", "nextjs", "gsap"],
+          complexity: 2,
+        },
+        {
+          id: uuidv4(),
+          tag: "fullstack",
+          title: {
             br: "Bike4Cash - Página Web",
             us: "Bike4Cash - Webpage",
           },
@@ -445,11 +485,10 @@ export const textVariants: TextVariants = {
             br: "27 Dez. 2023",
             us: "Dec. 27, 2023",
           },
-          stacks: [4, 6, 10, 11, 13],
+          stacks: ["tailwindcss", "typescript", "nextjs", "mysql", "apollo"],
           url: "https://bike4cash.vercel.app/",
           repository: "https://github.com/luissshc29/bike4cash",
           complexity: 5,
-          highlight: true,
         },
         {
           id: uuidv4(),
@@ -470,11 +509,10 @@ export const textVariants: TextVariants = {
             br: "14 Set. 2024",
             us: "Sep. 14, 2024",
           },
-          stacks: [6, 13, 12, 11],
+          stacks: ["typescript", "apollo", "graphql", "nodejs", "mysql"],
           url: "https://bike4cash-api.vercel.app/",
           repository: "https://github.com/luissshc29/bike4cash--API",
           complexity: 4,
-          highlight: true,
         },
         {
           id: uuidv4(),
@@ -495,7 +533,7 @@ export const textVariants: TextVariants = {
             br: "28 Jun. 2024",
             us: "Jun. 28, 2024",
           },
-          stacks: [4, 6, 10, 13],
+          stacks: ["tailwindcss", "typescript", "nextjs", "apollo"],
           url: "https://api-view-mu.vercel.app/",
           repository: "https://github.com/luissshc29/api-view",
           complexity: 3,
@@ -519,7 +557,7 @@ export const textVariants: TextVariants = {
             br: "28 Jun. 2024",
             us: "Jun. 28, 2024",
           },
-          stacks: [6, 13, 12, 11],
+          stacks: ["typescript", "apollo", "graphql", "nodejs", "mysql"],
           url: "https://api-view-url.vercel.app/",
           repository: "https://github.com/luissshc29/API--api-view",
           complexity: 3,
@@ -543,59 +581,59 @@ export const textVariants: TextVariants = {
             br: "25 Out. 2023",
             us: "Oct. 25, 2023",
           },
-          stacks: [4, 7, 6],
+          stacks: ["tailwindcss", "typescript", "react"],
           url: "https://unicapas.com.br",
           complexity: 1,
           highlight: true,
         },
-        {
-          id: uuidv4(),
-          tag: "fullstack",
-          title: {
-            br: "AuthSystem",
-            us: "AuthSystem",
-          },
-          images: {
-            path: "/images/projects/auth-system/",
-            list: ["1.png", "2.png"],
-          },
-          description: {
-            br: "Modelo de página de login com <i>OAuth 2.0</i>, guardando as informações dos usuários em uma tabela simples no banco de dados.",
-            us: "Login page template with OAuth 2.0, storing user information in a simple table in the database.",
-          },
-          date: {
-            br: "14 Dez. 2023",
-            us: "Dec. 14, 2023",
-          },
-          stacks: [4, 6, 10, 11],
-          url: "https://auth-system-iota.vercel.app/",
-          repository: "https://github.com/luissshc29/Auth-system",
-          complexity: 3,
-        },
-        {
-          id: uuidv4(),
-          tag: "frontend",
-          title: {
-            br: "Pokédex",
-            us: "Pokédex",
-          },
-          images: {
-            path: "/images/projects/pokedex/",
-            list: ["1.png", "2.png"],
-          },
-          description: {
-            br: "Pokédex online, com várias informações valiosas sobre Pokémon.<br/>A página consome dados da API <i>PokéAPI</i>, que você pode acessar <a href='https://pokeapi.co/' target='_blank'><u>clicando aqui</u></a>.",
-            us: "Online Pokédex, with lots of valuable information about Pokémon.<br/>The page consumes data from the <i>PokéAPI</i> API, which you can access by <a href='https://pokeapi.co/' target='_blank'><u>clicking here</u></a>.",
-          },
-          date: {
-            br: "8 Set. 2023",
-            us: "Sep. 8, 2023",
-          },
-          stacks: [3, 7, 6, 10],
-          url: "https://pokedex-omega-tan-81.vercel.app/",
-          repository: "https://github.com/luissshc29/pokedex",
-          complexity: 2,
-        },
+        // {
+        //   id: uuidv4(),
+        //   tag: "fullstack",
+        //   title: {
+        //     br: "AuthSystem",
+        //     us: "AuthSystem",
+        //   },
+        //   images: {
+        //     path: "/images/projects/auth-system/",
+        //     list: ["1.png", "2.png"],
+        //   },
+        //   description: {
+        //     br: "Modelo de página de login com <i>OAuth 2.0</i>, guardando as informações dos usuários em uma tabela simples no banco de dados.",
+        //     us: "Login page template with OAuth 2.0, storing user information in a simple table in the database.",
+        //   },
+        //   date: {
+        //     br: "14 Dez. 2023",
+        //     us: "Dec. 14, 2023",
+        //   },
+        //   stacks: [4, 6, 10, 11],
+        //   url: "https://auth-system-iota.vercel.app/",
+        //   repository: "https://github.com/luissshc29/Auth-system",
+        //   complexity: 3,
+        // },
+        // {
+        //   id: uuidv4(),
+        //   tag: "frontend",
+        //   title: {
+        //     br: "Pokédex",
+        //     us: "Pokédex",
+        //   },
+        //   images: {
+        //     path: "/images/projects/pokedex/",
+        //     list: ["1.png", "2.png"],
+        //   },
+        //   description: {
+        //     br: "Pokédex online, com várias informações valiosas sobre Pokémon.<br/>A página consome dados da API <i>PokéAPI</i>, que você pode acessar <a href='https://pokeapi.co/' target='_blank'><u>clicando aqui</u></a>.",
+        //     us: "Online Pokédex, with lots of valuable information about Pokémon.<br/>The page consumes data from the <i>PokéAPI</i> API, which you can access by <a href='https://pokeapi.co/' target='_blank'><u>clicking here</u></a>.",
+        //   },
+        //   date: {
+        //     br: "8 Set. 2023",
+        //     us: "Sep. 8, 2023",
+        //   },
+        //   stacks: [3, 7, 6, 10],
+        //   url: "https://pokedex-omega-tan-81.vercel.app/",
+        //   repository: "https://github.com/luissshc29/pokedex",
+        //   complexity: 2,
+        // },
         {
           id: uuidv4(),
           tag: "frontend",
@@ -615,59 +653,59 @@ export const textVariants: TextVariants = {
             br: "1 Nov. 2023",
             us: "Nov. 1, 2023",
           },
-          stacks: [4, 6, 9, 10],
+          stacks: ["tailwindcss", "typescript", "redux", "nextjs"],
           url: "https://notepad-luissshc29.vercel.app/",
           repository: "https://github.com/luissshc29/Notepad",
           complexity: 3,
         },
-        {
-          id: uuidv4(),
-          tag: "frontend",
-          title: {
-            br: "Countries Wiki",
-            us: "Countries Wiki",
-          },
-          images: {
-            path: "/images/projects/countries-wiki/",
-            list: ["1.png", "2.png"],
-          },
-          description: {
-            br: "Enciclopédia de páises feita para um desafio no <a href='https://www.frontendmentor.io/' target='_blank'><u>Frontend Mentor</u></a>.<br/>A página consome dados da API <i>REST Countries</i>, que você pode acessar <a href='https://restcountries.com/' target='_blank'><u>clicando aqui</u></a>.",
-            us: "Encyclopedia of countries made for a challenge on <a href='https://www.frontendmentor.io/' target='_blank'><u>Frontend Mentor</u></a>.<br/>The page consumes data from the <i>REST Countries</i> API, which you can access by <a href='https://restcountries.com/' target='_blank'><u>clicking here</u></a>.",
-          },
-          date: {
-            br: "5 Nov. 2023",
-            us: "Nov. 5, 2023",
-          },
-          stacks: [4, 6, 10],
-          url: "https://countries-wiki-tau.vercel.app/",
-          repository: "https://github.com/luissshc29/Countries-Wiki",
-          complexity: 2,
-        },
-        {
-          id: uuidv4(),
-          tag: "frontend",
-          title: {
-            br: "React Supplements",
-            us: "React Supplements",
-          },
-          images: {
-            path: "/images/projects/react-supplements/",
-            list: ["1.png", "2.png", "3.png"],
-          },
-          description: {
-            br: "Loja virtual fictícia de suplementos para musculação, feita para prática do uso do <i>Context</i> no React, com as páginas de carrinho e de finalização da compra conectadas aos estados globais.",
-            us: "Fictional online bodybuilding supplement store, made to practice the use of Context in React, with cart and checkout pages connected to global states.",
-          },
-          date: {
-            br: "2 Ago. 2023",
-            us: "Aug. 2, 2023",
-          },
-          stacks: [3, 6, 7],
-          url: "https://react-supplements.vercel.app/",
-          repository: "https://github.com/luissshc29/react-supplements",
-          complexity: 1,
-        },
+        // {
+        //   id: uuidv4(),
+        //   tag: "frontend",
+        //   title: {
+        //     br: "Countries Wiki",
+        //     us: "Countries Wiki",
+        //   },
+        //   images: {
+        //     path: "/images/projects/countries-wiki/",
+        //     list: ["1.png", "2.png"],
+        //   },
+        //   description: {
+        //     br: "Enciclopédia de páises feita para um desafio no <a href='https://www.frontendmentor.io/' target='_blank'><u>Frontend Mentor</u></a>.<br/>A página consome dados da API <i>REST Countries</i>, que você pode acessar <a href='https://restcountries.com/' target='_blank'><u>clicando aqui</u></a>.",
+        //     us: "Encyclopedia of countries made for a challenge on <a href='https://www.frontendmentor.io/' target='_blank'><u>Frontend Mentor</u></a>.<br/>The page consumes data from the <i>REST Countries</i> API, which you can access by <a href='https://restcountries.com/' target='_blank'><u>clicking here</u></a>.",
+        //   },
+        //   date: {
+        //     br: "5 Nov. 2023",
+        //     us: "Nov. 5, 2023",
+        //   },
+        //   stacks: [4, 6, 10],
+        //   url: "https://countries-wiki-tau.vercel.app/",
+        //   repository: "https://github.com/luissshc29/Countries-Wiki",
+        //   complexity: 2,
+        // },
+        // {
+        //   id: uuidv4(),
+        //   tag: "frontend",
+        //   title: {
+        //     br: "React Supplements",
+        //     us: "React Supplements",
+        //   },
+        //   images: {
+        //     path: "/images/projects/react-supplements/",
+        //     list: ["1.png", "2.png", "3.png"],
+        //   },
+        //   description: {
+        //     br: "Loja virtual fictícia de suplementos para musculação, feita para prática do uso do <i>Context</i> no React, com as páginas de carrinho e de finalização da compra conectadas aos estados globais.",
+        //     us: "Fictional online bodybuilding supplement store, made to practice the use of Context in React, with cart and checkout pages connected to global states.",
+        //   },
+        //   date: {
+        //     br: "2 Ago. 2023",
+        //     us: "Aug. 2, 2023",
+        //   },
+        //   stacks: [3, 6, 7],
+        //   url: "https://react-supplements.vercel.app/",
+        //   repository: "https://github.com/luissshc29/react-supplements",
+        //   complexity: 1,
+        // },
       ],
     },
     contacts: {
@@ -733,13 +771,13 @@ export const textVariants: TextVariants = {
       alert: {
         google_form: {
           br: (
-            <div className="flex flex-wrap items-center justify-center gap-1">
+            <div className="flex flex-wrap justify-center items-center gap-1">
               <FiInfo className="text-lg" /> Você também pode preencher um
               formulário,{" "}
               <a
                 href="https://docs.google.com/forms/d/e/1FAIpQLSeoaZv_XB15-3QHgqdHm-qDVGggPj1XSYlA0wIvf4L9BysZdw/viewform"
                 target="_blank"
-                className="flex w-fit items-center gap-[2px] underline"
+                className="flex items-center gap-[2px] w-fit underline"
               >
                 clicando aqui
                 <RiExternalLinkLine className="text-lg" />
@@ -747,12 +785,12 @@ export const textVariants: TextVariants = {
             </div>
           ),
           us: (
-            <div className="flex flex-wrap items-center justify-center gap-1">
+            <div className="flex flex-wrap justify-center items-center gap-1">
               <FiInfo className="text-lg" /> You can also fill out a form, by{" "}
               <a
                 href="https://docs.google.com/forms/d/e/1FAIpQLSfr4SLa31PNH489ktl2jPJriFJl3P-se7zCW1X3VzeLZAI8Aw/viewform"
                 target="_blank"
-                className="flex w-fit items-center gap-[2px] underline"
+                className="flex items-center gap-[2px] w-fit underline"
               >
                 clicking here
                 <RiExternalLinkLine className="text-lg" />

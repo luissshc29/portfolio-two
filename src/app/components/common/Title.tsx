@@ -1,13 +1,8 @@
 "use client";
 
+import { useLanguageContext } from "@/utils/context/LanguageContext";
 import React, { useEffect, useRef, useState } from "react";
 import { useInView } from "react-intersection-observer";
-
-// import { gsap } from "gsap";
-// import { SplitText } from "gsap/SplitText";
-// import { useGSAP } from "@gsap/react";
-
-// gsap.registerPlugin(SplitText);
 
 export default function Title({
   variant = "text-only",
@@ -25,6 +20,9 @@ export default function Title({
   const typingTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const [title, setTitle] = useState("");
+
+  const { language } = useLanguageContext();
+
   function typing() {
     if (textIndex.current < mainText.length) {
       const nextChar = mainText.charAt(textIndex.current);
@@ -43,24 +41,8 @@ export default function Title({
       if (inView) {
         typing();
       }
-
-      // let split = new SplitText(".text", { type: "chars" });
-      // let chars = split.chars;
-
-      // if (inView) {
-      //   gsap.from(chars, {
-      //     x: 150,
-      //     opacity: 0,
-      //     duration: 0.7,
-      //     ease: "power4",
-      //     stagger: 0.04,
-      //   });
-      // } else {
-      //   // Reverte SplitText
-      //   split.revert();
-      // }
     }
-  }, [inView]);
+  }, [inView, language]);
 
   if (variant === "text-only") {
     return (

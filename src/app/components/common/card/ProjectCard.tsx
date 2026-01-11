@@ -145,16 +145,18 @@ export default function ProjectCard({
                     </Badge>
                   )}
                 </DialogTitle>
-                <DialogDescription>
-                  <Link
-                    variant="tertiary"
-                    className="text-base"
-                    href={data.url}
-                  >
-                    {data.url}
-                    <FiLink />
-                  </Link>
-                </DialogDescription>
+                {data.url && (
+                  <DialogDescription>
+                    <Link
+                      variant="tertiary"
+                      className="text-base"
+                      href={data.url}
+                    >
+                      {data.url}
+                      <FiLink />
+                    </Link>
+                  </DialogDescription>
+                )}
               </DialogHeader>
             </div>
             <div className="z-[1500] flex items-center gap-10 w-full h-full">

@@ -1,8 +1,7 @@
-import React from "react";
 import { IconType } from "react-icons/lib";
 
 export type Stack = {
-  id: number;
+  id: string;
   name: string;
   url: string;
   component: IconType;

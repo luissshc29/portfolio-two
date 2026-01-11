@@ -16,12 +16,12 @@ export default function Language() {
       lightImgSrc="/images/background/light/language-bg-img.jpg"
       id="language"
     >
-      <div className="absolute left-0 top-0 flex h-full w-full flex-col justify-center gap-4">
+      <div className="top-0 left-0 absolute flex flex-col justify-center gap-4 md:gap-8 w-full h-full">
         <Title
           mainText={textVariants.sections.language.title.main[language]}
           bgText={textVariants.sections.language.title.bg[language]}
         />
-        <div className="mx-auto flex h-fit w-fit flex-col justify-center gap-4">
+        <div className="flex flex-col justify-center items-center gap-4 md:gap-8 mx-auto w-fit h-fit">
           <h2 className="font-semibold text-black dark:text-white">
             {textVariants.sections.language.subtitle[language]}
           </h2>

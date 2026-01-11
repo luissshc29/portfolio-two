@@ -1,3 +1,5 @@
+import { stacks } from "../constants/stacks";
+
 export type Project = {
   id: string;
   tag: "frontend" | "backend" | "fullstack";
@@ -17,9 +19,9 @@ export type Project = {
     br: string;
     us: string;
   };
-  stacks: number[];
-  url: string;
+  stacks: (typeof stacks)[number]["id"][];
+  url?: string;
   repository?: string;
   complexity: number;
-  highlight?: boolean
+  highlight?: boolean;
 };
