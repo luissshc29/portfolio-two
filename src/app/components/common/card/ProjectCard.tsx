@@ -346,16 +346,18 @@ export default function ProjectCard({
                     </Badge>
                   )}
                 </DrawerTitle>
-                <DrawerDescription>
-                  <Link
-                    variant="tertiary"
-                    href={data.url}
-                    className="text-sm md:text-base"
-                  >
-                    {data.url}
-                    <FiLink />
-                  </Link>
-                </DrawerDescription>
+                {data.url && (
+                  <DrawerDescription>
+                    <Link
+                      variant="tertiary"
+                      href={data.url}
+                      className="text-sm md:text-base"
+                    >
+                      {data.url}
+                      <FiLink />
+                    </Link>
+                  </DrawerDescription>
+                )}
               </DrawerHeader>
               <div className="z-[1500] flex [@media_(min-width:700px)]:flex-row flex-col items-center gap-2 md:gap-8 mx-auto mt-2">
                 <div className="flex flex-col items-start gap-1 md:gap-3 w-[90%] [@media_(min-width:700px)]:w-1/2 md:w-3/5 h-full overflow-visible">
