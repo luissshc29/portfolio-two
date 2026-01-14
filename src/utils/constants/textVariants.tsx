@@ -93,29 +93,30 @@ export const textVariants: TextVariants = {
       paragraph: {
         br: (
           <p>
-            Como <i>desenvolvedor</i>, eu, <strong>Luis Henrique</strong>, sou
-            especializado em criar sites personalizados sob demanda para atender
-            às necessidades específicas dos meus clientes. Utilizando
-            tecnologias difundidas no mercado web e minha expertise em{" "}
-            <i>TypeScript, React, Next.js</i>, <i>MySQL</i> e <i>GraphQL</i>,
-            entrego soluções web de alta qualidade, responsivas e amigáveis.
-            Minhas habilidades abrangem tanto o desenvolvimento front-end quanto
-            o back-end, garantindo uma experiência web de <u>alta qualidade</u>{" "}
-            e <u>eficiente</u> para os usuários. Estou comprometido em me manter
-            atualizado com as últimas tendências e melhores práticas do setor
-            para fornecer <u>soluções inovadoras</u> e <u>eficazes</u>.
+            Como <i>Desenvolvedor de Software</i>, eu,{" "}
+            <strong>Luis Henrique</strong>, sou especializado em criar
+            aplicações personalizadas e sob demanda para atender às necessidades
+            específicas dos meus clientes. Utilizando tecnologias difundidas no
+            mercado e minha expertise em <i>TypeScript, React, Next.js</i>,{" "}
+            <i>MySQL</i> e <i>GraphQL</i>, entrego soluções de alta qualidade,
+            responsivas e amigáveis. Minhas habilidades abrangem tanto o
+            desenvolvimento front-end quanto o back-end, garantindo uma
+            experiência de <u>alta qualidade</u> e <u>eficiência</u> para os
+            usuários. Estou comprometido em me manter atualizado com as últimas
+            tendências e melhores práticas do setor para fornecer{" "}
+            <u>soluções inovadoras</u> e <u>eficazes</u>.
           </p>
         ),
         us: (
           <p>
-            As a <i>developer</i>, I, <strong>Luis Henrique</strong>, specialize
-            in creating customized websites tailored to meet the specific needs
-            of my clients. Leveraging popular web technologies and my expertise
-            in <i>TypeScript, React, Next.js</i>, <i>MySQL</i> and{" "}
+            As a <i>Software Developer</i>, I, <strong>Luis Henrique</strong>,
+            specialize in creating customized applications tailored to meet the
+            specific needs of my clients. Leveraging popular technologies and my
+            expertise in <i>TypeScript, React, Next.js</i>, <i>MySQL</i> and{" "}
             <i>GraphQL</i>, I deliver high-quality, responsive, and
-            user-friendly web solutions. My skills encompass both front-end and
+            user-friendly solutions. My skills encompass both front-end and
             back-end development, ensuring a <u>high-quality</u> and{" "}
-            <u>efficient</u> web experience for users. I am dedicated to staying
+            <u>efficient</u> experience for users. I am dedicated to staying
             updated with the latest industry trends and best practices to
             provide <u>innovative</u> and <u>effective solutions</u>.
           </p>
@@ -771,13 +772,13 @@ export const textVariants: TextVariants = {
       alert: {
         google_form: {
           br: (
-            <div className="flex flex-wrap justify-center items-center gap-1">
+            <div className="flex flex-wrap items-center justify-center gap-1">
               <FiInfo className="text-lg" /> Você também pode preencher um
               formulário,{" "}
               <a
                 href="https://docs.google.com/forms/d/e/1FAIpQLSeoaZv_XB15-3QHgqdHm-qDVGggPj1XSYlA0wIvf4L9BysZdw/viewform"
                 target="_blank"
-                className="flex items-center gap-[2px] w-fit underline"
+                className="flex w-fit items-center gap-[2px] underline"
               >
                 clicando aqui
                 <RiExternalLinkLine className="text-lg" />
@@ -785,12 +786,12 @@ export const textVariants: TextVariants = {
             </div>
           ),
           us: (
-            <div className="flex flex-wrap justify-center items-center gap-1">
+            <div className="flex flex-wrap items-center justify-center gap-1">
               <FiInfo className="text-lg" /> You can also fill out a form, by{" "}
               <a
                 href="https://docs.google.com/forms/d/e/1FAIpQLSfr4SLa31PNH489ktl2jPJriFJl3P-se7zCW1X3VzeLZAI8Aw/viewform"
                 target="_blank"
-                className="flex items-center gap-[2px] w-fit underline"
+                className="flex w-fit items-center gap-[2px] underline"
               >
                 clicking here
                 <RiExternalLinkLine className="text-lg" />

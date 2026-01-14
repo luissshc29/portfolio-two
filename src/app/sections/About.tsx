@@ -29,7 +29,7 @@ export default function About() {
 
       <div className="flex w-full flex-col items-center justify-evenly gap-10 lg:flex-row">
         <img
-          src={`/images/avatar-${resolvedTheme}.png`}
+          src={`/images/avatar-${/*resolvedTheme*/ "new"}.jpg`}
           // src={`/images/avatar-bw.jpg`}
           alt="Avatar"
           className="w-[57%] rounded-full border-4 border-neutral-200 dark:border-neutral-900 md:w-1/3"

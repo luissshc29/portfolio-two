@@ -31,9 +31,9 @@ export default function LanguageProvider({
 
     if (document) {
       if (language === "br") {
-        document.title = "Luis Henrique | Developer";
+        document.title = "Luis Henrique | Software Developer";
       } else {
-        document.title = "Luis Henrique | Desenvolvedor";
+        document.title = "Luis Henrique | Desenvolvedor de Software";
       }
     }
   }, []);

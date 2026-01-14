@@ -9,9 +9,9 @@ import PageLoader from "./components/unique/PageLoader";
 import { ThemeProvider } from "@/utils/context/ThemeContext";
 
 export const metadata: Metadata = {
-  title: "Luis Henrique | Desenvolvedor",
+  title: "Luis Henrique | Desenvolvedor de Software",
   description:
-    "Desenvolvedor com experiência em HTML5, CSS3, Javascript, Typescript, React, Next.js, MySQL, GraphQL, Apollo, Git e GitHub. Especialista na criação de aplicações responsivas e escaláveis, focando em SEO, desempenho e acessibilidade. Habilidades em desenvolvimento front-end com Next.js e Typescript, e back-end com Node.js e MySQL. Integração de APIs REST e GraphQL em projetos complexos. Explore meu portfólio para ver como posso ajudar a melhorar sua presença online.",
+    "Desenvolvedor de Software com experiência em HTML5, CSS3, Javascript, Typescript, React, Next.js, MySQL, GraphQL, Apollo, Git e GitHub. Especialista na criação de aplicações responsivas e escaláveis, focando em SEO, desempenho e acessibilidade. Habilidades em desenvolvimento front-end com Next.js e Typescript, e back-end com Node.js e MySQL. Integração de APIs REST e GraphQL em projetos complexos. Explore meu portfólio para ver como posso ajudar a melhorar sua presença online.",
   authors: [{ name: "Luis Henrique", url: "https://luishenrique-dev.com.br/" }],
   keywords: [
     "HTML5",
@@ -33,6 +33,8 @@ export const metadata: Metadata = {
     "Desenvolvedor",
     "Developer",
     "Desenvolvimento Web",
+    "Desenvolvimento de Software",
+    "Desenvolvedor de Software",
     "Front-end",
     "Back-end",
     "SEO",
@@ -49,8 +51,10 @@ export const metadata: Metadata = {
     "Typescript Developer",
     "MySQL Database",
     "Web Performance",
+    "Software developer",
+    "Software development",
   ],
-  applicationName: "Portfólio Luis Henrique - Desenvolvedor",
+  applicationName: "Portfólio Luis Henrique - Desenvolvedor de Software",
   creator: "Luis Henrique",
   publisher: "Vercel",
   alternates: { canonical: "https://luishenrique-dev.com.br/" },
@@ -58,10 +62,10 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "https://luishenrique-dev.com.br/",
-    title: "Luis Henrique | Desenvolvedor",
+    title: "Luis Henrique | Desenvolvedor de Software",
     description:
-      "Desenvolvedor com expertise em HTML5, CSS3, React, Next.js, MySQL, GraphQL e integração de APIs. Especialista em SEO, acessibilidade e performance de aplicações.",
-    siteName: "Portfólio Luis Henrique - Desenvolvedor",
+      "Desenvolvedor de Software com expertise em HTML5, CSS3, React, Next.js, MySQL, GraphQL e integração de APIs. Especialista em SEO, acessibilidade e performance de aplicações.",
+    siteName: "Portfólio Luis Henrique - Desenvolvedor de Software",
     images: [
       {
         url: "https://i.imgur.com/cUgrAeU.png",
@@ -87,7 +91,7 @@ export default function RootLayout({
       </head>
       <LanguageProvider>
         <HeaderProvider>
-          <body className="relative bg-white dark:bg-bg-primary font-text text-black dark:text-white">
+          <body className="relative bg-white font-text text-black dark:bg-bg-primary dark:text-white">
             <ThemeProvider>
               <PageLoader>
                 {children}
