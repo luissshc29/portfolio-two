@@ -39,7 +39,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="flex items-center gap-1">
-        <p>Copyright &copy; 2024 </p>
+        <p>Copyright &copy; {new Date().getFullYear()} </p>
         <Link href="/" variant="tertiary" target="#">
           Luis Henrique C. Cavalcante
         </Link>
