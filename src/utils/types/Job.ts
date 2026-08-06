@@ -11,8 +11,14 @@ export type Job = {
   description: JobTask[];
   logo: string;
   date: {
-    br: string;
-    us: string;
+    text: {
+      br: string;
+      us: string;
+    };
+    values: {
+      startDate: Date;
+      endDate?: Date | null;
+    };
   };
   icon: React.ReactElement;
 };

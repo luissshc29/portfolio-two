@@ -224,8 +224,14 @@ export const textVariants: TextVariants = {
           ],
           logo: "/images/jobs/logo-pdcase.png",
           date: {
-            br: "Jul 2026 - Hoje",
-            us: "Jul 2026 - Today",
+            text: {
+              br: "Jul 2026 - Hoje",
+              us: "Jul 2026 - Today",
+            },
+            values: {
+              startDate: new Date(2026, 6, 13),
+              endDate: null,
+            },
           },
           icon: <HiMiniCommandLine />,
         },
@@ -268,9 +274,16 @@ export const textVariants: TextVariants = {
           ],
           logo: "/images/jobs/logo-g4f.png",
           date: {
-            br: "Nov 2025 - Jul 2026",
-            us: "Nov 2025 - Jul 2026",
+            text: {
+              br: "Nov 2025 - Jul 2026",
+              us: "Nov 2025 - Jul 2026",
+            },
+            values: {
+              startDate: new Date(2025, 10, 5),
+              endDate: new Date(2026, 6, 9),
+            },
           },
+
           icon: <HiMiniCommandLine />,
         },
         {
@@ -317,8 +330,14 @@ export const textVariants: TextVariants = {
           ],
           logo: "/images/jobs/logo-mpce.png",
           date: {
-            br: "Mar 2025 - Out 2025",
-            us: "Mar 2025 - Oct 2025",
+            text: {
+              br: "Mar 2025 - Out 2025",
+              us: "Mar 2025 - Oct 2025",
+            },
+            values: {
+              startDate: new Date(2025, 2, 17),
+              endDate: new Date(2025, 9, 5),
+            },
           },
           icon: <HiMiniCommandLine />,
         },
@@ -361,8 +380,14 @@ export const textVariants: TextVariants = {
           ],
           logo: "/images/jobs/freelancer.png",
           date: {
-            br: "Out 2023 - Hoje",
-            us: "Oct 2023 - Today",
+            text: {
+              br: "Out 2023 - Hoje",
+              us: "Oct 2023 - Today",
+            },
+            values: {
+              startDate: new Date(2023, 9, 1),
+              endDate: null,
+            },
           },
           icon: <FaCode />,
         },
@@ -405,8 +430,14 @@ export const textVariants: TextVariants = {
           ],
           logo: "/images/jobs/logo-prefeitura.png",
           date: {
-            br: "Fev 2024 - Fev 2025",
-            us: "Feb 2024 - Feb 2025",
+            text: {
+              br: "Fev 2024 - Fev 2025",
+              us: "Feb 2024 - Feb 2025",
+            },
+            values: {
+              startDate: new Date(2024, 1, 5),
+              endDate: new Date(2025, 1, 5),
+            },
           },
           icon: <FaComputer />,
         },
