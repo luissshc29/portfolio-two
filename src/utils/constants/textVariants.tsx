@@ -192,6 +192,50 @@ export const textVariants: TextVariants = {
             us: "Software Developer • Mid-level",
           },
           company: {
+            br: "PD Case",
+            us: "PD Case",
+          },
+          description: [
+            {
+              id: 1,
+              br: `Sustentação e atualização do Portal Interno do órgão, garantindo alta disponibilidade e suporte a uma base de mais de 3000 usuários ativos.`,
+              us: `Support and update of the agency's Internal Portal, ensuring high availability and support for a base of 3000+ active users.`,
+            },
+            {
+              id: 2,
+              br: `Atuação direta no ciclo de vida de desenvolvimento (construção, testes e otimização) de funcionalidades de alto impacto, como sistemas de folha de pagamento, concessão de benefícios e avaliação de desempenho de servidores.`,
+              us: `Direct action in the development life cycle (construction, testing and optimization) of high-impact features, such as payroll systems, granting benefits and evaluating the employee performance.`,
+            },
+            {
+              id: 3,
+              br: `Criação de scripts e protótipos de interfaces de serviços utilizando HTML5, CSS3 e JavaScript, com integração e consumo de APIs RESTful.`,
+              us: `Creation of scripts and prototypes of service interfaces using HTML5, CSS3 and JavaScript, with integration and consumption of RESTful APIs.`,
+            },
+            {
+              id: 4,
+              br: `Construção de queries complexas em MySQL para extração e cruzamento de dados institucionais, cadastrais e métricas de desempenho.`,
+              us: `Construction of complex queries in MySQL for extraction and cross-referencing of institutional data, registration and performance metrics. `,
+            },
+            {
+              id: 5,
+              br: `Atuação em squads ágeis com dinâmicas diárias de Scrum e Kanban, utilizando o Redmine para acompanhamento de sprints, controle de entregas e gestão de prazos.`,
+              us: `Acting in agile squads with daily dynamics of Scrum and Kanban, using Redmine to monitor sprints, control deliveries and manage deadlines.`,
+            },
+          ],
+          logo: "/images/jobs/logo-pdcase.png",
+          date: {
+            br: "Nov 2025 - Hoje",
+            us: "Nov 2025 - Today",
+          },
+          icon: <HiMiniCommandLine />,
+        },
+        {
+          id: 2,
+          function: {
+            br: "Desenvolvedor de Software • Pleno",
+            us: "Software Developer • Mid-level",
+          },
+          company: {
             br: "G4F",
             us: "G4F",
           },
@@ -230,7 +274,7 @@ export const textVariants: TextVariants = {
           icon: <HiMiniCommandLine />,
         },
         {
-          id: 2,
+          id: 3,
           function: {
             br: "Desenvolvedor de Software • Estágio",
             us: "Software Developer • Internship",
@@ -279,7 +323,7 @@ export const textVariants: TextVariants = {
           icon: <HiMiniCommandLine />,
         },
         {
-          id: 3,
+          id: 4,
           function: {
             br: "Desenvolvedor Web • Freelancer",
             us: "Web Developer • Freelancer",
@@ -323,7 +367,7 @@ export const textVariants: TextVariants = {
           icon: <FaCode />,
         },
         {
-          id: 4,
+          id: 5,
           function: {
             br: "Suporte de TI • Estágio",
             us: "IT Support • Internship",
@@ -772,13 +816,13 @@ export const textVariants: TextVariants = {
       alert: {
         google_form: {
           br: (
-            <div className="flex flex-wrap items-center justify-center gap-1">
+            <div className="flex flex-wrap justify-center items-center gap-1">
               <FiInfo className="text-lg" /> Você também pode preencher um
               formulário,{" "}
               <a
                 href="https://docs.google.com/forms/d/e/1FAIpQLSeoaZv_XB15-3QHgqdHm-qDVGggPj1XSYlA0wIvf4L9BysZdw/viewform"
                 target="_blank"
-                className="flex w-fit items-center gap-[2px] underline"
+                className="flex items-center gap-[2px] w-fit underline"
               >
                 clicando aqui
                 <RiExternalLinkLine className="text-lg" />
@@ -786,12 +830,12 @@ export const textVariants: TextVariants = {
             </div>
           ),
           us: (
-            <div className="flex flex-wrap items-center justify-center gap-1">
+            <div className="flex flex-wrap justify-center items-center gap-1">
               <FiInfo className="text-lg" /> You can also fill out a form, by{" "}
               <a
                 href="https://docs.google.com/forms/d/e/1FAIpQLSfr4SLa31PNH489ktl2jPJriFJl3P-se7zCW1X3VzeLZAI8Aw/viewform"
                 target="_blank"
-                className="flex w-fit items-center gap-[2px] underline"
+                className="flex items-center gap-[2px] w-fit underline"
               >
                 clicking here
                 <RiExternalLinkLine className="text-lg" />
