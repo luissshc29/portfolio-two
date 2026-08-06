@@ -18,7 +18,7 @@ const HoverCardContent = React.forwardRef<
     align={align}
     sideOffset={sideOffset}
     className={cn(
-      "z-[50] w-64 rounded-md border bg-popover p-4 text-popover-foreground shadow-md outline-none before:absolute before:left-0 before:top-0 before:z-[51] before:h-full before:w-full before:rounded-md before:border before:border-neutral-400 before:bg-white before:bg-opacity-70 before:backdrop-blur-md before:[-webkit-backdrop-filter:blur(12px)] data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 dark:border-neutral-700 before:dark:border-neutral-700 dark:before:bg-black dark:before:bg-opacity-70",
+      "before:top-0 data-[side=left]:slide-in-from-right-2 data-[side=top]:slide-in-from-bottom-2 before:left-0 before:z-[51] before:absolute bg-popover before:bg-white dark:before:bg-black data-[side=bottom]:slide-in-from-top-2 data-[side=right]:slide-in-from-left-2 before:bg-opacity-70 dark:before:bg-opacity-70 shadow-md before:[-webkit-backdrop-filter:blur(12px)] before:backdrop-blur-md p-4 border before:border before:border-neutral-400 before:dark:border-neutral-700 dark:border-neutral-700 rounded-md before:rounded-md outline-none w-64 before:w-full before:h-full text-popover-foreground data-[state=closed]:animate-out data-[state=open]:animate-in data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95",
       className,
     )}
     {...props}

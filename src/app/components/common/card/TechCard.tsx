@@ -42,7 +42,7 @@ export default function TechCard({
           <HoverCard openDelay={200} closeDelay={200}>
             <HoverCardTrigger
               asChild
-              className={`animate-content-up flex h-fit w-fit items-center justify-center rounded-md border-[2px] p-6 opacity-0 duration-200 hover:cursor-pointer`}
+              className={`flex h-fit w-fit animate-content-up items-center justify-center rounded-md border-[2px] p-6 opacity-0 duration-200 hover:cursor-pointer`}
               style={
                 isHovered
                   ? {
@@ -61,29 +61,29 @@ export default function TechCard({
                 <tech.component />
               </button>
             </HoverCardTrigger>
-            <HoverCardContent className="max-w-screen relative z-[51] min-w-80 md:max-w-[400px]">
-              <div className="relative z-[51]">
+            <HoverCardContent className="z-[100] relative min-w-80 max-w-screen md:max-w-[400px]">
+              <div className="z-[100] relative">
                 <div className="flex items-center gap-3">
                   <div
-                    className="flex items-center justify-center rounded-full text-white"
+                    className="flex justify-center items-center rounded-full text-white"
                     style={{ color: tech.color[theme] }}
                   >
                     <tech.component className="text-4xl" />
                   </div>
-                  <div className="flex w-full flex-col text-left">
-                    <div className="flex items-center justify-between gap-2">
-                      <p className="text-sm font-bold md:text-base">
+                  <div className="flex flex-col w-full text-left">
+                    <div className="flex justify-between items-center gap-2">
+                      <p className="font-bold text-sm md:text-base">
                         {tech.name}
                       </p>
                       <a href={tech.url} target="_blank">
                         <RiExternalLinkLine className="text-lg" />
                       </a>
                     </div>
-                    <p className="text-xs dark:text-neutral-500">{tech.url}</p>
+                    <p className="dark:text-neutral-500 text-xs">{tech.url}</p>
                   </div>
                 </div>
-                <Separator className="mx-auto my-3 w-full bg-neutral-500 dark:bg-neutral-700" />
-                <p className="text-left text-xs">
+                <Separator className="bg-neutral-500 dark:bg-neutral-700 mx-auto my-3 w-full" />
+                <p className="text-xs text-left">
                   {tech.description[language]}
                 </p>
               </div>
@@ -93,7 +93,7 @@ export default function TechCard({
       ) : (
         <div
           ref={ref}
-          className="animate-content-up opacity-0"
+          className="opacity-0 animate-content-up"
           style={{
             ...style,
           }}
@@ -113,29 +113,29 @@ export default function TechCard({
             >
               <tech.component />
             </PopoverTrigger>
-            <PopoverContent className="w-min min-w-80 max-w-[400px] p-4">
-              <div className="relative z-[51]">
+            <PopoverContent className="z-[100] p-4 w-min min-w-80 max-w-[400px]">
+              <div className="z-[100] relative">
                 <div className="flex items-center gap-3">
                   <div
-                    className="flex items-center justify-center rounded-full text-white"
+                    className="flex justify-center items-center rounded-full text-white"
                     style={{ color: tech.color[theme] }}
                   >
                     <tech.component className="text-4xl" />
                   </div>
-                  <div className="flex w-full flex-col text-left">
-                    <div className="flex items-center justify-between gap-2">
-                      <p className="text-sm font-bold md:text-base">
+                  <div className="flex flex-col w-full text-left">
+                    <div className="flex justify-between items-center gap-2">
+                      <p className="font-bold text-sm md:text-base">
                         {tech.name}
                       </p>
                       <a href={tech.url} target="_blank">
                         <RiExternalLinkLine className="text-lg" />
                       </a>
                     </div>
-                    <p className="text-xs dark:text-neutral-500">{tech.url}</p>
+                    <p className="dark:text-neutral-500 text-xs">{tech.url}</p>
                   </div>
                 </div>
-                <Separator className="mx-auto my-3 w-full bg-neutral-500 dark:bg-neutral-700" />
-                <p className="text-left text-xs">
+                <Separator className="bg-neutral-500 dark:bg-neutral-700 mx-auto my-3 w-full" />
+                <p className="text-xs text-left">
                   {tech.description[language]}
                 </p>
               </div>

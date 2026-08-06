@@ -224,8 +224,8 @@ export const textVariants: TextVariants = {
           ],
           logo: "/images/jobs/logo-pdcase.png",
           date: {
-            br: "Nov 2025 - Hoje",
-            us: "Nov 2025 - Today",
+            br: "Jul 2026 - Hoje",
+            us: "Jul 2026 - Today",
           },
           icon: <HiMiniCommandLine />,
         },
@@ -268,8 +268,8 @@ export const textVariants: TextVariants = {
           ],
           logo: "/images/jobs/logo-g4f.png",
           date: {
-            br: "Nov 2025 - Hoje",
-            us: "Nov 2025 - Today",
+            br: "Nov 2025 - Jul 2026",
+            us: "Nov 2025 - Jul 2026",
           },
           icon: <HiMiniCommandLine />,
         },
@@ -679,30 +679,30 @@ export const textVariants: TextVariants = {
         //   repository: "https://github.com/luissshc29/pokedex",
         //   complexity: 2,
         // },
-        {
-          id: uuidv4(),
-          tag: "frontend",
-          title: {
-            br: "Bloco de notas",
-            us: "Notepad",
-          },
-          images: {
-            path: "/images/projects/notepad/",
-            list: ["1.png"],
-          },
-          description: {
-            br: "Bloco de notas online que guardará suas anotações para sempre. O site guarda as notas no <i>localStorage</i> do navegador, cada uma com seu título, descrição e cor.",
-            us: "Online notepad that will save your notes forever. The site stores the notes in the browser's <i>localStorage</i>, each with its title, description and color.",
-          },
-          date: {
-            br: "1 Nov. 2023",
-            us: "Nov. 1, 2023",
-          },
-          stacks: ["tailwindcss", "typescript", "redux", "nextjs"],
-          url: "https://notepad-luissshc29.vercel.app/",
-          repository: "https://github.com/luissshc29/Notepad",
-          complexity: 3,
-        },
+        // {
+        //   id: uuidv4(),
+        //   tag: "frontend",
+        //   title: {
+        //     br: "Bloco de notas",
+        //     us: "Notepad",
+        //   },
+        //   images: {
+        //     path: "/images/projects/notepad/",
+        //     list: ["1.png"],
+        //   },
+        //   description: {
+        //     br: "Bloco de notas online que guardará suas anotações para sempre. O site guarda as notas no <i>localStorage</i> do navegador, cada uma com seu título, descrição e cor.",
+        //     us: "Online notepad that will save your notes forever. The site stores the notes in the browser's <i>localStorage</i>, each with its title, description and color.",
+        //   },
+        //   date: {
+        //     br: "1 Nov. 2023",
+        //     us: "Nov. 1, 2023",
+        //   },
+        //   stacks: ["tailwindcss", "typescript", "redux", "nextjs"],
+        //   url: "https://notepad-luissshc29.vercel.app/",
+        //   repository: "https://github.com/luissshc29/Notepad",
+        //   complexity: 3,
+        // },
         // {
         //   id: uuidv4(),
         //   tag: "frontend",
