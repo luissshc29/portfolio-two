@@ -61,7 +61,7 @@ export default function TechCard({
                 <tech.component />
               </button>
             </HoverCardTrigger>
-            <HoverCardContent className="z-[100] relative min-w-80 max-w-screen md:max-w-[400px]">
+            <HoverCardContent className="z-[100] relative bg-black min-w-80 max-w-screen md:max-w-[400px]">
               <div className="z-[100] relative">
                 <div className="flex items-center gap-3">
                   <div
